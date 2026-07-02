@@ -202,7 +202,7 @@ Cláusulas previstas:
 ## 13. Próximos passos / questões em aberto
 
 1. ~~Fechar as decisões técnicas da seção 10.~~ ✅ Fechadas em 2026-07-01 (ver `decisoes-tecnicas.md`).
-2. **Construir o primeiro template (o motor)** — variação 1 completa, com cliente-demo fictício. Em andamento.
+2. ~~Construir o primeiro template (o motor)~~ ✅ Variação 1 completa com cliente-demo (2026-07-02): componentes compartilhados + 4 páginas (home, acomodações, sobre, localização), tema "Maré". Falta o deploy da vitrine na Vercel.
 3. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
    - Método: Google Maps reverso, Instagram (bio), Hostelworld/Booking, showcases de design.
 4. Definir prazos e janelas (campos [DEFINIR] acima).
