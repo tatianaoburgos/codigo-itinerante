@@ -25,7 +25,7 @@ Não há testes nem linter configurados ainda.
 ## Arquitetura
 
 - **Stack**: Astro 5 + Tailwind CSS 4 (via `@tailwindcss/vite`), site 100% estático, deploy Vercel free tier. Tailwind é importado em `src/styles/global.css`.
-- **Dados por cliente**: cada cliente terá `clientes/<hostel>/config.json`, validado por schema (Zod, via content collections do Astro) na build — a build deve falhar com dados inválidos. `clientes/demo/` é o hostel fictício de vitrine.
+- **Dados por cliente**: cada cliente tem `clientes/<hostel>/config.json`, validado por schema Zod (`template/src/lib/schema.ts`) na build — a build falha com dados inválidos. O cliente ativo é escolhido pela variável de ambiente `CLIENTE` (padrão `demo`) em `template/src/lib/cliente.ts`. `clientes/demo/` é o hostel fictício de vitrine ("Hostel Maré Alta").
 - **Componentização**: biblioteca única de componentes compartilhados (hero, galeria, card de acomodação, mapa, CTA WhatsApp, nav/footer). Cada uma das 3 variações de site = uma composição de página diferente + um tema visual. ~80% do código compartilhado. Variação 1 primeiro, completa de ponta a ponta; variações 2 e 3 depois.
 - **Imagens**: fotos versionadas na pasta do cliente; otimização na build via `astro:assets`; alt text vem do config.json.
 - **Site institucional, não motor de reservas**: 4 abas (Acomodações, Sobre, Localização, Contato/WhatsApp). Sem checagem de disponibilidade, sem pagamento, sem integração com OTAs. Evitar a palavra isolada "Reservas" no menu. Evitar preço exato no conteúdo — preferir faixa de preços ou "consulte no WhatsApp".
@@ -38,4 +38,4 @@ Não há testes nem linter configurados ainda.
 
 ## Estado atual
 
-Scaffold do motor no ar (`template/src/pages/index.astro` é placeholder). Próximo passo registrado: construir a variação 1 do motor com o cliente-demo (`clientes/demo/` ainda não existe).
+Scaffold + schema do config validando na build, com cliente demo. Em andamento: componentes e as 4 páginas da variação 1 (`template/src/pages/index.astro` ainda é placeholder).
