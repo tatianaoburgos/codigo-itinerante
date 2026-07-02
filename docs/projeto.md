@@ -221,6 +221,7 @@ codigo-itinerante/
 │   ├── decisoes-tecnicas.md     (decisões fechadas e justificativas)
 │   ├── contrato-permuta.md      (a redigir)
 │   └── briefing-cliente.md      (questionário para o cliente)
+├── marca/                       (identidade visual: wordmark/monograma SVG, tokens.css; manual em docs/miv.md)
 ├── template/                    (o motor: projeto Astro reutilizável)
 │   └── src/styles/temas/        (tema por cliente: <slug>.css, selecionado por CLIENTE)
 └── clientes/
