@@ -1,0 +1,64 @@
+{
+  "nome": "Hostel Maré Alta",
+  "slogan": "Seu porto seguro a duas quadras do mar",
+  "descricaoSeo": "Hostel Maré Alta, no Rio Vermelho, Salvador: quartos compartilhados e suítes privativas a duas quadras da praia. Reserve direto pelo WhatsApp, sem taxas.",
+  "sobre": {
+    "historia": "O Maré Alta nasceu em 2019, quando a Dona Célia transformou o casarão da família, no coração do Rio Vermelho, num ponto de encontro de viajantes do mundo inteiro. A varanda que via o pôr do sol virou espaço de café da manhã coletivo, e o quintal de mangueiras, área de redes e conversa até tarde.",
+    "diferenciais": [
+      "Café da manhã baiano incluso, com tapioca feita na hora",
+      "A duas quadras da praia do Rio Vermelho e da feira de sexta",
+      "Cozinha compartilhada equipada e área de coworking com boa internet",
+      "Equipe local que monta roteiros personalizados a pé"
+    ]
+  },
+  "acomodacoes": [
+    {
+      "nome": "Quarto compartilhado misto",
+      "capacidade": "8 pessoas em beliches",
+      "comodidades": ["Ar-condicionado", "Armários individuais com cadeado", "Cortina e luz de leitura por cama", "Tomada e USB por cama"],
+      "fotos": [
+        { "arquivo": "quarto-misto-1.jpg", "alt": "Quarto compartilhado com beliches de madeira e cortinas individuais" },
+        { "arquivo": "quarto-misto-2.jpg", "alt": "Detalhe do beliche com luz de leitura e armário individual" }
+      ]
+    },
+    {
+      "nome": "Quarto compartilhado feminino",
+      "capacidade": "6 pessoas em beliches",
+      "comodidades": ["Ar-condicionado", "Banheiro exclusivo do quarto", "Armários individuais", "Espelho e bancada"],
+      "fotos": [
+        { "arquivo": "quarto-fem-1.jpg", "alt": "Quarto feminino com beliches e roupa de cama clara" }
+      ]
+    },
+    {
+      "nome": "Suíte privativa casal",
+      "capacidade": "2 pessoas, cama queen",
+      "comodidades": ["Ar-condicionado", "Banheiro privativo", "Varanda com rede", "Frigobar"],
+      "fotos": [
+        { "arquivo": "suite-1.jpg", "alt": "Suíte com cama de casal e varanda com rede ao fundo" }
+      ]
+    }
+  ],
+  "precos": {
+    "politica": "consultar"
+  },
+  "localizacao": {
+    "endereco": "Rua da Paciência, 123 — Rio Vermelho, Salvador/BA",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Rio%20Vermelho%2C%20Salvador%2C%20Bahia&output=embed",
+    "comoChegar": [
+      "Do aeroporto: ônibus Praça da Sé (linha 1001) até o Largo da Mariquita, ou 25 min de carro por aplicativo.",
+      "Da rodoviária: 15 min de carro por aplicativo.",
+      "A pé: estamos a 200 m do Largo da Dinha, ponto de referência do Rio Vermelho."
+    ]
+  },
+  "contato": {
+    "whatsapp": "5571999998888",
+    "email": "contato@marealta.example.com",
+    "instagram": "hostelmarealta.demo"
+  },
+  "atividades": [
+    "Aula de capoeira no quintal (terças e quintas)",
+    "Roteiro a pé pelo Rio Vermelho com a equipe",
+    "Noite de moqueca coletiva (sextas)",
+    "Aluguel de pranchas e caronas para o surf na Barra"
+  ]
+}

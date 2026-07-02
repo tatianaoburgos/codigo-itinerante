@@ -1,0 +1,23 @@
+---
+import '../styles/global.css';
+import { config, clienteAtivo } from '../lib/cliente';
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{config.nome}</title>
+    <meta name="description" content={config.descricaoSeo} />
+  </head>
+  <body class="flex min-h-screen items-center justify-center bg-slate-100">
+    <main class="text-center">
+      <h1 class="text-3xl font-bold text-slate-800">{config.nome}</h1>
+      <p class="mt-2 text-slate-600">{config.slogan}</p>
+      <p class="mt-6 text-sm text-slate-400">
+        Motor no ar — cliente ativo: <code>{clienteAtivo}</code>, config validado pelo schema.
+      </p>
+    </main>
+  </body>
+</html>
