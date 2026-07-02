@@ -1,0 +1,28 @@
+---
+interface Props {
+  eyebrow?: string;
+  /** Usar em seções de fundo escuro (bg-mare/bg-noite). */
+  claro?: boolean;
+}
+
+const { eyebrow, claro = false } = Astro.props;
+---
+
+<div>
+  {
+    eyebrow && (
+      <p
+        class:list={[
+          'font-mono text-xs tracking-widest uppercase',
+          claro ? 'text-sal' : 'text-azulejo',
+        ]}
+      >
+        {eyebrow}
+      </p>
+    )
+  }
+  <h2 class:list={['mt-1 font-display text-3xl font-bold', claro ? 'text-espuma' : 'text-mare']}>
+    <slot />
+  </h2>
+  <span class="mt-3 block h-1 w-12 bg-fitinha" aria-hidden="true"></span>
+</div>

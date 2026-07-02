@@ -1,0 +1,40 @@
+---
+import { config } from '../lib/cliente';
+
+const linkWhatsApp = `https://wa.me/${config.contato.whatsapp}`;
+const linkInstagram = config.contato.instagram
+  ? `https://instagram.com/${config.contato.instagram}`
+  : undefined;
+const estilosLink =
+  'underline decoration-fitinha decoration-2 underline-offset-4 transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fitinha';
+---
+
+<footer class="bg-noite text-sal">
+  <div class="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2">
+    <div>
+      <p class="font-display text-lg font-bold text-espuma">{config.nome}</p>
+      <p class="mt-1 max-w-xs text-sm">{config.slogan}</p>
+      <p class="mt-4 text-sm">{config.localizacao.endereco}</p>
+    </div>
+    <div class="text-sm sm:justify-self-end">
+      <p class="font-mono text-xs tracking-widest text-espuma uppercase">Fale conosco</p>
+      <ul class="mt-3 space-y-2">
+        <li>
+          <a href={linkWhatsApp} target="_blank" rel="noopener" class={estilosLink}>WhatsApp</a>
+        </li>
+        <li>
+          <a href={`mailto:${config.contato.email}`} class={estilosLink}>{config.contato.email}</a>
+        </li>
+        {
+          linkInstagram && (
+            <li>
+              <a href={linkInstagram} target="_blank" rel="noopener" class={estilosLink}>
+                @{config.contato.instagram}
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+  </div>
+</footer>

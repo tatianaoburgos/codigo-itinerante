@@ -1,0 +1,27 @@
+---
+import { Image } from 'astro:assets';
+import { config } from '../lib/cliente';
+import { foto } from '../lib/fotos';
+import BotaoWhatsApp from './BotaoWhatsApp.astro';
+---
+
+<section class="relative isolate flex min-h-[70vh] items-end bg-noite">
+  <Image
+    src={foto('capa.jpg')}
+    alt=""
+    widths={[640, 1024, 1600]}
+    sizes="100vw"
+    loading="eager"
+    class="absolute inset-0 -z-10 h-full w-full object-cover opacity-50"
+  />
+  <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-14">
+    <span class="block h-1 w-16 bg-fitinha" aria-hidden="true"></span>
+    <h1 class="mt-4 max-w-2xl font-display text-4xl font-bold text-espuma sm:text-6xl">
+      {config.nome}
+    </h1>
+    <p class="mt-3 max-w-xl text-lg text-sal">{config.slogan}</p>
+    <div class="mt-8">
+      <BotaoWhatsApp tamanho="grande" />
+    </div>
+  </div>
+</section>

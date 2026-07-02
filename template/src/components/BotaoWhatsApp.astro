@@ -1,0 +1,32 @@
+---
+import { config } from '../lib/cliente';
+
+interface Props {
+  rotulo?: string;
+  tamanho?: 'medio' | 'grande';
+}
+
+const { rotulo = 'Reserve pelo WhatsApp', tamanho = 'medio' } = Astro.props;
+
+const mensagem = encodeURIComponent(
+  `Ola! Vi o site do ${config.nome} e quero saber valores e disponibilidade.`,
+);
+const href = `https://wa.me/${config.contato.whatsapp}?text=${mensagem}`;
+
+const tamanhos = {
+  medio: 'px-4 py-2 text-sm',
+  grande: 'px-6 py-3 text-base',
+};
+---
+
+<a
+  href={href}
+  target="_blank"
+  rel="noopener"
+  class:list={[
+    'inline-block rounded-full bg-zap font-corpo font-bold text-noite transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo',
+    tamanhos[tamanho],
+  ]}
+>
+  {rotulo}
+</a>

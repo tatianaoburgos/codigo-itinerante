@@ -1,1 +1,19 @@
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/karla";
+@import "@fontsource-variable/spline-sans-mono";
 @import "tailwindcss";
+
+/* Tema da variação 1 ("Maré"): é esta camada que as variações 2 e 3 trocam. */
+@theme {
+  --color-mare: #123d66;
+  --color-noite: #0b1f30;
+  --color-azulejo: #2456c8;
+  --color-sal: #dde9ef;
+  --color-espuma: #f4f7f6;
+  --color-fitinha: #f2b705;
+  --color-zap: #25d366;
+
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Karla Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
+}
