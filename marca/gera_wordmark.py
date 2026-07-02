@@ -2,6 +2,8 @@
 
 Wordmark W2 (MIV §2): "Código" (Archivo 600, tracking -0.03em) + "Itinerante"
 (Instrument Serif Italic, corpo 10% maior), na mesma baseline.
+Monograma M4 (MIV §2): "C" e "I" ambos em Archivo 600, com o I inclinado 12°
+e na cor de acento.
 
 Uso:
     pip install fonttools
@@ -43,10 +45,10 @@ def carregar_archivo_600() -> TTFont:
 
 
 def render_texto(font: TTFont, texto: str, size: float, tracking_em: float,
-                 x0: float) -> tuple[str, float, float, float]:
-    """Desenha `texto` a partir de x0 na baseline y=0.
+                 x0: float, slant_tan: float = 0.0) -> tuple[str, float, float, float, float]:
+    """Desenha `texto` a partir de x0 na baseline y=0, com inclinação opcional.
 
-    Retorna (path_d, x_final, y_min, y_max) em coordenadas SVG (y para baixo).
+    Retorna (path_d, x_final, y_min, y_max, x_max) em coordenadas SVG (y para baixo).
     """
     upm = font["head"].unitsPerEm
     scale = size / upm
@@ -57,21 +59,28 @@ def render_texto(font: TTFont, texto: str, size: float, tracking_em: float,
     pen = SVGPathPen(glyph_set)
     x = x0
     y_min, y_max = 0.0, 0.0
+    x_max = x0
     for ch in texto:
         nome = cmap[ord(ch)]
         glifo = glyph_set[nome]
-        # y invertido: fontes têm y para cima, SVG para baixo
-        glifo.draw(TransformPen(pen, (scale, 0, 0, -scale, x, 0)))
+        # y invertido: fontes têm y para cima, SVG para baixo;
+        # yx inclina o glifo (topo para a direita) quando slant_tan > 0
+        glifo.draw(TransformPen(pen, (scale, 0, slant_tan * scale, -scale, x, 0)))
         bp = BoundsPen(glyph_set)
         glifo.draw(bp)
         if bp.bounds is not None:
-            _, b_ymin, _, b_ymax = bp.bounds
+            b_xmin, b_ymin, b_xmax, b_ymax = bp.bounds
             y_min = min(y_min, -b_ymax * scale)
             y_max = max(y_max, -b_ymin * scale)
+            cantos_x = [
+                x + (bx + slant_tan * by) * scale
+                for bx in (b_xmin, b_xmax) for by in (b_ymin, b_ymax)
+            ]
+            x_max = max(x_max, *cantos_x)
         avanco, _ = hmtx[nome]
         x += avanco * scale + tracking_em * size
     x -= tracking_em * size  # sem tracking depois do último glifo
-    return pen.getCommands(), x, y_min, y_max
+    return pen.getCommands(), x, y_min, y_max, x_max
 
 
 def svg(paths: list[tuple[str, str]], largura: float, y_min: float,
@@ -89,21 +98,23 @@ def svg(paths: list[tuple[str, str]], largura: float, y_min: float,
     )
 
 
-def gerar(arq_saida: str, partes: list[tuple[TTFont, str, float, float]],
+def gerar(arq_saida: str, partes: list[tuple[TTFont, str, float, float, float]],
           gap: float, titulo: str) -> None:
     for variante, (cor_sans, cor_italico) in CORES.items():
         cores = [cor_sans, cor_italico]
         paths: list[tuple[str, str]] = []
         x = 0.0
         y_min, y_max = 0.0, 0.0
-        for i, (font, texto, size, tracking) in enumerate(partes):
-            d, x, p_ymin, p_ymax = render_texto(font, texto, size, tracking, x)
+        largura = 0.0
+        for i, (font, texto, size, tracking, slant) in enumerate(partes):
+            d, x, p_ymin, p_ymax, p_xmax = render_texto(font, texto, size, tracking, x, slant)
             paths.append((d, cores[i]))
             y_min = min(y_min, p_ymin)
             y_max = max(y_max, p_ymax)
+            largura = max(largura, x, p_xmax)
             if i < len(partes) - 1:
                 x += gap
-        conteudo = svg(paths, x, y_min, y_max, titulo)
+        conteudo = svg(paths, largura, y_min, y_max, titulo)
         destino = AQUI / f"{arq_saida}-{variante}.svg"
         destino.write_text(conteudo, encoding="utf-8")
         print(f"gerado: {destino}")
@@ -116,19 +127,20 @@ def main() -> None:
     gerar(
         "wordmark",
         [
-            (archivo, "Código", CODIGO_SIZE, TRACKING_EM),
-            (instrument, "Itinerante", ITINERANTE_SIZE, 0.0),
+            (archivo, "Código", CODIGO_SIZE, TRACKING_EM, 0.0),
+            (instrument, "Itinerante", ITINERANTE_SIZE, 0.0, 0.0),
         ],
         WORD_GAP,
         "Código Itinerante",
     )
+    # Monograma M4: dupla sans no mesmo peso, movimento só na inclinação do I
     gerar(
         "monograma",
         [
-            (archivo, "C", CODIGO_SIZE, 0.0),
-            (instrument, "I", ITINERANTE_SIZE, 0.0),
+            (archivo, "C", CODIGO_SIZE, 0.0, 0.0),
+            (archivo, "I", CODIGO_SIZE, 0.0, 0.2126),  # tan(12°)
         ],
-        6.0,
+        4.0,
         "Código Itinerante",
     )
 

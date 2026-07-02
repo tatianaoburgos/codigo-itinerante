@@ -44,7 +44,11 @@ As duas palavras na mesma linha, separadas por espaço simples, alinhadas pela b
 ### Tamanhos
 
 - O wordmark se sustenta pequeno (validado a ~13px de corpo).
-- Abaixo disso (favicon, avatar), usar o monograma "C*I*" com o mesmo par tipográfico — a produzir junto com os SVGs.
+- Abaixo disso (favicon, avatar), usar o monograma.
+
+### Monograma
+
+"C" e "I" ambos em **Archivo 600, mesmo corpo** — mesmíssimo peso — com o "I" **inclinado 12°** e na cor de acento (Âmbar sobre escuro, Queimado sobre claro). Aqui não há serifa: em tamanhos minúsculos ela morre, então o movimento da viagem fica só na inclinação. Escolhido entre 4 candidatos em 2026-07-02 (venceu M4 "dupla sans"; preteridos: I-dentro-do-C, par sans+serifa equilibrado, C+cursor).
 
 ### O que não fazer
 
@@ -126,12 +130,12 @@ As duas palavras na mesma linha, separadas por espaço simples, alinhadas pela b
 ### Assinatura / avatar
 
 - Assinatura de e-mail: wordmark pequeno (versão de cor conforme o fundo).
-- Avatar/favicon: monograma "C*I*" (a produzir).
+- Avatar/favicon: monograma (ver §2) — `marca/monograma-*.svg`.
 
 ---
 
-## 6. Entregáveis pendentes
+## 6. Entregáveis
 
-1. `marca/` com wordmark em SVG (escuro, claro, mono; fontes em curvas) e monograma "C*I*".
-2. `marca/tokens.css` com a paleta e as fontes para materiais HTML e o futuro site.
-3. Aplicar o cabeçalho padrão nos documentos comerciais existentes.
+1. ✅ `marca/` com wordmark e monograma em SVG (escuro, claro, mono; fontes em curvas) + `gera_wordmark.py` para regenerar.
+2. ✅ `marca/tokens.css` com a paleta e as fontes para materiais HTML e o futuro site.
+3. Pendente: aplicar o cabeçalho padrão nos documentos comerciais quando forem redigidos (proposta, contrato).
