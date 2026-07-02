@@ -44,7 +44,7 @@ Modelo de referência: <https://www.nomadssalvador.com/>
 - Site institucional responsivo (desktop + mobile).
 - As 4 abas acima.
 - Copy dos textos, a partir do briefing preenchido pelo cliente.
-- SEO on-page básico (title, meta description, headings, dados estruturados LocalBusiness, alt text, sitemap).
+- SEO on-page básico (title, meta description, headings, dados estruturados LodgingBusiness, alt text, sitemap).
 - Mapa incorporado (Google Maps embed).
 - Botão/link direto para WhatsApp e e-mail.
 - Vinculação do site ao Perfil da Empresa no Google — condicionada a o cliente fornecer acesso de administrador (ver seção 8).
@@ -69,18 +69,19 @@ Modelo de referência: <https://www.nomadssalvador.com/>
 
 ## 6. Inputs necessários do cliente
 
-(esta seção vai no documento entregue AO CLIENTE, junto com a proposta/contrato)
+Questionário completo, pronto para enviar ao cliente: `docs/briefing-cliente.md`.
 
-Para construir o site, preciso que você me envie:
+Resumo do que é pedido:
 
+- [ ] **Identidade visual** — Manual de Identidade Visual (MIV), se houver; senão, logo/cores/estilo desejado.
 - [ ] **Fotos em alta resolução** — quartos, áreas comuns, fachada, arredores. A qualidade do site depende diretamente da qualidade das fotos fornecidas.
 - [ ] **Descrição das acomodações** — para cada tipo de quarto: nome, capacidade, comodidades.
 - [ ] **Sobre o hostel** — breve história, proposta, o que o diferencia.
-- [ ] **Logo e cores da marca** (se houver).
-- [ ] **Dados de contato** — número de WhatsApp, e-mail, endereço completo, Instagram/redes.
-- [ ] **Valores** — faixa de preços a exibir (ou indicar se prefere "consultar valores"). Colocar como pergunta para o cliente.
+- [ ] **Dados de contato** — número de WhatsApp, e-mail, endereço completo, Instagram/redes, domínio (se já tiver).
 - [ ] **Acesso de administrador ao Perfil da Empresa no Google** (ver seção 8).
-- [ ] **Grade de atividades/serviços**, se houver (tours, café, coworking etc.) — montar lista pronta para o cliente só marcar com X, algo que facilite a vida dele.
+- [ ] **Grade de atividades/serviços**, se houver (tours, café, coworking etc.).
+
+**Valores**: não é mais pergunta ao cliente — política fixa é "consultar no WhatsApp" (sem faixa/preço publicado no site), para evitar custo de manutenção recorrente a cada reajuste. Comunicado como combinado, não como escolha, no briefing.
 
 Observação: a construção só começa após o recebimento completo deste material.
 
@@ -203,10 +204,12 @@ Cláusulas previstas:
 
 1. ~~Fechar as decisões técnicas da seção 10.~~ ✅ Fechadas em 2026-07-01 (ver `decisoes-tecnicas.md`).
 2. ~~Construir o primeiro template (o motor)~~ ✅ Variação 1 completa com cliente-demo (2026-07-02): componentes compartilhados + 4 páginas (home, acomodações, sobre, localização), tema "Maré". Falta o deploy da vitrine na Vercel.
-3. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
+3. **Primeiro cliente real iniciado: LumeHostel (2026-07-02).** Cliente entregou só o MIV (marca). Criada a camada de **tema por cliente** (`template/src/styles/temas/<slug>.css` via alias `@tema`); aplicada a identidade do LumeHostel (cores/fontes do MIV, com fontes livres no lugar das pagas). Esqueleto navegável com conteúdo `[PROVISORIO]` e fotos placeholder. **Aguardando briefing** — pendências em `clientes/lumehostel/PENDENCIAS.md`; marca documentada em `clientes/lumehostel/marca.md`.
+4. ~~Redigir documento do cliente (seção 6).~~ ✅ `docs/briefing-cliente.md` criado (2026-07-02): questionário reutilizável, com seção de identidade visual (MIV ou fallback) e política fixa de preços "consultar no WhatsApp".
+5. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
    - Método: Google Maps reverso, Instagram (bio), Hostelworld/Booking, showcases de design.
-4. Definir prazos e janelas (campos [DEFINIR] acima).
-5. Redigir contrato de permuta (seção 12) + documento do cliente (seção 6).
+6. Definir prazos e janelas (campos [DEFINIR] acima).
+7. Redigir contrato de permuta (seção 12).
 
 ### Estrutura do repositório (adotada)
 
@@ -217,8 +220,10 @@ codigo-itinerante/
 │   ├── projeto.md               (este documento)
 │   ├── decisoes-tecnicas.md     (decisões fechadas e justificativas)
 │   ├── contrato-permuta.md      (a redigir)
-│   └── inputs-cliente.md        (a redigir)
+│   └── briefing-cliente.md      (questionário para o cliente)
 ├── template/                    (o motor: projeto Astro reutilizável)
+│   └── src/styles/temas/        (tema por cliente: <slug>.css, selecionado por CLIENTE)
 └── clientes/
-    └── demo/                    (hostel fictício: config.json + fotos)
+    ├── demo/                    (hostel fictício: config.json + fotos)
+    └── lumehostel/             (1º cliente real: config.json + fotos + marca.md + PENDENCIAS.md)
 ```
