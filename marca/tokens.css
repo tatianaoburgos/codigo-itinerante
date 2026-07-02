@@ -1,0 +1,29 @@
+/* Tokens da marca Código Itinerante — identidade "Estrada 1: Lâmpada de hostel".
+   Fonte de verdade: docs/miv.md. Para o futuro site do projeto e materiais em HTML. */
+
+:root {
+  /* Neutros */
+  --ci-breu: #0a0a09;        /* fundo principal (escuro) */
+  --ci-grafite: #161513;     /* superfícies, cards sobre breu */
+  --ci-cal: #f4f1e8;         /* texto sobre escuro */
+  --ci-cinza-pedra: #97928a; /* texto secundário sobre escuro */
+  --ci-papel: #fbf9f4;       /* fundo de documentos */
+  --ci-tinta: #1a1915;       /* texto sobre claro */
+
+  /* Acentos — usar pouco e com intenção (regra do acento, MIV §1) */
+  --ci-ambar: #e39a3b;       /* acento principal sobre escuro */
+  --ci-barro: #c4693f;       /* acento secundário, hovers */
+  --ci-dourado: #efc780;     /* detalhes finos sobre escuro */
+  --ci-queimado: #b85c2e;    /* o acento em fundo claro */
+
+  /* Tipografia */
+  --ci-fonte-display: "Archivo", sans-serif;         /* títulos e wordmark, pesos 500-700 */
+  --ci-fonte-italico: "Instrument Serif", serif;     /* acento itálico, peso 400 */
+  --ci-fonte-corpo: "Archivo", sans-serif;           /* texto corrido, pesos 400-500 */
+  --ci-fonte-mono: "IBM Plex Mono", monospace;       /* rótulos e técnico, pesos 400-500 */
+
+  /* Detalhes recorrentes */
+  --ci-raio: 12px;                    /* cantos de cards e caixas */
+  --ci-tracking-display: -0.03em;     /* tracking de headlines e do wordmark */
+  --ci-tracking-rotulo: 0.12em;       /* rótulos mono em caps */
+}
