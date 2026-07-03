@@ -1,0 +1,16 @@
+---
+import { linkWhatsApp } from "../dados";
+
+interface Props {
+  rotulo?: string;
+}
+
+const { rotulo = "Chamar no WhatsApp" } = Astro.props;
+---
+
+<a
+  href={linkWhatsApp()}
+  class="inline-block rounded-full bg-ambar px-7 py-3 font-medium text-breu transition-colors hover:bg-barro"
+>
+  {rotulo}
+</a>
