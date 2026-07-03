@@ -1,0 +1,20 @@
+/* Tema do site da marca Código Itinerante. Fonte de verdade: docs/miv.md + marca/tokens.css. */
+@import "@fontsource-variable/archivo";
+@import "@fontsource/instrument-serif/400-italic.css";
+@import "@fontsource/ibm-plex-mono/400.css";
+@import "@fontsource/ibm-plex-mono/500.css";
+@import "tailwindcss";
+
+@theme {
+  --color-breu: #0a0a09;
+  --color-grafite: #161513;
+  --color-cal: #f4f1e8;
+  --color-pedra: #97928a;
+  --color-ambar: #e39a3b;
+  --color-barro: #c4693f;
+  --color-dourado: #efc780;
+
+  --font-sans: "Archivo Variable", sans-serif;
+  --font-serifa: "Instrument Serif", serif;
+  --font-mono: "IBM Plex Mono", monospace;
+}
