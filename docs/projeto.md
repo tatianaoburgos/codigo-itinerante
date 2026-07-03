@@ -206,10 +206,11 @@ Cláusulas previstas:
 2. ~~Construir o primeiro template (o motor)~~ ✅ Variação 1 completa com cliente-demo (2026-07-02): componentes compartilhados + 4 páginas (home, acomodações, sobre, localização), tema "Maré". Falta o deploy da vitrine na Vercel.
 3. **Primeiro cliente real iniciado: LumeHostel (2026-07-02).** Cliente entregou só o MIV (marca). Criada a camada de **tema por cliente** (`template/src/styles/temas/<slug>.css` via alias `@tema`); aplicada a identidade do LumeHostel (cores/fontes do MIV, com fontes livres no lugar das pagas). Esqueleto navegável com conteúdo `[PROVISORIO]` e fotos placeholder. **Aguardando briefing** — pendências em `clientes/lumehostel/PENDENCIAS.md`; marca documentada em `clientes/lumehostel/marca.md`.
 4. ~~Redigir documento do cliente (seção 6).~~ ✅ `docs/briefing-cliente.md` criado (2026-07-02): questionário reutilizável, com seção de identidade visual (MIV ou fallback) e política fixa de preços "consultar no WhatsApp".
-5. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
+5. **Site da marca construído em `site/` (2026-07-03).** Landing única para donos de hostel (manifesto → dor → proposta → escopo → como funciona → quem sou eu → CTA WhatsApp), identidade do MIV, textos aprovados pela autora. Spec: `docs/superpowers/specs/2026-07-03-site-codigo-itinerante-design.md`. **Pendente**: dados reais de contato e foto (`site/src/dados.ts`), deploy na Vercel, domínio.
+6. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
    - Método: Google Maps reverso, Instagram (bio), Hostelworld/Booking, showcases de design.
-6. Definir prazos e janelas (campos [DEFINIR] acima).
-7. Redigir contrato de permuta (seção 12).
+7. Definir prazos e janelas (campos [DEFINIR] acima).
+8. Redigir contrato de permuta (seção 12).
 
 ### Estrutura do repositório (adotada)
 

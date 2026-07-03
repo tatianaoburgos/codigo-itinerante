@@ -46,4 +46,6 @@ Primeiro cliente real em andamento: **LumeHostel** (`clientes/lumehostel/`), com
 
 Questionário de briefing para clientes (reutilizável): `docs/briefing-cliente.md`. Pergunta identidade visual primeiro (MIV ou fallback logo/cores/estilo); preço é política fixa comunicada como combinado ("consultar no WhatsApp", sem faixa/valor no site) — nunca pergunta ao cliente.
 
+**Site da própria marca construído em `site/`** (2026-07-03): landing page única (spec em `docs/superpowers/specs/2026-07-03-site-codigo-itinerante-design.md`), projeto Astro separado do motor — comandos `npm run dev/build/preview` dentro de `site/`, mais `npm run og` (regenera a imagem Open Graph via sharp). Textos aprovados pela autora seção por seção. Pendente no site da marca: dados reais de contato/foto (`site/src/dados.ts` tem `[PROVISORIO]`), deploy na Vercel e domínio.
+
 Pendente: sitemap (depende de `site`/domínio por cliente), conteúdo real do LumeHostel, variações 2 e 3.
