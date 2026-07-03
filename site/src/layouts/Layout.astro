@@ -1,0 +1,36 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  titulo: string;
+  descricao: string;
+}
+
+const { titulo, descricao } = Astro.props;
+const ogImage = new URL("og.png", Astro.site ?? Astro.url);
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    <meta name="description" content={descricao} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descricao} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!--
+      Qual é a ideia que você está tentando provar ao mundo?
+
+      Que conhecimento se compartilha construindo soluções reais para
+      pessoas reais. Que dá pra se conectar às pessoas e aos lugares,
+      não apenas passar por eles.
+    -->
+  </head>
+  <body class="bg-breu font-sans text-cal antialiased">
+    <slot />
+  </body>
+</html>
