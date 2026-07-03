@@ -7,6 +7,6 @@ interface Props {
 const { texto, destaque } = Astro.props;
 ---
 
-<p class="font-mono text-xs font-medium uppercase tracking-[0.12em] text-pedra">
+<h2 class="font-mono text-xs font-medium uppercase tracking-[0.12em] text-pedra">
   {texto}{destaque && <span class="text-ambar"> {destaque}</span>}
-</p>
+</h2>
