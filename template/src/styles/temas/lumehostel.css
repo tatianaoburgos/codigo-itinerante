@@ -1,0 +1,25 @@
+/* Tema do cliente LumeHostel. Cores e conceito do Manual de Identidade Visual
+   (Etna Comunicacao). Fontes: substitutas livres arredondadas de Ellograph CF
+   (marca, paga) e Arial Rounded MT Bold (auxiliar, proprietaria).
+   Selecionado pela env CLIENTE via alias @tema. */
+@import "@fontsource-variable/fredoka";
+@import "@fontsource-variable/nunito";
+@import "@fontsource-variable/spline-sans-mono";
+
+@theme {
+  --color-mare: #1f3c8f;      /* azul primario (porto seguro) */
+  --color-noite: #0e1c42;     /* azul profundo (fundos/texto escuro) */
+  --color-azulejo: #2f56c0;   /* azul vibrante (links/realces) */
+  --color-sal: #e6ebf5;       /* neutro claro com leve tom azul */
+  --color-espuma: #f6f7fb;    /* quase branco (fundos) */
+  --color-fitinha: #fcbe35;   /* amarelo "lume" (luz/destaque) */
+  --color-zap: #25d366;       /* verde WhatsApp (fixo, funcional) */
+
+  /* Acentos secundarios do MIV (ainda nao usados pelos componentes) */
+  --color-mata: #3e8e40;      /* verde */
+  --color-terracota: #c94520; /* terracota/laranja */
+
+  --font-display: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
+}

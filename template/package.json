@@ -10,7 +10,9 @@
   },
   "dependencies": {
     "@fontsource-variable/bricolage-grotesque": "^5.2.0",
+    "@fontsource-variable/fredoka": "^5.2.10",
     "@fontsource-variable/karla": "^5.2.0",
+    "@fontsource-variable/nunito": "^5.2.7",
     "@fontsource-variable/spline-sans-mono": "^5.2.0",
     "@tailwindcss/vite": "^4.1.0",
     "astro": "^5.10.0",

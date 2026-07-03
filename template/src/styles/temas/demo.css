@@ -1,0 +1,18 @@
+/* Tema do cliente demo ("Maré Alta"). Selecionado pela env CLIENTE via alias @tema. */
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/karla";
+@import "@fontsource-variable/spline-sans-mono";
+
+@theme {
+  --color-mare: #123d66;
+  --color-noite: #0b1f30;
+  --color-azulejo: #2456c8;
+  --color-sal: #dde9ef;
+  --color-espuma: #f4f7f6;
+  --color-fitinha: #f2b705;
+  --color-zap: #25d366;
+
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Karla Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
+}

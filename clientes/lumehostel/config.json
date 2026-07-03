@@ -1,0 +1,58 @@
+{
+  "nome": "LumeHostel",
+  "slogan": "Seu porto seguro para renovar energias e seguir explorando",
+  "descricaoSeo": "LumeHostel: hostel pensado para nomades digitais. Conteudo provisorio, aguardando briefing do cliente.",
+  "sobre": {
+    "historia": "[PROVISORIO — aguardando briefing] O LumeHostel nasce como ponto de orientacao para viajantes: um porto seguro para renovar energias entre uma jornada e outra. A ideia guia da marca e iluminar o caminho de quem trabalha de forma remota enquanto viaja, conectando pessoas em transito.",
+    "diferenciais": [
+      "[PROVISORIO] Pensado para o nomade digital: espaco para trabremoto",
+      "[PROVISORIO] Area de descanso para recarregar as energias",
+      "[PROVISORIO] Ambiente seguro e acolhedor",
+      "[PROVISORIO] Equipe local como ponto de orientacao para viajantes"
+    ]
+  },
+  "acomodacoes": [
+    {
+      "nome": "[PROVISORIO] Quarto compartilhado",
+      "capacidade": "A definir no briefing",
+      "comodidades": [
+        "[PROVISORIO] Armario individual",
+        "[PROVISORIO] Luz de leitura por cama",
+        "[PROVISORIO] Ar-condicionado"
+      ],
+      "fotos": [
+        { "arquivo": "quarto-1.jpg", "alt": "Foto provisoria do quarto compartilhado do LumeHostel" }
+      ]
+    },
+    {
+      "nome": "[PROVISORIO] Suite privativa",
+      "capacidade": "A definir no briefing",
+      "comodidades": [
+        "[PROVISORIO] Banheiro privativo",
+        "[PROVISORIO] Espaco de trabalho",
+        "[PROVISORIO] Ar-condicionado"
+      ],
+      "fotos": [
+        { "arquivo": "suite-1.jpg", "alt": "Foto provisoria da suite privativa do LumeHostel" }
+      ]
+    }
+  ],
+  "precos": {
+    "politica": "consultar"
+  },
+  "localizacao": {
+    "endereco": "[PROVISORIO — endereco a definir no briefing]",
+    "mapsEmbedUrl": "https://maps.google.com/maps?q=Brasil&output=embed",
+    "comoChegar": [
+      "[PROVISORIO] Endereco e instrucoes de como chegar serao definidos no briefing do cliente."
+    ]
+  },
+  "contato": {
+    "whatsapp": "5583999990000",
+    "email": "contato@lumehostel.example.com",
+    "instagram": "lumehostel"
+  },
+  "atividades": [
+    "[PROVISORIO] Lista de atividades/servicos a definir no briefing"
+  ]
+}
