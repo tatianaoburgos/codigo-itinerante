@@ -1,0 +1,44 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+
+const inclui: string[] = [
+  "Site responsivo, bonito no celular e no computador",
+  "Acomodações, sobre o hostel, localização com mapa e contato",
+  "Textos escritos por mim a partir do seu briefing",
+  "Botão de reserva direta pelo seu WhatsApp",
+  "SEO básico: seu hostel bem apresentado no Google",
+  "Vinculação ao Perfil da Empresa no Google",
+  "Domínio registrado e configurado",
+  "Uma rodada de ajustes após a entrega",
+];
+
+const naoInclui: string[] = [
+  "Motor de reservas com calendário e disponibilidade",
+  "Pagamento online",
+  "Integração com plataformas de reserva",
+  "Manutenção contínua (alterações futuras são combinadas à parte)",
+  "Produção de fotos profissionais",
+  "Tráfego pago e gestão de redes sociais",
+];
+---
+
+<section class="mx-auto w-full max-w-3xl px-6 py-20">
+  <Eyebrow texto="o que você" destaque="recebe" />
+  <div class="mt-6 grid gap-6 md:grid-cols-2">
+    <div class="rounded-xl bg-grafite p-8">
+      <h2 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-ambar">Está incluído</h2>
+      <ul class="mt-5 space-y-3 leading-relaxed">
+        {inclui.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+    <div class="rounded-xl border border-grafite p-8">
+      <h2 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-pedra">Não está incluído</h2>
+      <ul class="mt-5 space-y-3 leading-relaxed text-pedra">
+        {naoInclui.map((item) => <li>{item}</li>)}
+      </ul>
+    </div>
+  </div>
+  <p class="mt-6 text-pedra">
+    Prefiro te contar os limites agora do que te surpreender depois.
+  </p>
+</section>
