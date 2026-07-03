@@ -1,0 +1,31 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+import { dados } from "../dados";
+---
+
+<section class="mx-auto w-full max-w-3xl px-6 py-20">
+  <Eyebrow texto="quem" destaque="sou eu" />
+  <div class="mt-8 grid items-start gap-8 md:grid-cols-[200px_1fr]">
+    <div class="flex aspect-square items-center justify-center rounded-xl bg-grafite text-sm text-pedra">
+      [PROVISORIO] foto
+    </div>
+    <div class="space-y-5 leading-relaxed">
+      <p class="text-xl font-semibold">{dados.nome}</p>
+      <p>
+        Viajo pelo Brasil me hospedando em hostels e, ao mesmo tempo, trabalho
+        como especialista em Ciência de Dados no Ministério da Gestão e da
+        Inovação. Essa combinação me deixa ver os hostels pelos dois lados:
+        como hóspede e como profissional que constrói soluções digitais.
+      </p>
+      <blockquote class="border-l-2 border-ambar pl-5 text-lg">
+        Eu não estou construindo um site para um hostel que conheci por uma
+        reunião de vídeo. Eu provavelmente dormi em um lugar como o seu na
+        semana passada — e vou dormir em outro na semana que vem. Conheço a
+        jornada do hóspede porque ela também é a minha.
+      </blockquote>
+      <p>
+        <a href={dados.linkedin} class="text-ambar underline underline-offset-4 hover:text-barro">LinkedIn</a>
+      </p>
+    </div>
+  </div>
+</section>

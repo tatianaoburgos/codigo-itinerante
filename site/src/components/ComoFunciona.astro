@@ -1,0 +1,27 @@
+---
+import Eyebrow from "./Eyebrow.astro";
+
+const passos: { titulo: string; texto: string }[] = [
+  { titulo: "Conversamos no WhatsApp", texto: "Você me conta do hostel e fechamos juntos o acordo de noites." },
+  { titulo: "Você preenche o briefing", texto: "Um formulário com as informações do hostel, mais suas fotos em alta qualidade." },
+  { titulo: "Quinze dias de construção", texto: "Eu escrevo os textos, monto o site e você acompanha." },
+  { titulo: "Site no ar, controle seu", texto: "Domínio no seu nome, site sob seu controle total." },
+];
+---
+
+<section class="mx-auto w-full max-w-3xl px-6 py-20">
+  <Eyebrow texto="como" destaque="funciona" />
+  <ol class="mt-8 space-y-8">
+    {
+      passos.map((passo, i) => (
+        <li class="flex gap-6">
+          <span class="font-mono text-2xl text-ambar">{i + 1}</span>
+          <div>
+            <h2 class="text-xl font-semibold">{passo.titulo}</h2>
+            <p class="mt-1 leading-relaxed text-pedra">{passo.texto}</p>
+          </div>
+        </li>
+      ))
+    }
+  </ol>
+</section>
