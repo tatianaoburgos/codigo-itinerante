@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "og": "node scripts/gera-og.mjs"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.0",
@@ -15,5 +16,8 @@
     "@tailwindcss/vite": "^4.1.0",
     "astro": "^5.10.0",
     "tailwindcss": "^4.1.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
   }
 }
