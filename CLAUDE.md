@@ -10,14 +10,26 @@ Contexto de negócio e decisões fechadas estão em `docs/projeto.md` e `docs/de
 
 ## Comandos
 
-Tudo roda dentro de `template/`:
+Há dois projetos Astro independentes, cada um com seu próprio `package.json` e `node_modules`:
+
+**`template/`** — o motor dos sites de cliente (buildado por cliente via env `CLIENTE`):
 
 ```
 cd template
 npm install
-npm run dev       # servidor de desenvolvimento
-npm run build     # build estática
-npm run preview   # serve a build localmente
+CLIENTE=lumehostel npm run dev       # servidor de desenvolvimento (padrão: demo)
+CLIENTE=lumehostel npm run build     # build estática
+npm run preview                      # serve a build localmente
+```
+
+**`site/`** — o site da própria marca (landing page única, projeto separado):
+
+```
+cd site
+npm install
+npm run dev
+npm run build
+npm run og        # regenera a imagem Open Graph via sharp
 ```
 
 Não há testes nem linter configurados ainda.

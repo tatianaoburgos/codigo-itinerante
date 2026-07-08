@@ -1,11 +1,11 @@
-/** Dados de contato e identidade da autora. Valores [PROVISORIO] são preenchidos na Task 9. */
+/** Dados de contato e identidade da autora. */
 export const dados = {
   nome: "Tatiana Burgos",
-  /** Número no formato wa.me: DDI + DDD + número, só dígitos. [PROVISORIO] */
-  whatsapp: "5500000000000",
+  /** Número no formato wa.me: DDI + DDD + número, só dígitos. */
+  whatsapp: "5581996730570",
   mensagemWhatsApp: "Oi! Tenho um hostel e quero saber mais sobre a permuta.",
-  email: "[PROVISORIO]",
-  linkedin: "[PROVISORIO]",
+  email: "tatianaoburgos@gmail.com",
+  linkedin: "https://www.linkedin.com/in/tatianaoburgos/",
 } as const;
 
 /** Link wa.me com a mensagem pré-preenchida. */

@@ -1,14 +1,19 @@
 ---
+import { Image } from "astro:assets";
 import Eyebrow from "./Eyebrow.astro";
 import { dados } from "../dados";
+import foto from "../assets/tatiana.jpg";
 ---
 
 <section class="mx-auto w-full max-w-3xl px-6 py-20">
   <Eyebrow texto="quem" destaque="sou eu" />
   <div class="mt-8 grid items-start gap-8 md:grid-cols-[200px_1fr]">
-    <div class="flex aspect-square items-center justify-center rounded-xl bg-grafite text-sm text-pedra">
-      [PROVISORIO] foto
-    </div>
+    <Image
+      src={foto}
+      alt="Tatiana Burgos sorrindo em uma paisagem de gêiseres no altiplano"
+      width={400}
+      class="aspect-square w-full rounded-xl object-cover"
+    />
     <div class="space-y-5 leading-relaxed">
       <p class="text-xl font-semibold">{dados.nome}</p>
       <p>
@@ -24,7 +29,10 @@ import { dados } from "../dados";
         jornada do hóspede porque ela também é a minha.
       </blockquote>
       <p>
-        <a href={dados.linkedin} class="text-ambar underline underline-offset-4 hover:text-barro">LinkedIn</a>
+        <a
+          href={dados.linkedin}
+          class="inline-block rounded-full border border-ambar px-6 py-2.5 font-medium text-ambar transition-colors hover:bg-ambar hover:text-breu"
+        >Me encontre no LinkedIn</a>
       </p>
     </div>
   </div>
