@@ -3,8 +3,8 @@ import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
-// `site` fica indefinido até o deploy (Task 11); a imagem OG usa Astro.url como fallback.
 export default defineConfig({
+  site: 'https://codigo-itinerante.vercel.app',
   vite: {
     plugins: [tailwindcss()],
     server: {
