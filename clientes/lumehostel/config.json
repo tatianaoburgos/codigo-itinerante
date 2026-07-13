@@ -1,5 +1,6 @@
 {
   "nome": "LumeHostel",
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel: hostel pensado para nomades digitais.",
   "sobre": {

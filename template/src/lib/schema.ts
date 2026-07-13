@@ -14,12 +14,19 @@ export const acomodacaoSchema = z.object({
   fotos: z.array(fotoSchema).min(1),
 });
 
+/** Arquivos de marca do cliente (pasta `marca/`), todos opcionais. */
+export const marcaSchema = z.object({
+  logo: z.string().min(1).optional(),
+  favicon: z.string().min(1).optional(),
+});
+
 /**
  * Schema do config.json de cada cliente (`clientes/<slug>/config.json`).
  * A build falha se o arquivo não obedecer a este contrato.
  */
 export const configClienteSchema = z.object({
   nome: z.string().min(1),
+  marca: marcaSchema.optional(),
   slogan: z.string().min(1),
   descricaoSeo: z.string().min(1).max(160),
   sobre: z.object({

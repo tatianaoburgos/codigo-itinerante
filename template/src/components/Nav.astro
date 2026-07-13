@@ -1,5 +1,6 @@
 ---
 import { config } from '../lib/cliente';
+import { marca } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 
 const abas = [
@@ -9,6 +10,7 @@ const abas = [
 ];
 
 const caminhoAtual = Astro.url.pathname.replace(/\/$/, '') || '/';
+const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
 
 <header class="border-b border-sal bg-espuma">
@@ -20,7 +22,7 @@ const caminhoAtual = Astro.url.pathname.replace(/\/$/, '') || '/';
       href="/"
       class="font-display text-xl font-bold text-mare focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
     >
-      {config.nome}
+      {logo ? <img src={logo.src} alt={config.nome} class="h-9 w-auto" /> : config.nome}
     </a>
     <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
       {

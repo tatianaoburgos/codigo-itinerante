@@ -21,3 +21,23 @@ export function foto(arquivo: string): ImageMetadata {
   }
   return meta;
 }
+
+const modulosMarca = import.meta.glob<{ default: ImageMetadata }>(
+  '../../../clientes/*/marca/*.svg',
+  { eager: true },
+);
+
+const marcaDoCliente = new Map<string, ImageMetadata>(
+  Object.entries(modulosMarca)
+    .filter(([caminho]) => caminho.includes(`/clientes/${clienteAtivo}/marca/`))
+    .map(([caminho, modulo]) => [caminho.split('/').pop()!, modulo.default]),
+);
+
+/** Resolve um arquivo de `marca/` do cliente ativo (logo, favicon). */
+export function marca(arquivo: string): ImageMetadata {
+  const meta = marcaDoCliente.get(arquivo);
+  if (!meta) {
+    throw new Error(`Arquivo de marca "${arquivo}" nao encontrado em clientes/${clienteAtivo}/marca/`);
+  }
+  return meta;
+}
