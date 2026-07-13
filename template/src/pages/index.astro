@@ -4,6 +4,10 @@ import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import TituloSecao from '../components/TituloSecao.astro';
 import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
+import Mapa from '../components/Mapa.astro';
+import DivisorSimbolo from '../components/DivisorSimbolo.astro';
+import MarcaDagua from '../components/MarcaDagua.astro';
+import CarrosselAcomodacoes from '../components/CarrosselAcomodacoes.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 ---
@@ -11,68 +15,137 @@ import { foto } from '../lib/fotos';
 <Layout>
   <Hero />
 
-  <section class="mx-auto max-w-5xl px-4 py-14">
+  <section id="acomodacoes" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
     <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
-    <div class="mt-8 grid gap-6 sm:grid-cols-3">
-      {
-        config.acomodacoes.map((acomodacao) => (
-          <a
-            href="/acomodacoes"
-            class="group rounded-xl bg-white shadow-sm transition hover:shadow-md focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
-          >
-            <Image
-              src={foto(acomodacao.fotos[0].arquivo)}
-              alt={acomodacao.fotos[0].alt}
-              widths={[400, 800]}
-              sizes="(min-width: 640px) 310px, 100vw"
-              class="aspect-4/3 w-full rounded-t-xl object-cover"
-            />
-            <div class="p-4">
-              <p class="font-mono text-xs tracking-widest text-azulejo uppercase">
-                {acomodacao.capacidade}
-              </p>
-              <h3 class="mt-1 font-display text-lg font-bold text-mare group-hover:text-azulejo">
-                {acomodacao.nome}
-              </h3>
-            </div>
-          </a>
-        ))
-      }
+    <div class="mt-8">
+      <CarrosselAcomodacoes />
     </div>
-    <p class="mt-8">
-      <a
-        href="/acomodacoes"
-        class="font-bold text-azulejo underline decoration-fitinha decoration-2 underline-offset-4 hover:text-mare focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
-      >
-        Ver todas as acomodações
-      </a>
-    </p>
+    <div class="mt-6 text-center">
+      <BotaoWhatsApp rotulo="Consultar disponibilidade no WhatsApp" />
+    </div>
   </section>
 
-  <section class="bg-mare">
+  <DivisorSimbolo />
+
+  <section id="comodidades" class="scroll-mt-20 bg-sal">
     <div class="mx-auto max-w-5xl px-4 py-14">
-      <TituloSecao eyebrow="Atividades" claro>A vida por aqui</TituloSecao>
-      <ul class="mt-8 grid gap-4 text-sal sm:grid-cols-2">
+      <TituloSecao eyebrow="Comodidades">A vida por aqui</TituloSecao>
+      <p class="mt-6 max-w-2xl text-lg leading-relaxed">{config.sobre.historia}</p>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
         {
           config.comodidades.map((comodidade) => (
-            <li class="flex gap-3">
-              <span class="mt-2.5 h-0.5 w-4 shrink-0 bg-fitinha" aria-hidden="true" />
-              {comodidade.nome}
-            </li>
+            <div class="overflow-hidden rounded-xl bg-white shadow-sm">
+              {comodidade.foto && (
+                <Image
+                  src={foto(comodidade.foto.arquivo)}
+                  alt={comodidade.foto.alt}
+                  widths={[480, 900]}
+                  sizes="(min-width: 640px) 480px, 100vw"
+                  class="aspect-video w-full object-cover"
+                />
+              )}
+              <div class="p-4">
+                <h3 class="font-display text-lg font-bold text-mare">{comodidade.nome}</h3>
+                {comodidade.descricao && <p class="mt-1 text-sm">{comodidade.descricao}</p>}
+              </div>
+            </div>
           ))
         }
-      </ul>
+      </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-5xl px-4 py-14 text-center">
-    <h2 class="font-display text-3xl font-bold text-mare">Reserve direto com a gente</h2>
-    <p class="mx-auto mt-3 max-w-md">
-      Sem comissão de plataforma: chame no WhatsApp e combine sua estadia direto com quem cuida da
-      casa.
-    </p>
-    <div class="mt-6">
-      <BotaoWhatsApp tamanho="grande" />
+  <DivisorSimbolo />
+
+  {
+    config.regiao && (
+      <section id="regiao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
+        <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
+        <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {config.regiao.map((ponto) => (
+            <article class="overflow-hidden rounded-xl bg-white shadow-sm">
+              <Image
+                src={foto(ponto.foto.arquivo)}
+                alt={ponto.foto.alt}
+                widths={[400, 800]}
+                sizes="(min-width: 1024px) 320px, (min-width: 640px) 480px, 100vw"
+                class="aspect-4/3 w-full object-cover"
+              />
+              <div class="p-4">
+                <p class="font-mono text-xs tracking-widest text-azulejo uppercase">
+                  {ponto.distancia}
+                </p>
+                <h3 class="mt-1 font-display text-lg font-bold text-mare">{ponto.nome}</h3>
+                <p class="mt-1 text-sm">{ponto.descricao}</p>
+                {ponto.credito && <p class="mt-2 text-xs opacity-60">Foto: {ponto.credito}</p>}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  {config.regiao && <DivisorSimbolo />}
+
+  {
+    config.depoimentos && (
+      <section id="depoimentos" class="scroll-mt-20 bg-mare">
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <TituloSecao eyebrow="Depoimentos" claro>
+            Quem passou por aqui
+          </TituloSecao>
+          <div class="mt-8 grid gap-6 sm:grid-cols-2">
+            {config.depoimentos.map((depoimento) => (
+              <figure class="rounded-xl bg-white p-6 shadow-sm">
+                <blockquote class="leading-relaxed">“{depoimento.texto}”</blockquote>
+                <figcaption class="mt-4 text-sm font-bold">
+                  {depoimento.nome} <span class="font-normal opacity-70">— {depoimento.fonte}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  {config.depoimentos && <DivisorSimbolo />}
+
+  <section id="localizacao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
+    <TituloSecao eyebrow="Localização">Onde estamos</TituloSecao>
+    <p class="mt-4 text-lg">{config.localizacao.endereco}</p>
+    <div class="mt-8">
+      <Mapa />
+    </div>
+    {
+      config.localizacao.comoChegar.length > 0 && (
+        <div class="mt-10">
+          <h3 class="font-display text-xl font-bold text-mare">Como chegar</h3>
+          <ul class="mt-4 max-w-2xl space-y-3">
+            {config.localizacao.comoChegar.map((trecho) => (
+              <li class="flex gap-3">
+                <span class="mt-2.5 h-0.5 w-4 shrink-0 bg-fitinha" aria-hidden="true" />
+                {trecho}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+  </section>
+
+  <section class="relative isolate overflow-hidden bg-mare">
+    <MarcaDagua />
+    <div class="mx-auto max-w-5xl px-4 py-14 text-center">
+      <h2 class="font-display text-3xl font-bold text-noite">Reserve direto com a gente</h2>
+      <p class="mx-auto mt-3 max-w-md text-noite">
+        Sem comissão de plataforma: chame no WhatsApp e combine sua estadia direto com quem cuida
+        da casa.
+      </p>
+      <div class="mt-6">
+        <BotaoWhatsApp tamanho="grande" />
+      </div>
     </div>
   </section>
 </Layout>

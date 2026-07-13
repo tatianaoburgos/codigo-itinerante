@@ -1,11 +1,15 @@
 ---
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
-import { foto } from '../lib/fotos';
+import { foto, marca } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
+import MarcaDagua from './MarcaDagua.astro';
+
+const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
 
-<section class="relative isolate flex min-h-[70vh] items-end bg-noite">
+<section class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
+  <MarcaDagua />
   <Image
     src={foto('capa.jpg')}
     alt=""
@@ -16,6 +20,7 @@ import BotaoWhatsApp from './BotaoWhatsApp.astro';
   />
   <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-14">
     <span class="block h-1 w-16 bg-fitinha" aria-hidden="true"></span>
+    {logo && <img src={logo.src} alt="" class="h-16 w-auto" />}
     <h1 class="mt-4 max-w-2xl font-display text-4xl font-bold text-espuma sm:text-6xl">
       {config.nome}
     </h1>
