@@ -14,14 +14,21 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | `quarto-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `suite-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `cozinha.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" | LumeHostel | Foto publicada pelo estabelecimento | Não |
-| `jardim.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" — mostra o pátio/mesa comunitária externa | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `jardim.jpg` | Booking.com (galeria de fotos do LumeHostel), foto 3/55 — mostra o pátio de entrada com mesas/cadeiras e a fachada com o logo | LumeHostel | Foto publicada pelo estabelecimento | Não |
 
-Observação: não foi encontrada, na galeria pública do Google Maps nem na tentativa de acesso à
-galeria completa do Booking.com, nenhuma foto claramente identificável como coworking,
-churrasqueira ou sala de jogos — essas três comodidades do config ficam **sem foto** (o schema
-trata `comodidade.foto` como opcional). Havia fotos de um lounge/sala de estar com sofá e de uma
-área com laptop, mas nenhuma mostrava de forma inequívoca um espaço dedicado a essas comodidades
-específicas; para não representar algo que não é, optei por não usá-las com esses nomes.
+Observação (2026-07-13): a versão anterior de `jardim.jpg` (baixada do Google Maps) era na
+verdade um frame de vídeo/reel — formato vertical (720x1280) com legenda queimada na imagem
+("Quando sua casa") — e foi descartada por não ser publicável. Frames de vídeo com texto
+sobreposto não servem como foto do site, mesmo quando aparecem misturados às fotos normais na
+galeria. A foto atual vem da galeria de fotos do Booking.com (não do Google Maps), é horizontal e
+sem nenhum texto sobreposto.
+
+Observação: não foi encontrada, na galeria pública do Google Maps nem na galeria do Booking.com,
+nenhuma foto claramente identificável como coworking, churrasqueira, sala de jogos ou jardim com
+redes — essas comodidades do config ficam **sem foto** (o schema trata `comodidade.foto` como
+opcional). A galeria do Booking tem fotos de uma sala de estar com sofá e TV, mas a única limpa o
+suficiente para uso mostra um hóspede com o rosto visível — descartada por privacidade. Para não
+representar algo que não é, optei por não forçar nenhuma foto genérica com esses rótulos.
 
 ## Fotos da região (Wikimedia Commons)
 
