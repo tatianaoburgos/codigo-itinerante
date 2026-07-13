@@ -8,7 +8,7 @@ const abas = [
   { href: '/#comodidades', rotulo: 'Comodidades' },
   { href: '/#regiao', rotulo: 'A região' },
   { href: '/#localizacao', rotulo: 'Localização' },
-];
+].filter((aba) => aba.href !== '/#regiao' || config.regiao);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
