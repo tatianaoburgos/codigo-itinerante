@@ -60,4 +60,4 @@ Questionário de briefing para clientes (reutilizável): `docs/briefing-cliente.
 
 **Site da própria marca construído em `site/`** (2026-07-03): landing page única (spec em `docs/superpowers/specs/2026-07-03-site-codigo-itinerante-design.md`), projeto Astro separado do motor — comandos `npm run dev/build/preview` dentro de `site/`, mais `npm run og` (regenera a imagem Open Graph via sharp). Textos aprovados pela autora seção por seção; dados reais preenchidos e site publicado na Vercel (`https://codigo-itinerante.vercel.app`, definido em `site/astro.config.mjs`). Pendente no site da marca: domínio próprio.
 
-Pendente: sitemap (depende de `site`/domínio por cliente), conteúdo real do LumeHostel, variações 2 e 3.
+Pendente: sitemap (depende de `site`/domínio por cliente), validação do LumeHostel pelo cliente (textos, fotos, contato real), variações 2 e 3.
