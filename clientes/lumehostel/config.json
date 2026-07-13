@@ -1,16 +1,10 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg" },
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-ambar.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
-    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa.",
-    "diferenciais": [
-      "Coworking ergonômico para trabalhar com conforto",
-      "Cozinha compartilhada com café de cortesia",
-      "Jardim com redes para desacelerar entre um compromisso e outro",
-      "Ambiente seguro e acolhedor, pensado para quem viaja sozinho"
-    ]
+    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa."
   },
   "acomodacoes": [
     {
@@ -83,12 +77,87 @@
     "email": "contato@lumehostel.example.com",
     "instagram": "lumehostel"
   },
-  "atividades": [
-    "Coworking ergonômico",
-    "Cozinha compartilhada com café de cortesia",
-    "Jardim com redes",
-    "Churrasqueira",
-    "Sala de jogos",
-    "Depósito de bagagem"
+  "comodidades": [
+    {
+      "nome": "Cozinha compartilhada",
+      "descricao": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes",
+      "foto": { "arquivo": "cozinha.jpg", "alt": "Cozinha compartilhada do LumeHostel, com balcão e banquetas" }
+    },
+    {
+      "nome": "Pátio externo",
+      "descricao": "Espaço com mesas para refeições e convivência entre hóspedes",
+      "foto": { "arquivo": "jardim.jpg", "alt": "Pátio de entrada do LumeHostel com mesas de madeira e a fachada com o logo ao fundo" }
+    },
+    { "nome": "Coworking ergonômico" },
+    { "nome": "Espaço com redes", "descricao": "Redes para descansar entre as atividades do dia" },
+    { "nome": "Churrasqueira" },
+    { "nome": "Sala de jogos" },
+    { "nome": "Depósito de bagagem" },
+    { "nome": "Ambiente acolhedor", "descricao": "Elogiado pelos hóspedes pelo aconchego e pela organização" }
+  ],
+  "regiao": [
+    {
+      "nome": "Praia de Manaíra",
+      "descricao": "Praia urbana em frente ao bairro, com orla de bares e restaurantes",
+      "distancia": "8 min a pé",
+      "foto": { "arquivo": "regiao-praia-manaira.jpg", "alt": "Faixa de areia e calçadão da Praia de Manaíra, com a orla ao fundo, em João Pessoa"},
+      "credito": "Patrick / CC BY-SA 3.0"
+    },
+    {
+      "nome": "Orla do Bessa",
+      "descricao": "Orla vizinha a Manaíra, com calçadão à beira-mar",
+      "distancia": "4 km",
+      "foto": { "arquivo": "regiao-orla-bessa.jpg", "alt": "Orla da Praia do Bessa em João Pessoa" },
+      "credito": "Matheus Jampa da Silva / CC BY-SA 4.0"
+    },
+    {
+      "nome": "Pôr do sol no Jacaré",
+      "descricao": "Praia em Cabedelo, na foz do Rio Paraíba, conhecida pelo pôr do sol",
+      "distancia": "10 km",
+      "foto": { "arquivo": "regiao-por-do-sol-jacare.jpg", "alt": "Pôr do sol na Praia do Jacaré, em João Pessoa" },
+      "credito": "Marinelson Almeida / CC BY 2.0"
+    },
+    {
+      "nome": "Centro Histórico",
+      "descricao": "Conjunto de prédios históricos do Centro/Varadouro de João Pessoa",
+      "distancia": "8 km",
+      "foto": { "arquivo": "regiao-centro-historico.jpg", "alt": "Vista do Centro Histórico de João Pessoa" },
+      "credito": "Rogerio121402 / CC BY-SA 4.0"
+    },
+    {
+      "nome": "Farol do Cabo Branco",
+      "descricao": "Farol no ponto mais oriental das Américas, no bairro Cabo Branco",
+      "distancia": "12 km",
+      "foto": { "arquivo": "regiao-farol-cabo-branco.jpg", "alt": "Farol do Cabo Branco, em João Pessoa" }
+    },
+    {
+      "nome": "Estação Cabo Branco",
+      "descricao": "Estação Cabo Branco de Ciência, Cultura e Artes, museu projetado por Oscar Niemeyer",
+      "distancia": "9 km",
+      "foto": { "arquivo": "regiao-estacao-cabo-branco.jpg", "alt": "Estação Cabo Branco de Ciência, Cultura e Artes, em João Pessoa" },
+      "credito": "A. Júnior / CC BY 2.0"
+    }
+  ],
+  "depoimentos": [
+    {
+      "texto": "Um dos melhores hostels que já fiquei. Muito limpo, cozinha com geladeira, microondas, purificador de água, talheres, copos... O ambiente é uma gracinha e tem um espaço com redes para descansar. O pessoal é muito legal e acolhedor e o hostel sempre tem eventos.",
+      "nome": "Desirree",
+      "fonte": "via Booking"
+    },
+    {
+      "texto": "Ambiente acolhedor, mercado, farmácia, lavandeira, bares, restaurantes ao redor. Me senti muito à vontade em usar todos os ambientes do Hostel.",
+      "nome": "Marques",
+      "fonte": "via Booking"
+    },
+    {
+      "texto": "A recepção e a casa super limpa e cheirosa! Isso diz muito.",
+      "nome": "Oliveira",
+      "fonte": "via Booking"
+    },
+    {
+      "texto": "Gostei do pessoal que trabalha no hostel. Sempre foram atenciosos comigo e achei o lugar muito tranquilo. O custo-benefício, por se encontrar em uma área nobre, é muito bom e posso recomendar a qualquer pessoa.",
+      "nome": "Tolopka",
+      "fonte": "via Booking"
+    }
   ]
 }

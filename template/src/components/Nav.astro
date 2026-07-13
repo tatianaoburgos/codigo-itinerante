@@ -4,12 +4,12 @@ import { marca } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 
 const abas = [
-  { href: '/acomodacoes', rotulo: 'Acomodações' },
-  { href: '/sobre', rotulo: 'Sobre' },
-  { href: '/localizacao', rotulo: 'Localização' },
-];
+  { href: '/#acomodacoes', rotulo: 'Acomodações' },
+  { href: '/#comodidades', rotulo: 'Comodidades' },
+  { href: '/#regiao', rotulo: 'A região' },
+  { href: '/#localizacao', rotulo: 'Localização' },
+].filter((aba) => aba.href !== '/#regiao' || config.regiao);
 
-const caminhoAtual = Astro.url.pathname.replace(/\/$/, '') || '/';
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
 
@@ -29,11 +29,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
         abas.map((aba) => (
           <a
             href={aba.href}
-            aria-current={caminhoAtual === aba.href ? 'page' : undefined}
-            class:list={[
-              'border-b-2 pb-0.5 text-sm font-bold text-noite transition hover:text-azulejo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo',
-              caminhoAtual === aba.href ? 'border-fitinha' : 'border-transparent',
-            ]}
+            class="border-b-2 border-transparent pb-0.5 text-sm font-bold text-noite transition hover:text-azulejo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
           >
             {aba.rotulo}
           </a>

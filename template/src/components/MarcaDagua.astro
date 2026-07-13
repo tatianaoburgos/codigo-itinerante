@@ -1,0 +1,17 @@
+---
+import { config } from '../lib/cliente';
+import { marca } from '../lib/fotos';
+
+const simbolo = config.marca?.simbolo ? marca(config.marca.simbolo) : undefined;
+---
+
+{
+  simbolo && (
+    <img
+      src={simbolo.src}
+      alt=""
+      aria-hidden="true"
+      class="pointer-events-none absolute -right-16 -bottom-16 -z-10 h-[60%] w-auto opacity-10 select-none"
+    />
+  )
+}
