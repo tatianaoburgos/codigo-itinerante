@@ -2,36 +2,64 @@
   "nome": "LumeHostel",
   "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
-  "descricaoSeo": "LumeHostel: hostel pensado para nomades digitais.",
+  "descricaoSeo": "LumeHostel em Manaira, Joao Pessoa: hostel pensado para nomades digitais, a poucos minutos da praia.",
   "sobre": {
-    "historia": "[PROVISORIO — aguardando briefing] O LumeHostel nasce como ponto de orientacao para viajantes: um porto seguro para renovar energias entre uma jornada e outra. A ideia guia da marca e iluminar o caminho de quem trabalha de forma remota enquanto viaja, conectando pessoas em transito.",
+    "historia": "O LumeHostel fica em Manaira, a poucos minutos a pe da praia, e nasce como ponto de orientacao para quem viaja trabalhando. Aqui a ideia e simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaco pensado para quem precisa de foco durante o dia e descanso a noite. Um ambiente acolhedor para nomades digitais, sem clima de festa.",
     "diferenciais": [
-      "[PROVISORIO] Pensado para o nomade digital: espaco para trabremoto",
-      "[PROVISORIO] Area de descanso para recarregar as energias",
-      "[PROVISORIO] Ambiente seguro e acolhedor",
-      "[PROVISORIO] Equipe local como ponto de orientacao para viajantes"
+      "Coworking ergonomico para trabalhar com conforto",
+      "Cozinha compartilhada com cafe de cortesia",
+      "Jardim com redes para desacelerar entre um compromisso e outro",
+      "Ambiente seguro e acolhedor, pensado para quem viaja sozinho"
     ]
   },
   "acomodacoes": [
     {
-      "nome": "[PROVISORIO] Quarto compartilhado",
-      "capacidade": "A definir no briefing",
+      "nome": "Dormitorio Misto",
+      "capacidade": "Camas em quarto misto (opcoes de 6 ou 8 camas)",
       "comodidades": [
-        "[PROVISORIO] Armario individual",
-        "[PROVISORIO] Luz de leitura por cama",
-        "[PROVISORIO] Ar-condicionado"
+        "Ar-condicionado",
+        "Locker individual",
+        "Tomada individual por cama",
+        "Toalhas inclusas"
       ],
       "fotos": [
         { "arquivo": "quarto-1.jpg", "alt": "Quarto compartilhado de hostel com beliches e luz natural" }
       ]
     },
     {
-      "nome": "[PROVISORIO] Suite privativa",
-      "capacidade": "A definir no briefing",
+      "nome": "Dormitorio Feminino",
+      "capacidade": "Camas em quarto feminino (opcoes de 4 ou 6 camas)",
       "comodidades": [
-        "[PROVISORIO] Banheiro privativo",
-        "[PROVISORIO] Espaco de trabalho",
-        "[PROVISORIO] Ar-condicionado"
+        "Ar-condicionado",
+        "Locker individual",
+        "Tomada individual por cama",
+        "Toalhas inclusas"
+      ],
+      "fotos": [
+        { "arquivo": "quarto-1.jpg", "alt": "Quarto compartilhado de hostel com beliches e luz natural" }
+      ]
+    },
+    {
+      "nome": "Quarto Duplo",
+      "capacidade": "2 pessoas",
+      "comodidades": [
+        "Ar-condicionado",
+        "Locker individual",
+        "Tomada individual",
+        "Toalhas inclusas"
+      ],
+      "fotos": [
+        { "arquivo": "suite-1.jpg", "alt": "Suite privativa de hostel com cama de casal e decoracao acolhedora" }
+      ]
+    },
+    {
+      "nome": "Suite Standard",
+      "capacidade": "2 pessoas",
+      "comodidades": [
+        "Ar-condicionado",
+        "Locker individual",
+        "Tomada individual",
+        "Toalhas inclusas"
       ],
       "fotos": [
         { "arquivo": "suite-1.jpg", "alt": "Suite privativa de hostel com cama de casal e decoracao acolhedora" }
@@ -42,10 +70,12 @@
     "politica": "consultar"
   },
   "localizacao": {
-    "endereco": "[PROVISORIO — endereco a definir no briefing]",
-    "mapsEmbedUrl": "https://maps.google.com/maps?q=Brasil&output=embed",
+    "endereco": "Av. Pombal, 1745 - Manaira, Joao Pessoa - PB, 58038-242",
+    "mapsEmbedUrl": "https://www.google.com/maps?q=LumeHostel,+Av.+Pombal+1745,+Manaira,+Joao+Pessoa&output=embed",
     "comoChegar": [
-      "[PROVISORIO] Endereco e instrucoes de como chegar serao definidos no briefing do cliente."
+      "Aeroporto Internacional de Joao Pessoa a cerca de 18 km",
+      "Rodoviaria de Joao Pessoa a cerca de 9 km",
+      "Praia de Manaira a cerca de 8 minutos a pe"
     ]
   },
   "contato": {
@@ -54,6 +84,11 @@
     "instagram": "lumehostel"
   },
   "atividades": [
-    "[PROVISORIO] Lista de atividades/servicos a definir no briefing"
+    "Coworking ergonomico",
+    "Cozinha compartilhada com cafe de cortesia",
+    "Jardim com redes",
+    "Churrasqueira",
+    "Sala de jogos",
+    "Deposito de bagagem"
   ]
 }
