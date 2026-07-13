@@ -23,3 +23,29 @@
   --font-corpo: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
 }
+
+/* Ajustes visuais exclusivos do LumeHostel para aproximar a aplicação do MIV. */
+header.border-b {
+  border-color: #1f3c8f26;
+  background: linear-gradient(180deg, #f8faff 0%, #f6f7fb 100%);
+}
+
+section.bg-mare {
+  background: linear-gradient(135deg, #1f3c8f 0%, #0e1c42 100%);
+}
+
+footer.bg-noite {
+  background: linear-gradient(160deg, #0e1c42 0%, #1f3c8f 100%);
+}
+
+.rounded-xl {
+  border-radius: 1rem;
+}
+
+.bg-white {
+  border: 1px solid #1f3c8f1a;
+}
+
+.font-display {
+  letter-spacing: -0.01em;
+}

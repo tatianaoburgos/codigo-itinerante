@@ -1,7 +1,7 @@
 {
   "nome": "LumeHostel",
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
-  "descricaoSeo": "LumeHostel: hostel pensado para nomades digitais. Conteudo provisorio, aguardando briefing do cliente.",
+  "descricaoSeo": "LumeHostel: hostel pensado para nomades digitais.",
   "sobre": {
     "historia": "[PROVISORIO — aguardando briefing] O LumeHostel nasce como ponto de orientacao para viajantes: um porto seguro para renovar energias entre uma jornada e outra. A ideia guia da marca e iluminar o caminho de quem trabalha de forma remota enquanto viaja, conectando pessoas em transito.",
     "diferenciais": [
@@ -21,7 +21,7 @@
         "[PROVISORIO] Ar-condicionado"
       ],
       "fotos": [
-        { "arquivo": "quarto-1.jpg", "alt": "Foto provisoria do quarto compartilhado do LumeHostel" }
+        { "arquivo": "quarto-1.jpg", "alt": "Quarto compartilhado de hostel com beliches e luz natural" }
       ]
     },
     {
@@ -33,7 +33,7 @@
         "[PROVISORIO] Ar-condicionado"
       ],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Foto provisoria da suite privativa do LumeHostel" }
+        { "arquivo": "suite-1.jpg", "alt": "Suite privativa de hostel com cama de casal e decoracao acolhedora" }
       ]
     }
   ],
