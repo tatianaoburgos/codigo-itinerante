@@ -2,20 +2,20 @@
   "nome": "LumeHostel",
   "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
-  "descricaoSeo": "LumeHostel em Manaira, Joao Pessoa: hostel pensado para nomades digitais, a poucos minutos da praia.",
+  "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
-    "historia": "O LumeHostel fica em Manaira, a poucos minutos a pe da praia, e nasce como ponto de orientacao para quem viaja trabalhando. Aqui a ideia e simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaco pensado para quem precisa de foco durante o dia e descanso a noite. Um ambiente acolhedor para nomades digitais, sem clima de festa.",
+    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa.",
     "diferenciais": [
-      "Coworking ergonomico para trabalhar com conforto",
-      "Cozinha compartilhada com cafe de cortesia",
+      "Coworking ergonômico para trabalhar com conforto",
+      "Cozinha compartilhada com café de cortesia",
       "Jardim com redes para desacelerar entre um compromisso e outro",
       "Ambiente seguro e acolhedor, pensado para quem viaja sozinho"
     ]
   },
   "acomodacoes": [
     {
-      "nome": "Dormitorio Misto",
-      "capacidade": "Camas em quarto misto (opcoes de 6 ou 8 camas)",
+      "nome": "Dormitório Misto",
+      "capacidade": "Camas em quarto misto (opções de 6 ou 8 camas)",
       "comodidades": [
         "Ar-condicionado",
         "Locker individual",
@@ -27,8 +27,8 @@
       ]
     },
     {
-      "nome": "Dormitorio Feminino",
-      "capacidade": "Camas em quarto feminino (opcoes de 4 ou 6 camas)",
+      "nome": "Dormitório Feminino",
+      "capacidade": "Camas em quarto feminino (opções de 4 ou 6 camas)",
       "comodidades": [
         "Ar-condicionado",
         "Locker individual",
@@ -49,11 +49,11 @@
         "Toalhas inclusas"
       ],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Suite privativa de hostel com cama de casal e decoracao acolhedora" }
+        { "arquivo": "suite-1.jpg", "alt": "Suíte privativa de hostel com cama de casal e decoração acolhedora" }
       ]
     },
     {
-      "nome": "Suite Standard",
+      "nome": "Suíte Standard",
       "capacidade": "2 pessoas",
       "comodidades": [
         "Ar-condicionado",
@@ -62,7 +62,7 @@
         "Toalhas inclusas"
       ],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Suite privativa de hostel com cama de casal e decoracao acolhedora" }
+        { "arquivo": "suite-1.jpg", "alt": "Suíte privativa de hostel com cama de casal e decoração acolhedora" }
       ]
     }
   ],
@@ -70,12 +70,12 @@
     "politica": "consultar"
   },
   "localizacao": {
-    "endereco": "Av. Pombal, 1745 - Manaira, Joao Pessoa - PB, 58038-242",
+    "endereco": "Av. Pombal, 1745 - Manaíra, João Pessoa - PB, 58038-242",
     "mapsEmbedUrl": "https://www.google.com/maps?q=LumeHostel,+Av.+Pombal+1745,+Manaira,+Joao+Pessoa&output=embed",
     "comoChegar": [
-      "Aeroporto Internacional de Joao Pessoa a cerca de 18 km",
-      "Rodoviaria de Joao Pessoa a cerca de 9 km",
-      "Praia de Manaira a cerca de 8 minutos a pe"
+      "Aeroporto Internacional de João Pessoa a cerca de 18 km",
+      "Rodoviária de João Pessoa a cerca de 9 km",
+      "Praia de Manaíra a cerca de 8 minutos a pé"
     ]
   },
   "contato": {
@@ -84,11 +84,11 @@
     "instagram": "lumehostel"
   },
   "atividades": [
-    "Coworking ergonomico",
-    "Cozinha compartilhada com cafe de cortesia",
+    "Coworking ergonômico",
+    "Cozinha compartilhada com café de cortesia",
     "Jardim com redes",
     "Churrasqueira",
     "Sala de jogos",
-    "Deposito de bagagem"
+    "Depósito de bagagem"
   ]
 }

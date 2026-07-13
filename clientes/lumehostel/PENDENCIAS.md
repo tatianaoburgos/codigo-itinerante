@@ -15,6 +15,7 @@ segue com dados fake e as fotos ainda são placeholders — ambos dependem do Ga
 
 ## Pendente do Gabriel
 
+- [ ] **Confirmação de capacidade dos quartos privativos** — assumimos 2 pessoas para Quarto Duplo e Suíte Standard (validar com hostel)
 - [ ] **Contato real** — WhatsApp (com DDD), e-mail e confirmação do Instagram (hoje fake/placeholder)
 - [ ] **Domínio** do site
 - [ ] **Confirmação dos textos** — validar se história/diferenciais/dados de acomodações batem com a realidade do hostel
