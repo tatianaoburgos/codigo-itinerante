@@ -3,13 +3,7 @@
   "slogan": "Seu porto seguro a duas quadras do mar",
   "descricaoSeo": "Hostel Maré Alta, no Rio Vermelho, Salvador: quartos compartilhados e suítes privativas a duas quadras da praia. Reserve direto pelo WhatsApp, sem taxas.",
   "sobre": {
-    "historia": "O Maré Alta nasceu em 2019, quando a Dona Célia transformou o casarão da família, no coração do Rio Vermelho, num ponto de encontro de viajantes do mundo inteiro. A varanda que via o pôr do sol virou espaço de café da manhã coletivo, e o quintal de mangueiras, área de redes e conversa até tarde.",
-    "diferenciais": [
-      "Café da manhã baiano incluso, com tapioca feita na hora",
-      "A duas quadras da praia do Rio Vermelho e da feira de sexta",
-      "Cozinha compartilhada equipada e área de coworking com boa internet",
-      "Equipe local que monta roteiros personalizados a pé"
-    ]
+    "historia": "O Maré Alta nasceu em 2019, quando a Dona Célia transformou o casarão da família, no coração do Rio Vermelho, num ponto de encontro de viajantes do mundo inteiro. A varanda que via o pôr do sol virou espaço de café da manhã coletivo, e o quintal de mangueiras, área de redes e conversa até tarde."
   },
   "acomodacoes": [
     {
@@ -57,8 +51,11 @@
   },
   "comodidades": [
     { "nome": "Aula de capoeira no quintal (terças e quintas)" },
-    { "nome": "Roteiro a pé pelo Rio Vermelho com a equipe" },
+    { "nome": "Roteiro a pé pelo Rio Vermelho com a equipe", "descricao": "Equipe local que monta roteiros personalizados a pé" },
     { "nome": "Noite de moqueca coletiva (sextas)" },
-    { "nome": "Aluguel de pranchas e caronas para o surf na Barra" }
+    { "nome": "Aluguel de pranchas e caronas para o surf na Barra" },
+    { "nome": "Café da manhã baiano incluso", "descricao": "com tapioca feita na hora" },
+    { "nome": "A duas quadras da praia do Rio Vermelho e da feira de sexta" },
+    { "nome": "Cozinha compartilhada equipada e área de coworking com boa internet" }
   ]
 }

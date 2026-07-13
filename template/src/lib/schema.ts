@@ -55,7 +55,6 @@ export const configClienteSchema = z.object({
   descricaoSeo: z.string().min(1).max(160),
   sobre: z.object({
     historia: z.string().min(1),
-    diferenciais: z.array(z.string().min(1)).min(1),
   }),
   acomodacoes: z.array(acomodacaoSchema).min(1),
   precos: z.object({

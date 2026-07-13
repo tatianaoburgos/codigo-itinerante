@@ -4,13 +4,7 @@
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
-    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa.",
-    "diferenciais": [
-      "Coworking ergonômico para trabalhar com conforto",
-      "Cozinha compartilhada com café de cortesia",
-      "Jardim com redes para desacelerar entre um compromisso e outro",
-      "Ambiente seguro e acolhedor, pensado para quem viaja sozinho"
-    ]
+    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa."
   },
   "acomodacoes": [
     {
@@ -84,11 +78,12 @@
     "instagram": "lumehostel"
   },
   "comodidades": [
-    { "nome": "Coworking ergonômico" },
+    { "nome": "Coworking ergonômico", "descricao": "Coworking ergonômico para trabalhar com conforto" },
     { "nome": "Cozinha compartilhada com café de cortesia" },
-    { "nome": "Jardim com redes" },
+    { "nome": "Jardim com redes", "descricao": "Jardim com redes para desacelerar entre um compromisso e outro" },
     { "nome": "Churrasqueira" },
     { "nome": "Sala de jogos" },
-    { "nome": "Depósito de bagagem" }
+    { "nome": "Depósito de bagagem" },
+    { "nome": "Ambiente seguro e acolhedor", "descricao": "pensado para quem viaja sozinho" }
   ]
 }
