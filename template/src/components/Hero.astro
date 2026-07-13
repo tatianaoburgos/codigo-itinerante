@@ -8,7 +8,7 @@ import MarcaDagua from './MarcaDagua.astro';
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
 
-<section class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
+<section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
   <MarcaDagua />
   <Image
     src={foto('capa.jpg')}
@@ -24,8 +24,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
   >
   </div>
   <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-14">
-    <span class="block h-1 w-16 bg-fitinha" aria-hidden="true"></span>
-    <h1 class="mt-4 max-w-2xl">
+    <h1 class="max-w-2xl">
       {
         logo ? (
           <img src={logo.src} alt={config.nome} class="h-14 w-auto sm:h-20" />

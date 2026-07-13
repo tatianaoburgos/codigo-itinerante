@@ -33,12 +33,9 @@ body {
   color: var(--color-noite);
 }
 
-header.border-b {
-  border-color: #8f2d1266;
-  background: #c94520;
-}
-
-header.border-b a {
+/* Estado solido do menu flutuante (Nav.astro): bg-espuma ja e terracota neste tema,
+   mas o text-noite padrao (marrom escuro) nao contrasta bem sobre terracota. */
+header[data-solido="true"] {
   color: #ffffff;
 }
 
