@@ -1,0 +1,16 @@
+---
+import { config } from '../lib/cliente';
+import { marca } from '../lib/fotos';
+
+const simbolo = config.marca?.simbolo ? marca(config.marca.simbolo) : undefined;
+---
+
+<div class="flex justify-center py-2" aria-hidden="true">
+  {
+    simbolo ? (
+      <img src={simbolo.src} alt="" class="h-8 w-auto opacity-70" />
+    ) : (
+      <span class="h-0.5 w-10 bg-fitinha" />
+    )
+  }
+</div>
