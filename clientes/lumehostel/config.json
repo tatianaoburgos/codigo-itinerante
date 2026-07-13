@@ -95,14 +95,14 @@
     {
       "nome": "Praia de Manaíra",
       "descricao": "Praia urbana em frente ao bairro, com orla de bares e restaurantes",
-      "distancia": "8 min a pé",
+      "distancia": "600 m",
       "foto": { "arquivo": "regiao-praia-manaira.jpg", "alt": "Faixa de areia e calçadão da Praia de Manaíra, com a orla ao fundo, em João Pessoa"},
       "credito": "Patrick / CC BY-SA 3.0"
     },
     {
       "nome": "Orla do Bessa",
       "descricao": "Orla vizinha a Manaíra, com calçadão à beira-mar",
-      "distancia": "4 km",
+      "distancia": "750 m",
       "foto": { "arquivo": "regiao-orla-bessa.jpg", "alt": "Orla da Praia do Bessa em João Pessoa" },
       "credito": "Matheus Jampa da Silva / CC BY-SA 4.0"
     },
@@ -116,14 +116,14 @@
     {
       "nome": "Centro Histórico",
       "descricao": "Conjunto de prédios históricos do Centro/Varadouro de João Pessoa",
-      "distancia": "8 km",
+      "distancia": "4 km",
       "foto": { "arquivo": "regiao-centro-historico.jpg", "alt": "Vista do Centro Histórico de João Pessoa" },
       "credito": "Rogerio121402 / CC BY-SA 4.0"
     },
     {
       "nome": "Farol do Cabo Branco",
       "descricao": "Farol no ponto mais oriental das Américas, no bairro Cabo Branco",
-      "distancia": "12 km",
+      "distancia": "3,1 km",
       "foto": { "arquivo": "regiao-farol-cabo-branco.jpg", "alt": "Farol do Cabo Branco, em João Pessoa" }
     },
     {

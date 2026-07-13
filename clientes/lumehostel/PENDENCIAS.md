@@ -31,11 +31,11 @@ comodidades → a região → depoimentos → localização → CTA).
       sozinho. Perguntar se ele quer manter a seção sabendo disso.
 - [ ] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
       proprietária da Monotype e não pode ser hospedada num site sem licença web paga.
-      Escolhemos a **Fredoka** — gratuita, de código aberto e fiel ao espírito
-      arredondado e amigável do manual — e ela é usada no site inteiro (títulos e corpo),
-      de forma que todos os visitantes vejam exatamente a mesma coisa. Informar isso ao
-      Gabriel e registrar que ele **tem a opção de comprar a licença web da fonte do MIV**
-      se quiser a original no site.
+      A autora comparou visualmente três substitutas livres e escolheu **Space Grotesk**
+      — geométrica e angular, no espírito do logotipo (que usa a Ellograph CF, também
+      proprietária) — usada no site inteiro (títulos e corpo). Informar isso ao Gabriel e
+      registrar que ele **tem a opção de comprar a licença web de qualquer uma das duas
+      fontes do MIV** se quiser a original no site.
 
 ## Pendente do Gabriel — conteúdo
 
@@ -58,7 +58,6 @@ O site é dominado por fotografia, e hoje faltam fotos para ilustrar:
 
 - [ ] **Coworking** — nenhuma foto encontrada nas fontes públicas; hoje a comodidade
       aparece sem imagem, apesar de ser o diferencial central para o público nômade digital
-- [ ] **Espaço com redes** — a foto `jardim.jpg` mostra o pátio com mesas, não as redes
 - [ ] **Churrasqueira**
 - [ ] **Sala de jogos**
 - [ ] **Dormitório Feminino** — hoje usa a mesma foto do Dormitório Misto, e no carrossel
