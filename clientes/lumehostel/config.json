@@ -78,7 +78,6 @@
     "instagram": "lumehostel"
   },
   "comodidades": [
-    { "nome": "Coworking ergonômico" },
     {
       "nome": "Cozinha compartilhada",
       "descricao": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes",
@@ -89,6 +88,7 @@
       "descricao": "Espaço com mesas para refeições e convivência entre hóspedes",
       "foto": { "arquivo": "jardim.jpg", "alt": "Pátio de entrada do LumeHostel com mesas de madeira e a fachada com o logo ao fundo" }
     },
+    { "nome": "Coworking ergonômico" },
     { "nome": "Espaço com redes", "descricao": "Redes para descansar entre as atividades do dia" },
     { "nome": "Churrasqueira" },
     { "nome": "Sala de jogos" },
