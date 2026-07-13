@@ -55,10 +55,10 @@
     "email": "contato@marealta.example.com",
     "instagram": "hostelmarealta.demo"
   },
-  "atividades": [
-    "Aula de capoeira no quintal (terças e quintas)",
-    "Roteiro a pé pelo Rio Vermelho com a equipe",
-    "Noite de moqueca coletiva (sextas)",
-    "Aluguel de pranchas e caronas para o surf na Barra"
+  "comodidades": [
+    { "nome": "Aula de capoeira no quintal (terças e quintas)" },
+    { "nome": "Roteiro a pé pelo Rio Vermelho com a equipe" },
+    { "nome": "Noite de moqueca coletiva (sextas)" },
+    { "nome": "Aluguel de pranchas e caronas para o surf na Barra" }
   ]
 }

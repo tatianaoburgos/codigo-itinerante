@@ -1,6 +1,6 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg" },
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-ambar.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
@@ -83,12 +83,12 @@
     "email": "contato@lumehostel.example.com",
     "instagram": "lumehostel"
   },
-  "atividades": [
-    "Coworking ergonômico",
-    "Cozinha compartilhada com café de cortesia",
-    "Jardim com redes",
-    "Churrasqueira",
-    "Sala de jogos",
-    "Depósito de bagagem"
+  "comodidades": [
+    { "nome": "Coworking ergonômico" },
+    { "nome": "Cozinha compartilhada com café de cortesia" },
+    { "nome": "Jardim com redes" },
+    { "nome": "Churrasqueira" },
+    { "nome": "Sala de jogos" },
+    { "nome": "Depósito de bagagem" }
   ]
 }
