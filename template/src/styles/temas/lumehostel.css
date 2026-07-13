@@ -1,41 +1,54 @@
 /* Tema do cliente LumeHostel. Cores e conceito do Manual de Identidade Visual
-   (Etna Comunicacao). Fontes: substitutas livres arredondadas de Ellograph CF
-   (marca, paga) e Arial Rounded MT Bold (auxiliar, proprietaria).
-   Selecionado pela env CLIENTE via alias @tema. */
+   (Etna Comunicacao): terracota #c94520 dominante + ambar #fcbe35, como nas
+   paginas do proprio MIV. Fonte auxiliar do MIV (Arial Rounded MT Bold,
+   proprietaria) entra primeiro no stack; quem nao a tiver ve as substitutas
+   livres arredondadas. Selecionado pela env CLIENTE via alias @tema. */
 @import "@fontsource-variable/fredoka";
 @import "@fontsource-variable/nunito";
 @import "@fontsource-variable/spline-sans-mono";
 
 @theme {
-  --color-mare: #1f3c8f;      /* azul primario (porto seguro) */
-  --color-noite: #0e1c42;     /* azul profundo (fundos/texto escuro) */
-  --color-azulejo: #2f56c0;   /* azul vibrante (links/realces) */
-  --color-sal: #e6ebf5;       /* neutro claro com leve tom azul */
-  --color-espuma: #f6f7fb;    /* quase branco (fundos) */
-  --color-fitinha: #fcbe35;   /* amarelo "lume" (luz/destaque) */
+  --color-mare: #fcbe35;      /* blocos fortes (hero/CTA): ambar */
+  --color-noite: #3a1509;     /* texto escuro: marrom profundo */
+  --color-azulejo: #8f2d12;   /* links/realces sobre fundos claros */
+  --color-sal: #fff3dc;       /* neutro claro: creme */
+  --color-espuma: #c94520;    /* fundo geral: terracota */
+  --color-fitinha: #fcbe35;   /* destaque: ambar */
   --color-zap: #25d366;       /* verde WhatsApp (fixo, funcional) */
 
-  /* Acentos secundarios do MIV (ainda nao usados pelos componentes) */
-  --color-mata: #3e8e40;      /* verde */
-  --color-terracota: #c94520; /* terracota/laranja */
-
-  --font-display: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-corpo: "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Arial Rounded MT Bold", "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Arial Rounded MT Bold", "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
 }
 
-/* Ajustes visuais exclusivos do LumeHostel para aproximar a aplicação do MIV. */
+/* Ajustes exclusivos do LumeHostel: texto padrao branco sobre terracota;
+   blocos ambar e cards claros voltam ao texto escuro. */
+body {
+  color: #ffffff;
+}
+
+.bg-mare,
+.bg-sal,
+.bg-white {
+  color: var(--color-noite);
+}
+
 header.border-b {
-  border-color: #1f3c8f26;
-  background: linear-gradient(180deg, #f8faff 0%, #f6f7fb 100%);
+  border-color: #8f2d1266;
+  background: #c94520;
+}
+
+header.border-b a {
+  color: #ffffff;
 }
 
 section.bg-mare {
-  background: linear-gradient(135deg, #1f3c8f 0%, #0e1c42 100%);
+  background: linear-gradient(135deg, #fcbe35 0%, #f0a81c 100%);
 }
 
 footer.bg-noite {
-  background: linear-gradient(160deg, #0e1c42 0%, #1f3c8f 100%);
+  background: #8f2d12;
+  color: #ffffff;
 }
 
 .rounded-xl {
@@ -43,9 +56,23 @@ footer.bg-noite {
 }
 
 .bg-white {
-  border: 1px solid #1f3c8f1a;
+  background: #fff3dc;
+  border: 1px solid #8f2d1233;
 }
 
 .font-display {
   letter-spacing: -0.01em;
+}
+
+/* Cards claros (bg-white/bg-sal) usam text-mare (ambar) nos titulos, que fica
+   ilegivel sobre o creme do card. Escurece para o marrom do tema. */
+.bg-white .text-mare,
+.bg-sal .text-mare {
+  color: var(--color-azulejo);
+}
+
+/* Footer usa text-espuma (terracota) sobre footer.bg-noite, que aqui vira
+   marrom escuro (#8f2d12) — terracota sobre marrom fica ilegivel. */
+footer.bg-noite .text-espuma {
+  color: var(--color-fitinha);
 }
