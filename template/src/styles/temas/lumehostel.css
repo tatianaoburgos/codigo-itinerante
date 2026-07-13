@@ -1,10 +1,10 @@
 /* Tema do cliente LumeHostel. Cores e conceito do Manual de Identidade Visual
    (Etna Comunicacao): terracota #c94520 dominante + ambar #fcbe35, como nas
-   paginas do proprio MIV. Fonte auxiliar do MIV (Arial Rounded MT Bold,
-   proprietaria) entra primeiro no stack; quem nao a tiver ve as substitutas
-   livres arredondadas. Selecionado pela env CLIENTE via alias @tema. */
+   paginas do proprio MIV. A fonte do MIV (Arial Rounded MT Bold) e
+   proprietaria; adotada a substituta livre Fredoka em todo o site (display
+   e corpo) para render identico em qualquer maquina. Selecionado pela env
+   CLIENTE via alias @tema. */
 @import "@fontsource-variable/fredoka";
-@import "@fontsource-variable/nunito";
 @import "@fontsource-variable/spline-sans-mono";
 
 @theme {
@@ -16,8 +16,8 @@
   --color-fitinha: #fcbe35;   /* destaque: ambar */
   --color-zap: #25d366;       /* verde WhatsApp (fixo, funcional) */
 
-  --font-display: "Arial Rounded MT Bold", "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-corpo: "Arial Rounded MT Bold", "Nunito Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
 }
 
