@@ -1,7 +1,7 @@
 # Fontes das fotos
 
-Proveniência de cada arquivo de foto do LumeHostel. Fotos do hostel (`capa.jpg`, `quarto-1.jpg`,
-`suite-1.jpg`, `cozinha.jpg`, `jardim.jpg`) vêm das fotos públicas do próprio estabelecimento no
+Proveniência de cada arquivo de foto do LumeHostel. Fotos do hostel (`capa.jpg`, `cozinha.jpg`,
+`jardim.jpg`) vêm das fotos públicas do próprio estabelecimento no
 Google Maps (categoria "Do proprietário" / fotos publicadas pelo perfil do negócio) — nenhuma é
 foto de hóspede nem de banco de imagens. Fotos da região (`regiao-*.jpg`) vêm do Wikimedia
 Commons, com licença livre conferida e atribuição anotada abaixo.
@@ -11,8 +11,6 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | Arquivo | Origem | Autor | Licença | Atribuição exigida? |
 |---|---|---|---|---|
 | `capa.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
-| `quarto-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
-| `suite-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `cozinha.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `jardim.jpg` | Booking.com (galeria de fotos do LumeHostel), foto 3/55 — mostra o pátio de entrada com mesas/cadeiras e a fachada com o logo | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `dormitorio-misto-6.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
