@@ -15,6 +15,12 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | `suite-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `cozinha.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `jardim.jpg` | Booking.com (galeria de fotos do LumeHostel), foto 3/55 — mostra o pátio de entrada com mesas/cadeiras e a fachada com o logo | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `dormitorio-misto-6.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-misto-8.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-feminino-4.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-feminino-6.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `quarto-duplo.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `suite-standard.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
 | `vibe-patio-noite.jpg` | Enviada pela autora, foto real do estabelecimento — pátio à noite, com mesa comunitária e varal de luzes | LumeHostel | Foto própria do hostel | Não |
 | `vibe-redario.jpg` | Enviada pela autora, foto real do estabelecimento — redário no corredor externo entre os quartos | LumeHostel | Foto própria do hostel | Não |
 | `vibe-patio-entrada.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |

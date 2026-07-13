@@ -9,54 +9,50 @@
   "acomodacoes": [
     {
       "nome": "Dormitório Misto",
-      "capacidade": "Camas em quarto misto (opções de 6 ou 8 camas)",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual por cama",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "Quarto misto com 6 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "quarto-1.jpg", "alt": "Dormitório compartilhado com beliches de metal, armário e piso de cerâmica" }
+        { "arquivo": "dormitorio-misto-6.jpg", "alt": "Dormitório misto com três beliches de metal e cortinas separando as camas" }
+      ]
+    },
+    {
+      "nome": "Dormitório Misto",
+      "capacidade": "Quarto misto com 8 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "dormitorio-misto-8.jpg", "alt": "Dormitório misto amplo com cama de solteiro e beliches, armário branco e janela com persiana" }
       ]
     },
     {
       "nome": "Dormitório Feminino",
-      "capacidade": "Camas em quarto feminino (opções de 4 ou 6 camas)",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual por cama",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "Quarto feminino com 4 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "quarto-1.jpg", "alt": "Dormitório compartilhado com beliches de metal, armário e piso de cerâmica" }
+        { "arquivo": "dormitorio-feminino-4.jpg", "alt": "Dormitório feminino com dois beliches de metal preto, armário e janela com grade decorativa" }
+      ]
+    },
+    {
+      "nome": "Dormitório Feminino",
+      "capacidade": "Quarto feminino com 6 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "dormitorio-feminino-6.jpg", "alt": "Dormitório feminino com beliches de metal preto, armário branco e piso de cerâmica" }
       ]
     },
     {
       "nome": "Quarto Duplo",
-      "capacidade": "2 pessoas",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "2 pessoas, 1 cama de casal",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Quarto privativo com cama de casal, ar-condicionado e quadros decorativos na parede" }
+        { "arquivo": "quarto-duplo.jpg", "alt": "Quarto privativo com cama de casal, cortinas marrons, quadros na parede e mesa com cadeiras" }
       ]
     },
     {
       "nome": "Suíte Standard",
-      "capacidade": "2 pessoas",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "2 pessoas, 1 cama de casal",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Quarto privativo com cama de casal, ar-condicionado e quadros decorativos na parede" }
+        { "arquivo": "suite-standard.jpg", "alt": "Suíte privativa com cama de casal, mesa de madeira, cadeiras e espelho de corpo inteiro" }
       ]
     }
   ],
