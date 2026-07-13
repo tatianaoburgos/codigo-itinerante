@@ -159,5 +159,9 @@
       "nome": "Tolopka",
       "fonte": "via Booking"
     }
+  ],
+  "vibe": [
+    { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" },
+    { "arquivo": "vibe-redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" }
   ]
 }

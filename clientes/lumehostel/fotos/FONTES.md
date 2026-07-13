@@ -15,6 +15,8 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | `suite-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `cozinha.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `jardim.jpg` | Booking.com (galeria de fotos do LumeHostel), foto 3/55 — mostra o pátio de entrada com mesas/cadeiras e a fachada com o logo | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-patio-noite.jpg` | Enviada pela autora, foto real do estabelecimento — pátio à noite, com mesa comunitária e varal de luzes | LumeHostel | Foto própria do hostel | Não |
+| `vibe-redario.jpg` | Enviada pela autora, foto real do estabelecimento — redário no corredor externo entre os quartos | LumeHostel | Foto própria do hostel | Não |
 
 Observação (2026-07-13): a versão anterior de `jardim.jpg` (baixada do Google Maps) era na
 verdade um frame de vídeo/reel — formato vertical (720x1280) com legenda queimada na imagem

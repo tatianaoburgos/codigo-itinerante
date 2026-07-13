@@ -8,6 +8,7 @@ import Mapa from '../components/Mapa.astro';
 import DivisorSimbolo from '../components/DivisorSimbolo.astro';
 import MarcaDagua from '../components/MarcaDagua.astro';
 import CarrosselAcomodacoes from '../components/CarrosselAcomodacoes.astro';
+import Vibe from '../components/Vibe.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 
@@ -72,6 +73,19 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
   </section>
 
   <DivisorSimbolo />
+
+  {
+    config.vibe && (
+      <section id="vibe" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
+        <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
+        <div class="mt-8">
+          <Vibe />
+        </div>
+      </section>
+    )
+  }
+
+  {config.vibe && <DivisorSimbolo />}
 
   {
     config.regiao && (
