@@ -21,7 +21,8 @@ comodidades → a região → depoimentos → localização → CTA).
 - [x] Seção "A vibe do hostel" — mosaico com 9 fotos reais do próprio estabelecimento
 - [x] Seção "A região" — 6 pontos de João Pessoa com distância oficial do Booking e foto
       de licença livre
-- [x] Depoimentos — 4 avaliações públicas reais do Booking
+- [x] Depoimentos — 4 avaliações públicas reais do Booking (candidatas de troca levantadas
+      no Google Maps e no Booking em `avaliacoes.md`, aguardando escolha)
 - [x] Marca (logo/favicon/símbolo completo — estrela + chama; usado como divisor de
       seções e marca-d'água)
 - [x] Tipografia única (Space Grotesk) em todo o site
@@ -35,6 +36,10 @@ comodidades → a região → depoimentos → localização → CTA).
       **demandaria manutenção no futuro**: trocar, acrescentar ou remover um depoimento
       exige editar os dados do site e publicar de novo — não é algo que o Gabriel muda
       sozinho. Perguntar se ele quer manter a seção sabendo disso.
+- [ ] **Quais depoimentos entram no site.** Em 2026-07-14 foram levantadas as 10 melhores
+      avaliações públicas (Google Maps e Booking) em `avaliacoes.md`, com recomendação de
+      troca das 4 atuais. Escolha pendente — só depois o `config.json` é atualizado.
+      Confirmar também se os nomes aparecem completos ou só o primeiro nome.
 - [ ] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
       proprietária da Monotype e não pode ser hospedada num site sem licença web paga.
       A autora comparou visualmente três substitutas livres e escolheu **Space Grotesk**
