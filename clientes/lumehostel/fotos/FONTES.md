@@ -1,7 +1,7 @@
 # Fontes das fotos
 
-Proveniência de cada arquivo de foto do LumeHostel. Fotos do hostel (`capa.jpg`, `quarto-1.jpg`,
-`suite-1.jpg`, `cozinha.jpg`, `jardim.jpg`) vêm das fotos públicas do próprio estabelecimento no
+Proveniência de cada arquivo de foto do LumeHostel. Fotos do hostel (`capa.jpg`, `cozinha.jpg`,
+`jardim.jpg`) vêm das fotos públicas do próprio estabelecimento no
 Google Maps (categoria "Do proprietário" / fotos publicadas pelo perfil do negócio) — nenhuma é
 foto de hóspede nem de banco de imagens. Fotos da região (`regiao-*.jpg`) vêm do Wikimedia
 Commons, com licença livre conferida e atribuição anotada abaixo.
@@ -11,10 +11,23 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | Arquivo | Origem | Autor | Licença | Atribuição exigida? |
 |---|---|---|---|---|
 | `capa.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
-| `quarto-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
-| `suite-1.jpg` | Google Maps (perfil LumeHostel) — já existia antes desta task | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `cozinha.jpg` | Google Maps (perfil LumeHostel), galeria "Fotos e vídeos" | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `jardim.jpg` | Booking.com (galeria de fotos do LumeHostel), foto 3/55 — mostra o pátio de entrada com mesas/cadeiras e a fachada com o logo | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `dormitorio-misto-6.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-misto-8.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-feminino-4.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `dormitorio-feminino-6.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `quarto-duplo.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `suite-standard.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
+| `vibe-patio-noite.jpg` | Enviada pela autora, foto real do estabelecimento — pátio à noite, com mesa comunitária e varal de luzes | LumeHostel | Foto própria do hostel | Não |
+| `vibe-redario.jpg` | Enviada pela autora, foto real do estabelecimento — redário no corredor externo entre os quartos | LumeHostel | Foto própria do hostel | Não |
+| `vibe-patio-entrada.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-patio-trabalho.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-cozinha-bar.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-corredor-cores.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-recepcao.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-mural-recados.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-entrada-frase.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
 
 Observação (2026-07-13): a versão anterior de `jardim.jpg` (baixada do Google Maps) era na
 verdade um frame de vídeo/reel — formato vertical (720x1280) com legenda queimada na imagem
@@ -29,6 +42,16 @@ redes — essas comodidades do config ficam **sem foto** (o schema trata `comodi
 opcional). A galeria do Booking tem fotos de uma sala de estar com sofá e TV, mas a única limpa o
 suficiente para uso mostra um hóspede com o rosto visível — descartada por privacidade. Para não
 representar algo que não é, optei por não forçar nenhuma foto genérica com esses rótulos.
+
+Observação (2026-07-13): revisitando as galerias para ampliar o mosaico "A vibe", também não foi
+encontrada nenhuma foto de espaço de coworking dedicado — `vibe-patio-trabalho.jpg` mostra apenas
+um notebook sobre a mesa comunitária do pátio, e não uma sala de trabalho. Por isso a comodidade
+"Coworking ergonômico" continua sem foto no config.
+
+Observação (2026-07-13): o arquivo baixado como `vibe-mural-entrada.jpg` era, na verdade, um
+duplicado byte a byte de `capa.jpg` (mesmo hash SHA-256) — provavelmente a mesma foto salva duas
+vezes durante a curadoria. Foi descartado (arquivo removido e entrada retirada do `vibe` do
+config) para não repetir a mesma imagem duas vezes no mosaico.
 
 ## Fotos da região (Wikimedia Commons)
 

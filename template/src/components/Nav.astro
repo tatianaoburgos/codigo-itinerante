@@ -6,21 +6,27 @@ import BotaoWhatsApp from './BotaoWhatsApp.astro';
 const abas = [
   { href: '/#acomodacoes', rotulo: 'Acomodações' },
   { href: '/#comodidades', rotulo: 'Comodidades' },
+  { href: '/#vibe', rotulo: 'A vibe' },
   { href: '/#regiao', rotulo: 'A região' },
   { href: '/#localizacao', rotulo: 'Localização' },
-].filter((aba) => aba.href !== '/#regiao' || config.regiao);
+]
+  .filter((aba) => aba.href !== '/#vibe' || config.vibe)
+  .filter((aba) => aba.href !== '/#regiao' || config.regiao);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
 
-<header class="border-b border-sal bg-espuma">
+<header
+  data-solido="false"
+  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent text-white transition-colors duration-300 data-[solido=true]:border-sal data-[solido=true]:bg-espuma data-[solido=true]:text-noite"
+>
   <nav
     aria-label="Principal"
     class="mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 py-4 sm:flex-row sm:justify-between"
   >
     <a
       href="/"
-      class="font-display text-xl font-bold text-mare focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+      class="font-display text-xl font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
     >
       {logo ? <img src={logo.src} alt={config.nome} class="h-9 w-auto" /> : config.nome}
     </a>
@@ -29,7 +35,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
         abas.map((aba) => (
           <a
             href={aba.href}
-            class="border-b-2 border-transparent pb-0.5 text-sm font-bold text-noite transition hover:text-azulejo focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+            class="border-b-2 border-transparent pb-0.5 text-sm font-bold transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
           >
             {aba.rotulo}
           </a>
@@ -39,3 +45,14 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
     </div>
   </nav>
 </header>
+
+<script>
+  const header = document.querySelector<HTMLElement>('header[data-solido]');
+  const hero = document.getElementById('hero');
+  if (header && hero) {
+    const observer = new IntersectionObserver(([entry]) => {
+      header.dataset.solido = entry.isIntersecting ? 'false' : 'true';
+    });
+    observer.observe(hero);
+  }
+</script>

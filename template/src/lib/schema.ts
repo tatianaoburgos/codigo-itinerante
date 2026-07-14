@@ -74,6 +74,7 @@ export const configClienteSchema = z.object({
   comodidades: z.array(comodidadeSchema).min(1),
   regiao: z.array(pontoRegiaoSchema).optional(),
   depoimentos: z.array(depoimentoSchema).optional(),
+  vibe: z.array(fotoSchema).optional(),
 });
 
 export type ConfigCliente = z.infer<typeof configClienteSchema>;

@@ -1,10 +1,10 @@
 /* Tema do cliente LumeHostel. Cores e conceito do Manual de Identidade Visual
    (Etna Comunicacao): terracota #c94520 dominante + ambar #fcbe35, como nas
-   paginas do proprio MIV. A fonte do MIV (Arial Rounded MT Bold) e
-   proprietaria; adotada a substituta livre Fredoka em todo o site (display
-   e corpo) para render identico em qualquer maquina. Selecionado pela env
-   CLIENTE via alias @tema. */
-@import "@fontsource-variable/fredoka";
+   paginas do proprio MIV. A fonte auxiliar do MIV (Arial Rounded MT Bold) e
+   proprietaria; a substituta livre escolhida — Space Grotesk, geometrica e
+   angular, no espirito do logotipo — esta em todo o site (display e corpo).
+   Selecionado pela env CLIENTE via alias @tema. */
+@import "@fontsource-variable/space-grotesk";
 @import "@fontsource-variable/spline-sans-mono";
 
 @theme {
@@ -16,8 +16,8 @@
   --color-fitinha: #fcbe35;   /* destaque: ambar */
   --color-zap: #25d366;       /* verde WhatsApp (fixo, funcional) */
 
-  --font-display: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
-  --font-corpo: "Fredoka Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Space Grotesk Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
 }
 
@@ -33,12 +33,9 @@ body {
   color: var(--color-noite);
 }
 
-header.border-b {
-  border-color: #8f2d1266;
-  background: #c94520;
-}
-
-header.border-b a {
+/* Estado solido do menu flutuante (Nav.astro): bg-espuma ja e terracota neste tema,
+   mas o text-noite padrao (marrom escuro) nao contrasta bem sobre terracota. */
+header[data-solido="true"] {
   color: #ffffff;
 }
 

@@ -14,13 +14,19 @@ comodidades → a região → depoimentos → localização → CTA).
 ## Feito
 
 - [x] Endereço e mapa (`localizacao.endereco`, `mapsEmbedUrl`, `comoChegar`)
-- [x] Acomodações (4 tipos: Dormitório Misto, Dormitório Feminino, Quarto Duplo, Suíte Standard)
+- [x] Acomodações — os 6 tipos reais do Booking (Dormitório Misto 6 e 8 camas, Dormitório
+      Feminino 4 e 6 camas, Quarto Duplo, Suíte Standard), cada um com foto própria
 - [x] Sobre (história, com base no conceito do MIV)
 - [x] Comodidades (as antigas "diferenciais" foram absorvidas aqui, agora ilustradas onde há foto)
-- [x] Seção "A região" — 6 pontos de João Pessoa com distância real e foto de licença livre
+- [x] Seção "A vibe do hostel" — mosaico com 9 fotos reais do próprio estabelecimento
+- [x] Seção "A região" — 6 pontos de João Pessoa com distância oficial do Booking e foto
+      de licença livre
 - [x] Depoimentos — 4 avaliações públicas reais do Booking
-- [x] Marca (logo/favicon/símbolo; símbolo usado como divisor de seções e marca-d'água)
-- [x] Fotos reais em uso: `capa.jpg`, `quarto-1.jpg`, `suite-1.jpg`, `cozinha.jpg`, `jardim.jpg`
+- [x] Marca (logo/favicon/símbolo completo — estrela + chama; usado como divisor de
+      seções e marca-d'água)
+- [x] Tipografia única (Space Grotesk) em todo o site
+- [x] Fotos reais em uso: `capa.jpg`, `cozinha.jpg`, `jardim.jpg`, as 6 fotos de
+      acomodação e as 9 da seção "A vibe" (ver `fotos/FONTES.md`)
 
 ## Pendente do Gabriel — decisões
 
@@ -31,11 +37,11 @@ comodidades → a região → depoimentos → localização → CTA).
       sozinho. Perguntar se ele quer manter a seção sabendo disso.
 - [ ] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
       proprietária da Monotype e não pode ser hospedada num site sem licença web paga.
-      Escolhemos a **Fredoka** — gratuita, de código aberto e fiel ao espírito
-      arredondado e amigável do manual — e ela é usada no site inteiro (títulos e corpo),
-      de forma que todos os visitantes vejam exatamente a mesma coisa. Informar isso ao
-      Gabriel e registrar que ele **tem a opção de comprar a licença web da fonte do MIV**
-      se quiser a original no site.
+      A autora comparou visualmente três substitutas livres e escolheu **Space Grotesk**
+      — geométrica e angular, no espírito do logotipo (que usa a Ellograph CF, também
+      proprietária) — usada no site inteiro (títulos e corpo). Informar isso ao Gabriel e
+      registrar que ele **tem a opção de comprar a licença web de qualquer uma das duas
+      fontes do MIV** se quiser a original no site.
 
 ## Pendente do Gabriel — conteúdo
 
@@ -56,13 +62,10 @@ comodidades → a região → depoimentos → localização → CTA).
 
 O site é dominado por fotografia, e hoje faltam fotos para ilustrar:
 
-- [ ] **Coworking** — nenhuma foto encontrada nas fontes públicas; hoje a comodidade
-      aparece sem imagem, apesar de ser o diferencial central para o público nômade digital
-- [ ] **Espaço com redes** — a foto `jardim.jpg` mostra o pátio com mesas, não as redes
+- [ ] **Coworking** — nenhuma foto de espaço dedicado encontrada nas fontes públicas; hoje
+      a comodidade aparece sem imagem, apesar de ser o diferencial central para o público
+      nômade digital
 - [ ] **Churrasqueira**
 - [ ] **Sala de jogos**
-- [ ] **Dormitório Feminino** — hoje usa a mesma foto do Dormitório Misto, e no carrossel
-      os dois cards ficam lado a lado com a imagem repetida
-- [ ] **Quarto Duplo e Suíte Standard** — hoje compartilham a mesma foto, pelo mesmo motivo
 
 Preços: não pedir — política fixa é "consultar no WhatsApp" (já aplicada, `precos.politica: "consultar"`).

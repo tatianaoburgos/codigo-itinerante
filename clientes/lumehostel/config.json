@@ -1,6 +1,6 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-ambar.svg" },
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-completo.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
@@ -9,54 +9,50 @@
   "acomodacoes": [
     {
       "nome": "Dormitório Misto",
-      "capacidade": "Camas em quarto misto (opções de 6 ou 8 camas)",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual por cama",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "Quarto misto com 6 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "quarto-1.jpg", "alt": "Dormitório compartilhado com beliches de metal, armário e piso de cerâmica" }
+        { "arquivo": "dormitorio-misto-6.jpg", "alt": "Dormitório misto com três beliches de metal e cortinas separando as camas" }
+      ]
+    },
+    {
+      "nome": "Dormitório Misto",
+      "capacidade": "Quarto misto com 8 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "dormitorio-misto-8.jpg", "alt": "Dormitório misto amplo com cama de solteiro e beliches, armário branco e janela com persiana" }
       ]
     },
     {
       "nome": "Dormitório Feminino",
-      "capacidade": "Camas em quarto feminino (opções de 4 ou 6 camas)",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual por cama",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "Quarto feminino com 4 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "quarto-1.jpg", "alt": "Dormitório compartilhado com beliches de metal, armário e piso de cerâmica" }
+        { "arquivo": "dormitorio-feminino-4.jpg", "alt": "Dormitório feminino com dois beliches de metal preto, armário e janela com grade decorativa" }
+      ]
+    },
+    {
+      "nome": "Dormitório Feminino",
+      "capacidade": "Quarto feminino com 6 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "dormitorio-feminino-6.jpg", "alt": "Dormitório feminino com beliches de metal preto, armário branco e piso de cerâmica" }
       ]
     },
     {
       "nome": "Quarto Duplo",
-      "capacidade": "2 pessoas",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "2 pessoas, 1 cama de casal",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Quarto privativo com cama de casal, ar-condicionado e quadros decorativos na parede" }
+        { "arquivo": "quarto-duplo.jpg", "alt": "Quarto privativo com cama de casal, cortinas marrons, quadros na parede e mesa com cadeiras" }
       ]
     },
     {
       "nome": "Suíte Standard",
-      "capacidade": "2 pessoas",
-      "comodidades": [
-        "Ar-condicionado",
-        "Locker individual",
-        "Tomada individual",
-        "Toalhas inclusas"
-      ],
+      "capacidade": "2 pessoas, 1 cama de casal",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
       "fotos": [
-        { "arquivo": "suite-1.jpg", "alt": "Quarto privativo com cama de casal, ar-condicionado e quadros decorativos na parede" }
+        { "arquivo": "suite-standard.jpg", "alt": "Suíte privativa com cama de casal, mesa de madeira, cadeiras e espelho de corpo inteiro" }
       ]
     }
   ],
@@ -99,14 +95,14 @@
     {
       "nome": "Praia de Manaíra",
       "descricao": "Praia urbana em frente ao bairro, com orla de bares e restaurantes",
-      "distancia": "8 min a pé",
+      "distancia": "600 m",
       "foto": { "arquivo": "regiao-praia-manaira.jpg", "alt": "Faixa de areia e calçadão da Praia de Manaíra, com a orla ao fundo, em João Pessoa"},
       "credito": "Patrick / CC BY-SA 3.0"
     },
     {
       "nome": "Orla do Bessa",
       "descricao": "Orla vizinha a Manaíra, com calçadão à beira-mar",
-      "distancia": "4 km",
+      "distancia": "750 m",
       "foto": { "arquivo": "regiao-orla-bessa.jpg", "alt": "Orla da Praia do Bessa em João Pessoa" },
       "credito": "Matheus Jampa da Silva / CC BY-SA 4.0"
     },
@@ -120,14 +116,14 @@
     {
       "nome": "Centro Histórico",
       "descricao": "Conjunto de prédios históricos do Centro/Varadouro de João Pessoa",
-      "distancia": "8 km",
+      "distancia": "4 km",
       "foto": { "arquivo": "regiao-centro-historico.jpg", "alt": "Vista do Centro Histórico de João Pessoa" },
       "credito": "Rogerio121402 / CC BY-SA 4.0"
     },
     {
       "nome": "Farol do Cabo Branco",
       "descricao": "Farol no ponto mais oriental das Américas, no bairro Cabo Branco",
-      "distancia": "12 km",
+      "distancia": "3,1 km",
       "foto": { "arquivo": "regiao-farol-cabo-branco.jpg", "alt": "Farol do Cabo Branco, em João Pessoa" }
     },
     {
@@ -159,5 +155,16 @@
       "nome": "Tolopka",
       "fonte": "via Booking"
     }
+  ],
+  "vibe": [
+    { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" },
+    { "arquivo": "vibe-redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" },
+    { "arquivo": "vibe-patio-entrada.jpg", "alt": "Pátio externo do LumeHostel visto da entrada, com mesas de madeira e o nome do hostel pintado na parede" },
+    { "arquivo": "vibe-patio-trabalho.jpg", "alt": "Mesa comunitária no pátio do LumeHostel com notebook, usada como espaço de trabalho ao ar livre" },
+    { "arquivo": "vibe-cozinha-bar.jpg", "alt": "Área social integrada à cozinha do LumeHostel, com balcão, plantas penduradas e parede terracota" },
+    { "arquivo": "vibe-corredor-cores.jpg", "alt": "Corredor interno do LumeHostel com paredes amarela e terracota, geladeira e balcão com banquinhos" },
+    { "arquivo": "vibe-recepcao.jpg", "alt": "Recepção do LumeHostel, com balcão de madeira e vista para o pátio através do portão decorado" },
+    { "arquivo": "vibe-mural-recados.jpg", "alt": "Parede de recados do LumeHostel, com mensagens e desenhos deixados por hóspedes" },
+    { "arquivo": "vibe-entrada-frase.jpg", "alt": "Espaço de estar próximo à entrada do LumeHostel, com almofadas amarelas e quadro com frase inspiracional" }
   ]
 }

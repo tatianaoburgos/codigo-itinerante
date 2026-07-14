@@ -603,7 +603,6 @@ import Vibe from '../components/Vibe.astro';
 imediatamente após a seção Comodidades — o bloco acima entra depois dela, e a região
 segue com seu próprio par de divisores como já existe hoje.)
 
-O `Nav.astro` já ganhou a aba condicional `/#vibe` na Task 3.
 
 - [ ] **Step 5: Dados — adicionar `vibe` ao config do LumeHostel**
 
