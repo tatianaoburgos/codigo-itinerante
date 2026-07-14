@@ -28,6 +28,7 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | `vibe-recepcao.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `vibe-mural-recados.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `vibe-entrada-frase.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `vibe-cozinha-corredor.jpg` | Google Maps, galeria pública do próprio estabelecimento LumeHostel (foto de visualização específica) | LumeHostel | Foto publicada pelo estabelecimento | Não |
 
 Observação (2026-07-13): a versão anterior de `jardim.jpg` (baixada do Google Maps) era na
 verdade um frame de vídeo/reel — formato vertical (720x1280) com legenda queimada na imagem

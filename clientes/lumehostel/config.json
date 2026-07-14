@@ -1,10 +1,10 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-completo.svg" },
+  "marca": { "logo": "logo-ambar.svg", "logoHero": "logo-terracota.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-completo.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
-    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais, sem clima de festa."
+    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais."
   },
   "acomodacoes": [
     {
@@ -165,6 +165,7 @@
     { "arquivo": "vibe-corredor-cores.jpg", "alt": "Corredor interno do LumeHostel com paredes amarela e terracota, geladeira e balcão com banquinhos" },
     { "arquivo": "vibe-recepcao.jpg", "alt": "Recepção do LumeHostel, com balcão de madeira e vista para o pátio através do portão decorado" },
     { "arquivo": "vibe-mural-recados.jpg", "alt": "Parede de recados do LumeHostel, com mensagens e desenhos deixados por hóspedes" },
-    { "arquivo": "vibe-entrada-frase.jpg", "alt": "Espaço de estar próximo à entrada do LumeHostel, com almofadas amarelas e quadro com frase inspiracional" }
+    { "arquivo": "vibe-entrada-frase.jpg", "alt": "Espaço de estar próximo à entrada do LumeHostel, com almofadas amarelas e quadro com frase inspiracional" },
+    { "arquivo": "vibe-cozinha-corredor.jpg", "alt": "Vista ampla da cozinha compartilhada do LumeHostel, com bancada, plantas penduradas e corredor ao fundo" }
   ]
 }

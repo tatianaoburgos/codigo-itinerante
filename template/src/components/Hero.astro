@@ -5,7 +5,8 @@ import { foto, marca } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 import MarcaDagua from './MarcaDagua.astro';
 
-const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
+const arquivoLogo = config.marca?.logoHero ?? config.marca?.logo;
+const logo = arquivoLogo ? marca(arquivoLogo) : undefined;
 ---
 
 <section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">

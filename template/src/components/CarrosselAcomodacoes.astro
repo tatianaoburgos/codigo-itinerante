@@ -4,10 +4,10 @@ import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 ---
 
-<div class="-mx-4 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4">
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   {
     config.acomodacoes.map((acomodacao) => (
-      <article class="relative w-[85vw] max-w-md shrink-0 snap-center overflow-hidden rounded-xl">
+      <article class="relative overflow-hidden rounded-xl">
         <Image
           src={foto(acomodacao.fotos[0].arquivo)}
           alt={acomodacao.fotos[0].alt}

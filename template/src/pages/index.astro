@@ -66,7 +66,7 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
               <li class="flex gap-3">
                 <span class="mt-2.5 h-0.5 w-4 shrink-0 bg-fitinha" aria-hidden="true" />
                 <span>
-                  <span class="font-bold">{comodidade.nome}</span>
+                  <span class="font-display font-bold text-mare">{comodidade.nome}</span>
                   {comodidade.descricao && <> — {comodidade.descricao}</>}
                 </span>
               </li>
@@ -96,22 +96,32 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
     config.regiao && (
       <section id="regiao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
         <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
-        <div class="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {config.regiao.map((ponto) => (
-            <article>
+        <div class="mt-8 grid auto-rows-[220px] grid-cols-2 gap-2 sm:grid-cols-4">
+          {config.regiao.map((ponto, indice) => (
+            <article
+              class:list={[
+                'group relative overflow-hidden',
+                indice === 0 ? 'col-span-2 row-span-2' : 'col-span-1',
+              ]}
+            >
               <Image
                 src={foto(ponto.foto.arquivo)}
                 alt={ponto.foto.alt}
                 widths={[400, 800]}
-                sizes="(min-width: 1024px) 320px, (min-width: 640px) 480px, 100vw"
-                class="aspect-4/3 w-full object-cover"
+                sizes="(min-width: 640px) 40vw, 100vw"
+                class="h-full w-full object-cover transition duration-500 group-hover:scale-105"
               />
-              <p class="mt-3 font-mono text-xs tracking-widest text-azulejo uppercase">
-                {ponto.distancia}
-              </p>
-              <h3 class="mt-1 font-display text-lg font-bold text-mare">{ponto.nome}</h3>
-              <p class="mt-1 text-sm">{ponto.descricao}</p>
-              {ponto.credito && <p class="mt-2 text-xs opacity-60">Foto: {ponto.credito}</p>}
+              <div class="absolute inset-0 bg-gradient-to-t from-noite/90 via-noite/10 to-transparent" />
+              <div class="absolute inset-x-0 bottom-0 p-4">
+                <p class="font-mono text-xs tracking-widest text-fitinha uppercase">
+                  {ponto.distancia}
+                </p>
+                <h3 class="mt-1 font-display font-bold text-white">{ponto.nome}</h3>
+                <p class:list={['mt-1 text-sm text-sal/90', indice === 0 ? 'block' : 'hidden sm:block']}>
+                  {ponto.descricao}
+                </p>
+                {ponto.credito && <p class="mt-2 text-xs text-sal/60">Foto: {ponto.credito}</p>}
+              </div>
             </article>
           ))}
         </div>
@@ -166,9 +176,9 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
         </div>
       )
     }
-    <div class="mt-10 text-center">
-      <BotaoWhatsApp tamanho="grande" rotulo="Combinar chegada pelo WhatsApp" />
-    </div>
+    <p class="mt-10 text-center text-lg">
+      Chame no WhatsApp e combine sua estadia direto com quem cuida da casa.
+    </p>
   </section>
 
   <section class="relative isolate overflow-hidden bg-mare">
