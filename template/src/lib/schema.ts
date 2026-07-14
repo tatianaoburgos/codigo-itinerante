@@ -21,11 +21,30 @@ export const marcaSchema = z.object({
   simbolo: z.string().min(1).optional(),
 });
 
-/** Comodidade do hostel, opcionalmente ilustrada com foto. */
+/** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */
+export const simbolosComodidade = [
+  'cozinha',
+  'patio',
+  'cowork',
+  'rede',
+  'churrasqueira',
+  'jogos',
+  'bagagem',
+  'acolhedor',
+] as const;
+
+/** Comodidade do hostel, opcionalmente ilustrada com foto ou com símbolo artístico. */
 export const comodidadeSchema = z.object({
   nome: z.string().min(1),
   descricao: z.string().min(1).optional(),
   foto: fotoSchema.optional(),
+  simbolo: z.enum(simbolosComodidade).optional(),
+});
+
+/** Seção de destaque full-bleed: foto que fica fixa enquanto a página rola, com frase por cima. */
+export const destaqueSchema = z.object({
+  frase: z.string().min(1),
+  foto: fotoSchema,
 });
 
 /** Ponto de interesse da região, com distância a partir do hostel. */
@@ -75,6 +94,7 @@ export const configClienteSchema = z.object({
   regiao: z.array(pontoRegiaoSchema).optional(),
   depoimentos: z.array(depoimentoSchema).optional(),
   vibe: z.array(fotoSchema).optional(),
+  destaques: z.array(destaqueSchema).max(2).optional(),
 });
 
 export type ConfigCliente = z.infer<typeof configClienteSchema>;
@@ -83,3 +103,5 @@ export type Foto = z.infer<typeof fotoSchema>;
 export type Comodidade = z.infer<typeof comodidadeSchema>;
 export type PontoRegiao = z.infer<typeof pontoRegiaoSchema>;
 export type Depoimento = z.infer<typeof depoimentoSchema>;
+export type Destaque = z.infer<typeof destaqueSchema>;
+export type SimboloComodidade = (typeof simbolosComodidade)[number];

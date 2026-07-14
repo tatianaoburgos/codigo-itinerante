@@ -84,12 +84,12 @@
       "descricao": "Espaço com mesas para refeições e convivência entre hóspedes",
       "foto": { "arquivo": "jardim.jpg", "alt": "Pátio de entrada do LumeHostel com mesas de madeira e a fachada com o logo ao fundo" }
     },
-    { "nome": "Coworking ergonômico" },
-    { "nome": "Espaço com redes", "descricao": "Redes para descansar entre as atividades do dia" },
-    { "nome": "Churrasqueira" },
-    { "nome": "Sala de jogos" },
-    { "nome": "Depósito de bagagem" },
-    { "nome": "Ambiente acolhedor", "descricao": "Elogiado pelos hóspedes pelo aconchego e pela organização" }
+    { "nome": "Coworking ergonômico", "simbolo": "cowork" },
+    { "nome": "Espaço com redes", "descricao": "Redes para descansar entre as atividades do dia", "simbolo": "rede" },
+    { "nome": "Churrasqueira", "simbolo": "churrasqueira" },
+    { "nome": "Sala de jogos", "simbolo": "jogos" },
+    { "nome": "Depósito de bagagem", "simbolo": "bagagem" },
+    { "nome": "Ambiente acolhedor", "descricao": "Elogiado pelos hóspedes pelo aconchego e pela organização", "simbolo": "acolhedor" }
   ],
   "regiao": [
     {
@@ -156,11 +156,19 @@
       "fonte": "via Booking"
     }
   ],
+  "destaques": [
+    {
+      "frase": "Foco durante o dia, descanso à noite",
+      "foto": { "arquivo": "vibe-patio-trabalho.jpg", "alt": "Mesa comunitária no pátio do LumeHostel com notebook, usada como espaço de trabalho ao ar livre" }
+    },
+    {
+      "frase": "Um porto seguro entre uma jornada e outra",
+      "foto": { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" }
+    }
+  ],
   "vibe": [
-    { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" },
     { "arquivo": "vibe-redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" },
     { "arquivo": "vibe-patio-entrada.jpg", "alt": "Pátio externo do LumeHostel visto da entrada, com mesas de madeira e o nome do hostel pintado na parede" },
-    { "arquivo": "vibe-patio-trabalho.jpg", "alt": "Mesa comunitária no pátio do LumeHostel com notebook, usada como espaço de trabalho ao ar livre" },
     { "arquivo": "vibe-cozinha-bar.jpg", "alt": "Área social integrada à cozinha do LumeHostel, com balcão, plantas penduradas e parede terracota" },
     { "arquivo": "vibe-corredor-cores.jpg", "alt": "Corredor interno do LumeHostel com paredes amarela e terracota, geladeira e balcão com banquinhos" },
     { "arquivo": "vibe-recepcao.jpg", "alt": "Recepção do LumeHostel, com balcão de madeira e vista para o pátio através do portão decorado" },

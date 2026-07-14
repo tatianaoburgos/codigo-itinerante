@@ -41,5 +41,20 @@ const dadosEstruturados = {
       <slot />
     </main>
     <Footer />
+    <script>
+      const revelaveis = document.querySelectorAll<HTMLElement>('.revela');
+      const observador = new IntersectionObserver(
+        (entradas) => {
+          for (const entrada of entradas) {
+            if (entrada.isIntersecting) {
+              entrada.target.classList.add('visivel');
+              observador.unobserve(entrada.target);
+            }
+          }
+        },
+        { rootMargin: '0px 0px -10% 0px' },
+      );
+      revelaveis.forEach((el) => observador.observe(el));
+    </script>
   </body>
 </html>

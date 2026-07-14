@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets';
+import type { Destaque } from '../lib/schema';
+import { foto } from '../lib/fotos';
+
+interface Props {
+  destaque: Destaque;
+}
+
+const { destaque } = Astro.props;
+---
+
+{/* A imagem é position:fixed (parada em relação à janela) e o clip-path da
+    seção a recorta: ao rolar, a página passa por cima da foto imóvel. */}
+<section
+  class="relative isolate flex min-h-[70svh] items-center justify-center overflow-hidden"
+  style="clip-path: inset(0)"
+>
+  <Image
+    src={foto(destaque.foto.arquivo)}
+    alt={destaque.foto.alt}
+    widths={[768, 1280, 1920]}
+    sizes="100vw"
+    class="fixed inset-0 -z-10 h-full w-full object-cover"
+  />
+  <div class="fixed inset-0 -z-10 bg-noite/45" aria-hidden="true"></div>
+  <p
+    class="revela max-w-3xl px-6 text-center font-display text-3xl font-bold text-white [text-shadow:0_1px_12px_rgb(0_0_0/0.35)] sm:text-5xl"
+  >
+    {destaque.frase}
+  </p>
+</section>

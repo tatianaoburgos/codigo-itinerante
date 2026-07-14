@@ -7,13 +7,16 @@ import BotaoWhatsApp from '../components/BotaoWhatsApp.astro';
 import Mapa from '../components/Mapa.astro';
 import DivisorSimbolo from '../components/DivisorSimbolo.astro';
 import MarcaDagua from '../components/MarcaDagua.astro';
-import CarrosselAcomodacoes from '../components/CarrosselAcomodacoes.astro';
+import Acomodacoes from '../components/Acomodacoes.astro';
+import FotoDestaque from '../components/FotoDestaque.astro';
+import SimboloComodidade from '../components/SimboloComodidade.astro';
 import Vibe from '../components/Vibe.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 
 const comodidadesComFoto = config.comodidades.filter((c) => c.foto);
 const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
+const [destaqueUm, destaqueDois] = config.destaques ?? [];
 ---
 
 <Layout>
@@ -21,8 +24,8 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
 
   <section id="acomodacoes" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
     <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
-    <div class="mt-8">
-      <CarrosselAcomodacoes />
+    <div class="revela mt-8">
+      <Acomodacoes />
     </div>
     <div class="mt-6 text-center">
       <BotaoWhatsApp rotulo="Consultar disponibilidade no WhatsApp" />
@@ -34,21 +37,28 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
   <section id="comodidades" class="scroll-mt-20 bg-sal">
     <div class="mx-auto max-w-5xl px-4 py-14">
       <TituloSecao eyebrow="Comodidades">A vida por aqui</TituloSecao>
-      <p class="mt-6 max-w-2xl text-lg leading-relaxed">{config.sobre.historia}</p>
+      <p class="revela mt-6 max-w-2xl text-lg leading-relaxed">{config.sobre.historia}</p>
       {
         comodidadesComFoto.length > 0 && (
-          <div class="mt-8 grid gap-8 sm:grid-cols-2">
-            {comodidadesComFoto.map((comodidade) => (
-              <div>
+          <div class="mt-12 space-y-12">
+            {comodidadesComFoto.map((comodidade, indice) => (
+              <div class="revela grid items-center gap-6 sm:grid-cols-2 sm:gap-10">
                 <Image
                   src={foto(comodidade.foto!.arquivo)}
                   alt={comodidade.foto!.alt}
                   widths={[480, 900]}
                   sizes="(min-width: 640px) 480px, 100vw"
-                  class="aspect-video w-full object-cover"
+                  class:list={[
+                    'aspect-4/3 w-full object-cover',
+                    indice % 2 === 1 && 'sm:order-last',
+                  ]}
                 />
-                <h3 class="mt-3 font-display text-lg font-bold text-mare">{comodidade.nome}</h3>
-                {comodidade.descricao && <p class="mt-1 text-sm">{comodidade.descricao}</p>}
+                <div>
+                  <h3 class="font-display text-2xl font-bold text-mare">{comodidade.nome}</h3>
+                  {comodidade.descricao && (
+                    <p class="mt-3 text-lg leading-relaxed">{comodidade.descricao}</p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
@@ -56,19 +66,21 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
       }
       {
         comodidadesSemFoto.length > 0 && (
-          <ul
-            class:list={[
-              'grid gap-3 sm:grid-cols-2',
-              comodidadesComFoto.length > 0 ? 'mt-8 border-t border-sal/30 pt-6' : 'mt-8',
-            ]}
-          >
+          <ul class="revela mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-3">
             {comodidadesSemFoto.map((comodidade) => (
-              <li class="flex gap-3">
-                <span class="mt-2.5 h-0.5 w-4 shrink-0 bg-fitinha" aria-hidden="true" />
-                <span>
-                  <span class="font-display font-bold text-mare">{comodidade.nome}</span>
-                  {comodidade.descricao && <> — {comodidade.descricao}</>}
-                </span>
+              <li class="flex items-start gap-4">
+                {comodidade.simbolo ? (
+                  <SimboloComodidade
+                    simbolo={comodidade.simbolo}
+                    class="h-12 w-12 shrink-0 text-fitinha"
+                  />
+                ) : (
+                  <span class="mt-3 h-0.5 w-6 shrink-0 bg-fitinha" aria-hidden="true" />
+                )}
+                <div>
+                  <h3 class="font-display font-bold text-mare">{comodidade.nome}</h3>
+                  {comodidade.descricao && <p class="mt-1 text-sm">{comodidade.descricao}</p>}
+                </div>
               </li>
             ))}
           </ul>
@@ -77,13 +89,13 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
     </div>
   </section>
 
-  <DivisorSimbolo />
+  {destaqueUm ? <FotoDestaque destaque={destaqueUm} /> : <DivisorSimbolo />}
 
   {
     config.vibe && (
       <section id="vibe" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
         <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
-        <div class="mt-8">
+        <div class="revela mt-8">
           <Vibe />
         </div>
       </section>
@@ -96,7 +108,7 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
     config.regiao && (
       <section id="regiao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
         <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
-        <div class="mt-8 grid auto-rows-[220px] grid-cols-2 gap-2 sm:grid-cols-4">
+        <div class="revela mt-8 grid auto-rows-[220px] grid-cols-2 gap-2 sm:grid-cols-4">
           {config.regiao.map((ponto, indice) => (
             <article
               class:list={[
@@ -129,19 +141,26 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
     )
   }
 
-  {config.regiao && <DivisorSimbolo />}
+  {config.regiao && (destaqueDois ? <FotoDestaque destaque={destaqueDois} /> : <DivisorSimbolo />)}
 
   {
     config.depoimentos && (
-      <section id="depoimentos" class="scroll-mt-20 bg-mare">
+      <section id="depoimentos" class="relative isolate scroll-mt-20 overflow-hidden bg-mare">
+        <MarcaDagua />
         <div class="mx-auto max-w-5xl px-4 py-14">
           <TituloSecao eyebrow="Depoimentos" claro>
             Quem passou por aqui
           </TituloSecao>
-          <div class="mt-8 grid gap-8 sm:grid-cols-2">
+          <div class="mt-10 grid gap-x-10 gap-y-12 sm:grid-cols-2">
             {config.depoimentos.map((depoimento) => (
-              <figure class="border-l-4 border-noite pl-5">
-                <blockquote class="text-lg leading-relaxed text-noite">“{depoimento.texto}”</blockquote>
+              <figure class="revela relative pt-8 pl-2">
+                <span
+                  class="pointer-events-none absolute -top-3 left-0 font-display text-8xl leading-none text-noite/25 select-none"
+                  aria-hidden="true"
+                >
+                  “
+                </span>
+                <blockquote class="text-lg leading-relaxed text-noite">{depoimento.texto}</blockquote>
                 <figcaption class="mt-4 text-sm font-bold text-noite">
                   {depoimento.nome} <span class="font-normal opacity-70">— {depoimento.fonte}</span>
                 </figcaption>
@@ -158,12 +177,12 @@ const comodidadesSemFoto = config.comodidades.filter((c) => !c.foto);
   <section id="localizacao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
     <TituloSecao eyebrow="Localização">Onde estamos</TituloSecao>
     <p class="mt-4 text-lg">{config.localizacao.endereco}</p>
-    <div class="mt-8">
+    <div class="revela mt-8">
       <Mapa />
     </div>
     {
       config.localizacao.comoChegar.length > 0 && (
-        <div class="mt-10">
+        <div class="revela mt-10">
           <h3 class="font-display text-xl font-bold text-mare">Como chegar</h3>
           <ul class="mt-4 max-w-2xl space-y-3">
             {config.localizacao.comoChegar.map((trecho) => (
