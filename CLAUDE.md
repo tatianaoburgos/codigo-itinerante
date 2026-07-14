@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Sites institucionais para hostels/pousadas oferecidos em permuta por noites de hospedagem. Arquitetura "build once, reuse everywhere": um motor Astro reutilizável em `template/`, dados por cliente em `clientes/<hostel>/` (config.json + fotos). Monorepo privado; cada cliente vira um projeto separado na Vercel apontando para este repo, com variável de ambiente selecionando qual cliente buildar.
 
+**Diretrizes de design obrigatórias em qualquer trabalho visual**: `docs/diretrizes-design.md` (o que todo site SEMPRE tem e o que NUNCA tem — ex.: hero full-bleed, rolagem só vertical, sem vídeos/carrosséis/popups/emojis) e `docs/preferencias-visuais.md` (catálogo de referências visuais por site analisado, para propor opções com exemplo que a autora consiga ver). Para iniciar site de cliente novo, usar a skill `/novo-projeto` (`.claude/skills/novo-projeto/SKILL.md`): pesquisa Maps/Instagram/Booking primeiro, confirma o que a pesquisa já respondeu, pergunta o resto uma pergunta por vez com opções + recomendação + referência visual.
+
 Contexto de negócio e decisões fechadas estão em `docs/projeto.md` e `docs/decisoes-tecnicas.md` — leia antes de propor mudanças de arquitetura; as decisões lá registradas (Astro + Tailwind, config.json sem CMS, monorepo, componentes compartilhados) já foram deliberadas e não devem ser reabertas sem motivo forte. A identidade visual da própria marca está em `docs/miv.md` (Manual de Identidade Visual) e o questionário reutilizável de onboarding de cliente em `docs/briefing-cliente.md`.
 
 ## Comandos
@@ -21,6 +23,8 @@ CLIENTE=lumehostel npm run dev       # servidor de desenvolvimento (padrão: dem
 CLIENTE=lumehostel npm run build     # build estática
 npm run preview                      # serve a build localmente
 ```
+
+No PowerShell (Windows), a sintaxe `VAR=x cmd` não funciona — defina a env antes: `$env:CLIENTE = 'lumehostel'; npm run dev`.
 
 **`site/`** — o site da própria marca (landing page única, projeto separado):
 
@@ -55,7 +59,7 @@ Não há testes nem linter configurados ainda.
 
 Motor completo como **one-page** (`/` apenas), JSON-LD LodgingBusiness no layout. Spec e plano do redesign: `docs/superpowers/specs/2026-07-13-lumehostel-onepage-design.md` e `docs/superpowers/plans/2026-07-13-lumehostel-onepage.md`. Convenção: todo cliente precisa de `fotos/capa.jpg` (imagem do hero, decorativa) — `template/src/lib/fotos.ts` derruba a build se uma foto do config não existir. Campos do config: `comodidades` (nome + descricao/foto opcionais; absorveu os antigos `sobre.diferenciais`), `regiao` e `depoimentos` (opcionais), `marca.simbolo` (usado como divisor de seções e marca-d'água).
 
-Primeiro cliente real em andamento: **LumeHostel** (`clientes/lumehostel/`), com tema terracota/âmbar do MIV aplicado (`template/src/styles/temas/lumehostel.css` — ver `clientes/lumehostel/marca.md`), logo real extraído do PDF (`clientes/lumehostel/marca/`) e conteúdo baseado **exclusivamente** nas presenças online do hostel (Booking/Maps/Instagram) — nunca inventar informação sobre o hostel. Fotos do hostel vêm das galerias públicas do próprio estabelecimento e as da região são de licença livre; proveniência de cada arquivo em `clientes/lumehostel/fotos/FONTES.md`. Tipografia: Fredoka em todo o site (a Arial Rounded MT Bold do MIV é proprietária). Pendências do Gabriel em `clientes/lumehostel/PENDENCIAS.md` — inclui decidir se mantém a seção de depoimentos (custo de manutenção) e a opção de comprar a licença web da fonte do MIV. Build/preview: `CLIENTE=lumehostel`.
+Primeiro cliente real em andamento: **LumeHostel** (`clientes/lumehostel/`), com tema terracota/âmbar do MIV aplicado (`template/src/styles/temas/lumehostel.css` — ver `clientes/lumehostel/marca.md`), logo real extraído do PDF (`clientes/lumehostel/marca/`) e conteúdo baseado **exclusivamente** nas presenças online do hostel (Booking/Maps/Instagram) — nunca inventar informação sobre o hostel. Fotos do hostel vêm das galerias públicas do próprio estabelecimento e as da região são de licença livre; proveniência de cada arquivo em `clientes/lumehostel/fotos/FONTES.md`. Tipografia: Fredoka em todo o site (a Arial Rounded MT Bold do MIV é proprietária). Pendências do Gabriel em `clientes/lumehostel/PENDENCIAS.md` — inclui decidir se mantém a seção de depoimentos (custo de manutenção) e a opção de comprar a licença web da fonte do MIV. As 10 melhores avaliações públicas do hostel (Google Maps 5,0/52 e Booking 9,2/444), com as candidatas a depoimento e a recomendação de troca, estão em `clientes/lumehostel/avaliacoes.md` — a escolha ainda não foi feita, o `config.json` segue com os 4 depoimentos originais do Booking. Build/preview: `CLIENTE=lumehostel`.
 
 Questionário de briefing para clientes (reutilizável): `docs/briefing-cliente.md`. Pergunta identidade visual primeiro (MIV ou fallback logo/cores/estilo); preço é política fixa comunicada como combinado ("consultar no WhatsApp", sem faixa/valor no site) — nunca pergunta ao cliente.
 
