@@ -17,7 +17,6 @@ export const acomodacaoSchema = z.object({
 /** Arquivos de marca do cliente (pasta `marca/`), todos opcionais. */
 export const marcaSchema = z.object({
   logo: z.string().min(1).optional(),
-  logoHero: z.string().min(1).optional(),
   favicon: z.string().min(1).optional(),
   simbolo: z.string().min(1).optional(),
 });
