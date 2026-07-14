@@ -20,7 +20,10 @@ Commons, com licença livre conferida e atribuição anotada abaixo.
 | `quarto-duplo.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
 | `suite-standard.jpg` | Enviada pela autora, foto real do quarto correspondente no hostel | LumeHostel | Foto própria do hostel | Não |
 | `vibe-patio-noite.jpg` | Enviada pela autora, foto real do estabelecimento — pátio à noite, com mesa comunitária e varal de luzes | LumeHostel | Foto própria do hostel | Não |
-| `vibe-redario.jpg` | Enviada pela autora, foto real do estabelecimento — redário no corredor externo entre os quartos | LumeHostel | Foto própria do hostel | Não |
+| `coworking.jpg` | Google Maps (galeria pública do LumeHostel), URL indicada pela autora em 2026-07-14 — sala de coworking com mesas e cadeiras ergonômicas | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `redario.jpg` | Booking.com (galeria do LumeHostel, foto 685884944), URL indicada pela autora em 2026-07-14 — redário no corredor externo | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `destaque-cozinha.jpg` | Booking.com (galeria do LumeHostel, foto 685884933), URL indicada pela autora em 2026-07-14 — copa amarela com mural terracota | LumeHostel | Foto publicada pelo estabelecimento | Não |
+| `destaque-recepcao.jpg` | Booking.com (galeria do LumeHostel, foto 685884930), URL indicada pela autora em 2026-07-14 — recepção ensolarada | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `vibe-patio-entrada.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `vibe-patio-trabalho.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
 | `vibe-cozinha-bar.jpg` | Google Maps ou Booking, galeria pública do próprio estabelecimento LumeHostel | LumeHostel | Foto publicada pelo estabelecimento | Não |
@@ -49,6 +52,12 @@ encontrada nenhuma foto de espaço de coworking dedicado — `vibe-patio-trabalh
 um notebook sobre a mesa comunitária do pátio, e não uma sala de trabalho. Por isso a comodidade
 "Coworking ergonômico" continua sem foto no config.
 
+Observação (2026-07-14): removidos `vibe-redario.jpg`, `vibe-recepcao.jpg`, `vibe-cozinha-bar.jpg`
+e `vibe-cozinha-corredor.jpg` — mostravam as mesmas cenas das fotos novas (`redario.jpg`,
+`destaque-recepcao.jpg`, `destaque-cozinha.jpg`) e de `cozinha.jpg`, gerando repetição entre
+seções. A foto anterior do Farol do Cabo Branco (uma placa comemorativa, autor Ridiculopathy/CC0)
+foi substituída pela vista cênica do Cácio Murilo.
+
 Observação (2026-07-13): o arquivo baixado como `vibe-mural-entrada.jpg` era, na verdade, um
 duplicado byte a byte de `capa.jpg` (mesmo hash SHA-256) — provavelmente a mesma foto salva duas
 vezes durante a curadoria. Foi descartado (arquivo removido e entrada retirada do `vibe` do
@@ -62,7 +71,7 @@ config) para não repetir a mesma imagem duas vezes no mosaico.
 | `regiao-orla-bessa.jpg` | Orla do Bessa | https://commons.wikimedia.org/wiki/File:Praia_do_bessa_joao_pessoa.png | Matheus Jampa da Silva | CC BY-SA 4.0 | Sim |
 | `regiao-por-do-sol-jacare.jpg` | Pôr do sol no Jacaré | https://commons.wikimedia.org/wiki/File:Por_do_Sol_na_Praia_do_Jacaré_em_João_Pessoa_-_Pb_-_Brasil_(8624763746).jpg | Marinelson Almeida | CC BY 2.0 | Sim |
 | `regiao-centro-historico.jpg` | Centro Histórico de João Pessoa | https://commons.wikimedia.org/wiki/File:Vista_do_Centro_Histórico_de_João_Pessoa_PB_BR.jpg | Rogerio121402 | CC BY-SA 4.0 | Sim |
-| `regiao-farol-cabo-branco.jpg` | Farol do Cabo Branco | https://commons.wikimedia.org/wiki/File:Apr2024._Cabo_Branco_Lighthouse_aka_Farol_do_Cabo_Branco,_João_Pessoa,_state_of_Paraíba,_Brazil._03.jpg | Ridiculopathy | CC0 (domínio público) | Não |
+| `regiao-farol-cabo-branco.jpg` | Farol do Cabo Branco | https://commons.wikimedia.org/wiki/File:CacioMurilo_FarolCaboBranco_JoãoPessoa_PB_(39994462855).jpg | Cácio Murilo / MTur Destinos | Domínio público (Public Domain Mark, Flickr) | Não |
 | `regiao-estacao-cabo-branco.jpg` | Estação Cabo Branco de Ciência, Cultura e Artes | https://commons.wikimedia.org/wiki/File:Estação_Cabo_Branco_de_Ciência,_Cultura_e_Artes_-_João_Pessoa,_Paraíba,_Brasil.jpg | A. Júnior | CC BY 2.0 | Sim |
 
 Todas as fotos da região foram baixadas em resolução original via Wikimedia Commons

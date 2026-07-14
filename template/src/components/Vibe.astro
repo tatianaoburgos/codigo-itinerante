@@ -4,17 +4,28 @@ import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 ---
 
+{/* Mesma gramática do mosaico da região: no celular 2 colunas com alturas
+    variadas; no computador fileiras alinhadas na mesma altura, alternando
+    foto grande + pequena (display:grid desativa as columns no lg). */}
 {
   config.vibe && (
-    <div class="columns-2 gap-3 sm:columns-3">
-      {config.vibe.map((imagem) => (
-        <Image
-          src={foto(imagem.arquivo)}
-          alt={imagem.alt}
-          widths={[300, 600]}
-          sizes="(min-width: 640px) 33vw, 50vw"
-          class="mb-3 w-full break-inside-avoid object-cover"
-        />
+    <div class="columns-2 gap-3 lg:grid lg:grid-cols-3 lg:gap-4">
+      {config.vibe.map((imagem, indice) => (
+        <div class:list={[
+          'mb-3 overflow-hidden break-inside-avoid lg:mb-0',
+          indice % 5 === 0 && 'lg:col-span-2',
+        ]}>
+          <Image
+            src={foto(imagem.arquivo)}
+            alt={imagem.alt}
+            widths={[300, 600, 1200]}
+            sizes="(min-width: 1024px) 40vw, 50vw"
+            class:list={[
+              'w-full object-cover lg:aspect-auto lg:h-72',
+              indice % 3 === 0 ? 'aspect-4/5' : indice % 3 === 1 ? 'aspect-square' : 'aspect-4/3',
+            ]}
+          />
+        </div>
       ))}
     </div>
   )

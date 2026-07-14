@@ -1,0 +1,31 @@
+---
+/**
+ * Ondas orgânicas fixas ao fundo da página, inspiradas no mural pintado do
+ * hostel: dão profundidade ao bloco de cor sem disputar com o conteúdo.
+ * Ficam atrás de tudo (-z-10) e só aparecem nas áreas com o fundo padrão —
+ * seções com fundo próprio (bg-sal, bg-mare) cobrem as ondas naturalmente.
+ * Cores vêm dos tokens do tema, em opacidade baixa para não criar contraste.
+ */
+---
+
+<div class="pointer-events-none fixed inset-0 -z-10" aria-hidden="true">
+  <svg
+    class="h-full w-full"
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMax slice"
+    fill="none"
+  >
+    <path
+      class="fill-mare opacity-[0.06]"
+      d="M0 640 C 180 580, 340 700, 540 660 C 760 616, 860 730, 1080 690 C 1250 660, 1350 715, 1440 685 L 1440 900 L 0 900 Z"
+    />
+    <path
+      class="fill-noite opacity-[0.05]"
+      d="M0 780 C 220 730, 420 820, 660 785 C 920 748, 1120 830, 1440 790 L 1440 900 L 0 900 Z"
+    />
+    <path
+      class="fill-mare opacity-[0.04]"
+      d="M0 120 C 260 170, 460 60, 720 100 C 980 140, 1200 55, 1440 95 L 1440 0 L 0 0 Z"
+    />
+  </svg>
+</div>

@@ -1,20 +1,12 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-ambar.svg", "simbolo": "simbolo-completo.svg" },
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
     "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais."
   },
   "acomodacoes": [
-    {
-      "nome": "Dormitório Misto",
-      "capacidade": "Quarto misto com 6 camas (beliches)",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
-      "fotos": [
-        { "arquivo": "dormitorio-misto-6.jpg", "alt": "Dormitório misto com três beliches de metal e cortinas separando as camas" }
-      ]
-    },
     {
       "nome": "Dormitório Misto",
       "capacidade": "Quarto misto com 8 camas (beliches)",
@@ -32,6 +24,22 @@
       ]
     },
     {
+      "nome": "Suíte Standard",
+      "capacidade": "2 pessoas, 1 cama de casal",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "suite-standard.jpg", "alt": "Suíte privativa com cama de casal, mesa de madeira, cadeiras e espelho de corpo inteiro" }
+      ]
+    },
+    {
+      "nome": "Dormitório Misto",
+      "capacidade": "Quarto misto com 6 camas (beliches)",
+      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "fotos": [
+        { "arquivo": "dormitorio-misto-6.jpg", "alt": "Dormitório misto com três beliches de metal e cortinas separando as camas" }
+      ]
+    },
+    {
       "nome": "Dormitório Feminino",
       "capacidade": "Quarto feminino com 6 camas (beliches)",
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
@@ -45,14 +53,6 @@
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
       "fotos": [
         { "arquivo": "quarto-duplo.jpg", "alt": "Quarto privativo com cama de casal, cortinas marrons, quadros na parede e mesa com cadeiras" }
-      ]
-    },
-    {
-      "nome": "Suíte Standard",
-      "capacidade": "2 pessoas, 1 cama de casal",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
-      "fotos": [
-        { "arquivo": "suite-standard.jpg", "alt": "Suíte privativa com cama de casal, mesa de madeira, cadeiras e espelho de corpo inteiro" }
       ]
     }
   ],
@@ -77,18 +77,30 @@
     {
       "nome": "Cozinha compartilhada",
       "descricao": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes",
+      "simbolo": "cozinha",
       "foto": { "arquivo": "cozinha.jpg", "alt": "Cozinha compartilhada do LumeHostel, com balcão e banquetas" }
     },
     {
       "nome": "Pátio externo",
       "descricao": "Espaço com mesas para refeições e convivência entre hóspedes",
+      "simbolo": "patio",
       "foto": { "arquivo": "jardim.jpg", "alt": "Pátio de entrada do LumeHostel com mesas de madeira e a fachada com o logo ao fundo" }
     },
-    { "nome": "Coworking ergonômico", "simbolo": "cowork" },
-    { "nome": "Espaço com redes", "descricao": "Redes para descansar entre as atividades do dia", "simbolo": "rede" },
-    { "nome": "Churrasqueira", "simbolo": "churrasqueira" },
-    { "nome": "Sala de jogos", "simbolo": "jogos" },
-    { "nome": "Depósito de bagagem", "simbolo": "bagagem" },
+    {
+      "nome": "Coworking ergonômico",
+      "descricao": "Mesas amplas e cadeiras confortáveis para render no trabalho",
+      "simbolo": "cowork",
+      "foto": { "arquivo": "coworking.jpg", "alt": "Sala de coworking do LumeHostel com mesas, cadeiras ergonômicas e notebooks junto à janela" }
+    },
+    {
+      "nome": "Espaço com redes",
+      "descricao": "Redes para descansar entre as atividades do dia",
+      "simbolo": "rede",
+      "foto": { "arquivo": "redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" }
+    },
+    { "nome": "Churrasqueira", "descricao": "Para reunir a galera em volta do fogo", "simbolo": "churrasqueira" },
+    { "nome": "Sala de jogos", "descricao": "Diversão garantida entre um passeio e outro", "simbolo": "jogos" },
+    { "nome": "Depósito de bagagem", "descricao": "Suas malas guardadas antes do check-in e depois do check-out", "simbolo": "bagagem" },
     { "nome": "Ambiente acolhedor", "descricao": "Elogiado pelos hóspedes pelo aconchego e pela organização", "simbolo": "acolhedor" }
   ],
   "regiao": [
@@ -136,44 +148,41 @@
   ],
   "depoimentos": [
     {
-      "texto": "Um dos melhores hostels que já fiquei. Muito limpo, cozinha com geladeira, microondas, purificador de água, talheres, copos... O ambiente é uma gracinha e tem um espaço com redes para descansar. O pessoal é muito legal e acolhedor e o hostel sempre tem eventos.",
+      "texto": "Superou muito as minhas expectativas. É uma das melhores estruturas de Hostel que já encontrei. Tudo muito organizado, limpo, e nota-se muito capricho em tudo. Mas o que mais me chamou atenção: a equipe. Voltaria mais vezes só pela atenção, respeito, carinho e educação com a qual fui tratado.",
+      "nome": "Gabriel Batista",
+      "fonte": "via Google"
+    },
+    {
+      "texto": "Eu amei a experiência, é um ambiente acolhedor, tranquilo, me senti em casa. Se você procura um espaço que respeite a sua tranquilidade, descanso e ainda assim sugira atividades diferentes para te acolher e te fazer não se sentir sozinho na sua viagem, você vai ao lugar certo.",
+      "nome": "Camila Cavalcanti",
+      "fonte": "via Google"
+    },
+    {
+      "texto": "Um dos melhores hostels que já fiquei. Muito limpo. Tinha noite de tacos, bate-papo com histórias de viajantes e teve uma aula de forró muito massa que participei e depois dançamos quadrilha. Foi muito divertido!",
       "nome": "Desirree",
       "fonte": "via Booking"
     },
     {
-      "texto": "Ambiente acolhedor, mercado, farmácia, lavandeira, bares, restaurantes ao redor. Me senti muito à vontade em usar todos os ambientes do Hostel.",
-      "nome": "Marques",
-      "fonte": "via Booking"
-    },
-    {
-      "texto": "A recepção e a casa super limpa e cheirosa! Isso diz muito.",
-      "nome": "Oliveira",
-      "fonte": "via Booking"
-    },
-    {
-      "texto": "Gostei do pessoal que trabalha no hostel. Sempre foram atenciosos comigo e achei o lugar muito tranquilo. O custo-benefício, por se encontrar em uma área nobre, é muito bom e posso recomendar a qualquer pessoa.",
-      "nome": "Tolopka",
-      "fonte": "via Booking"
+      "texto": "Feito de viajante para viajante. Ambiente acolhedor e familiar. Tudo muito limpo. Cozinha equipada. Quartos com ar-condicionado. Cowork excelente. Internet rápida.",
+      "nome": "Rudá Alberti",
+      "fonte": "via Google"
     }
   ],
   "destaques": [
     {
-      "frase": "Foco durante o dia, descanso à noite",
-      "foto": { "arquivo": "vibe-patio-trabalho.jpg", "alt": "Mesa comunitária no pátio do LumeHostel com notebook, usada como espaço de trabalho ao ar livre" }
+      "frase": "Fique à vontade: a casa também é sua",
+      "foto": { "arquivo": "destaque-cozinha.jpg", "alt": "Copa do LumeHostel com paredes amarelas, mural ondulado terracota e mesa de vidro com banquinhos" }
     },
     {
       "frase": "Um porto seguro entre uma jornada e outra",
-      "foto": { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" }
+      "foto": { "arquivo": "destaque-recepcao.jpg", "alt": "Recepção do LumeHostel banhada de sol, com balcão de madeira e vista para o pátio pelo portão decorado" }
     }
   ],
   "vibe": [
-    { "arquivo": "vibe-redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" },
+    { "arquivo": "vibe-patio-noite.jpg", "alt": "Pátio do LumeHostel à noite, com mesa comunitária e varal de luzes" },
     { "arquivo": "vibe-patio-entrada.jpg", "alt": "Pátio externo do LumeHostel visto da entrada, com mesas de madeira e o nome do hostel pintado na parede" },
-    { "arquivo": "vibe-cozinha-bar.jpg", "alt": "Área social integrada à cozinha do LumeHostel, com balcão, plantas penduradas e parede terracota" },
     { "arquivo": "vibe-corredor-cores.jpg", "alt": "Corredor interno do LumeHostel com paredes amarela e terracota, geladeira e balcão com banquinhos" },
-    { "arquivo": "vibe-recepcao.jpg", "alt": "Recepção do LumeHostel, com balcão de madeira e vista para o pátio através do portão decorado" },
     { "arquivo": "vibe-mural-recados.jpg", "alt": "Parede de recados do LumeHostel, com mensagens e desenhos deixados por hóspedes" },
-    { "arquivo": "vibe-entrada-frase.jpg", "alt": "Espaço de estar próximo à entrada do LumeHostel, com almofadas amarelas e quadro com frase inspiracional" },
-    { "arquivo": "vibe-cozinha-corredor.jpg", "alt": "Vista ampla da cozinha compartilhada do LumeHostel, com bancada, plantas penduradas e corredor ao fundo" }
+    { "arquivo": "vibe-entrada-frase.jpg", "alt": "Espaço de estar próximo à entrada do LumeHostel, com almofadas amarelas e quadro com frase inspiracional" }
   ]
 }
