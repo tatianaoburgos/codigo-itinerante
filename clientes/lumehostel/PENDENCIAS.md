@@ -3,12 +3,13 @@
 O MIV cobre a marca (recebido — ver `marca.md`). O `config.json` foi preenchido com
 dados reais levantados em fontes públicas (Booking/agregadores e Google Maps, em
 2026-07-12/13): endereço, acomodações, sobre, comodidades, região, depoimentos e mapa.
-Contato (WhatsApp/e-mail) segue com dados fake e depende do Gabriel. As fotos do hostel
+O WhatsApp já é o número real (atualizado em 2026-07-14); e-mail e confirmação do
+Instagram ainda dependem do Gabriel. As fotos do hostel
 são reais, extraídas das presenças públicas do próprio estabelecimento (Google Maps,
 aba "Do proprietário", e Booking) — proveniência de cada arquivo em `fotos/FONTES.md`;
 falta a autorização formal de uso.
 
-Desde 2026-07-13 o site é uma **one-page com âncoras** (hero → acomodações em carrossel →
+Desde 2026-07-13 o site é uma **one-page com âncoras** (hero → acomodações em grade →
 comodidades → a região → depoimentos → localização → CTA).
 
 ## Feito
@@ -50,7 +51,8 @@ comodidades → a região → depoimentos → localização → CTA).
 
 ## Pendente do Gabriel — conteúdo
 
-- [ ] **Contato real** — WhatsApp (com DDD), e-mail e confirmação do Instagram (hoje fake/placeholder)
+- [ ] **Contato real** — e-mail (hoje placeholder `contato@lumehostel.example.com`, aparece
+      clicável no rodapé e no JSON-LD) e confirmação do Instagram. WhatsApp já é o número real.
 - [ ] **Domínio** do site
 - [ ] **Confirmação dos textos** — validar se história, comodidades e dados das acomodações
       batem com a realidade do hostel

@@ -8,7 +8,7 @@
   },
   "acomodacoes": [
     {
-      "nome": "Dormitório Misto",
+      "nome": "Dormitório Misto — 8 camas",
       "capacidade": "Quarto misto com 8 camas (beliches)",
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
@@ -16,7 +16,7 @@
       ]
     },
     {
-      "nome": "Dormitório Feminino",
+      "nome": "Dormitório Feminino — 4 camas",
       "capacidade": "Quarto feminino com 4 camas (beliches)",
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "nome": "Dormitório Misto",
+      "nome": "Dormitório Misto — 6 camas",
       "capacidade": "Quarto misto com 6 camas (beliches)",
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [
@@ -40,7 +40,7 @@
       ]
     },
     {
-      "nome": "Dormitório Feminino",
+      "nome": "Dormitório Feminino — 6 camas",
       "capacidade": "Quarto feminino com 6 camas (beliches)",
       "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
       "fotos": [

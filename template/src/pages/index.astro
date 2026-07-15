@@ -23,7 +23,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 <Layout>
   <Hero />
 
-  <section id="acomodacoes" class="relative isolate scroll-mt-20 overflow-hidden">
+  <section id="acomodacoes" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
     <CascataOndas />
     <div class="mx-auto max-w-5xl px-4 py-14">
       <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
@@ -38,7 +38,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   <DivisorSimbolo />
 
-  <section id="comodidades" class="scroll-mt-20 bg-sal">
+  <section id="comodidades" class="scroll-mt-36 sm:scroll-mt-20 bg-sal">
     <div class="mx-auto max-w-5xl px-4 py-14">
       <TituloSecao eyebrow="Comodidades">A vida por aqui</TituloSecao>
       <p class="revela mt-6 max-w-2xl text-lg leading-relaxed">{config.sobre.historia}</p>
@@ -103,7 +103,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {
     config.vibe && (
-      <section id="vibe" class="relative isolate scroll-mt-20 overflow-hidden">
+      <section id="vibe" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
         <CascataOndas />
         <div class="mx-auto max-w-5xl px-4 py-14">
           <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
@@ -119,7 +119,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {
     config.regiao && (
-      <section id="regiao" class="relative isolate scroll-mt-20 overflow-hidden">
+      <section id="regiao" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
         <CascataOndas />
         <div class="mx-auto max-w-5xl px-4 py-14">
         <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
@@ -162,7 +162,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {
     config.depoimentos && (
-      <section id="depoimentos" class="relative isolate scroll-mt-20 overflow-hidden bg-mare">
+      <section id="depoimentos" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden bg-mare">
         <CascataOndas cor="var(--color-mare)" />
         <MarcaDagua />
         <div class="mx-auto max-w-5xl px-4 py-14">
@@ -192,7 +192,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {config.depoimentos && <DivisorSimbolo />}
 
-  <section id="localizacao" class="relative isolate scroll-mt-20 overflow-hidden">
+  <section id="localizacao" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
     <CascataOndas />
     <div class="mx-auto max-w-5xl px-4 py-14">
     <TituloSecao eyebrow="Localização">Onde estamos</TituloSecao>
@@ -216,7 +216,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
       )
     }
     <p class="mt-10 text-center text-lg">
-      Chame no WhatsApp e combine sua estadia direto com quem cuida da casa.
+      A poucos minutos da praia de Manaíra, no coração de João Pessoa.
     </p>
     </div>
   </section>

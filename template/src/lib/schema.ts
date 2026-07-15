@@ -100,9 +100,9 @@ export const configClienteSchema = z.object({
     instagram: z.string().optional(),
   }),
   comodidades: z.array(comodidadeSchema).min(1),
-  regiao: z.array(pontoRegiaoSchema).optional(),
-  depoimentos: z.array(depoimentoSchema).optional(),
-  vibe: z.array(fotoSchema).optional(),
+  regiao: z.array(pontoRegiaoSchema).min(1).optional(),
+  depoimentos: z.array(depoimentoSchema).min(1).optional(),
+  vibe: z.array(fotoSchema).min(1).optional(),
   destaques: z.array(destaqueSchema).max(2).optional(),
 });
 

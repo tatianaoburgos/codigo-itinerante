@@ -74,17 +74,17 @@ footer.bg-noite .text-espuma {
   color: var(--color-fitinha);
 }
 
-/* Secao Atividades (bg-mare/ambar): text-sal (creme) e text-espuma (terracota)
-   nos filhos ficam ilegiveis sobre o ambar do bloco — escurece para o marrom. */
+/* Blocos bg-mare/ambar (CTA final e depoimentos): text-sal (creme) e text-espuma
+   (terracota) nos filhos ficam ilegiveis sobre o ambar — escurece para o marrom. */
 section.bg-mare .text-sal,
 section.bg-mare .text-espuma {
   color: var(--color-noite);
 }
 
 /* text-azulejo (terracota profundo) e usado tanto sobre fundo terracota
-   (eyebrows, link "Ver todas as acomodacoes") quanto dentro de cards claros
-   (bg-white/bg-sal). Sobre terracota fica quase invisivel; ali precisa de
-   ambar. Dentro dos cards claros o terracota profundo continua correto. */
+   (eyebrows) quanto dentro de cards claros (bg-white/bg-sal). Sobre terracota
+   fica quase invisivel; ali precisa de ambar. Dentro dos cards claros o
+   terracota profundo continua correto. */
 .text-azulejo {
   color: var(--color-fitinha);
 }
