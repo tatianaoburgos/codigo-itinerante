@@ -36,10 +36,10 @@ comodidades → a região → depoimentos → localização → CTA).
       **demandaria manutenção no futuro**: trocar, acrescentar ou remover um depoimento
       exige editar os dados do site e publicar de novo — não é algo que o Gabriel muda
       sozinho. Perguntar se ele quer manter a seção sabendo disso.
-- [ ] **Quais depoimentos entram no site.** Em 2026-07-14 foram levantadas as 10 melhores
-      avaliações públicas (Google Maps e Booking) em `avaliacoes.md`, com recomendação de
-      troca das 4 atuais. Escolha pendente — só depois o `config.json` é atualizado.
-      Confirmar também se os nomes aparecem completos ou só o primeiro nome.
+- [x] **Quais depoimentos entram no site.** Em 2026-07-14 foram levantadas as 10 melhores
+      avaliações públicas (Google Maps e Booking) em `avaliacoes.md`; o `config.json` já
+      foi atualizado com a troca (3 via Google, 1 via Booking). Falta confirmar com o
+      Gabriel se os nomes devem aparecer completos ou só o primeiro nome.
 - [ ] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
       proprietária da Monotype e não pode ser hospedada num site sem licença web paga.
       A autora comparou visualmente três substitutas livres e escolheu **Space Grotesk**
@@ -65,11 +65,9 @@ comodidades → a região → depoimentos → localização → CTA).
 
 ## Fotos que faltam (enviar em alta resolução)
 
-O site é dominado por fotografia, e hoje faltam fotos para ilustrar:
+O site é dominado por fotografia. Coworking (`coworking.jpg`) e redário (`redario.jpg`)
+já têm foto própria (adicionadas em 2026-07-14). Ainda faltam:
 
-- [ ] **Coworking** — nenhuma foto de espaço dedicado encontrada nas fontes públicas; hoje
-      a comodidade aparece sem imagem, apesar de ser o diferencial central para o público
-      nômade digital
 - [ ] **Churrasqueira**
 - [ ] **Sala de jogos**
 

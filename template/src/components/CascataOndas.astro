@@ -1,0 +1,40 @@
+---
+/**
+ * Cascata de ondas tom sobre tom: três camadas orgânicas que descem do canto
+ * superior esquerdo da seção, cada uma um degrau mais escuro que a cor base
+ * (estilo recorte de papel monocromático). Fica atrás do conteúdo (-z-10);
+ * a seção que a recebe precisa de `relative isolate overflow-hidden`.
+ *
+ * `cor` é a cor base da seção (token do tema); os degraus são derivados dela
+ * com color-mix, então o componente funciona em qualquer tema/cliente.
+ */
+interface Props {
+  cor?: string;
+}
+
+const { cor = 'var(--color-espuma)' } = Astro.props;
+
+const camadas = [6, 12, 18].map((pct) => `color-mix(in srgb, ${cor}, black ${pct}%)`);
+---
+
+<div class="pointer-events-none absolute inset-0 -z-10" aria-hidden="true">
+  <svg
+    class="h-full w-full"
+    viewBox="0 0 1440 900"
+    preserveAspectRatio="xMidYMid slice"
+    fill="none"
+  >
+    <path
+      fill={camadas[0]}
+      d="M0 330 C 90 300, 140 200, 230 190 C 330 180, 360 260, 460 240 C 570 218, 580 110, 690 95 C 800 80, 830 150, 940 125 C 1050 100, 1060 20, 1160 0 L 1440 0 L 1440 900 L 0 900 Z"
+    />
+    <path
+      fill={camadas[1]}
+      d="M0 560 C 110 530, 150 420, 250 410 C 360 400, 380 490, 490 465 C 610 438, 610 320, 730 300 C 850 280, 880 360, 1000 330 C 1120 300, 1130 190, 1250 165 C 1330 148, 1390 190, 1440 175 L 1440 900 L 0 900 Z"
+    />
+    <path
+      fill={camadas[2]}
+      d="M0 740 C 120 715, 160 610, 265 600 C 380 590, 395 675, 510 650 C 635 622, 630 505, 755 485 C 880 465, 910 540, 1035 510 C 1160 480, 1170 375, 1290 355 C 1360 343, 1410 370, 1440 360 L 1440 900 L 0 900 Z"
+    />
+  </svg>
+</div>

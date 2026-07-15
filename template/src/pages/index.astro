@@ -11,6 +11,7 @@ import Acomodacoes from '../components/Acomodacoes.astro';
 import FotoDestaque from '../components/FotoDestaque.astro';
 import SimboloComodidade from '../components/SimboloComodidade.astro';
 import Vibe from '../components/Vibe.astro';
+import CascataOndas from '../components/CascataOndas.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 
@@ -22,13 +23,16 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 <Layout>
   <Hero />
 
-  <section id="acomodacoes" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
-    <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
-    <div class="revela mt-8">
-      <Acomodacoes />
-    </div>
-    <div class="mt-6 text-center">
-      <BotaoWhatsApp rotulo="Consultar disponibilidade no WhatsApp" />
+  <section id="acomodacoes" class="relative isolate scroll-mt-20 overflow-hidden">
+    <CascataOndas />
+    <div class="mx-auto max-w-5xl px-4 py-14">
+      <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
+      <div class="revela mt-8">
+        <Acomodacoes />
+      </div>
+      <div class="mt-6 text-center">
+        <BotaoWhatsApp rotulo="Consultar disponibilidade no WhatsApp" />
+      </div>
     </div>
   </section>
 
@@ -99,10 +103,13 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {
     config.vibe && (
-      <section id="vibe" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
-        <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
-        <div class="revela mt-8">
-          <Vibe />
+      <section id="vibe" class="relative isolate scroll-mt-20 overflow-hidden">
+        <CascataOndas />
+        <div class="mx-auto max-w-5xl px-4 py-14">
+          <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
+          <div class="revela mt-8">
+            <Vibe />
+          </div>
         </div>
       </section>
     )
@@ -112,7 +119,9 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {
     config.regiao && (
-      <section id="regiao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
+      <section id="regiao" class="relative isolate scroll-mt-20 overflow-hidden">
+        <CascataOndas />
+        <div class="mx-auto max-w-5xl px-4 py-14">
         <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
         {/* Celular: mosaico em 2 colunas com alturas variadas. Computador: fileiras
             alinhadas na mesma altura, alternando foto grande + pequena (ritmo
@@ -144,6 +153,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
             </figure>
           ))}
         </div>
+        </div>
       </section>
     )
   }
@@ -153,6 +163,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
   {
     config.depoimentos && (
       <section id="depoimentos" class="relative isolate scroll-mt-20 overflow-hidden bg-mare">
+        <CascataOndas cor="var(--color-mare)" />
         <MarcaDagua />
         <div class="mx-auto max-w-5xl px-4 py-14">
           <TituloSecao eyebrow="Depoimentos" claro>
@@ -181,7 +192,9 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
   {config.depoimentos && <DivisorSimbolo />}
 
-  <section id="localizacao" class="mx-auto max-w-5xl scroll-mt-20 px-4 py-14">
+  <section id="localizacao" class="relative isolate scroll-mt-20 overflow-hidden">
+    <CascataOndas />
+    <div class="mx-auto max-w-5xl px-4 py-14">
     <TituloSecao eyebrow="Localização">Onde estamos</TituloSecao>
     <p class="mt-4 text-lg">{config.localizacao.endereco}</p>
     <div class="revela mt-8">
@@ -205,9 +218,11 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     <p class="mt-10 text-center text-lg">
       Chame no WhatsApp e combine sua estadia direto com quem cuida da casa.
     </p>
+    </div>
   </section>
 
   <section class="relative isolate overflow-hidden bg-mare">
+    <CascataOndas cor="var(--color-mare)" />
     <MarcaDagua />
     <div class="mx-auto max-w-5xl px-4 py-14 text-center">
       <h2 class="font-display text-3xl font-bold text-noite">Reserve direto com a gente</h2>

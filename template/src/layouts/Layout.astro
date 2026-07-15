@@ -2,7 +2,6 @@
 import '../styles/global.css';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
-import OndasFundo from '../components/OndasFundo.astro';
 import { config } from '../lib/cliente';
 import { marca } from '../lib/fotos';
 
@@ -37,7 +36,6 @@ const dadosEstruturados = {
     <script type="application/ld+json" set:html={JSON.stringify(dadosEstruturados)} />
   </head>
   <body class="flex min-h-screen flex-col bg-espuma font-corpo text-noite">
-    <OndasFundo />
     <Nav />
     <main class="flex-1">
       <slot />
