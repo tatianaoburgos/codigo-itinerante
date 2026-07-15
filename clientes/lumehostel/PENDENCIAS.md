@@ -51,8 +51,8 @@ comodidades → a região → depoimentos → localização → CTA).
 
 ## Pendente do Gabriel — conteúdo
 
-- [ ] **Contato real** — e-mail (hoje placeholder `contato@lumehostel.example.com`, aparece
-      clicável no rodapé e no JSON-LD) e confirmação do Instagram. WhatsApp já é o número real.
+- [x] **E-mail real** — atualizado para `lumehostel@gmail.com` (2026-07-15).
+- [ ] **Confirmação do Instagram**. WhatsApp e e-mail já são os reais.
 - [ ] **Domínio** do site
 - [ ] **Confirmação dos textos** — validar se história, comodidades e dados das acomodações
       batem com a realidade do hostel
