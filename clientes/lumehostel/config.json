@@ -1,6 +1,6 @@
 {
   "nome": "LumeHostel",
-  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg" },
+  "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg", "appleTouchIcon": "apple-touch-icon.png", "faviconPng": "favicon-32.png" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
   "sobre": {
@@ -61,6 +61,11 @@
   },
   "localizacao": {
     "endereco": "Av. Pombal, 1745 - Manaíra, João Pessoa - PB, 58038-242",
+    "logradouro": "Av. Pombal, 1745",
+    "bairro": "Manaíra",
+    "cidade": "João Pessoa",
+    "uf": "PB",
+    "cep": "58038-242",
     "mapsEmbedUrl": "https://www.google.com/maps?q=LumeHostel,+Av.+Pombal+1745,+Manaira,+Joao+Pessoa&output=embed",
     "comoChegar": [
       "Aeroporto Internacional de João Pessoa a cerca de 18 km",

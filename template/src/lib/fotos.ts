@@ -1,5 +1,5 @@
 import type { ImageMetadata } from 'astro';
-import { clienteAtivo } from './cliente';
+import { clienteAtivo, config } from './cliente';
 
 const modulos = import.meta.glob<{ default: ImageMetadata }>(
   '../../../clientes/*/fotos/*.{jpg,jpeg,png,webp,avif}',
@@ -23,7 +23,7 @@ export function foto(arquivo: string): ImageMetadata {
 }
 
 const modulosMarca = import.meta.glob<{ default: ImageMetadata }>(
-  '../../../clientes/*/marca/*.svg',
+  '../../../clientes/*/marca/*.{svg,png}',
   { eager: true },
 );
 
@@ -40,4 +40,9 @@ export function marca(arquivo: string): ImageMetadata {
     throw new Error(`Arquivo de marca "${arquivo}" nao encontrado em clientes/${clienteAtivo}/marca/`);
   }
   return meta;
+}
+
+/** Símbolo da marca do cliente (divisor de seção e marca-d'água), se houver. */
+export function simboloMarca(): ImageMetadata | undefined {
+  return config.marca?.simbolo ? marca(config.marca.simbolo) : undefined;
 }

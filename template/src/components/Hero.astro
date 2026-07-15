@@ -25,6 +25,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
   </div>
   <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-14">
     <h1 class="max-w-2xl">
+      {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
       {
         logo ? (
           <img src={logo.src} alt={config.nome} class="h-14 w-auto sm:h-20" />

@@ -19,6 +19,9 @@ export const marcaSchema = z.object({
   logo: z.string().min(1).optional(),
   favicon: z.string().min(1).optional(),
   simbolo: z.string().min(1).optional(),
+  /** Ícone raster (PNG) para Apple touch icon e fallback de favicon. */
+  appleTouchIcon: z.string().min(1).optional(),
+  faviconPng: z.string().min(1).optional(),
 });
 
 /** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */
@@ -82,6 +85,12 @@ export const configClienteSchema = z.object({
   }),
   localizacao: z.object({
     endereco: z.string().min(1),
+    /** Campos estruturados (opcionais) usados no PostalAddress do JSON-LD. */
+    logradouro: z.string().min(1).optional(),
+    bairro: z.string().min(1).optional(),
+    cidade: z.string().min(1).optional(),
+    uf: z.string().min(1).optional(),
+    cep: z.string().min(1).optional(),
     mapsEmbedUrl: z.url(),
     comoChegar: z.array(z.string().min(1)),
   }),

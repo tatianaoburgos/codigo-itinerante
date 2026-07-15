@@ -20,7 +20,7 @@ const estilosLink =
       <p class="font-mono text-xs tracking-widest text-espuma uppercase">Fale conosco</p>
       <ul class="mt-3 space-y-2">
         <li>
-          <a href={linkWhatsApp} target="_blank" rel="noopener" class={estilosLink}>WhatsApp</a>
+          <a href={linkWhatsApp} target="_blank" rel="noopener noreferrer" class={estilosLink}>WhatsApp</a>
         </li>
         <li>
           <a href={`mailto:${config.contato.email}`} class={estilosLink}>{config.contato.email}</a>
@@ -28,7 +28,7 @@ const estilosLink =
         {
           linkInstagram && (
             <li>
-              <a href={linkInstagram} target="_blank" rel="noopener" class={estilosLink}>
+              <a href={linkInstagram} target="_blank" rel="noopener noreferrer" class={estilosLink}>
                 @{config.contato.instagram}
               </a>
             </li>
