@@ -58,6 +58,15 @@ Verificar: 8 células renderizam, cabelo claramente longo em todas, nenhuma tem 
 
 Apresentar pedindo reação nos dois eixos (silhueta e paleta) separadamente. Iterar o mockup até aprovação explícita de uma combinação (ex.: "S2 com P1, mas pompom azul"). Registrar a escolha no próprio arquivo (banner "APROVADO: ...") antes de seguir.
 
+> **STATUS 2026-07-18 — PAUSADO NO PORTÃO.** Preferência parcial: **S2 · P2**
+> (alongada macia, paleta viva-profunda), mas "ainda não é isso". A autora tem a
+> personagem na cabeça e vai trazê-la: as opções oferecidas foram (1) rabisco no papel
+> fotografado → vetorização em rodadas, (2) entrevista dirigida de personagem (uma
+> pergunta por vez com opções desenhadas), (3) Figma/Inkscape se ela quiser montar,
+> (4) ilustrador contratado (Workana/Fiverr, entrega em SVG com cessão de direitos)
+> usando spec + mockups como briefing. A Fase 1 retoma quando ela voltar com a
+> personagem. Tasks 2+ dependem deste portão.
+
 - [ ] **Step 4: Commit**
 
 ```bash
