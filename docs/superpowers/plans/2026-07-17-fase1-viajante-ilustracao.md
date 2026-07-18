@@ -142,28 +142,27 @@ git commit -m "Fase 1: figurinha de corpo inteiro da viajante com escolha aprova
 
 ---
 
-### Task 4: Cena de cidade Night in the Woods — teste de integração visual
+### Task 4: Cena-modelo do roteiro — cidade cinza, casinha colorida
 
 **Files:**
 - Create: `mockups/cidade-viajante.html`
 
 **Interfaces:**
-- Consumes: silhueta de longe aprovada (Task 1), tokens `--vj-*` (Task 2).
-- Produces: a cena-modelo da cidade — gramática visual dos prédios que a Fase 4 (filme da hero) reutilizará.
+- Consumes: silhueta de longe aprovada (Task 1), tokens `--vj-*` (Task 2), roteiro do filme (spec §5).
+- Produces: a cena-modelo da cidade e da casinha — gramática visual que a Fase 4 (filme da hero) reutilizará, incluindo os dois estados do céu e do wordmark.
 
-- [ ] **Step 1: Montar a cena única**
+- [ ] **Step 1: Montar a cena-modelo com os dois estados do céu**
 
-Uma cena horizontal (~1100×480) com a construção NitW da spec §4:
-- 3 camadas de paralaxe: fundo (silhueta de telhados quase-Breu sobre céu), meio (fileira de prédios-bloco âmbar/barro com janelas repetidas — retângulos em grade, algumas acesas em dourado `#EFC780`), frente (calçada/rua ferrugem profunda + postes).
-- Silhueta de telhados variada: platibandas, duas águas, caixa d'água, antena.
-- Luz Campion: 4–6 janelas acesas + um poste iluminando a viajante.
-- A viajante (silhueta aprovada, cores `--vj-*`) caminhando na camada da frente — o único elemento multicolorido.
-- Wordmark pequeno num canto (como no filme da hero) para testar convivência.
+Uma cena horizontal (~1200×500) que conta o roteiro numa imagem só — noite à esquerda, aurora à direita:
+- **Cidade pequena NitW dessaturada** (esquerda/centro): 2–3 hotéis-bloco de 2–3 andares com letreiro "HOTEL" no topo, em cinzas quentes derivados do Breu/Grafite (ex. `#2A2724`, `#3A3733`, `#4A4540`); janelas repetidas em grade, luz fria/apagada. Camadas de paralaxe: telhados de fundo, fileira de prédios, rua na frente. O cinza é narrativo (mundo das plataformas — spec §2/§4), não estética da marca.
+- **Céu noturno estrelado** sobre a cidade, com o **wordmark no céu** (versão noite: Código em Cal, Itinerante em Âmbar).
+- **A viajante colorida** na rua, celular na mão com um cone/glow sutil iluminando rosto e peito (luz Campion) — o único elemento multicolorido do trecho noturno.
+- **A casinha do hostel** na ponta direita: colorida (âmbar/barro/dourado + jardim verde vivo), sob o trecho do céu que **amanhece em degradê laranja Firewatch**; ali o wordmark aparece na versão amanhecer (cores da paleta com contraste sobre o céu claro).
 
 - [ ] **Step 2: Abrir no navegador e verificar**
 
 Run: `start "" "C:\Users\tatia\codigo-itinerante\mockups\cidade-viajante.html"`
-Verificar: 3 camadas legíveis, janelas em grade regular, viajante achável de imediato, nada além dela fora da paleta da marca.
+Verificar: a cidade lê como "sem cor" ao lado da casinha; letreiros "HOTEL" legíveis; a viajante é o único elemento multicolorido na parte noturna; wordmark legível nos dois trechos de céu.
 
 - [ ] **Step 3: Portão de aprovação da autora**
 

@@ -37,6 +37,9 @@ uma ideia por desenho, sentimento acima de detalhe.
   `mockups/paleta-estendida-cena.html`) foi **rejeitada**: "o mundo da viajante não é
   feito de cores tão neutras e calmas".
 - Cores de ilustração nunca tocam texto, botão, link ou fundo de interface.
+- **Exceção narrativa**: o mundo acinzentado/sem cor é permitido quando conta história
+  (a cidade das plataformas no filme da hero, §4) — o dessaturado como estado do mundo
+  a ser superado, nunca como estética padrão da marca.
 
 ### A viajante é a única livre
 A personagem é o único elemento da marca que **não** obedece à regra de cores:
@@ -63,18 +66,32 @@ calibrados para sentar sobre as cenas escuras.
 
 ## 4. A cidade (cenário do filme da hero)
 
-Construção **Night in the Woods**, integral: prédios como blocos simples com janelas
-repetidas, cidade em **camadas de paralaxe**, silhuetas de telhados contra o céu.
-Cores conforme o regime de cenário (§2). Influência secundária de luz: Pascal
-Campion — janelas acesas e postes como pontos de emoção na cena, coerentes com a
-narrativa da lâmpada de hostel do MIV.
+Construção **Night in the Woods**: prédios como blocos simples com janelas repetidas,
+camadas de paralaxe, silhuetas de telhados contra o céu. Influência secundária de luz:
+Pascal Campion — janelas acesas e postes como pontos de emoção.
+
+**Cidade pequena, não metrópole** (decisão 2026-07-18): alguns hotéis de 2–3 andares
+com o letreiro "HOTEL" no topo. Os hotéis representam as plataformas (Booking, Airbnb
+etc.) e por isso **a cidade é deliberadamente acinzentada, sem cor, empoeirada** — o
+cinza aqui é recurso narrativo (o mundo genérico das plataformas), não identidade da
+marca. O destino é uma **casinha com jardim, cheia de cor**: o hostel que tem site
+próprio (feito pela Código Itinerante). A cor viva continua sendo o ponto de chegada.
 
 ## 5. O filme da hero (conceito registrado; spec próprio na Fase 4)
 
-Tela cheia, fundo Breu, wordmark visível o tempo todo. A viajante atravessa a cidade
-(estilo §4) em rolagem/tempo; a narrativa deve prender até o fim. No final, ela para
-e a cabeça acompanha o mouse (referência: robbowen.digital). Sem vídeo — SVG/CSS/JS,
-respeitando `prefers-reduced-motion` como todo movimento do projeto.
+Tela cheia, wordmark **no céu**, visível o tempo todo. Roteiro (decisão 2026-07-18):
+
+1. **Noite** — céu estrelado; a viajante colorida caminha pela cidade cinza dos
+   hotéis-plataforma. Está escuro: vê-se ela parcialmente, o rosto iluminado pelo
+   celular nas mãos (a luz Campion aplicada nela).
+2. **A descoberta** — ela encontra a casinha colorida com jardim (o hostel achado
+   através do site). O sol nasce: o céu esquenta para o laranja de Firewatch.
+3. **A chegada** — vemos a casinha inteira; ela entra. Fim.
+
+O **wordmark muda de cor conforme o céu** (sempre dentro da paleta): uma versão para a
+noite estrelada, outra para o amanhecer. O final "ela para e a cabeça segue o mouse"
+foi removido do conceito (2026-07-18). Sem vídeo — SVG/CSS/JS, respeitando
+`prefers-reduced-motion` como todo movimento do projeto.
 
 ## 6. Iconografia
 

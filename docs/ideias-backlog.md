@@ -20,7 +20,7 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 - Limite: playful sem perder credibilidade com o dono de hostel.
 - Cenários seguem as cores da marca (mescla âmbar → barro → ferrugem em camadas, aprovada). Paleta estendida "empoeirada" foi rejeitada — o mundo da viajante é vivo.
 - **A viajante é a única livre da regra de cores**: mochila verde, calça azul, blusa vermelha, bota de trilha marrom, gorro amarelo com pompom de outra cor. Cabelo cacheado longo. **Nunca mostrar o rosto de perto** — só sugestão de rosto. Dois registros (de longe nas cenas / figurinha geométrica de corpo inteiro).
-- Filminho da hero: tela cheia, fundo preto, wordmark sempre visível, ambientado **numa cidade**; estilo de fundo em pesquisa (favorito: Night in the Woods); no fim ela para e segue o mouse.
+- Filminho da hero — roteiro fechado (2026-07-18): cidade **pequena** NitW, cinza/empoeirada de propósito (os hotéis "HOTEL" de 2–3 andares = as plataformas Booking/Airbnb); a viajante colorida caminha à noite sob céu estrelado, rosto parcialmente iluminado pelo celular; encontra a **casinha colorida com jardim** (o hostel com site próprio), o sol nasce em laranja Firewatch e ela entra. **Wordmark no céu o tempo todo**, mudando de cor (dentro da paleta) conforme noite/amanhecer. O final "para e segue o mouse" foi removido.
 - Mockups: `mockups/estilo-ilustracao.html`, `mockups/paleta-estendida-cena.html`, `mockups/viajante-dois-registros.html`.
 
 ### Fase 2 — Template Word com a assinatura da marca
@@ -34,7 +34,7 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 - Menos texto, tipografia maior onde couber.
 
 ### Fase 4 — Animação da hero: a viajante
-- Fundo preto, personagem só contorno, laranja. Anda reto (estilo Mario Bros antigo), para, e a cabeça passa a seguir o mouse (refs: robbowen.digital, intro de Mario).
+- Roteiro fechado em 2026-07-18 (spec da Fase 1, §5): noite na cidade cinza das plataformas → descoberta da casinha colorida → amanhecer Firewatch e ela entra; wordmark no céu mudando de cor. (A ideia original "contorno laranja, anda estilo Mario, cabeça segue o mouse" foi substituída.)
 - Depois, adicionar mais elementos incrementalmente.
 - Depende da Fase 1 (design da personagem) e idealmente da Fase 3 (site já com a linguagem de arte).
 
