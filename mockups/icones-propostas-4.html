@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconografia — rodada 1D: casinha com árvores e cerquinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  body { --fundo: var(--breu); --superficie: var(--grafite); --borda: #26241f;
+    --texto: var(--cal); --texto-2: var(--pedra);
+    --linha: var(--cal); --acento: var(--ambar); }
+  body.claro { --fundo: var(--papel); --superficie: #ffffff; --borda: #e8e3d6;
+    --texto: var(--tinta); --texto-2: #7a756b;
+    --linha: var(--tinta); --acento: var(--queimado); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--fundo); color: var(--texto); font-family: "Archivo", sans-serif;
+    line-height: 1.6; transition: background 0.25s, color 0.25s; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--acento); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--acento); letter-spacing: 0; }
+  .nota { color: var(--texto-2); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 10;
+    font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto); background: var(--superficie);
+    border: 1px solid var(--borda); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+
+  .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; transition: background 0.25s; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--acento); font-style: normal; }
+  .palco { display: flex; gap: 2.5rem; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; }
+  .opcao { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .opcao svg { width: 112px; height: 112px; }
+  .opcao span { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); }
+  .opcao span b { color: var(--texto); font-weight: 500; }
+  .legenda { color: var(--texto-2); font-size: 0.85rem; max-width: 58ch; margin-top: 1.25rem; }
+
+  svg { fill: none; stroke: var(--linha); stroke-width: 3.25;
+    stroke-linecap: round; stroke-linejoin: round; }
+  svg .acento { fill: var(--acento); stroke: none; }
+  svg .cheio { fill: var(--linha); stroke: none; }
+  svg .furo { fill: var(--fundo); stroke: none; }
+  svg .fino { stroke-width: 2.25; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.body.classList.toggle('claro')">Breu / Papel</button>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>iconografia</b> · rodada 1D</p>
+  <h1>A casinha da <span class="it">referência</span> sua</h1>
+  <p class="nota">A partir da imagem que você mandou: casinha simétrica com janela redonda
+  no oitão, arvorezinhas dos dois lados e cerquinha. Três traduções pro traço da marca,
+  da mais linear (K) à mais preenchida como a referência (M). Já fechados: 1B1, 2A, 3B, 5A, 6A.</p>
+
+  <div class="cartao">
+    <p class="rotulo">4 — hostel / pousada <em>· árvores + cerquinha, janela redonda</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha em linha com árvores e cerquinha">
+          <path d="M16 30 Q31 14 33 15 L48 30"/>
+          <path d="M20 30 L20 50 L44 50 L44 30"/>
+          <circle class="fino" cx="32" cy="25" r="4"/>
+          <path class="acento" d="M28 50 L28 43 Q28 39 32 39 Q36 39 36 43 L36 50 Z"/>
+          <path d="M10 50 L10 44"/>
+          <circle class="fino" cx="10" cy="39" r="5"/>
+          <path d="M54 50 L54 44"/>
+          <circle class="fino" cx="54" cy="39" r="5"/>
+          <path class="fino" d="M15 50 L15 45"/>
+          <path class="fino" d="M18 50 L18 45"/>
+          <path class="fino" d="M13.5 47.5 L19.5 47.5"/>
+          <path class="fino" d="M46 50 L46 45"/>
+          <path class="fino" d="M49 50 L49 45"/>
+          <path class="fino" d="M44.5 47.5 L50.5 47.5"/>
+          <path d="M5 50 L59 50"/>
+        </svg>
+        <span><b>K</b> · em linha</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com nuvem, janelinhas e escadinha">
+          <path class="fino" d="M24 9 Q24 5 28 5 Q30 2 34 4 Q38 3 38 7 Q40 9 37 10 L27 10 Q24 10 24 9 Z"/>
+          <path d="M16 32 Q31 16 33 17 L48 32"/>
+          <path d="M20 32 L20 50 L44 50 L44 32"/>
+          <circle class="fino" cx="32" cy="27" r="4"/>
+          <path class="fino" d="M23 37 L28 37 L28 42 L23 42 Z"/>
+          <path class="fino" d="M36 37 L41 37 L41 42 L36 42 Z"/>
+          <path class="acento" d="M29 50 L29 44 Q29 41 32 41 Q35 41 35 44 L35 50 Z"/>
+          <path class="fino" d="M26 50 L25 53 L39 53 L38 50"/>
+          <path d="M10 53 L10 47"/>
+          <circle class="cheio" cx="10" cy="43" r="4"/>
+          <path d="M54 53 L54 47"/>
+          <circle class="cheio" cx="54" cy="43" r="4"/>
+          <path d="M6 53 L58 53"/>
+        </svg>
+        <span><b>L</b> · com nuvem e escadinha</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha preenchida com telhado aceso">
+          <path class="acento" d="M14 30 Q31 13 33 14 L50 30 Z"/>
+          <circle class="furo" cx="32" cy="24.5" r="3.2"/>
+          <path class="cheio" d="M19 30 L19 51 L45 51 L45 30 Z"/>
+          <path class="furo" d="M22.5 35 L28 35 L28 40.5 L22.5 40.5 Z"/>
+          <path class="furo" d="M36 35 L41.5 35 L41.5 40.5 L36 40.5 Z"/>
+          <path class="furo" d="M28.5 51 L28.5 46 Q28.5 43.5 32 43.5 Q35.5 43.5 35.5 46 L35.5 51 Z"/>
+          <path d="M10 51 L10 45"/>
+          <circle class="cheio" cx="10" cy="40" r="5"/>
+          <path d="M54 51 L54 45"/>
+          <circle class="cheio" cx="54" cy="40" r="5"/>
+          <path class="fino" d="M14.5 51 L14.5 46"/>
+          <path class="fino" d="M17.5 51 L17.5 46"/>
+          <path class="fino" d="M13 48.5 L19 48.5"/>
+          <path class="fino" d="M46.5 51 L46.5 46"/>
+          <path class="fino" d="M49.5 51 L49.5 46"/>
+          <path class="fino" d="M45 48.5 L51 48.5"/>
+          <path d="M5 51 L59 51"/>
+        </svg>
+        <span><b>M</b> · preenchida, telhado aceso</span>
+      </div>
+    </div>
+    <p class="legenda">K mantém o traço linear do resto do conjunto, com janela redonda no oitão,
+    árvores de copa vazada e cerquinha. L adiciona a nuvenzinha, as janelas laterais e a
+    escadinha da sua referência de baixo. M é a mais próxima da referência: corpo preenchido,
+    janela e porta vazadas, telhado inteiro em acento, árvores de copa cheia.</p>
+  </div>
+
+  <p class="nota" style="margin-top:2rem">Escolhida a casinha, a rodada 2 refina os seis
+  nos dois pesos (cheio e miúdo) com régua de tamanhos reais.</p>
+</main>
+</body>
+</html>
