@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1A1915" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M15 30 Q17 13 32 13 Q42 13 47 21"/>
+  <path d="M45 13 L53 22 L42 26 Z" fill="#1A1915" stroke="none"/>
+  <g transform="rotate(180 32 32)"><path stroke="#B85C2E" d="M15 30 Q17 13 32 13 Q42 13 47 21"/><path d="M45 13 L53 22 L42 26 Z" fill="#B85C2E" stroke="none"/></g>
+</svg>

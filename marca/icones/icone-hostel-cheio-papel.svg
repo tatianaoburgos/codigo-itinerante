@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#1A1915" stroke-width="3.25" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M16 32 Q31 16 33 17 L48 32"/>
+  <path d="M20 32 L20 50 L44 50 L44 32"/>
+  <circle cx="32" cy="27" r="4" stroke-width="2.25"/>
+  <path d="M23 37 L28 37 L28 42 L23 42 Z" stroke-width="2.25"/>
+  <path d="M36 37 L41 37 L41 42 L36 42 Z" stroke-width="2.25"/>
+  <path d="M29 50 L29 44 Q29 41 32 41 Q35 41 35 44 L35 50 Z" fill="#B85C2E" stroke="none"/>
+  <path d="M26 50 L25 53 L39 53 L38 50" stroke-width="2.25"/>
+  <path d="M10 53 L10 47"/>
+  <circle cx="10" cy="43" r="4" fill="#1A1915" stroke="none"/>
+  <path d="M54 53 L54 47"/>
+  <circle cx="54" cy="43" r="4" fill="#1A1915" stroke="none"/>
+  <path d="M6 53 L58 53"/>
+</svg>

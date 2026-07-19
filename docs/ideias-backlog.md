@@ -12,6 +12,9 @@ Identidade primeiro, aplicações depois. O MIV expandido é a fundação: icono
 O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — aprovado 2026-07-02). Falta a camada que as novas ideias exigem:
 1. **Estilo de ilustração/arte autoral**: definir a linguagem dos desenhos. É pré-requisito da iconografia, da viajante e de qualquer arte no site.
 2. **Iconografia**: conjunto de ícones/símbolos da marca no estilo definido acima.
+   ✅ **Concluída em 2026-07-19**: 6 conceitos do negócio em dois pesos (cheio/miúdo) e
+   dois fundos — `marca/icones/`, seção 6 do `docs/miv.md`, spec
+   `docs/superpowers/specs/2026-07-19-iconografia-design.md`.
 3. **A personagem viajante**: design estático primeiro — vira ativo da marca antes de virar animação.
 4. Registrar tudo como novas seções do `docs/miv.md`.
 

@@ -1,5 +1,10 @@
 # Plano — Iconografia da marca Código Itinerante
 
+> **CONCLUÍDO em 2026-07-19.** Rodadas 1/1B/1C/1D fecharam o conjunto (1B1, 2A, 3B,
+> 4L sem nuvem, 5A, 6A); rodada 2 aprovada com ajustes (setas simétricas por rotação,
+> raios no miúdo da estrada). SVGs em `marca/icones/` via `marca/gera_icones.py`;
+> seção 6 do `docs/miv.md`.
+
 ## Contexto
 
 Fase 1 do MIV, item 2. A parte da personagem/cidade/hero está pausada por decisão da autora; a iconografia não depende dela. Spec aprovada e commitada: `docs/superpowers/specs/2026-07-19-iconografia-design.md` — 6 conceitos do negócio, estilo linha solta + flat (herdado da spec 2026-07-17, §1/§2/§6), dois pesos (cheio/miúdo), cores por fundo (Papel: Tinta+Queimado; Breu: Cal+Âmbar/Dourado), regra do acento (máx. 1 mancha de acento por ícone).
