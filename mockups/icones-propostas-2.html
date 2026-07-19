@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconografia — rodada 1B: site próprio e casinha</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  body { --fundo: var(--breu); --superficie: var(--grafite); --borda: #26241f;
+    --texto: var(--cal); --texto-2: var(--pedra);
+    --linha: var(--cal); --acento: var(--ambar); }
+  body.claro { --fundo: var(--papel); --superficie: #ffffff; --borda: #e8e3d6;
+    --texto: var(--tinta); --texto-2: #7a756b;
+    --linha: var(--tinta); --acento: var(--queimado); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--fundo); color: var(--texto); font-family: "Archivo", sans-serif;
+    line-height: 1.6; transition: background 0.25s, color 0.25s; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--acento); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--acento); letter-spacing: 0; }
+  .nota { color: var(--texto-2); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 10;
+    font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto); background: var(--superficie);
+    border: 1px solid var(--borda); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+
+  .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; transition: background 0.25s; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--acento); font-style: normal; }
+  .palco { display: flex; gap: 2.5rem; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; }
+  .opcao { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .opcao svg { width: 112px; height: 112px; }
+  .opcao span { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); }
+  .opcao span b { color: var(--texto); font-weight: 500; }
+  .legenda { color: var(--texto-2); font-size: 0.85rem; max-width: 58ch; margin-top: 1.25rem; }
+
+  svg { fill: none; stroke: var(--linha); stroke-width: 3.25;
+    stroke-linecap: round; stroke-linejoin: round; }
+  svg .acento { fill: var(--acento); stroke: none; }
+  svg .acento-linha { stroke: var(--acento); fill: none; }
+  svg .vazado { stroke: var(--fundo); fill: none; }
+  svg .cheio { fill: var(--linha); stroke: none; }
+  svg .fino { stroke-width: 2.25; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.body.classList.toggle('claro')">Breu / Papel</button>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>iconografia</b> · rodada 1B</p>
+  <h1>Ajustes: <span class="it">site próprio</span> e a casinha</h1>
+  <p class="nota">Já fechados: 2A (setas de troca), 3B (lua + cama), 5A (estrada ao horizonte)
+  e 6A (balão cheio). Aqui, mais opções no estilo da janela de navegador (conceito 1)
+  e novas tentativas da casinha com jardim (conceito 4).</p>
+
+  <!-- ============ 1. SITE PRÓPRIO — variações da janela ============ -->
+  <div class="cartao">
+    <p class="rotulo">1 — site próprio <em>· variações da janela de navegador</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Original: casinha pequena dentro da janela">
+          <path d="M10 13 Q9 13 9 15 L9 49 Q9 51 11 51 L53 51 Q55 51 55 49 L55 15 Q55 13 53 13 Z"/>
+          <path d="M9 23 L55 23"/>
+          <circle class="cheio" cx="15.5" cy="18" r="1.8"/>
+          <circle class="cheio" cx="21.5" cy="18" r="1.8"/>
+          <path class="acento" d="M21 42 L32 31 L43 42 Z"/>
+          <path d="M24 42 L24 47 L40 47 L40 42"/>
+        </svg>
+        <span><b>B1</b> · original</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha maior com porta em destaque">
+          <path d="M10 10 Q9 10 9 12 L9 52 Q9 54 11 54 L53 54 Q55 54 55 52 L55 12 Q55 10 53 10 Z"/>
+          <path d="M9 20 L55 20"/>
+          <circle class="cheio" cx="15.5" cy="15" r="1.8"/>
+          <circle class="cheio" cx="21.5" cy="15" r="1.8"/>
+          <path d="M19 45 Q31 33 32 34 L45 45"/>
+          <path d="M23 45 L23 50 L41 50 L41 45"/>
+          <path class="acento" d="M29 50 L29 45 Q29 42 32 42 Q35 42 35 45 L35 50 Z"/>
+        </svg>
+        <span><b>B2</b> · casinha maior, porta acesa</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Telhado ultrapassando a janela do navegador">
+          <path d="M11 24 Q10 24 10 26 L10 50 Q10 52 12 52 L52 52 Q54 52 54 50 L54 26 Q54 24 53 24 L46 24"/>
+          <path d="M10 24 L20 24"/>
+          <circle class="cheio" cx="15.5" cy="29" r="1.8"/>
+          <path class="acento" d="M21 30 Q32 15 33 16 L45 30 Z"/>
+          <path d="M25 32 L25 45 L41 45 L41 32"/>
+          <path class="fino" d="M30 40 Q33 38 36 40"/>
+        </svg>
+        <span><b>B3</b> · telhado pra fora da caixa</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Janela com casinha e cursor clicando">
+          <path d="M10 12 Q9 12 9 14 L9 48 Q9 50 11 50 L53 50 Q55 50 55 48 L55 14 Q55 12 53 12 Z"/>
+          <path d="M9 22 L55 22"/>
+          <circle class="cheio" cx="15.5" cy="17" r="1.8"/>
+          <circle class="cheio" cx="21.5" cy="17" r="1.8"/>
+          <path d="M15 40 Q24 30 25 31 L34 40"/>
+          <path d="M18 40 L18 45 L31 45 L31 40"/>
+          <path class="acento" d="M37 33 L52 39 L45 42 L42 49 Z"/>
+        </svg>
+        <span><b>B4</b> · com o cursor clicando</span>
+      </div>
+    </div>
+    <p class="legenda">B1 é a original. B2 aumenta a casinha e põe o acento na porta (a luz acesa).
+    B3 deixa a casinha maior que a "caixinha" do navegador — o hostel não cabe na plataforma.
+    B4 traz o cursor da proposta A pra dentro da janela: alguém achando o hostel.</p>
+  </div>
+
+  <!-- ============ 4. HOSTEL / POUSADA — novas casinhas ============ -->
+  <div class="cartao">
+    <p class="rotulo">4 — hostel / pousada <em>· novas tentativas, jardim mais presente</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Referência: casinha anterior com flores e chaminé">
+          <path d="M43 21 L43 13 L48 13 L48 26"/>
+          <path d="M15 33 Q32 16 34 17 L52 33"/>
+          <path d="M19 33 L19 53 L49 53 L49 33"/>
+          <path class="acento" d="M29 53 L29 43 Q29 39 34 39 Q39 39 39 43 L39 53 Z"/>
+          <path class="fino" d="M9 53 Q7 47 11 44"/>
+          <circle class="cheio" cx="11.5" cy="42" r="2.6"/>
+          <path class="fino" d="M57 53 Q59 48 55 45"/>
+          <circle class="cheio" cx="54.5" cy="43.5" r="2.6"/>
+        </svg>
+        <span><b>A</b> · referência (anterior)</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com jardim generoso de flores">
+          <path d="M10 29 Q26 13 28 14 L44 29"/>
+          <path d="M14 29 L14 50 L40 50 L40 29"/>
+          <path class="acento" d="M22 50 L22 41 Q22 37 27 37 Q32 37 32 41 L32 50 Z"/>
+          <path d="M6 50 L58 50"/>
+          <path class="fino" d="M47 50 Q46 44 48 41"/>
+          <circle class="cheio" cx="48.5" cy="38.5" r="2.8"/>
+          <path class="fino" d="M54 50 Q55 46 53 43"/>
+          <circle class="cheio" cx="52.5" cy="40.5" r="2.4"/>
+          <path class="fino" d="M43 50 Q42 47 44 45"/>
+          <circle class="cheio" cx="44.5" cy="43.5" r="2"/>
+          <path class="fino" d="M8 47 Q10 44 12 47"/>
+        </svg>
+        <span><b>C</b> · canteiro de flores</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com árvore ao lado">
+          <path d="M14 38 L14 50"/>
+          <path d="M14 38 Q5 37 7 29 Q9 22 15 24 Q15 16 23 18 Q28 19 27 26 Q32 28 29 34 Q26 39 14 38 Z"/>
+          <path d="M32 32 Q45 19 46 20 L59 32"/>
+          <path d="M35 32 L35 50 L56 50 L56 32"/>
+          <path class="acento" d="M42 50 L42 42 Q42 38 45.5 38 Q49 38 49 42 L49 50 Z"/>
+          <path d="M8 50 L60 50"/>
+        </svg>
+        <span><b>D</b> · árvore ao lado</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com cerquinha e telhado aceso">
+          <path class="acento" d="M18 28 Q32 13 34 14 L48 28 Z"/>
+          <path d="M22 30 L22 50 L45 50 L45 30"/>
+          <path d="M30 50 L30 42 Q30 38 33.5 38 Q37 38 37 42 L37 50"/>
+          <path d="M6 50 L58 50"/>
+          <path class="fino" d="M8 50 L8 43"/>
+          <path class="fino" d="M14 50 L14 43"/>
+          <path class="fino" d="M5 45 L17 45"/>
+          <path class="fino" d="M51 50 Q50 45 53 42"/>
+          <circle class="cheio" cx="54" cy="40" r="2.6"/>
+        </svg>
+        <span><b>E</b> · cerquinha, telhado aceso</span>
+      </div>
+    </div>
+    <p class="legenda">C aposta no canteiro: três flores de alturas diferentes e a porta acesa.
+    D dá uma árvore de copa solta pra casinha respirar. E troca o acento pro telhado e
+    põe a cerquinha de jardim. Todas sobre a linha de chão, que a anterior não tinha.</p>
+  </div>
+
+  <p class="nota" style="margin-top:2rem">Escolhendo 1 e 4, a rodada 2 refina os seis
+  nos dois pesos (cheio e miúdo) com régua de tamanhos reais.</p>
+</main>
+</body>
+</html>
