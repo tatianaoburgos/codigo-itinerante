@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconografia — rodada 1C: casinha simétrica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  body { --fundo: var(--breu); --superficie: var(--grafite); --borda: #26241f;
+    --texto: var(--cal); --texto-2: var(--pedra);
+    --linha: var(--cal); --acento: var(--ambar); }
+  body.claro { --fundo: var(--papel); --superficie: #ffffff; --borda: #e8e3d6;
+    --texto: var(--tinta); --texto-2: #7a756b;
+    --linha: var(--tinta); --acento: var(--queimado); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--fundo); color: var(--texto); font-family: "Archivo", sans-serif;
+    line-height: 1.6; transition: background 0.25s, color 0.25s; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--acento); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--acento); letter-spacing: 0; }
+  .nota { color: var(--texto-2); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 10;
+    font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto); background: var(--superficie);
+    border: 1px solid var(--borda); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+
+  .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; transition: background 0.25s; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--acento); font-style: normal; }
+  .palco { display: flex; gap: 2.5rem; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; }
+  .opcao { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .opcao svg { width: 112px; height: 112px; }
+  .opcao span { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); }
+  .opcao span b { color: var(--texto); font-weight: 500; }
+  .legenda { color: var(--texto-2); font-size: 0.85rem; max-width: 58ch; margin-top: 1.25rem; }
+
+  svg { fill: none; stroke: var(--linha); stroke-width: 3.25;
+    stroke-linecap: round; stroke-linejoin: round; }
+  svg .acento { fill: var(--acento); stroke: none; }
+  svg .cheio { fill: var(--linha); stroke: none; }
+  svg .fino { stroke-width: 2.25; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.body.classList.toggle('claro')">Breu / Papel</button>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>iconografia</b> · rodada 1C</p>
+  <h1>A casinha <span class="it">simétrica</span></h1>
+  <p class="nota">A casinha da referência no centro (sem a chaminé, que quebrava a simetria),
+  porta acesa, linha de chão — e o mesmo jardinzinho espelhado dos dois lados.
+  Cinco variações de jardim. Já fechados: 1B1, 2A, 3B, 5A, 6A.</p>
+
+  <div class="cartao">
+    <p class="rotulo">4 — hostel / pousada <em>· casinha central, jardim espelhado</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com uma flor de cada lado">
+          <path d="M14 31 Q31 14 33 15 L50 31"/>
+          <path d="M18 31 L18 51 L46 51 L46 31"/>
+          <path class="acento" d="M27 51 L27 42 Q27 38 32 38 Q37 38 37 42 L37 51 Z"/>
+          <path d="M6 51 L58 51"/>
+          <path class="fino" d="M10 51 Q9 45 12 42"/>
+          <circle class="cheio" cx="12.5" cy="40" r="2.6"/>
+          <path class="fino" d="M54 51 Q55 45 52 42"/>
+          <circle class="cheio" cx="51.5" cy="40" r="2.6"/>
+        </svg>
+        <span><b>F</b> · uma flor de cada lado</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com tufos de capim dos dois lados">
+          <path d="M14 31 Q31 14 33 15 L50 31"/>
+          <path d="M18 31 L18 51 L46 51 L46 31"/>
+          <path class="acento" d="M27 51 L27 42 Q27 38 32 38 Q37 38 37 42 L37 51 Z"/>
+          <path d="M6 51 L58 51"/>
+          <path class="fino" d="M8 51 Q7 46 9 43"/>
+          <path class="fino" d="M11 51 L11 42"/>
+          <path class="fino" d="M14 51 Q15 46 13 43"/>
+          <path class="fino" d="M56 51 Q57 46 55 43"/>
+          <path class="fino" d="M53 51 L53 42"/>
+          <path class="fino" d="M50 51 Q49 46 51 43"/>
+        </svg>
+        <span><b>G</b> · capim alto</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com arbustos redondos dos dois lados">
+          <path d="M14 31 Q31 14 33 15 L50 31"/>
+          <path d="M18 31 L18 51 L46 51 L46 31"/>
+          <path class="acento" d="M27 51 L27 42 Q27 38 32 38 Q37 38 37 42 L37 51 Z"/>
+          <path d="M6 51 L58 51"/>
+          <path d="M5 51 Q4 42 11 42 Q16 42 15 51"/>
+          <path d="M59 51 Q60 42 53 42 Q48 42 49 51"/>
+        </svg>
+        <span><b>H</b> · arbustos redondos</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com flor e graminha de cada lado">
+          <path d="M14 31 Q31 14 33 15 L50 31"/>
+          <path d="M18 31 L18 51 L46 51 L46 31"/>
+          <path class="acento" d="M27 51 L27 42 Q27 38 32 38 Q37 38 37 42 L37 51 Z"/>
+          <path d="M6 51 L58 51"/>
+          <path class="fino" d="M9 51 Q8 45 11 42"/>
+          <circle class="cheio" cx="11.5" cy="40" r="2.6"/>
+          <path class="fino" d="M14 51 Q15.5 48.5 17 51"/>
+          <path class="fino" d="M55 51 Q56 45 53 42"/>
+          <circle class="cheio" cx="52.5" cy="40" r="2.6"/>
+          <path class="fino" d="M50 51 Q48.5 48.5 47 51"/>
+        </svg>
+        <span><b>I</b> · flor + graminha</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com canteiro duplo de flores de cada lado">
+          <path d="M14 31 Q31 14 33 15 L50 31"/>
+          <path d="M18 31 L18 51 L46 51 L46 31"/>
+          <path class="acento" d="M27 51 L27 42 Q27 38 32 38 Q37 38 37 42 L37 51 Z"/>
+          <path d="M6 51 L58 51"/>
+          <path class="fino" d="M7 51 Q6 45 9 42"/>
+          <circle class="cheio" cx="9.5" cy="40" r="2.4"/>
+          <path class="fino" d="M13 51 Q14 48 12 45.5"/>
+          <circle class="cheio" cx="11.5" cy="43.5" r="2"/>
+          <path class="fino" d="M57 51 Q58 45 55 42"/>
+          <circle class="cheio" cx="54.5" cy="40" r="2.4"/>
+          <path class="fino" d="M51 51 Q50 48 52 45.5"/>
+          <circle class="cheio" cx="52.5" cy="43.5" r="2"/>
+        </svg>
+        <span><b>J</b> · duas flores de cada lado</span>
+      </div>
+    </div>
+    <p class="legenda">A casinha é idêntica nas cinco — o que muda é só o jardim espelhado:
+    F uma flor, G tufos de capim, H arbustos redondos, I flor com graminha aos pés,
+    J canteirinho de duas flores em alturas diferentes.</p>
+  </div>
+
+  <p class="nota" style="margin-top:2rem">Escolhida a casinha, a rodada 2 refina os seis
+  nos dois pesos (cheio e miúdo) com régua de tamanhos reais.</p>
+</main>
+</body>
+</html>
