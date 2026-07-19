@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconografia — rodada 2: dois pesos e tamanhos reais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  body { --fundo: var(--breu); --superficie: var(--grafite); --borda: #26241f;
+    --texto: var(--cal); --texto-2: var(--pedra);
+    --linha: var(--cal); --acento: var(--ambar); }
+  body.claro { --fundo: var(--papel); --superficie: #ffffff; --borda: #e8e3d6;
+    --texto: var(--tinta); --texto-2: #7a756b;
+    --linha: var(--tinta); --acento: var(--queimado); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--fundo); color: var(--texto); font-family: "Archivo", sans-serif;
+    line-height: 1.6; transition: background 0.25s, color 0.25s; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--acento); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--acento); letter-spacing: 0; }
+  .nota { color: var(--texto-2); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 10;
+    font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto); background: var(--superficie);
+    border: 1px solid var(--borda); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+
+  .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; transition: background 0.25s; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--acento); font-style: normal; }
+  .palco { display: flex; gap: 2.5rem; align-items: flex-end; flex-wrap: wrap; }
+  .opcao { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .opcao span { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); }
+  .opcao span b { color: var(--texto); font-weight: 500; }
+  .regua { display: flex; gap: 1.25rem; align-items: flex-end; }
+  .g96 { width: 96px; height: 96px; }
+  .g64 { width: 64px; height: 64px; }
+  .g32 { width: 32px; height: 32px; }
+  .g24 { width: 24px; height: 24px; }
+  .g16 { width: 16px; height: 16px; }
+
+  svg { fill: none; stroke: var(--linha); stroke-width: 3.25;
+    stroke-linecap: round; stroke-linejoin: round; }
+  svg.miudo { stroke-width: 4.5; }
+  svg .acento { fill: var(--acento); stroke: none; }
+  svg .cheio { fill: var(--linha); stroke: none; }
+  svg .furo { fill: var(--fundo); stroke: none; }
+  svg .fino { stroke-width: 2.25; }
+  svg .vazado { stroke: var(--fundo); fill: none; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.body.classList.toggle('claro')">Breu / Papel</button>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>iconografia</b> · rodada 2</p>
+  <h1>Os seis, em <span class="it">dois pesos</span></h1>
+  <p class="nota">O conjunto fechado na rodada 1 (1B1 · 2A · 3B · 4L sem nuvem · 5A · 6A).
+  Cada ícone no peso cheio (apresentações, ≥32px) e no peso miúdo — a destilação com traço
+  mais grosso e menos detalhe, pro Word em 16–24px. A régua mostra os tamanhos reais.</p>
+
+  <!-- ============ 1. SITE PRÓPRIO ============ -->
+  <div class="cartao">
+    <p class="rotulo">1 — site próprio <em>· janela de navegador (B1)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Site próprio, peso cheio">
+          <path d="M10 13 Q9 13 9 15 L9 49 Q9 51 11 51 L53 51 Q55 51 55 49 L55 15 Q55 13 53 13 Z"/>
+          <path d="M9 23 L55 23"/>
+          <circle class="cheio" cx="15.5" cy="18" r="1.8"/>
+          <circle class="cheio" cx="21.5" cy="18" r="1.8"/>
+          <path class="acento" d="M21 42 L32 31 L43 42 Z"/>
+          <path d="M24 42 L24 47 L40 47 L40 42"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Site próprio, peso miúdo">
+          <path d="M10 11 Q9 11 9 13 L9 51 Q9 53 11 53 L53 53 Q55 53 55 51 L55 13 Q55 11 53 11 Z"/>
+          <path d="M9 22 L55 22"/>
+          <path class="acento" d="M20 44 L32 32 L44 44 Z"/>
+          <path d="M24 44 L24 49 L40 49 L40 44"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path d="M10 11 Q9 11 9 13 L9 51 Q9 53 11 53 L53 53 Q55 53 55 51 L55 13 Q55 11 53 11 Z"/><path d="M9 22 L55 22"/><path class="acento" d="M20 44 L32 32 L44 44 Z"/><path d="M24 44 L24 49 L40 49 L40 44"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path d="M10 11 Q9 11 9 13 L9 51 Q9 53 11 53 L53 53 Q55 53 55 51 L55 13 Q55 11 53 11 Z"/><path d="M9 22 L55 22"/><path class="acento" d="M20 44 L32 32 L44 44 Z"/><path d="M24 44 L24 49 L40 49 L40 44"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path d="M10 11 Q9 11 9 13 L9 51 Q9 53 11 53 L53 53 Q55 53 55 51 L55 13 Q55 11 53 11 Z"/><path d="M9 22 L55 22"/><path class="acento" d="M20 44 L32 32 L44 44 Z"/><path d="M24 44 L24 49 L40 49 L40 44"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path d="M10 13 Q9 13 9 15 L9 49 Q9 51 11 51 L53 51 Q55 51 55 49 L55 15 Q55 13 53 13 Z"/><path d="M9 23 L55 23"/><circle class="cheio" cx="15.5" cy="18" r="1.8"/><circle class="cheio" cx="21.5" cy="18" r="1.8"/><path class="acento" d="M21 42 L32 31 L43 42 Z"/><path d="M24 42 L24 47 L40 47 L40 42"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+    <p class="legenda"></p>
+  </div>
+
+  <!-- ============ 2. PERMUTA ============ -->
+  <div class="cartao">
+    <p class="rotulo">2 — permuta <em>· setas de troca (A)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Permuta, peso cheio">
+          <path d="M17 27 Q19 12 33 12 Q41 12 46 18"/>
+          <path class="cheio" d="M45 12 L53 20 L43 24 Z"/>
+          <path class="acento-linha" style="stroke:var(--acento)" d="M47 37 Q45 52 31 52 Q23 52 18 46"/>
+          <path class="acento" d="M19 52 L11 44 L21 40 Z"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Permuta, peso miúdo">
+          <path d="M17 26 Q19 11 33 11 Q41 11 46 17"/>
+          <path class="cheio" d="M44 9 L54 19 L42 25 Z"/>
+          <path style="stroke:var(--acento)" d="M47 38 Q45 53 31 53 Q23 53 18 47"/>
+          <path class="acento" d="M20 55 L10 45 L22 39 Z"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path d="M17 26 Q19 11 33 11 Q41 11 46 17"/><path class="cheio" d="M44 9 L54 19 L42 25 Z"/><path style="stroke:var(--acento)" d="M47 38 Q45 53 31 53 Q23 53 18 47"/><path class="acento" d="M20 55 L10 45 L22 39 Z"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path d="M17 26 Q19 11 33 11 Q41 11 46 17"/><path class="cheio" d="M44 9 L54 19 L42 25 Z"/><path style="stroke:var(--acento)" d="M47 38 Q45 53 31 53 Q23 53 18 47"/><path class="acento" d="M20 55 L10 45 L22 39 Z"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path d="M17 26 Q19 11 33 11 Q41 11 46 17"/><path class="cheio" d="M44 9 L54 19 L42 25 Z"/><path style="stroke:var(--acento)" d="M47 38 Q45 53 31 53 Q23 53 18 47"/><path class="acento" d="M20 55 L10 45 L22 39 Z"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path d="M17 27 Q19 12 33 12 Q41 12 46 18"/><path class="cheio" d="M45 12 L53 20 L43 24 Z"/><path style="stroke:var(--acento)" d="M47 37 Q45 52 31 52 Q23 52 18 46"/><path class="acento" d="M19 52 L11 44 L21 40 Z"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 3. NOITES ============ -->
+  <div class="cartao">
+    <p class="rotulo">3 — noites de hospedagem <em>· lua + cama (B)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Noites, peso cheio">
+          <path class="acento" d="M42 8 A9 9 0 1 0 50 20 A7 7 0 1 1 42 8 Z"/>
+          <path d="M12 30 L12 50"/>
+          <path d="M12 44 L52 44 L52 50"/>
+          <path d="M12 38 Q13 34 17 34 L24 34 Q28 34 28 38"/>
+          <path d="M28 38 L52 38 L52 44"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Noites, peso miúdo">
+          <path class="acento" d="M41 6 A10 10 0 1 0 50 20 A8 8 0 1 1 41 6 Z"/>
+          <path d="M11 28 L11 52"/>
+          <path d="M11 44 L53 44 L53 52"/>
+          <path d="M11 36 L53 36 L53 44"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path class="acento" d="M41 6 A10 10 0 1 0 50 20 A8 8 0 1 1 41 6 Z"/><path d="M11 28 L11 52"/><path d="M11 44 L53 44 L53 52"/><path d="M11 36 L53 36 L53 44"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path class="acento" d="M41 6 A10 10 0 1 0 50 20 A8 8 0 1 1 41 6 Z"/><path d="M11 28 L11 52"/><path d="M11 44 L53 44 L53 52"/><path d="M11 36 L53 36 L53 44"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path class="acento" d="M41 6 A10 10 0 1 0 50 20 A8 8 0 1 1 41 6 Z"/><path d="M11 28 L11 52"/><path d="M11 44 L53 44 L53 52"/><path d="M11 36 L53 36 L53 44"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path class="acento" d="M42 8 A9 9 0 1 0 50 20 A7 7 0 1 1 42 8 Z"/><path d="M12 30 L12 50"/><path d="M12 44 L52 44 L52 50"/><path d="M12 38 Q13 34 17 34 L24 34 Q28 34 28 38"/><path d="M28 38 L52 38 L52 44"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 4. HOSTEL / POUSADA ============ -->
+  <div class="cartao">
+    <p class="rotulo">4 — hostel / pousada <em>· casinha com árvores e escadinha (L, sem nuvem)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Hostel, peso cheio">
+          <path d="M16 32 Q31 16 33 17 L48 32"/>
+          <path d="M20 32 L20 50 L44 50 L44 32"/>
+          <circle class="fino" cx="32" cy="27" r="4"/>
+          <path class="fino" d="M23 37 L28 37 L28 42 L23 42 Z"/>
+          <path class="fino" d="M36 37 L41 37 L41 42 L36 42 Z"/>
+          <path class="acento" d="M29 50 L29 44 Q29 41 32 41 Q35 41 35 44 L35 50 Z"/>
+          <path class="fino" d="M26 50 L25 53 L39 53 L38 50"/>
+          <path d="M10 53 L10 47"/>
+          <circle class="cheio" cx="10" cy="43" r="4"/>
+          <path d="M54 53 L54 47"/>
+          <circle class="cheio" cx="54" cy="43" r="4"/>
+          <path d="M6 53 L58 53"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Hostel, peso miúdo">
+          <path d="M15 30 Q31 14 33 15 L49 30"/>
+          <path d="M19 30 L19 50 L45 50 L45 30"/>
+          <path class="acento" d="M27 50 L27 43 Q27 39 32 39 Q37 39 37 43 L37 50 Z"/>
+          <path d="M10 50 L10 46"/>
+          <circle class="cheio" cx="10" cy="41.5" r="4.5"/>
+          <path d="M54 50 L54 46"/>
+          <circle class="cheio" cx="54" cy="41.5" r="4.5"/>
+          <path d="M5 50 L59 50"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path d="M15 30 Q31 14 33 15 L49 30"/><path d="M19 30 L19 50 L45 50 L45 30"/><path class="acento" d="M27 50 L27 43 Q27 39 32 39 Q37 39 37 43 L37 50 Z"/><path d="M10 50 L10 46"/><circle class="cheio" cx="10" cy="41.5" r="4.5"/><path d="M54 50 L54 46"/><circle class="cheio" cx="54" cy="41.5" r="4.5"/><path d="M5 50 L59 50"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path d="M15 30 Q31 14 33 15 L49 30"/><path d="M19 30 L19 50 L45 50 L45 30"/><path class="acento" d="M27 50 L27 43 Q27 39 32 39 Q37 39 37 43 L37 50 Z"/><path d="M10 50 L10 46"/><circle class="cheio" cx="10" cy="41.5" r="4.5"/><path d="M54 50 L54 46"/><circle class="cheio" cx="54" cy="41.5" r="4.5"/><path d="M5 50 L59 50"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path d="M15 30 Q31 14 33 15 L49 30"/><path d="M19 30 L19 50 L45 50 L45 30"/><path class="acento" d="M27 50 L27 43 Q27 39 32 39 Q37 39 37 43 L37 50 Z"/><path d="M10 50 L10 46"/><circle class="cheio" cx="10" cy="41.5" r="4.5"/><path d="M54 50 L54 46"/><circle class="cheio" cx="54" cy="41.5" r="4.5"/><path d="M5 50 L59 50"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path d="M16 32 Q31 16 33 17 L48 32"/><path d="M20 32 L20 50 L44 50 L44 32"/><circle class="fino" cx="32" cy="27" r="4"/><path class="fino" d="M23 37 L28 37 L28 42 L23 42 Z"/><path class="fino" d="M36 37 L41 37 L41 42 L36 42 Z"/><path class="acento" d="M29 50 L29 44 Q29 41 32 41 Q35 41 35 44 L35 50 Z"/><path class="fino" d="M26 50 L25 53 L39 53 L38 50"/><path d="M10 53 L10 47"/><circle class="cheio" cx="10" cy="43" r="4"/><path d="M54 53 L54 47"/><circle class="cheio" cx="54" cy="43" r="4"/><path d="M6 53 L58 53"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 5. ESTRADA ============ -->
+  <div class="cartao">
+    <p class="rotulo">5 — estrada / viagem <em>· estrada ao horizonte (A)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Estrada, peso cheio">
+          <path class="acento" d="M18 33 A14 14 0 0 1 46 33 Z"/>
+          <path class="fino" d="M32 10 L32 14"/>
+          <path class="fino" d="M15 19 L18 22"/>
+          <path class="fino" d="M49 19 L46 22"/>
+          <path d="M4 33 L60 33"/>
+          <path d="M16 56 L28 33"/>
+          <path d="M48 56 L36 33"/>
+          <path class="fino" d="M32 52 L32 48"/>
+          <path class="fino" d="M32 42 L32 39"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Estrada, peso miúdo">
+          <path class="acento" d="M17 33 A15 15 0 0 1 47 33 Z"/>
+          <path d="M4 33 L60 33"/>
+          <path d="M15 57 L28 33"/>
+          <path d="M49 57 L36 33"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path class="acento" d="M17 33 A15 15 0 0 1 47 33 Z"/><path d="M4 33 L60 33"/><path d="M15 57 L28 33"/><path d="M49 57 L36 33"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path class="acento" d="M17 33 A15 15 0 0 1 47 33 Z"/><path d="M4 33 L60 33"/><path d="M15 57 L28 33"/><path d="M49 57 L36 33"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path class="acento" d="M17 33 A15 15 0 0 1 47 33 Z"/><path d="M4 33 L60 33"/><path d="M15 57 L28 33"/><path d="M49 57 L36 33"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path class="acento" d="M18 33 A14 14 0 0 1 46 33 Z"/><path class="fino" d="M32 10 L32 14"/><path class="fino" d="M15 19 L18 22"/><path class="fino" d="M49 19 L46 22"/><path d="M4 33 L60 33"/><path d="M16 56 L28 33"/><path d="M48 56 L36 33"/><path class="fino" d="M32 52 L32 48"/><path class="fino" d="M32 42 L32 39"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ 6. CONTATO ============ -->
+  <div class="cartao">
+    <p class="rotulo">6 — contato <em>· balão cheio (A)</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg class="g96" viewBox="0 0 64 64" aria-label="Contato, peso cheio">
+          <path class="acento" d="M17 12 Q11 12 11 19 L11 33 Q11 40 18 40 L21 40 L21 50 L31 40 L46 40 Q53 40 53 33 L53 19 Q53 12 47 12 Z"/>
+          <circle class="vazado" cx="24" cy="26" r="1" stroke-width="4"/>
+          <circle class="vazado" cx="32" cy="26" r="1" stroke-width="4"/>
+          <circle class="vazado" cx="40" cy="26" r="1" stroke-width="4"/>
+        </svg>
+        <span><b>cheio</b></span>
+      </div>
+      <div class="opcao">
+        <svg class="miudo g96" viewBox="0 0 64 64" aria-label="Contato, peso miúdo">
+          <path class="acento" d="M16 10 Q9 10 9 18 L9 34 Q9 42 17 42 L20 42 L20 54 L32 42 L47 42 Q55 42 55 34 L55 18 Q55 10 48 10 Z"/>
+          <circle class="vazado" cx="23" cy="26" r="1.5" stroke-width="6"/>
+          <circle class="vazado" cx="32" cy="26" r="1.5" stroke-width="6"/>
+          <circle class="vazado" cx="41" cy="26" r="1.5" stroke-width="6"/>
+        </svg>
+        <span><b>miúdo</b></span>
+      </div>
+      <div class="opcao">
+        <div class="regua">
+          <svg class="miudo g16" viewBox="0 0 64 64"><path class="acento" d="M16 10 Q9 10 9 18 L9 34 Q9 42 17 42 L20 42 L20 54 L32 42 L47 42 Q55 42 55 34 L55 18 Q55 10 48 10 Z"/><circle class="vazado" cx="23" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="32" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="41" cy="26" r="1.5" stroke-width="6"/></svg>
+          <svg class="miudo g24" viewBox="0 0 64 64"><path class="acento" d="M16 10 Q9 10 9 18 L9 34 Q9 42 17 42 L20 42 L20 54 L32 42 L47 42 Q55 42 55 34 L55 18 Q55 10 48 10 Z"/><circle class="vazado" cx="23" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="32" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="41" cy="26" r="1.5" stroke-width="6"/></svg>
+          <svg class="miudo g32" viewBox="0 0 64 64"><path class="acento" d="M16 10 Q9 10 9 18 L9 34 Q9 42 17 42 L20 42 L20 54 L32 42 L47 42 Q55 42 55 34 L55 18 Q55 10 48 10 Z"/><circle class="vazado" cx="23" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="32" cy="26" r="1.5" stroke-width="6"/><circle class="vazado" cx="41" cy="26" r="1.5" stroke-width="6"/></svg>
+          <svg class="g64" viewBox="0 0 64 64"><path class="acento" d="M17 12 Q11 12 11 19 L11 33 Q11 40 18 40 L21 40 L21 50 L31 40 L46 40 Q53 40 53 33 L53 19 Q53 12 47 12 Z"/><circle class="vazado" cx="24" cy="26" r="1" stroke-width="4"/><circle class="vazado" cx="32" cy="26" r="1" stroke-width="4"/><circle class="vazado" cx="40" cy="26" r="1" stroke-width="4"/></svg>
+        </div>
+        <span>16 · 24 · 32 (miúdo) · 64 (cheio)</span>
+      </div>
+    </div>
+  </div>
+
+  <p class="nota" style="margin-top:2rem">Aprovando aqui, os aprovados viram SVGs definitivos
+  em <code>marca/icones/</code> e a seção "Iconografia" entra no manual (<code>docs/miv.md</code>).</p>
+</main>
+</body>
+</html>
