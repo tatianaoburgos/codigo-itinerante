@@ -67,6 +67,22 @@ Apresentar pedindo reação nos dois eixos (silhueta e paleta) separadamente. It
 > usando spec + mockups como briefing. A Fase 1 retoma quando ela voltar com a
 > personagem. Tasks 2+ dependem deste portão.
 
+> **STATUS 2026-07-19 — ESCOLHIDA "PELO MOMENTO".** A autora trouxe o desenho a lápis
+> (pose: celular erguido, mão na cintura, óculos escuros, cabelão cacheado redondo, top
+> cropped, blusa amarrada na cintura, mochila, botas) e uma referência de forma flat
+> chapada. A tradução em `mockups/viajante-personagem.html` foi salva como **versão
+> provisória** — a autora considerou a execução do Claude fraca e vai produzir a versão
+> digital definitiva com ferramenta externa (traçado sobre a foto em Krita/Inkscape ou
+> vetorização IA), usando o desenho dela como fonte. O SVG final substituirá esta versão.
+>
+> **Mesmo dia, mais tarde:** a autora vetorizou o desenho (vectorizer, traço preto) e o
+> Claude coloriu por regiões: `mockups/viajante-colorida.svg` (fonte vetorizada em
+> `mockups/viajante-vetorizada-original.svg`). Cores P1 viva-clara + pele/cabelo do
+> mockup de silhuetas; cabelo e rosto são camadas por baixo do traço (a vetorização
+> fundiu-os com o fundo); botas desenhadas por cima da calça; fundo transparente,
+> funciona sobre claro e escuro. Os óculos do lápis se perderam na vetorização.
+> Aguardando reação da autora para promover a `marca/ilustracao/viajante.svg`.
+
 - [ ] **Step 4: Commit**
 
 ```bash
@@ -221,6 +237,16 @@ git commit -m "Fase 1: SVGs definitivos da viajante e da cidade-modelo"
 ---
 
 ### Task 6: Iconografia da marca
+
+> **CONCLUÍDA em 2026-07-19, por um plano separado.** A autora pediu para deixar
+> personagem/cidade/hero por último e seguir com o resto — a iconografia foi
+> executada fora desta sequência, com seu próprio plano
+> (`docs/superpowers/plans/2026-07-19-iconografia.md`) e spec
+> (`docs/superpowers/specs/2026-07-19-iconografia-design.md`). Conjunto final: 6
+> conceitos do negócio (não os 8 listados no Step 1 abaixo, que ficou como rascunho
+> anterior), em `marca/icones/` com `gera_icones.py`, registrado na seção 6 do
+> `docs/miv.md`. Os passos originais abaixo não foram seguidos à risca — mantidos
+> como histórico da primeira proposta.
 
 **Files:**
 - Create: `mockups/iconografia.html`

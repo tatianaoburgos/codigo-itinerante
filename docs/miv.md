@@ -184,4 +184,5 @@ verdade do desenho é `mockups/icones-refino.html`.
 1. ✅ `marca/` com wordmark e monograma em SVG (escuro, claro, mono; fontes em curvas) + `gera_wordmark.py` para regenerar.
 2. ✅ `marca/tokens.css` com a paleta e as fontes para materiais HTML e o futuro site.
 3. ✅ `marca/icones/` com os 24 SVGs da iconografia + `gera_icones.py` para regenerar.
-4. Pendente: aplicar o cabeçalho padrão nos documentos comerciais quando forem redigidos (proposta, contrato).
+4. ✅ `marca/miv.html` — versão navegável deste manual, e `marca/MIV-codigo-itinerante.pdf` — exportação em PDF (gerados a partir deste arquivo; regenerar manualmente quando o manual mudar de forma relevante).
+5. Pendente: aplicar o cabeçalho padrão nos documentos comerciais quando forem redigidos (proposta, contrato).

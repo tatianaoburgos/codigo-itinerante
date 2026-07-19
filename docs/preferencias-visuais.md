@@ -105,3 +105,55 @@ Notas de identidade visual da aba "Critérios UX" da planilha (0-5): nota máxim
 - **"Como mostrar comodidades"** → Baguá (símbolo artístico + descrição breve).
 - **"Como mostrar a região/atrações"** → El Misti "Localização privilegiada", Ponto de Luz "Atrações ao Ar Livre".
 - **Paleta aproveitável** → Pousada do Cais (cores sim, execução não).
+
+---
+
+# Referências para o site da própria marca — análise de 2026-07-15
+
+Segunda leva de análise da autora, agora de sites de designers/estúdios, para orientar a evolução do **site do Código Itinerante** (`site/`), não os sites de cliente. Síntese do gosto: **preto e branco com splashs de cor intencionais, tipografia grande, pouco texto, arte/ilustração autoral e movimento sem vídeo** — coerente com a "regra do acento" do MIV.
+
+## Gostou — usar como referência
+
+### Designjoy (designjoy.co)
+- Gosta dos dois tipos de letra (par sans + serifa, como o site dela). Site tem informação demais para o gosto dela, mas o **splash de cor** é divertido — **quer explorar um splash de cor que faça sentido no nosso contexto**.
+
+### Tobias van Schneider (vanschneider.com)
+- Bonito: preto, detalhes brancos, pontos vermelhos que chamam atenção. Fontes grandes, pouco texto. Contra: fotos que "vão se abrindo" (efeito powerpoint — proibição já conhecida).
+
+### Set Studio (set.studio)
+- Moderno; texto grande e pontos de cor. **Amou o final: ao rolar até o fim surge uma tela de cor completamente diferente com as informações — quer isso no site dela.**
+
+### Rauno Freiberg (rauno.me)
+- Desenhos preto e branco com splash de laranja; **desenhos que se movem conforme a rolagem**. (O conceito geral do site é "revolucionário" demais para o público dono-de-hostel — pegar só a linguagem dos desenhos.)
+
+### Robb Owen (robbowen.digital)
+- **Animação com movimento** (personagem que segue o mouse) e letras grandes. Paleta não agradou.
+
+### Heydon Pickering (heydonworks.com)
+- Amou a arte da landing page. Quer **agregar arte autoral** ao site, respeitando o tom — mas mantendo o formato one-page rolável. Sentiu falta de cor no site dele.
+
+### Maggie Appleton (maggieappleton.com)
+- Gostou do conjunto: o site cria um **ambiente, um sentimento** (jardim/romântico — tom que não vamos seguir, mas o princípio de "site que cria ambiente" sim). O humor de "mediocre developer" arrancou sorriso — leveza na voz.
+
+### Sara Soueidan (sarasoueidan.com)
+- Plain demais, não é o estilo. Salvou só um detalhe: **a artezinha na aba (favicon/ícone) ao lado do nome**.
+
+### Lynn Fisher (lynnandtonic.com)
+- Não vai seguir a estética, mas admira a **voz clara e autoral** — quer encontrar uma voz própria tão nítida quanto.
+
+## Descartados
+
+- **Cassie Evans** (cassie.codes) — site fora do ar.
+- **37signals** — out of the box demais para o público; mas nota que mudanças de cor + texto grande tornam a página interessante mesmo sem imagens.
+- **Clearleft** — feeling de jornal, "sem alma".
+- **Semplice** — lindo, mas depende de fotos/vídeos profissionais que não temos; não replicável.
+- **Worldpackers / TrustedHousesitters** — institucionais demais; o caminho é autoral: "eu quero gostar do site que vou fazer".
+
+## Síntese acionável (site da marca)
+
+- **Splash de cor**: base preta/branca com explosões pontuais de âmbar (Designjoy, Set Studio, Rauno) — versão ampliada da regra do acento.
+- **Final de página em cor cheia**: última seção em cor completamente diferente com as informações (Set Studio) — aprovado, ela quer.
+- **Arte autoral em vez de fotos**: ilustrações/desenhos p&b com acento laranja, que ganham movimento na rolagem (Rauno, Heydon) — o caminho para dar movimento sem vídeo.
+- **Animação de personagem**: a viajante da hero (ver `docs/ideias-backlog.md`), cabeça seguindo o mouse (Robb Owen, intro de Mario).
+- **Menos texto, tipografia maior** (van Schneider, Set Studio).
+- **Site que cria ambiente/sentimento**, com voz clara e um toque de humor (Maggie Appleton, Lynn Fisher).

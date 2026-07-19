@@ -53,7 +53,7 @@ comodidades → a região → depoimentos → localização → CTA).
 
 - [x] **E-mail real** — atualizado para `lumehostel@gmail.com` (2026-07-15).
 - [ ] **Confirmação do Instagram**. WhatsApp e e-mail já são os reais.
-- [ ] **Domínio** do site
+- [ ] **Domínio** do site — publicado em produção na Vercel em https://lumehostel.vercel.app (2026-07-15); falta domínio próprio
 - [ ] **Confirmação dos textos** — validar se história, comodidades e dados das acomodações
       batem com a realidade do hostel
 - [ ] **Confirmação de capacidade dos quartos privativos** — assumimos 2 pessoas para
