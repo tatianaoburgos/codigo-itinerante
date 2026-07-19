@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Iconografia — propostas por conceito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  /* modo escuro (padrão): fundo Breu, linha Cal, acento Âmbar */
+  body { --fundo: var(--breu); --superficie: var(--grafite); --borda: #26241f;
+    --texto: var(--cal); --texto-2: var(--pedra);
+    --linha: var(--cal); --acento: var(--ambar); }
+  body.claro { --fundo: var(--papel); --superficie: #ffffff; --borda: #e8e3d6;
+    --texto: var(--tinta); --texto-2: #7a756b;
+    --linha: var(--tinta); --acento: var(--queimado); }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--fundo); color: var(--texto); font-family: "Archivo", sans-serif;
+    line-height: 1.6; transition: background 0.25s, color 0.25s; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--acento); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--acento); letter-spacing: 0; }
+  .nota { color: var(--texto-2); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .toggle { position: fixed; top: 1.25rem; right: 1.25rem; z-index: 10;
+    font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto); background: var(--superficie);
+    border: 1px solid var(--borda); border-radius: 999px; padding: 0.5rem 1rem; cursor: pointer; }
+
+  .cartao { background: var(--superficie); border: 1px solid var(--borda); border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; transition: background 0.25s; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--acento); font-style: normal; }
+  .palco { display: flex; gap: 2.5rem; align-items: flex-start; justify-content: flex-start; flex-wrap: wrap; }
+  .opcao { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+  .opcao svg { width: 112px; height: 112px; }
+  .opcao span { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--texto-2); }
+  .opcao span b { color: var(--texto); font-weight: 500; }
+  .legenda { color: var(--texto-2); font-size: 0.85rem; max-width: 58ch; margin-top: 1.25rem; }
+
+  svg { fill: none; stroke: var(--linha); stroke-width: 3.25;
+    stroke-linecap: round; stroke-linejoin: round; }
+  svg .acento { fill: var(--acento); stroke: none; }
+  svg .acento-linha { stroke: var(--acento); fill: none; }
+  svg .vazado { stroke: var(--fundo); fill: none; }
+  svg .cheio { fill: var(--linha); stroke: none; }
+  svg .fino { stroke-width: 2.25; }
+</style>
+</head>
+<body>
+<button class="toggle" onclick="document.body.classList.toggle('claro')">Breu / Papel</button>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>iconografia</b> · rodada 1</p>
+  <h1>Um conceito, <span class="it">duas ou três propostas</span></h1>
+  <p class="nota">Peso "cheio" (linha solta + flat), 15 propostas para os 6 conceitos do negócio.
+  Escolha uma por conceito — ou peça outra rodada. O botão no canto troca o fundo (Breu/Papel)
+  com as cores certas de cada um. O refino de traço e o peso "miúdo" vêm na rodada 2.</p>
+
+  <!-- ============ 1. SITE PRÓPRIO ============ -->
+  <div class="cartao">
+    <p class="rotulo">1 — site próprio <em>· o hostel dono da própria presença</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com cursor">
+          <path d="M13 31 Q31 13 33 14 L51 31"/>
+          <path d="M17 31 L17 51 Q17 52 18 52 L46 52 Q47 52 47 51 L47 31"/>
+          <path class="acento" d="M27 52 L27 41 Q27 37 32 37 Q37 37 37 41 L37 52 Z"/>
+          <path class="cheio" d="M42 36 L58 42 L51 45 L48 52 Z"/>
+        </svg>
+        <span><b>A</b> · casinha + cursor</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha dentro de janela de navegador">
+          <path d="M10 13 Q9 13 9 15 L9 49 Q9 51 11 51 L53 51 Q55 51 55 49 L55 15 Q55 13 53 13 Z"/>
+          <path d="M9 23 L55 23"/>
+          <circle class="cheio" cx="15.5" cy="18" r="1.8"/>
+          <circle class="cheio" cx="21.5" cy="18" r="1.8"/>
+          <path class="acento" d="M21 42 L32 31 L43 42 Z"/>
+          <path d="M24 42 L24 47 L40 47 L40 42"/>
+        </svg>
+        <span><b>B</b> · janela de navegador</span>
+      </div>
+    </div>
+    <p class="legenda">A casinha é o hostel; o cursor (A) ou o navegador (B) dizem "com site próprio".
+    Em A o acento é a porta; em B, o telhado.</p>
+  </div>
+
+  <!-- ============ 2. PERMUTA ============ -->
+  <div class="cartao">
+    <p class="rotulo">2 — permuta <em>· sites em troca de noites</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Setas circulares de troca">
+          <path d="M17 27 Q19 12 33 12 Q41 12 46 18"/>
+          <path class="cheio" d="M45 12 L53 20 L43 24 Z"/>
+          <path class="acento-linha" d="M47 37 Q45 52 31 52 Q23 52 18 46"/>
+          <path class="acento" d="M19 52 L11 44 L21 40 Z"/>
+        </svg>
+        <span><b>A</b> · setas de troca</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Aperto de mãos">
+          <path d="M4 29 L15 29"/>
+          <path d="M15 22 L15 36"/>
+          <path d="M15 29 Q20 28 23 30"/>
+          <path d="M60 35 L49 35"/>
+          <path d="M49 28 L49 42"/>
+          <path d="M49 35 Q44 36 41 34"/>
+          <path class="acento" d="M25 25 Q22 32 26 36 Q31 41 37 38 Q42 35 40 29 Q38 24 32 24 Q27 24 25 25 Z"/>
+          <path class="vazado fino" d="M28 29 Q32 27 36 30"/>
+          <path class="vazado fino" d="M28 33 Q32 31 36 34"/>
+        </svg>
+        <span><b>B</b> · aperto de mãos</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha e lua com setas de ida e volta">
+          <path d="M6 34 L16 24 L26 34"/>
+          <path d="M9 34 L9 47 L23 47 L23 34"/>
+          <path class="acento" d="M49 8 A11 11 0 1 0 58 22 A9 9 0 1 1 49 8 Z"/>
+          <path d="M27 22 Q33 13 40 12"/>
+          <path class="cheio" d="M43 9 L44 17 L36 15 Z"/>
+          <path class="acento-linha" d="M47 36 Q41 45 34 46"/>
+          <path class="acento" d="M31 49 L30 41 L38 43 Z"/>
+        </svg>
+        <span><b>C</b> · casinha ⇄ lua</span>
+      </div>
+    </div>
+    <p class="legenda">A é o símbolo clássico de troca no traço solto; B é a versão humana (o combinado);
+    C conta a permuta literalmente: a casinha (o site) pelas noites (a lua).</p>
+  </div>
+
+  <!-- ============ 3. NOITES DE HOSPEDAGEM ============ -->
+  <div class="cartao">
+    <p class="rotulo">3 — noites de hospedagem <em>· o pagamento</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Lâmpada de hostel acesa">
+          <path d="M32 7 L32 17"/>
+          <path class="acento" d="M32 17 Q21 18 21 30 Q21 39 27 42 L37 42 Q43 39 43 30 Q43 18 32 17 Z"/>
+          <path d="M28 47 L36 47"/>
+          <path d="M30 52 L34 52"/>
+          <path class="fino" d="M14 28 L8 26"/>
+          <path class="fino" d="M50 28 L56 26"/>
+          <path class="fino" d="M17 40 L12 44"/>
+          <path class="fino" d="M47 40 L52 44"/>
+        </svg>
+        <span><b>A</b> · a lâmpada do hostel</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Cama com lua em cima">
+          <path class="acento" d="M42 8 A9 9 0 1 0 50 20 A7 7 0 1 1 42 8 Z"/>
+          <path d="M12 30 L12 50"/>
+          <path d="M12 44 L52 44 L52 50"/>
+          <path d="M12 38 Q13 34 17 34 L24 34 Q28 34 28 38"/>
+          <path d="M28 38 L52 38 L52 44"/>
+        </svg>
+        <span><b>B</b> · lua + cama</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha dormindo sob a lua">
+          <path class="acento" d="M40 6 A9 9 0 1 0 48 18 A7 7 0 1 1 40 6 Z"/>
+          <path d="M13 37 Q30 21 32 22 L51 37"/>
+          <path d="M17 37 L17 54 L47 54 L47 37"/>
+          <path class="fino" d="M27 45 Q29 43 31 45"/>
+          <path class="fino" d="M34 45 Q36 43 38 45"/>
+        </svg>
+        <span><b>C</b> · casinha dormindo</span>
+      </div>
+    </div>
+    <p class="legenda">A é a narrativa da marca (a lâmpada acesa à noite) — meu palpite favorito.
+    B é a leitura mais literal de "noite de hospedagem". C tem as janelas fechadas como olhinhos dormindo.</p>
+  </div>
+
+  <!-- ============ 4. HOSTEL / POUSADA ============ -->
+  <div class="cartao">
+    <p class="rotulo">4 — hostel / pousada <em>· a casinha com jardim, o destino</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha com jardim e chaminé">
+          <path d="M43 21 L43 13 L48 13 L48 26"/>
+          <path d="M15 33 Q32 16 34 17 L52 33"/>
+          <path d="M19 33 L19 53 L49 53 L49 33"/>
+          <path class="acento" d="M29 53 L29 43 Q29 39 34 39 Q39 39 39 43 L39 53 Z"/>
+          <path class="fino" d="M9 53 Q7 47 11 44"/>
+          <circle class="cheio" cx="11.5" cy="42" r="2.6"/>
+          <path class="fino" d="M57 53 Q59 48 55 45"/>
+          <circle class="cheio" cx="54.5" cy="43.5" r="2.6"/>
+        </svg>
+        <span><b>A</b> · com flores e chaminé</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Casinha de telhado redondo com fumaça">
+          <path class="fino" d="M44 12 Q41 9 44 6"/>
+          <path class="acento" d="M14 32 Q14 18 32 18 Q50 18 50 32 L14 32 Z"/>
+          <path d="M18 32 L18 52 L46 52 L46 32"/>
+          <path d="M27 52 L27 43 Q27 40 31 40 Q35 40 35 43 L35 52"/>
+          <path class="fino" d="M40 46 Q43 44 43 41"/>
+          <path class="fino" d="M55 52 Q57 46 53 43"/>
+          <path class="fino" d="M9 52 Q8 47 12 45"/>
+        </svg>
+        <span><b>B</b> · telhado redondo, fumaça</span>
+      </div>
+    </div>
+    <p class="legenda">A mesma casinha do universo da viajante, em ícone. Em A o acento é a porta;
+    em B, o telhado arredondado (mais macio, mais "pousada").</p>
+  </div>
+
+  <!-- ============ 5. ESTRADA / VIAGEM ============ -->
+  <div class="cartao">
+    <p class="rotulo">5 — estrada / viagem <em>· o itinerante</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Estrada ao horizonte com sol nascendo">
+          <path class="acento" d="M18 33 A14 14 0 0 1 46 33 Z"/>
+          <path class="fino" d="M32 10 L32 14"/>
+          <path class="fino" d="M15 19 L18 22"/>
+          <path class="fino" d="M49 19 L46 22"/>
+          <path d="M4 33 L60 33"/>
+          <path d="M16 56 L28 33"/>
+          <path d="M48 56 L36 33"/>
+          <path class="fino" d="M32 52 L32 48"/>
+          <path class="fino" d="M32 42 L32 39"/>
+        </svg>
+        <span><b>A</b> · estrada ao horizonte</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Placa de estrada">
+          <path d="M29 28 L29 53"/>
+          <path d="M20 53 L38 53"/>
+          <path class="acento" d="M12 11 Q11 11 11 13 L11 25 Q11 27 13 27 L46 27 L53 19 L46 11 Z"/>
+          <path class="vazado" d="M19 19 L40 19"/>
+          <path class="vazado" d="M35 14.5 L40 19 L35 23.5"/>
+        </svg>
+        <span><b>B</b> · placa de estrada</span>
+      </div>
+    </div>
+    <p class="legenda">A junta estrada e amanhecer (o sol Firewatch no horizonte); B aponta o caminho —
+    a plaquinha inteira é a mancha de acento.</p>
+  </div>
+
+  <!-- ============ 6. CONTATO / WHATSAPP ============ -->
+  <div class="cartao">
+    <p class="rotulo">6 — contato <em>· conversa no traço da marca, nunca o logo oficial</em></p>
+    <div class="palco">
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Balão de conversa com pontinhos">
+          <path class="acento" d="M17 12 Q11 12 11 19 L11 33 Q11 40 18 40 L21 40 L21 50 L31 40 L46 40 Q53 40 53 33 L53 19 Q53 12 47 12 Z"/>
+          <circle class="vazado" cx="24" cy="26" r="1" stroke-width="4"/>
+          <circle class="vazado" cx="32" cy="26" r="1" stroke-width="4"/>
+          <circle class="vazado" cx="40" cy="26" r="1" stroke-width="4"/>
+        </svg>
+        <span><b>A</b> · balão cheio</span>
+      </div>
+      <div class="opcao">
+        <svg viewBox="0 0 64 64" aria-label="Dois balões de conversa">
+          <path class="acento" d="M34 8 Q28 8 28 14 L28 22 Q28 28 34 28 L44 28 L51 34 L51 14 Q51 8 45 8 Z"/>
+          <path d="M14 24 Q9 24 9 30 L9 42 Q9 48 15 48 L18 48 L18 56 L26 48 L34 48 Q40 48 40 42 L40 34"/>
+          <path class="fino" d="M17 37 L30 37"/>
+          <path class="fino" d="M17 42 L26 42"/>
+        </svg>
+        <span><b>B</b> · conversa de dois</span>
+      </div>
+    </div>
+    <p class="legenda">A é um balão só, chapado no acento, com os pontinhos de "digitando";
+    B mostra a conversa dos dois lados (você e o dono do hostel).</p>
+  </div>
+
+  <p class="nota" style="margin-top:2rem">Próximo passo depois da escolha: rodada 2 com os 6 escolhidos
+  refinados nos dois pesos (cheio e miúdo) e régua de tamanhos reais (16–64px).</p>
+</main>
+</body>
+</html>
