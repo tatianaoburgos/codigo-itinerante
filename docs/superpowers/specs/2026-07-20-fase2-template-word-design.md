@@ -34,10 +34,14 @@ comercial (essa decisão de escopo está registrada abaixo).
    interface do Word — não seria reproduzível nem versionável, e quebraria o
    padrão do resto da pasta `marca/`.
 
-4. **Fontes: instalar as 3 famílias da marca no Windows + incorporar no
-   arquivo.** Archivo e Instrument Serif Italic já existem como `.ttf` em
-   `marca/` (baixados para gerar os SVGs); falta baixar o `.ttf` da Martian
-   Mono. As três precisam ser instaladas no Windows para o Word renderizar
+4. **Fontes: instalar as famílias da marca no Windows + incorporar no
+   arquivo.** *Correção sobre a aprovação inicial*: a estrutura do §5 do MIV
+   (cabeçalho, metadados, corpo, rodapé) não usa itálico serifado em nenhum
+   ponto — só Archivo e Martian Mono. Instrument Serif Italic fica de fora
+   desta fase (seria instalada sem necessidade real; entra se um documento
+   futuro pedir o acento itálico). Archivo já existe como `.ttf` em `marca/`
+   (baixado para gerar os SVGs); falta baixar o `.ttf` da Martian Mono. As
+   duas precisam ser instaladas no Windows para o Word renderizar
    corretamente, e o arquivo final tem as fontes incorporadas (Word suporta
    isso nativamente) para abrir igual em qualquer computador, mesmo sem as
    fontes instaladas. Como o Microsoft Word está instalado nesta máquina, a
@@ -66,10 +70,12 @@ comercial (essa decisão de escopo está registrada abaixo).
 ## Escopo de implementação
 
 - Baixar o `.ttf` da Martian Mono (mesma fonte usada no site/MIV — Google
-  Fonts) para `marca/`, ao lado de `archivo.ttf` e
-  `instrumentserif-italic.ttf` já existentes.
-- Passo manual da autora: instalar as 3 fontes no Windows (instruções no
-  próprio script ou numa mensagem direta durante a implementação).
+  Fonts) para `marca/`, ao lado de `archivo.ttf` já existente
+  (`instrumentserif-italic.ttf` não é necessária nesta fase — ver item 4).
+- Instalação das fontes automatizada por script (`marca/prepara_fontes_documento.py`),
+  sem passo manual na interface do Windows/Word — deriva faces estáticas
+  Regular/Bold nomeadas "Archivo Doc"/"Martian Mono Doc" a partir das fontes
+  variáveis e instala por usuário.
 - `marca/gera_template_word.py`: gera `marca/template-documento.docx` com a
   estrutura acima via `python-docx`, e ao final abre o arquivo via
   automação COM do Word para ativar "incorporar fontes" e resalvar.
