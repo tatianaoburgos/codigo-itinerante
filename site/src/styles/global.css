@@ -18,3 +18,21 @@
   --font-serifa: "Instrument Serif", serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
+
+/* Fase 3: o fundo da página é um degradê contínuo breu -> âmbar (a lâmpada
+   acendendo ao longo da rolagem). Zona clara só no CtaFinal.
+   Spec: docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md */
+.pagina-degrade {
+  min-height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #0a0a09 0%,
+    #0a0a09 40%,
+    #14100c 52%,
+    #241812 62%,
+    #4a2a17 74%,
+    #8a4a24 84%,
+    #c4693f 92%,
+    #e39a3b 100%
+  );
+}

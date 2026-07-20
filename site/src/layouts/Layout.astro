@@ -30,7 +30,9 @@ const ogImage = new URL("og.png", Astro.site ?? Astro.url);
       não apenas passar por eles.
     -->
   </head>
-  <body class="bg-breu font-sans text-cal antialiased">
-    <slot />
+  <body class="bg-ambar font-sans text-cal antialiased">
+    <div class="pagina-degrade">
+      <slot />
+    </div>
   </body>
 </html>
