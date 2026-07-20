@@ -1,21 +1,25 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
+import iconeContato from "../../../marca/icones/icone-contato-cheio-breu.svg";
+import iconeHostel from "../../../marca/icones/icone-hostel-cheio-breu.svg";
+import iconeSiteProprio from "../../../marca/icones/icone-site-proprio-cheio-breu.svg";
+import iconeEstrada from "../../../marca/icones/icone-estrada-cheio-breu.svg";
 
-const passos: { titulo: string; texto: string }[] = [
-  { titulo: "Conversamos no WhatsApp", texto: "Você me conta do hostel e fechamos juntos o acordo de noites." },
-  { titulo: "Briefing e fotos", texto: "Você preenche um formulário rápido sobre o hostel e me envia as fotos em alta qualidade. Quanto melhores as fotos, mais bonito o site fica." },
-  { titulo: "Quinze dias de construção", texto: "Eu escrevo os textos, monto o site e você acompanha." },
-  { titulo: "Site no ar, controle seu", texto: "Domínio no seu nome, site sob seu controle total." },
+const passos: { icone: ImageMetadata; titulo: string; texto: string }[] = [
+  { icone: iconeContato, titulo: "Conversamos no WhatsApp", texto: "Você me conta do hostel e fechamos juntos o acordo de noites." },
+  { icone: iconeHostel, titulo: "Briefing e fotos", texto: "Você preenche um formulário rápido sobre o hostel e me envia as fotos em alta qualidade. Quanto melhores as fotos, mais bonito o site fica." },
+  { icone: iconeSiteProprio, titulo: "Quinze dias de construção", texto: "Eu escrevo os textos, monto o site e você acompanha." },
+  { icone: iconeEstrada, titulo: "Site no ar, controle seu", texto: "Domínio no seu nome, site sob seu controle total." },
 ];
 ---
 
 <section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
   <Eyebrow texto="como" destaque="funciona" />
-  <ol class="mt-7 space-y-6">
+  <ol class="mt-7 space-y-8">
     {
-      passos.map((passo, i) => (
+      passos.map((passo) => (
         <li class="flex gap-6">
-          <span class="font-mono text-2xl text-ambar">{i + 1}</span>
+          <img src={passo.icone.src} alt="" class="w-[72px] flex-none" />
           <div>
             <h3 class="text-xl font-semibold">{passo.titulo}</h3>
             <p class="mt-1 leading-relaxed text-pedra">{passo.texto}</p>
