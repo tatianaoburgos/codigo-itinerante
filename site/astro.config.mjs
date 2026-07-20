@@ -1,10 +1,12 @@
 // @ts-check
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://codigo-itinerante.vercel.app',
+  integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
     server: {
