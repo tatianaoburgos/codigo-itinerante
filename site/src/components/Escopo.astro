@@ -25,13 +25,13 @@ const naoInclui: string[] = [
 <section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
   <Eyebrow texto="o que você" destaque="recebe" />
   <div class="mt-6 grid gap-6 md:grid-cols-2">
-    <div class="rounded-xl bg-grafite p-6 md:p-7">
+    <div class="rounded-xl border border-cal/10 bg-grafite/70 p-6 backdrop-blur-sm md:p-7">
       <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-ambar">Está incluído</h3>
       <ul class="mt-5 space-y-3 leading-relaxed">
         {inclui.map((item) => <li>{item}</li>)}
       </ul>
     </div>
-    <div class="rounded-xl border border-grafite p-6 md:p-7">
+    <div class="rounded-xl border border-cal/10 p-6 md:p-7">
       <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-pedra">Não está incluído</h3>
       <ul class="mt-5 space-y-3 leading-relaxed text-pedra">
         {naoInclui.map((item) => <li>{item}</li>)}
