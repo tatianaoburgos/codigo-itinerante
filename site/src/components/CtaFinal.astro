@@ -1,27 +1,27 @@
 ---
 import BotaoWhatsApp from "./BotaoWhatsApp.astro";
 import { dados } from "../dados";
-import monograma from "../../../marca/monograma-escuro.svg";
+import iconeContato from "../../../marca/icones/icone-contato-cheio-papel.svg";
+import monograma from "../../../marca/monograma-claro.svg";
 ---
 
-<section class="mx-auto w-full max-w-3xl px-6 pb-6 pt-10 md:pt-12">
-  <div class="rounded-xl bg-grafite px-6 py-12 text-center md:px-7 md:py-14">
-    <h2 class="text-3xl font-bold tracking-[-0.035em] md:text-4xl">
-      Tem um hostel? Vamos <em class="font-serifa font-normal text-ambar">conversar</em>.
-    </h2>
-    <p class="mx-auto mt-4 max-w-md leading-relaxed text-pedra">
-      Me chama no WhatsApp e me conta do seu hostel. A conversa não custa
-      nada — nem depois dela.
-    </p>
-    <div class="mt-7">
-      <BotaoWhatsApp />
-    </div>
+<section class="mx-auto w-full max-w-3xl px-6 pb-6 pt-10 text-breu md:pt-12">
+  <img src={iconeContato.src} alt="" class="h-[88px]" />
+  <h2 class="mt-6 text-4xl font-bold tracking-[-0.035em] md:text-5xl">
+    Tem um hostel? Vamos <em class="font-serifa font-normal">conversar</em>.
+  </h2>
+  <p class="mt-4 max-w-md text-lg leading-relaxed text-breu/70">
+    Me chama no WhatsApp e me conta do seu hostel. A conversa não custa
+    nada — nem depois dela.
+  </p>
+  <div class="mt-7">
+    <BotaoWhatsApp invertido />
   </div>
-  <footer class="mt-12 flex items-center justify-between border-t border-grafite pt-6 text-sm text-pedra">
+  <footer class="mt-12 flex items-center justify-between border-t border-breu/25 pt-6 text-sm text-breu/70">
     <img src={monograma.src} alt="Código Itinerante" class="h-8" />
     <div class="flex gap-6">
-      <a href={`mailto:${dados.email}`} class="hover:text-cal">{dados.email}</a>
-      <a href={dados.linkedin} class="hover:text-cal">LinkedIn</a>
+      <a href={`mailto:${dados.email}`} class="hover:text-breu">{dados.email}</a>
+      <a href={dados.linkedin} class="hover:text-breu">LinkedIn</a>
     </div>
   </footer>
 </section>

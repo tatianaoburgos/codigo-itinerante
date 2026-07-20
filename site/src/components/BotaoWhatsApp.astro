@@ -3,14 +3,18 @@ import { linkWhatsApp } from "../dados";
 
 interface Props {
   rotulo?: string;
+  invertido?: boolean;
 }
 
-const { rotulo = "Chamar no WhatsApp" } = Astro.props;
+const { rotulo = "Chamar no WhatsApp", invertido = false } = Astro.props;
 ---
 
 <a
   href={linkWhatsApp()}
-  class="inline-block rounded-full bg-ambar px-7 py-3 font-medium text-breu transition-colors hover:bg-barro"
+  class:list={[
+    "inline-block rounded-full px-7 py-3 font-medium transition-colors",
+    invertido ? "bg-breu text-ambar hover:bg-grafite" : "bg-ambar text-breu hover:bg-barro",
+  ]}
 >
   {rotulo}
 </a>
