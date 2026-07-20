@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site da marca — final de página em cor cheia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal);
+    font-family: "Archivo", sans-serif; line-height: 1.6; }
+
+  .barra { position: sticky; top: 0; z-index: 10; display: flex; gap: 0.5rem;
+    justify-content: center; padding: 0.9rem; background: rgba(10,10,9,0.92);
+    border-bottom: 1px solid #26241f; backdrop-filter: blur(6px); }
+  .barra button { font-family: "IBM Plex Mono", monospace; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer;
+    padding: 0.5rem 1rem; border-radius: 999px; border: 1px solid #35322b;
+    background: transparent; color: var(--pedra); transition: 0.2s; }
+  .barra button:hover { color: var(--cal); }
+  .barra button.on { background: var(--cal); color: var(--breu); border-color: var(--cal); }
+
+  .palco { max-width: 48rem; margin: 0 auto; padding: 2.5rem 1.5rem 0; }
+  .eyebrow { font-family: "IBM Plex Mono", monospace; font-size: 12px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--pedra); }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  .cartao { border-radius: 0.75rem; background: var(--grafite); padding: 1.75rem; margin-top: 1.5rem; }
+  .cartao h3 { font-family: "IBM Plex Mono", monospace; font-size: 13px; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--ambar); }
+  .cartao ul { list-style: none; margin-top: 1.1rem; display: grid; gap: 0.7rem; }
+
+  /* ---- a seção final em cor cheia (full-bleed) ---- */
+  .final { margin-top: 4rem; padding: 5rem 1.5rem 3rem;
+    background: var(--fundo-final); color: var(--texto-final); }
+  .final .dentro { max-width: 48rem; margin: 0 auto; }
+  .final .icone { height: 64px; margin-bottom: 2rem; }
+  .final h2 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 700;
+    letter-spacing: -0.04em; line-height: 1.02; max-width: 12ch; }
+  .final h2 em { font-family: "Instrument Serif", serif; font-style: italic;
+    font-weight: 400; letter-spacing: -0.01em; }
+  .final p { margin-top: 1.5rem; max-width: 34ch; font-size: 1.15rem;
+    color: var(--texto-final-2); }
+  .final .botao { display: inline-block; margin-top: 2rem; padding: 0.85rem 1.9rem;
+    border-radius: 999px; font-weight: 500; text-decoration: none;
+    background: var(--botao-fundo); color: var(--botao-texto); }
+  .final .rodape { margin-top: 5rem; padding-top: 1.5rem; display: flex;
+    align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    border-top: 1px solid var(--borda-final); font-size: 0.9rem; color: var(--texto-final-2); }
+  .final .rodape img { height: 30px; }
+  .final .rodape a { color: inherit; text-decoration: none; }
+
+  /* variantes */
+  body[data-cor="ambar"] { --fundo-final: var(--ambar); --texto-final: var(--breu);
+    --texto-final-2: rgba(10,10,9,0.72); --botao-fundo: var(--breu); --botao-texto: var(--ambar);
+    --borda-final: rgba(10,10,9,0.22); --icone-arquivo: breu; }
+  body[data-cor="cal"] { --fundo-final: var(--cal); --texto-final: #1a1915;
+    --texto-final-2: #7a756b; --botao-fundo: var(--breu); --botao-texto: var(--cal);
+    --borda-final: #ddd8c9; --icone-arquivo: breu; }
+  body[data-cor="barro"] { --fundo-final: var(--barro); --texto-final: var(--cal);
+    --texto-final-2: rgba(244,241,232,0.78); --botao-fundo: var(--cal); --botao-texto: var(--barro);
+    --borda-final: rgba(244,241,232,0.25); --icone-arquivo: papel; }
+</style>
+</head>
+<body data-cor="ambar">
+
+<div class="barra">
+  <button data-alvo="ambar" class="on">A · âmbar</button>
+  <button data-alvo="cal">B · cal</button>
+  <button data-alvo="barro">C · barro</button>
+</div>
+
+<!-- pedaço do site como está hoje, só pra dar o contraste da virada -->
+<div class="palco">
+  <p class="eyebrow">o que você <b>recebe</b></p>
+  <div class="cartao">
+    <h3>Está incluído</h3>
+    <ul>
+      <li>Site responsivo, bonito no celular e no computador</li>
+      <li>Acomodações, sobre o hostel, localização com mapa e contato</li>
+      <li>Botão de reserva direta pelo seu WhatsApp</li>
+      <li>Domínio registrado e configurado</li>
+    </ul>
+  </div>
+</div>
+
+<section class="final">
+  <div class="dentro">
+    <img class="icone" id="icone" src="../marca/icones/icone-contato-cheio-papel.svg" alt="">
+    <h2>Tem um hostel? Vamos <em>conversar</em>.</h2>
+    <p>Me chama no WhatsApp e me conta do seu hostel. A conversa não custa nada — nem depois dela.</p>
+    <a class="botao" href="#">Falar no WhatsApp</a>
+    <div class="rodape">
+      <img id="monograma" src="../marca/monograma-claro.svg" alt="Código Itinerante">
+      <div style="display:flex; gap:1.5rem">
+        <a href="#">tatianaoburgos@gmail.com</a>
+        <a href="#">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const icone = document.getElementById("icone");
+  const monograma = document.getElementById("monograma");
+  document.querySelectorAll(".barra button").forEach((b) => {
+    b.addEventListener("click", () => {
+      document.querySelectorAll(".barra button").forEach((o) => o.classList.remove("on"));
+      b.classList.add("on");
+      const cor = b.dataset.alvo;
+      document.body.dataset.cor = cor;
+      const versao = cor === "barro" ? "breu" : "papel";
+      icone.src = `../marca/icones/icone-contato-cheio-${versao}.svg`;
+      monograma.src = cor === "barro" ? "../marca/monograma-escuro.svg" : "../marca/monograma-claro.svg";
+    });
+  });
+</script>
+</body>
+</html>

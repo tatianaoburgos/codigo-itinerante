@@ -31,11 +31,10 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 - Documento .docx padrão para todos os documentos do projeto: fontes da marca (Archivo + Instrument Serif — verificar disponibilidade/fallback no Word), cores do MIV, iconografia da Fase 1, cara extremamente profissional.
 - Depende da Fase 1 (iconografia pronta).
 
-### Fase 3 — Splashs de cor e arte no site da marca
-- Introduzir a arte autoral e os splashs de âmbar no `site/` (refs: Designjoy, Set Studio, Rauno).
-- Final de página em cor cheia: última seção numa cor completamente diferente com as informações (Set Studio) — aprovado, ela quer.
-- Movimento sem vídeo: desenhos que reagem à rolagem (Rauno).
-- Menos texto, tipografia maior onde couber.
+### Fase 3 — Splashs de cor e arte no site da marca — DIREÇÃO FECHADA (2026-07-19)
+- Direção aprovada: **degradê contínuo breu → âmbar** na página inteira, final nas versões de papel do MIV, iconografia em escala grande, tipografia maior. Spec: `docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md`; mockup aprovado: `mockups/site-splash-cor.html`.
+- *Rejeitados no processo*: final de página em cor sólida (Set Studio), mancha de tinta e halo difuso.
+- Movimento sem vídeo (desenhos que reagem à rolagem, Rauno) ficou para a Fase 4.
 
 ### Fase 4 — Animação da hero: a viajante
 - Roteiro fechado em 2026-07-18 (spec da Fase 1, §5): noite na cidade cinza das plataformas → descoberta da casinha colorida → amanhecer Firewatch e ela entra; wordmark no céu mudando de cor. (A ideia original "contorno laranja, anda estilo Mario, cabeça segue o mouse" foi substituída.)
