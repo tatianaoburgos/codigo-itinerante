@@ -34,13 +34,18 @@ Reaproveita integralmente o motor `template/` e o padrão de cliente do LumeHost
 - **Perfil:** hostel urbano de praia, **adults only**, social (Booking dá nota
   **9,9 para grupos**). Recepção fala PT/EN/ES.
 - **Notas:** TripAdvisor 5,0 · Booking ~9,1–9,2.
-- **Acomodações:** dormitórios compartilhados (misto e feminino), ar-condicionado,
-  tomada por cama, **todos com vista pro mar**.
+- **Acomodações** (detalhe por cama, via Booking): dormitório misto (~26 m²,
+  banheiro **compartilhado**), dormitório feminino (~24 m², banheiro **privativo**)
+  e dormitório misto de 6 camas — todos com vista do mar, ar-condicionado, wi-fi
+  grátis, tomada perto da cama; roupa de cama e banho com custo adicional.
 - **Comodidades:** cozinha compartilhada 24h, lounge/sala de TV, recepção 24h,
-  wi-fi grátis, beira-mar, jogos de tabuleiro, serviço de limpeza diário,
-  segurança 24h/CCTV. Sem estacionamento. Roupa de cama/banho com custo adicional.
+  wi-fi grátis, beira-mar, jogos de tabuleiro/quebra-cabeças, álcool gel, ferro de
+  passar roupa, serviço de limpeza diário, segurança 24h/CCTV, máquinas de venda
+  automática (lanches/bebidas). Sem estacionamento.
 - **Elogios recorrentes:** localização, limpeza, equipe atenciosa que dá dicas,
   cozinha equipada, wi-fi bom.
+- **Contato confirmado:** WhatsApp de reservas **(71) 99983-8184**; Instagram
+  [@maravistahostel](https://www.instagram.com/maravistahostel/).
 
 ## Identidade visual (decisões do brainstorm)
 
@@ -97,7 +102,7 @@ Seções opcionais só entram se o material público as sustentar honestamente.
    com aspas grandes.
 9. **Localização** — Av. Oceânica 171; mapa embed; como chegar (aeroporto ~25 km
    etc.).
-10. **CTA final** — WhatsApp (número placeholder até o contato).
+10. **CTA final** — WhatsApp de reservas (71) 99983-8184.
 
 Entre seções: divisor com assinatura marítima (veleiro/farol).
 
@@ -135,8 +140,9 @@ derivado do círculo/veleiro).
    autorização de uso; se vier, é candidato a hero em vídeo (exceção prevista na
    regra de design, decisão da autora).
 2. **Fotos em alta resolução** de quartos e áreas comuns.
-3. **WhatsApp e e-mail reais** — o schema exige `whatsapp` (12–13 dígitos) e
-   `email`; a POC usa **placeholder claramente marcado**, trocado no contato.
+3. **E-mail de contato** — WhatsApp já confirmado ((71) 99983-8184, formato
+   `5571999838184` no config); falta e-mail. Até lá, POC usa **placeholder
+   claramente marcado**.
 4. Confirmar dados factuais (tipos de quarto, comodidades, política adults-only).
 5. **Contexto comercial sensível (não vai ao site):** há reclamações públicas
    sobre cobrança de day use / uso do lobby antes do check-in — a autora deve saber
