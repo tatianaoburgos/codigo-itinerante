@@ -50,5 +50,5 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 
 - [ ] Fase 1 — MIV expandido (ilustração, iconografia, viajante)
 - [ ] Fase 2 — Template Word
-- [ ] Fase 3 — Splash de cor + arte no site
+- [x] Fase 3 — Degradê breu → âmbar + iconografia no site (2026-07-19)
 - [ ] Fase 4 — Animação da hero

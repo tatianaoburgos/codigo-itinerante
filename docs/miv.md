@@ -88,6 +88,13 @@ As duas palavras na mesma linha, separadas por espaço simples, alinhadas pela b
 - Sobre escuro, nunca usar Queimado (é a versão para papel); sobre claro, nunca usar Âmbar/Dourado em texto (contraste insuficiente).
 - Preto puro `#000` e branco puro `#FFF` não fazem parte da paleta — usar Breu e Cal/Papel.
 
+**Exceção deliberada (site da marca, Fase 3 — 2026-07-19)**: o fundo do site
+institucional é um degradê contínuo Breu → Âmbar revelado pela rolagem — a
+lâmpada acendendo. O âmbar em área grande é o ponto de chegada da página, não
+o tom geral da marca; a regra do acento segue valendo em todas as outras
+aplicações. O trecho final (zona clara) usa as versões de papel: texto Tinta/
+Breu, ícones `-papel`, monograma claro.
+
 ---
 
 ## 4. Tipografia
