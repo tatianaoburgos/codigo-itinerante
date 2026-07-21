@@ -34,6 +34,10 @@ export const simbolosComodidade = [
   'jogos',
   'bagagem',
   'acolhedor',
+  'vista-mar',
+  'ar-condicionado',
+  'recepcao',
+  'wifi',
 ] as const;
 
 /** Comodidade do hostel, opcionalmente ilustrada com foto ou com símbolo artístico. */
