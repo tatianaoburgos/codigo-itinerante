@@ -7,25 +7,27 @@ import { foto } from '../lib/fotos';
 {/* Cards estilo boutique (ref. Kenoa/Parador/Awasi): foto limpa sem véu escuro,
     legenda embaixo com a capacidade em eyebrow monospace. 2 colunas no celular
     para encurtar a rolagem. */}
-<div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-4 lg:grid-cols-3">
-  {
-    config.acomodacoes.map((acomodacao) => (
-      <article>
-        <div class="overflow-hidden rounded-xl">
-          <Image
-            src={foto(acomodacao.fotos[0].arquivo)}
-            alt={acomodacao.fotos[0].alt}
-            widths={[480, 900]}
-            sizes="(min-width: 640px) 448px, 50vw"
-            class="aspect-3/4 w-full object-cover"
-          />
-        </div>
-        <p class="mt-3 font-mono text-xs tracking-widest text-fitinha uppercase">
-          {acomodacao.capacidade}
-        </p>
-        <h3 class="mt-1 font-display text-lg font-bold">{acomodacao.nome}</h3>
-        <p class="mt-1 text-sm opacity-75">{acomodacao.comodidades.join(' · ')}</p>
-      </article>
-    ))
-  }
-</div>
+{
+  config.acomodacoes && (
+    <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-4 lg:grid-cols-3">
+      {config.acomodacoes.map((acomodacao) => (
+        <article>
+          <div class="overflow-hidden rounded-xl">
+            <Image
+              src={foto(acomodacao.fotos[0].arquivo)}
+              alt={acomodacao.fotos[0].alt}
+              widths={[480, 900]}
+              sizes="(min-width: 640px) 448px, 50vw"
+              class="aspect-3/4 w-full object-cover"
+            />
+          </div>
+          <p class="mt-3 font-mono text-xs tracking-widest text-fitinha uppercase">
+            {acomodacao.capacidade}
+          </p>
+          <h3 class="mt-1 font-display text-lg font-bold">{acomodacao.nome}</h3>
+          <p class="mt-1 text-sm opacity-75">{acomodacao.comodidades.join(' · ')}</p>
+        </article>
+      ))}
+    </div>
+  )
+}

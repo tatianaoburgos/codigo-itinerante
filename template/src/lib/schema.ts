@@ -83,7 +83,7 @@ export const configClienteSchema = z.object({
     historia: z.string().min(1),
     foto: fotoSchema.optional(),
   }),
-  acomodacoes: z.array(acomodacaoSchema).min(1),
+  acomodacoes: z.array(acomodacaoSchema).min(1).optional(),
   precos: z.object({
     politica: z.enum(['faixa', 'consultar']),
     faixa: z.string().optional(),
@@ -96,8 +96,8 @@ export const configClienteSchema = z.object({
     cidade: z.string().min(1).optional(),
     uf: z.string().min(1).optional(),
     cep: z.string().min(1).optional(),
-    mapsEmbedUrl: z.url(),
-    comoChegar: z.array(z.string().min(1)),
+    mapsEmbedUrl: z.url().optional(),
+    comoChegar: z.array(z.string().min(1)).optional(),
     /** Frase curta opcional, exibida ao fim da seção Localização. */
     resumo: z.string().min(1).optional(),
   }),
@@ -106,7 +106,7 @@ export const configClienteSchema = z.object({
     email: z.email(),
     instagram: z.string().optional(),
   }),
-  comodidades: z.array(comodidadeSchema).min(1),
+  comodidades: z.array(comodidadeSchema).min(1).optional(),
   regiao: z.array(pontoRegiaoSchema).min(1).optional(),
   depoimentos: z.array(depoimentoSchema).min(1).optional(),
   vibe: z.array(fotoSchema).min(1).optional(),

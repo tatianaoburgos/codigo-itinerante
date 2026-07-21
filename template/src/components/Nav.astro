@@ -10,8 +10,11 @@ const abas = [
   { href: '/#regiao', rotulo: 'A região' },
   { href: '/#localizacao', rotulo: 'Localização' },
 ]
+  .filter((aba) => aba.href !== '/#acomodacoes' || config.acomodacoes)
+  .filter((aba) => aba.href !== '/#comodidades' || config.comodidades)
   .filter((aba) => aba.href !== '/#vibe' || config.vibe)
-  .filter((aba) => aba.href !== '/#regiao' || config.regiao);
+  .filter((aba) => aba.href !== '/#regiao' || config.regiao)
+  .filter((aba) => aba.href !== '/#localizacao' || config.localizacao.mapsEmbedUrl);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 ---
