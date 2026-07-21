@@ -4,6 +4,7 @@ import { marca } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 
 const abas = [
+  { href: '/#sobre', rotulo: 'O Hostel' },
   { href: '/#acomodacoes', rotulo: 'Acomodações' },
   { href: '/#comodidades', rotulo: 'Comodidades' },
   { href: '/#vibe', rotulo: 'A vibe' },
@@ -43,6 +44,13 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
           >
             {aba.rotulo}
           </a>
+        ))
+      }
+      {
+        config.navFuturo?.map((rotulo) => (
+          <span class="pb-0.5 text-sm font-bold opacity-40" title="Em breve" aria-hidden="true">
+            {rotulo}
+          </span>
         ))
       }
       <BotaoWhatsApp />

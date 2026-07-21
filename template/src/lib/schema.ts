@@ -111,6 +111,8 @@ export const configClienteSchema = z.object({
   depoimentos: z.array(depoimentoSchema).min(1).optional(),
   vibe: z.array(fotoSchema).min(1).optional(),
   destaques: z.array(destaqueSchema).max(2).optional(),
+  /** Rótulos de seções futuras exibidos no nav sem link (roadmap do site). */
+  navFuturo: z.array(z.string().min(1)).optional(),
 });
 
 export type ConfigCliente = z.infer<typeof configClienteSchema>;
