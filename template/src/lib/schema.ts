@@ -81,6 +81,7 @@ export const configClienteSchema = z.object({
   descricaoSeo: z.string().min(1).max(160),
   sobre: z.object({
     historia: z.string().min(1),
+    foto: fotoSchema.optional(),
   }),
   acomodacoes: z.array(acomodacaoSchema).min(1),
   precos: z.object({
