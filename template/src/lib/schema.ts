@@ -22,6 +22,10 @@ export const marcaSchema = z.object({
   /** Ícone raster (PNG) para Apple touch icon e fallback de favicon. */
   appleTouchIcon: z.string().min(1).optional(),
   faviconPng: z.string().min(1).optional(),
+  /** Vídeo full-bleed do hero (mp4/webm), no lugar da foto capa.jpg. */
+  heroVideo: z.string().min(1).optional(),
+  /** Frame estático (jpg) usado como poster do vídeo e fallback sem motion. */
+  heroVideoPoster: z.string().min(1).optional(),
 });
 
 /** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */

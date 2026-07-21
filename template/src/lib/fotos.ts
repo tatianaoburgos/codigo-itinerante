@@ -42,6 +42,28 @@ export function marca(arquivo: string): ImageMetadata {
   return meta;
 }
 
+const modulosVideo = import.meta.glob<string>('../../../clientes/*/fotos/*.{mp4,webm}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
+
+const videosDoCliente = new Map<string, string>(
+  Object.entries(modulosVideo)
+    .filter(([caminho]) => caminho.includes(`/clientes/${clienteAtivo}/fotos/`))
+    .map(([caminho, url]) => [caminho.split('/').pop()!, url]),
+);
+
+/** Resolve um arquivo de vídeo do cliente ativo (hero em vídeo). Não passa
+ * por `astro:assets` — vídeo não é otimizado como imagem, só copiado. */
+export function video(arquivo: string): string {
+  const url = videosDoCliente.get(arquivo);
+  if (!url) {
+    throw new Error(`Video "${arquivo}" nao encontrado em clientes/${clienteAtivo}/fotos/`);
+  }
+  return url;
+}
+
 /** Símbolo da marca do cliente (divisor de seção e marca-d'água), se houver. */
 export function simboloMarca(): ImageMetadata | undefined {
   return config.marca?.simbolo ? marca(config.marca.simbolo) : undefined;
