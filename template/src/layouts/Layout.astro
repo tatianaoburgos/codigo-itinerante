@@ -13,7 +13,12 @@ interface Props {
 const { titulo, descricao = config.descricaoSeo } = Astro.props;
 const tituloPagina = titulo ? `${titulo} — ${config.nome}` : `${config.nome} — ${config.slogan}`;
 
-const favicon = config.marca?.favicon ? marca(config.marca.favicon).src : '/favicon.svg';
+const temFaviconProprio = Boolean(config.marca?.favicon) || Boolean(config.marca?.faviconPng);
+const favicon = config.marca?.favicon
+  ? marca(config.marca.favicon).src
+  : temFaviconProprio
+    ? undefined
+    : '/favicon.svg';
 const faviconPng = config.marca?.faviconPng ? marca(config.marca.faviconPng).src : undefined;
 const appleTouchIcon = config.marca?.appleTouchIcon
   ? marca(config.marca.appleTouchIcon).src
@@ -60,7 +65,7 @@ const dadosEstruturados = {
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href={favicon} />
+    {favicon && <link rel="icon" type="image/svg+xml" href={favicon} />}
     {faviconPng && <link rel="icon" type="image/png" sizes="32x32" href={faviconPng} />}
     {appleTouchIcon && <link rel="apple-touch-icon" href={appleTouchIcon} />}
     {canonical && <link rel="canonical" href={canonical} />}
