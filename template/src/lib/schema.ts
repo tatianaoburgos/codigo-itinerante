@@ -93,6 +93,8 @@ export const configClienteSchema = z.object({
     cep: z.string().min(1).optional(),
     mapsEmbedUrl: z.url(),
     comoChegar: z.array(z.string().min(1)),
+    /** Frase curta opcional, exibida ao fim da seção Localização. */
+    resumo: z.string().min(1).optional(),
   }),
   contato: z.object({
     whatsapp: z.string().regex(/^\d{12,13}$/, 'somente dígitos, com DDI e DDD (ex.: 5571999998888)'),

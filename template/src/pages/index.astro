@@ -215,9 +215,11 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
         </div>
       )
     }
-    <p class="mt-10 text-center text-lg">
-      A poucos minutos da praia de Manaíra, no coração de João Pessoa.
-    </p>
+    {
+      config.localizacao.resumo && (
+        <p class="mt-10 text-center text-lg">{config.localizacao.resumo}</p>
+      )
+    }
     </div>
   </section>
 
