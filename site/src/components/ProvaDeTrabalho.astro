@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import Eyebrow from "./Eyebrow.astro";
+import printDesktop from "../assets/portfolio/lumehostel-desktop.png";
+import printMobile from "../assets/portfolio/lumehostel-mobile.png";
+
+const url = "https://lumehostel.vercel.app";
+---
+
+<section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
+  <Eyebrow texto="prova de" destaque="trabalho" />
+
+  <div class="relative mt-7">
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener"
+      class="block overflow-hidden rounded-xl border border-pedra/20 shadow-2xl transition-transform hover:-translate-y-1"
+    >
+      <div class="flex items-center gap-2 bg-grafite px-4 py-3">
+        <span class="h-2.5 w-2.5 rounded-full bg-pedra/40"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-pedra/40"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-pedra/40"></span>
+        <span class="ml-3 font-mono text-xs text-pedra">lumehostel.vercel.app</span>
+      </div>
+      <Image
+        src={printDesktop}
+        alt="Primeira dobra do site do LumeHostel vista no computador"
+        width={1440}
+        class="w-full"
+      />
+    </a>
+
+    <div
+      class="pointer-events-none absolute -bottom-6 right-6 hidden w-[130px] overflow-hidden rounded-[1.5rem] border-4 border-grafite shadow-2xl md:block"
+    >
+      <Image
+        src={printMobile}
+        alt="O mesmo site do LumeHostel visto no celular"
+        width={390}
+        class="w-full"
+      />
+    </div>
+  </div>
+
+  <div class="mt-10 space-y-5 leading-relaxed md:mt-16">
+    <h3 class="text-xl font-semibold">LumeHostel — João Pessoa, PB</h3>
+    <p>
+      Site institucional completo: acomodações, comodidades, a região,
+      depoimentos e localização. Reserva direta pelo WhatsApp. No ar desde
+      julho de 2026.
+    </p>
+    <p>
+      <a
+        href={url}
+        target="_blank"
+        rel="noopener"
+        class="inline-block rounded-full border border-ambar px-6 py-2.5 font-medium text-ambar transition-colors hover:bg-ambar hover:text-breu"
+      >Ver o site no ar</a>
+    </p>
+  </div>
+</section>
