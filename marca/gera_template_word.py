@@ -184,6 +184,22 @@ def construir_corpo(documento: Document) -> None:
     )
 
 
+def incorporar_fontes(caminho_docx: Path) -> None:
+    """Abre o docx no Word e resalva com as fontes incorporadas no arquivo."""
+    import win32com.client as win32
+
+    word = win32.gencache.EnsureDispatch("Word.Application")
+    word.Visible = False
+    try:
+        word.Options.PrintBackgrounds = True
+        doc = word.Documents.Open(str(caminho_docx))
+        doc.EmbedTrueTypeFonts = True
+        doc.Save()
+        doc.Close()
+    finally:
+        word.Quit()
+
+
 def main() -> None:
     with tempfile.TemporaryDirectory() as tmp:
         tmp_path = Path(tmp)
@@ -202,7 +218,9 @@ def main() -> None:
 
         destino = AQUI / "template-documento.docx"
         documento.save(str(destino))
-        print(f"gerado: {destino}")
+
+    incorporar_fontes(destino)
+    print(f"gerado com fontes incorporadas: {destino}")
 
 
 if __name__ == "__main__":
