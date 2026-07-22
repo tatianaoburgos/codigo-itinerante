@@ -140,7 +140,48 @@ def construir_rodape(documento: Document, largura_util: Emu, monograma_png: Path
 
 
 def construir_corpo(documento: Document) -> None:
-    documento.add_paragraph("(corpo em construcao)")
+    for rotulo, valor in [
+        ("PARA", "[Nome do cliente]"),
+        ("DATA", "[00/00/0000]"),
+        ("VALIDADE", "[00/00/0000]"),
+    ]:
+        p = documento.add_paragraph()
+        p.paragraph_format.space_after = Pt(2)
+        r_rotulo = p.add_run(rotulo + "  ")
+        r_rotulo.font.name = FONTE_MONO
+        r_rotulo.font.size = Pt(9)
+        r_rotulo.font.color.rgb = CINZA_PEDRA
+        r_valor = p.add_run(valor)
+        r_valor.font.name = FONTE_CORPO
+        r_valor.font.size = Pt(11)
+        r_valor.font.color.rgb = TINTA
+        r_valor.font.bold = True
+
+    espaco = documento.add_paragraph()
+    espaco.paragraph_format.space_after = Pt(6)
+
+    titulo = documento.add_paragraph()
+    titulo.paragraph_format.space_before = Pt(6)
+    titulo.paragraph_format.space_after = Pt(12)
+    r_titulo = titulo.add_run("[Título do documento]")
+    r_titulo.font.name = FONTE_CORPO
+    r_titulo.font.size = Pt(20)
+    r_titulo.font.bold = True
+    r_titulo.font.color.rgb = TINTA
+
+    documento.add_paragraph(
+        "[Texto do documento. Corpo em Archivo Regular, 11pt, entrelinha 1,3 "
+        "— o padrão de leitura confortável em tela e impresso.]"
+    )
+
+    destaque = documento.add_paragraph()
+    destaque.add_run("Um trecho de destaque, como ")
+    r_destaque = destaque.add_run("uma cláusula importante ou um valor")
+    r_destaque.font.color.rgb = QUEIMADO
+    r_destaque.font.bold = True
+    destaque.add_run(
+        ", aparece em Queimado negrito — sempre um trecho, nunca o parágrafo inteiro."
+    )
 
 
 def main() -> None:
