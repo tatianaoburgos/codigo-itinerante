@@ -1,0 +1,33 @@
+{
+  "nome": "Mar à Vista Hostel",
+  "marca": {
+    "logo": "logo.png",
+    "faviconPng": "favicon-32.png",
+    "appleTouchIcon": "apple-touch-icon.png",
+    "simbolo": "icone.png",
+    "heroVideo": "hero.mp4",
+    "heroVideoPoster": "hero-poster.jpg"
+  },
+  "slogan": "Mar à vista em todos os quartos",
+  "descricaoSeo": "Mar à Vista Hostel, na Barra (Salvador): todos os quartos com vista pro mar, a 300 m do Farol da Barra. Reserve direto pelo WhatsApp.",
+  "sobre": {
+    "historia": "O Mar à Vista fica na Barra, de frente para o mar, a poucos passos do Farol. É um hostel de dormitórios compartilhados — todos com vista para o mar — com cozinha e recepção 24 horas. Hóspedes descrevem a localização como perfeita e a vista como inigualável; a nota no Booking é 8,8 (\"Fabuloso\"), com 1.177 avaliações, e 9,9/10 para localização.",
+    "foto": { "arquivo": "sobre-lounge.jpg", "alt": "Lounge do Mar à Vista Hostel, com colunas de pedra e janelas abertas para a praia" }
+  },
+  "precos": {
+    "politica": "consultar"
+  },
+  "localizacao": {
+    "endereco": "Av. Oceânica, 171 — Barra, Salvador/BA",
+    "logradouro": "Av. Oceânica, 171",
+    "bairro": "Barra",
+    "cidade": "Salvador",
+    "uf": "BA"
+  },
+  "contato": {
+    "whatsapp": "5571999838184",
+    "email": "contato@maravistahostel.example.com",
+    "instagram": "maravistahostel"
+  },
+  "navFuturo": ["Acomodações", "Comodidades", "A região", "Localização"]
+}

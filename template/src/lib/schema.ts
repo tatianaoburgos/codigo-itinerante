@@ -22,6 +22,10 @@ export const marcaSchema = z.object({
   /** Ícone raster (PNG) para Apple touch icon e fallback de favicon. */
   appleTouchIcon: z.string().min(1).optional(),
   faviconPng: z.string().min(1).optional(),
+  /** Vídeo full-bleed do hero (mp4/webm), no lugar da foto capa.jpg. */
+  heroVideo: z.string().min(1).optional(),
+  /** Frame estático (jpg) usado como poster do vídeo e fallback sem motion. */
+  heroVideoPoster: z.string().min(1).optional(),
 });
 
 /** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */
@@ -34,6 +38,10 @@ export const simbolosComodidade = [
   'jogos',
   'bagagem',
   'acolhedor',
+  'vista-mar',
+  'ar-condicionado',
+  'recepcao',
+  'wifi',
 ] as const;
 
 /** Comodidade do hostel, opcionalmente ilustrada com foto ou com símbolo artístico. */
@@ -77,8 +85,9 @@ export const configClienteSchema = z.object({
   descricaoSeo: z.string().min(1).max(160),
   sobre: z.object({
     historia: z.string().min(1),
+    foto: fotoSchema.optional(),
   }),
-  acomodacoes: z.array(acomodacaoSchema).min(1),
+  acomodacoes: z.array(acomodacaoSchema).min(1).optional(),
   precos: z.object({
     politica: z.enum(['faixa', 'consultar']),
     faixa: z.string().optional(),
@@ -91,19 +100,23 @@ export const configClienteSchema = z.object({
     cidade: z.string().min(1).optional(),
     uf: z.string().min(1).optional(),
     cep: z.string().min(1).optional(),
-    mapsEmbedUrl: z.url(),
-    comoChegar: z.array(z.string().min(1)),
+    mapsEmbedUrl: z.url().optional(),
+    comoChegar: z.array(z.string().min(1)).optional(),
+    /** Frase curta opcional, exibida ao fim da seção Localização. */
+    resumo: z.string().min(1).optional(),
   }),
   contato: z.object({
     whatsapp: z.string().regex(/^\d{12,13}$/, 'somente dígitos, com DDI e DDD (ex.: 5571999998888)'),
     email: z.email(),
     instagram: z.string().optional(),
   }),
-  comodidades: z.array(comodidadeSchema).min(1),
+  comodidades: z.array(comodidadeSchema).min(1).optional(),
   regiao: z.array(pontoRegiaoSchema).min(1).optional(),
   depoimentos: z.array(depoimentoSchema).min(1).optional(),
   vibe: z.array(fotoSchema).min(1).optional(),
   destaques: z.array(destaqueSchema).max(2).optional(),
+  /** Rótulos de seções futuras exibidos no nav sem link (roadmap do site). */
+  navFuturo: z.array(z.string().min(1)).optional(),
 });
 
 export type ConfigCliente = z.infer<typeof configClienteSchema>;

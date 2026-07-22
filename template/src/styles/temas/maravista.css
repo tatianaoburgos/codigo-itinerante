@@ -1,0 +1,32 @@
+/* Tema do cliente Mar a Vista Hostel. Paleta partindo do logo (que nao muda):
+   azul-marinho da assinatura + azul vivo do circulo, sobre fundo claro
+   (areia/branco) com acento em ambar queimado (sol do fim de tarde). Fontes:
+   mesmo par de display/corpo do tema demo (Bricolage Grotesque + Karla), ja
+   instaladas no projeto. Selecionado pela env CLIENTE via alias @tema. */
+@import "@fontsource-variable/bricolage-grotesque";
+@import "@fontsource-variable/karla";
+@import "@fontsource-variable/spline-sans-mono";
+
+@theme {
+  --color-mare: #0b2c55;      /* azul-marinho do logo: titulos (TituloSecao) + blocos fortes (CTA/depoimentos) */
+  --color-noite: #081120;     /* azul quase-preto: texto padrao do corpo e fundo do footer */
+  --color-azulejo: #026cda;   /* azul vivo do circulo: eyebrows e realces sobre fundo claro */
+  --color-sal: #ffffff;       /* branco: secao clara */
+  --color-espuma: #fbf4e6;    /* areia: fundo geral da pagina */
+  --color-fitinha: #c17f1b;   /* ambar queimado: simbolos e destaques (legivel sobre claro e escuro) */
+  --color-zap: #25d366;       /* verde WhatsApp (fixo, funcional) */
+
+  --font-display: "Bricolage Grotesque Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-corpo: "Karla Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
+}
+
+/* Depoimentos e CTA final (bg-mare = azul-marinho escuro): blockquote,
+   figcaption e paragrafos do motor usam text-noite hardcoded (index.astro),
+   que e ainda mais escuro que o mare e nao contrasta sobre ele. */
+section.bg-mare .text-noite {
+  color: var(--color-sal);
+}
+section.bg-mare .text-noite\/25 {
+  color: rgb(255 255 255 / 0.25);
+}

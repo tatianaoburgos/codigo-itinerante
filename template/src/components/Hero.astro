@@ -1,23 +1,50 @@
 ---
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
-import { foto, marca } from '../lib/fotos';
+import { foto, marca, video } from '../lib/fotos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 import MarcaDagua from './MarcaDagua.astro';
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
+const heroVideo = config.marca?.heroVideo ? video(config.marca.heroVideo) : undefined;
+const heroVideoPoster = config.marca?.heroVideoPoster
+  ? foto(config.marca.heroVideoPoster)
+  : undefined;
 ---
 
 <section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
   <MarcaDagua />
-  <Image
-    src={foto('capa.jpg')}
-    alt=""
-    widths={[640, 1024, 1600]}
-    sizes="100vw"
-    loading="eager"
-    class="absolute inset-0 -z-10 h-full w-full object-cover"
-  />
+  {
+    heroVideo ? (
+      <>
+        {heroVideoPoster && (
+          <Image
+            src={heroVideoPoster}
+            alt=""
+            widths={[640, 1024, 1600]}
+            sizes="100vw"
+            loading="eager"
+            class="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_42%]"
+          />
+        )}
+        <video
+          class="hero-video absolute inset-0 -z-10 hidden h-full w-full object-cover object-[50%_42%]"
+          data-src={heroVideo}
+          muted
+          playsinline
+        />
+      </>
+    ) : (
+      <Image
+        src={foto('capa.jpg')}
+        alt=""
+        widths={[640, 1024, 1600]}
+        sizes="100vw"
+        loading="eager"
+        class="absolute inset-0 -z-10 h-full w-full object-cover"
+      />
+    )
+  }
   <div
     class="absolute inset-0 -z-10 bg-gradient-to-t from-noite/90 via-noite/50 to-noite/20"
     aria-hidden="true"
@@ -40,3 +67,16 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
     </div>
   </div>
 </section>
+
+{
+  heroVideo && (
+    <script>
+      const video = document.querySelector<HTMLVideoElement>('.hero-video');
+      if (video && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        video.src = video.dataset.src!;
+        video.classList.remove('hidden');
+        video.play().catch(() => {});
+      }
+    </script>
+  )
+}

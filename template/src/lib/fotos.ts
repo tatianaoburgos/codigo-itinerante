@@ -1,5 +1,7 @@
+import { existsSync } from 'node:fs';
+import path from 'node:path';
 import type { ImageMetadata } from 'astro';
-import { clienteAtivo, config } from './cliente';
+import { clienteAtivo, config, pastaCliente } from './cliente';
 
 const modulos = import.meta.glob<{ default: ImageMetadata }>(
   '../../../clientes/*/fotos/*.{jpg,jpeg,png,webp,avif}',
@@ -40,6 +42,20 @@ export function marca(arquivo: string): ImageMetadata {
     throw new Error(`Arquivo de marca "${arquivo}" nao encontrado em clientes/${clienteAtivo}/marca/`);
   }
   return meta;
+}
+
+/** Resolve um arquivo de vídeo do cliente ativo (hero em vídeo). Não passa por
+ * `import.meta.glob` (o padrão `clientes/*\/fotos/*.mp4` casaria e copiaria
+ * pro dist o vídeo de TODOS os clientes, não só do ativo) nem por
+ * `astro:assets` (que não otimiza vídeo) — quem serve/emite o arquivo é o
+ * plugin Vite `servir-video-cliente` em astro.config.mjs, já restrito à
+ * pasta do cliente ativo; aqui só validamos que o arquivo existe. */
+export function video(arquivo: string): string {
+  const caminho = path.join(pastaCliente, 'fotos', arquivo);
+  if (!existsSync(caminho)) {
+    throw new Error(`Video "${arquivo}" nao encontrado em clientes/${clienteAtivo}/fotos/`);
+  }
+  return `/video/${arquivo}`;
 }
 
 /** Símbolo da marca do cliente (divisor de seção e marca-d'água), se houver. */
