@@ -36,6 +36,9 @@ export const marcaSchema = z.object({
    *  frase + símbolo no canto inferior direito) em vez do bloco padrão
    *  ancorado embaixo à esquerda. */
   heroCentralizado: z.boolean().optional(),
+  /** Versão da frase (slogan) com quebra de linha manual (\n), usada só na
+   *  composição centralizada da hero. Se ausente, usa o slogan normal. */
+  heroFraseQuebrada: z.string().optional(),
 });
 
 /** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */

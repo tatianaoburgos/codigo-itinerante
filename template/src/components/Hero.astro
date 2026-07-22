@@ -11,6 +11,7 @@ const heroVideoPoster = config.marca?.heroVideoPoster
   : undefined;
 const heroCentralizado = config.marca?.heroCentralizado ?? false;
 const simbolo = heroCentralizado ? simboloMarca() : undefined;
+const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
 ---
 
 <section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
@@ -55,15 +56,15 @@ const simbolo = heroCentralizado ? simboloMarca() : undefined;
     heroCentralizado ? (
       <>
         <div class="absolute inset-0 flex items-center justify-center px-4 text-center">
-          <h1 class="font-display text-4xl font-bold text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl">
+          <h1 class="max-w-[12ch] font-display text-4xl font-bold text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl">
             {config.nome}
           </h1>
         </div>
-        <div class="absolute right-4 bottom-6 flex flex-col items-end gap-3 sm:right-8 sm:bottom-8 md:right-12 md:bottom-12">
-          <p class="hero-frase max-w-[14rem] text-right text-base text-white sm:max-w-xs sm:text-lg md:max-w-sm md:text-xl">
-            {config.slogan}
+        <div class="absolute right-4 bottom-0 flex flex-col items-end gap-2 sm:right-8 md:right-12">
+          <p class="hero-frase whitespace-pre-line text-right text-base font-bold text-white sm:text-lg md:text-xl">
+            {fraseHero}
           </p>
-          {simbolo && <img src={simbolo.src} alt="" class="h-16 w-auto sm:h-20 md:h-28" />}
+          {simbolo && <img src={simbolo.src} alt="" class="h-12 w-auto sm:h-14 md:h-20" />}
         </div>
       </>
     ) : (
