@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A viajante — dois registros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 1080px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+  .grade { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  @media (min-width: 900px) { .grade { grid-template-columns: 3fr 2fr; align-items: start; } }
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2rem; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+  .palco { display: flex; justify-content: center; }
+  .palco svg { max-width: 100%; height: auto; border-radius: 8px; }
+  .legenda { color: var(--pedra); font-size: 0.85rem; margin-top: 1.25rem; }
+  .dna { margin-top: 1.25rem; }
+  .dna table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .dna th { font-family: "Martian Mono", monospace; font-size: 10px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); text-align: left; padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #33302a; font-weight: 500; }
+  .dna td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #26241f; color: var(--cal); }
+  .dna td:first-child { color: var(--ambar); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>a viajante</b> · rascunho de design</p>
+  <h1>Uma menina, <span class="it">dois registros</span></h1>
+  <p class="nota">De longe (registro Alto / Old Man's Journey), ela pertence à paisagem de
+  camadas alaranjadas. De perto (registro Everyhey), ela é geometria com carisma. O DNA —
+  gorro âmbar, cachos, mochila dourada, cachecol barro — é o mesmo nos dois. As cores saem
+  da paleta quando a cena pede (o céu violeta da madrugada, a pele dela).</p>
+
+  <div class="grade">
+    <!-- REGISTRO 1: DE LONGE -->
+    <div class="cartao">
+      <p class="rotulo">Registro 1 — de longe <em>· nas cenas, no filminho da hero, nos documentos</em></p>
+      <div class="palco">
+        <svg width="640" height="420" viewBox="0 0 760 420" fill="none" aria-label="A viajante pequena caminhando sobre morros em camadas de laranja, céu violeta com sol dourado">
+          <defs>
+            <linearGradient id="ceu" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#0a0a09"/>
+              <stop offset="45%" stop-color="#3b2a4f"/>
+              <stop offset="100%" stop-color="#8c3b2a"/>
+            </linearGradient>
+          </defs>
+          <rect width="760" height="420" fill="url(#ceu)"/>
+          <!-- estrelas -->
+          <g fill="#f4f1e8">
+            <circle cx="90" cy="60" r="2.5"/><circle cx="210" cy="40" r="2"/>
+            <circle cx="330" cy="70" r="2"/><circle cx="560" cy="44" r="2.5"/>
+            <circle cx="680" cy="80" r="2"/><circle cx="470" cy="36" r="1.5"/>
+          </g>
+          <!-- pássaros -->
+          <g stroke="#f4f1e8" stroke-width="3" stroke-linecap="round">
+            <path d="M600 120 q7 -7 14 0 M614 120 q7 -7 14 0"/>
+            <path d="M650 100 q6 -6 12 0 M662 100 q6 -6 12 0"/>
+          </g>
+          <!-- sol baixo -->
+          <circle cx="380" cy="272" r="72" fill="#efc780"/>
+          <!-- camadas de morro: a mescla dos laranjas -->
+          <path d="M0 280 Q190 218 380 262 Q570 300 760 248 L760 420 L0 420 Z" fill="#e39a3b"/>
+          <path d="M0 322 Q200 272 420 306 Q600 332 760 300 L760 420 L0 420 Z" fill="#c4693f"/>
+          <path d="M0 364 Q240 322 500 350 Q640 362 760 344 L760 420 L0 420 Z" fill="#7e3322"/>
+          <!-- árvores na crista -->
+          <g fill="#3b2118">
+            <path d="M600 318 l10 -26 l10 26 Z"/>
+            <path d="M636 314 l8 -20 l8 20 Z"/>
+            <circle cx="86" cy="352" r="12"/>
+            <path d="M84 352 l4 0 l0 16 l-4 0 Z"/>
+          </g>
+          <!-- a viajante, pequenina na crista do morro do meio -->
+          <g>
+            <!-- cachecol ao vento -->
+            <path d="M292 234 q-16 6 -26 0" stroke="#c4693f" stroke-width="6" stroke-linecap="round" fill="none"/>
+            <!-- mochila -->
+            <rect x="278" y="236" width="17" height="27" rx="7" fill="#efc780"/>
+            <!-- corpo -->
+            <rect x="288" y="228" width="27" height="38" rx="13" fill="#2e1b12"/>
+            <!-- pernas em passada -->
+            <path d="M296 262 L290 292 M308 260 L314 290" stroke="#2e1b12" stroke-width="7" stroke-linecap="round"/>
+            <!-- cachos escapando do gorro -->
+            <circle cx="291" cy="226" r="8" fill="#2e1b12"/>
+            <circle cx="286" cy="217" r="6" fill="#2e1b12"/>
+            <!-- cabeça -->
+            <circle cx="302" cy="217" r="13" fill="#b97a52"/>
+            <!-- gorro -->
+            <path d="M288 212 a14 14 0 0 1 28 0 Z" fill="#e39a3b"/>
+            <rect x="288" y="209" width="28" height="6" rx="3" fill="#f4f1e8"/>
+            <circle cx="302" cy="194" r="5.5" fill="#f4f1e8"/>
+          </g>
+        </svg>
+      </div>
+      <p class="legenda">A mescla dos laranjas do Firewatch nas camadas; o céu violeta é a
+      cor "de fora da paleta" que a noite pediu. Ela é pequena de propósito: identificável
+      pelo gorro, pelo pompom, pela mochila e pelo cachecol ao vento.</p>
+    </div>
+
+    <!-- REGISTRO 2: DE PERTO -->
+    <div class="cartao">
+      <p class="rotulo">Registro 2 — de perto <em>· avatar, figurinha, stickers</em></p>
+      <div class="palco">
+        <svg width="360" height="420" viewBox="0 0 360 420" fill="none" aria-label="Retrato geométrico frontal da viajante: gorro âmbar com pompom, cachos escuros, sorriso, alças douradas de mochila">
+          <rect width="360" height="420" rx="16" fill="#4a3570"/>
+          <!-- cachos: coroa de círculos -->
+          <g fill="#2e1b12">
+            <circle cx="103" cy="235" r="36"/>
+            <circle cx="88" cy="192" r="27"/>
+            <circle cx="257" cy="235" r="36"/>
+            <circle cx="272" cy="192" r="27"/>
+            <circle cx="135" cy="264" r="31"/>
+            <circle cx="225" cy="264" r="31"/>
+            <circle cx="180" cy="272" r="31"/>
+          </g>
+          <!-- pescoço e corpo -->
+          <rect x="160" y="270" width="40" height="36" fill="#b97a52"/>
+          <rect x="88" y="298" width="184" height="122" rx="42" fill="#c4693f"/>
+          <!-- alças da mochila -->
+          <rect x="116" y="304" width="27" height="116" rx="13" fill="#efc780"/>
+          <rect x="217" y="304" width="27" height="116" rx="13" fill="#efc780"/>
+          <!-- cabeça -->
+          <circle cx="180" cy="192" r="81" fill="#b97a52"/>
+          <!-- gorro -->
+          <path d="M99 165 a81 81 0 0 1 162 0 Z" fill="#e39a3b"/>
+          <rect x="99" y="152" width="162" height="24" rx="12" fill="#f4f1e8"/>
+          <circle cx="180" cy="94" r="19" fill="#f4f1e8"/>
+          <!-- rosto -->
+          <circle cx="150" cy="203" r="8" fill="#1a1915"/>
+          <circle cx="210" cy="203" r="8" fill="#1a1915"/>
+          <circle cx="127" cy="226" r="11" fill="#c4693f" opacity="0.75"/>
+          <circle cx="233" cy="226" r="11" fill="#c4693f" opacity="0.75"/>
+          <path d="M164 234 q16 12 32 0" stroke="#1a1915" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <!-- brinquinho -->
+          <circle cx="94" cy="238" r="5" fill="#efc780"/>
+        </svg>
+      </div>
+      <p class="legenda">Círculos e arcos, estilo Everyhey: os cachos são uma coroa de
+      bolhas, o gorro é meia-lua com pompom, as alças douradas contam a mochila sem
+      mostrá-la. O fundo violeta vivo é irmão do céu da cena ao lado.</p>
+    </div>
+  </div>
+
+  <!-- DNA -->
+  <div class="cartao dna" style="margin-top:1.25rem;">
+    <p class="rotulo">O DNA compartilhado — o que faz ser a mesma menina</p>
+    <table>
+      <tr><th>Elemento</th><th>De longe</th><th>De perto</th></tr>
+      <tr><td>Gorro âmbar</td><td>meia-lua + faixa cal + pompom</td><td>meia-lua + faixa cal + pompom</td></tr>
+      <tr><td>Cachos escuros</td><td>bolhas escapando do gorro</td><td>coroa de círculos ao redor do rosto</td></tr>
+      <tr><td>Mochila dourada</td><td>bloco às costas</td><td>só as alças, na frente</td></tr>
+      <tr><td>Cachecol barro</td><td>fita ao vento</td><td>— (aparece nas versões de corpo inteiro)</td></tr>
+      <tr><td>Pele</td><td colspan="2">marrom quente #B97A52 — cor nova, fora da paleta, fixa da personagem</td></tr>
+      <tr><td>Céu / fundo</td><td colspan="2">violeta da madrugada (#3B2A4F–#4A3570) — a cor viva nova que a noite trouxe</td></tr>
+    </table>
+  </div>
+</main>
+</body>
+</html>

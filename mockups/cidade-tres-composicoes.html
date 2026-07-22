@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A cidade — 3 composições</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 1060px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 66ch; margin-bottom: 2.5rem; }
+
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+  .palco { border-radius: 8px; overflow: hidden; }
+  .palco svg { display: block; width: 100%; height: auto; }
+  .legenda { color: var(--pedra); font-size: 0.85rem; max-width: 62ch; margin-top: 1.25rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>a cidade</b> · três composições da mesma cena</p>
+  <h1>A cidade cinza, <span class="it">três enquadramentos</span></h1>
+  <p class="nota">O que já está decidido não muda aqui: cidade pequena estilo Night in the Woods,
+  hotéis de 2–3 andares com letreiro "HOTEL" (as plataformas), cinza empoeirado como recurso
+  narrativo, céu no Breu com estrelas, janelas acesas à la Pascal Campion, e a viajante —
+  o único ponto multicolorido — com o rosto iluminado pelo celular. O que se decide aqui é o
+  <strong style="color:var(--cal)">enquadramento</strong> da cena da hero.</p>
+
+  <!-- ============ A. RUA RETA ============ -->
+  <div class="cartao">
+    <p class="rotulo">A — a rua dos hotéis <em>· frontal, a casinha no fim da rua</em></p>
+    <div class="palco">
+      <svg viewBox="0 0 960 420" role="img" aria-label="Rua reta com hotéis cinza dos dois lados e uma casinha colorida iluminada no fim">
+        <rect width="960" height="420" fill="#0a0a09"/>
+        <!-- estrelas -->
+        <g fill="#f4f1e8">
+          <circle cx="80" cy="40" r="1.6"/><circle cx="210" cy="72" r="1.2"/><circle cx="340" cy="30" r="1.4"/>
+          <circle cx="470" cy="58" r="1.2"/><circle cx="620" cy="26" r="1.6"/><circle cx="760" cy="64" r="1.2"/>
+          <circle cx="880" cy="38" r="1.4"/><circle cx="530" cy="90" r="1"/><circle cx="150" cy="110" r="1"/>
+          <circle cx="820" cy="104" r="1"/>
+        </g>
+        <!-- fileira esquerda de hotéis -->
+        <g>
+          <rect x="0" y="130" width="150" height="190" fill="#33322f"/>
+          <rect x="150" y="160" width="120" height="160" fill="#2b2a28"/>
+          <rect x="270" y="185" width="95" height="135" fill="#242322"/>
+          <!-- letreiros -->
+          <rect x="30" y="112" width="88" height="22" rx="3" fill="#3d3c39"/>
+          <text x="74" y="128" font-family="Archivo" font-weight="700" font-size="14" letter-spacing="4" fill="#6a675f" text-anchor="middle">HOTEL</text>
+          <rect x="172" y="144" width="74" height="19" rx="3" fill="#383734"/>
+          <text x="209" y="158" font-family="Archivo" font-weight="700" font-size="11" letter-spacing="3" fill="#63605a" text-anchor="middle">HOTEL</text>
+          <!-- janelas apagadas + poucas acesas -->
+          <g fill="#1d1c1a">
+            <rect x="20" y="150" width="22" height="26"/><rect x="60" y="150" width="22" height="26"/><rect x="100" y="150" width="22" height="26"/>
+            <rect x="20" y="196" width="22" height="26"/><rect x="100" y="196" width="22" height="26"/>
+            <rect x="20" y="242" width="22" height="26"/><rect x="60" y="242" width="22" height="26"/><rect x="100" y="242" width="22" height="26"/>
+            <rect x="166" y="178" width="18" height="22"/><rect x="200" y="178" width="18" height="22"/><rect x="234" y="178" width="18" height="22"/>
+            <rect x="166" y="218" width="18" height="22"/><rect x="234" y="218" width="18" height="22"/>
+            <rect x="284" y="200" width="15" height="18"/><rect x="312" y="200" width="15" height="18"/><rect x="340" y="200" width="15" height="18"/>
+            <rect x="284" y="232" width="15" height="18"/><rect x="312" y="232" width="15" height="18"/>
+          </g>
+          <rect x="60" y="196" width="22" height="26" fill="#e39a3b" opacity="0.85"/>
+          <rect x="200" y="218" width="18" height="22" fill="#e39a3b" opacity="0.6"/>
+        </g>
+        <!-- fileira direita de hotéis -->
+        <g>
+          <rect x="810" y="130" width="150" height="190" fill="#33322f"/>
+          <rect x="690" y="160" width="120" height="160" fill="#2b2a28"/>
+          <rect x="595" y="185" width="95" height="135" fill="#242322"/>
+          <rect x="842" y="112" width="88" height="22" rx="3" fill="#3d3c39"/>
+          <text x="886" y="128" font-family="Archivo" font-weight="700" font-size="14" letter-spacing="4" fill="#6a675f" text-anchor="middle">HOTEL</text>
+          <rect x="712" y="144" width="74" height="19" rx="3" fill="#383734"/>
+          <text x="749" y="158" font-family="Archivo" font-weight="700" font-size="11" letter-spacing="3" fill="#63605a" text-anchor="middle">HOTEL</text>
+          <g fill="#1d1c1a">
+            <rect x="838" y="150" width="22" height="26"/><rect x="878" y="150" width="22" height="26"/><rect x="918" y="150" width="22" height="26"/>
+            <rect x="838" y="196" width="22" height="26"/><rect x="918" y="196" width="22" height="26"/>
+            <rect x="838" y="242" width="22" height="26"/><rect x="878" y="242" width="22" height="26"/><rect x="918" y="242" width="22" height="26"/>
+            <rect x="706" y="178" width="18" height="22"/><rect x="740" y="178" width="18" height="22"/><rect x="774" y="178" width="18" height="22"/>
+            <rect x="706" y="218" width="18" height="22"/><rect x="774" y="218" width="18" height="22"/>
+            <rect x="612" y="200" width="15" height="18"/><rect x="640" y="200" width="15" height="18"/><rect x="668" y="200" width="15" height="18"/>
+            <rect x="640" y="232" width="15" height="18"/><rect x="668" y="232" width="15" height="18"/>
+          </g>
+          <rect x="878" y="196" width="22" height="26" fill="#e39a3b" opacity="0.7"/>
+          <rect x="740" y="218" width="18" height="22" fill="#e39a3b" opacity="0.55"/>
+        </g>
+        <!-- rua em perspectiva -->
+        <path d="M0 420 L365 320 L595 320 L960 420 Z" fill="#1c1b19"/>
+        <path d="M478 320 L472 420 L488 420 L482 320 Z" fill="#26241f" opacity="0.7"/>
+        <!-- casinha no fim da rua -->
+        <g>
+          <ellipse cx="480" cy="322" rx="70" ry="12" fill="#e39a3b" opacity="0.12"/>
+          <rect x="448" y="278" width="64" height="42" rx="2" fill="#c4693f"/>
+          <path d="M442 280 L480 254 L518 280 Z" fill="#b85c2e"/>
+          <rect x="470" y="294" width="14" height="26" fill="#e39a3b"/>
+          <rect x="492" y="288" width="12" height="12" fill="#efc780"/>
+          <!-- jardim -->
+          <circle cx="440" cy="316" r="7" fill="#4a8f5c"/>
+          <circle cx="524" cy="314" r="8" fill="#4a8f5c"/>
+          <circle cx="533" cy="318" r="5" fill="#3d7a4d"/>
+          <circle cx="447" cy="320" r="4" fill="#3d7a4d"/>
+        </g>
+        <!-- viajante, de costas, andando em direção à casinha -->
+        <g>
+          <ellipse cx="480" cy="402" rx="26" ry="5" fill="#000" opacity="0.5"/>
+          <!-- luz do celular -->
+          <ellipse cx="480" cy="352" rx="26" ry="20" fill="#efc780" opacity="0.18"/>
+          <!-- pernas -->
+          <path d="M472 384 l-4 16" stroke="#3d6bb0" stroke-width="9" stroke-linecap="round"/>
+          <path d="M488 384 l5 15" stroke="#3d6bb0" stroke-width="9" stroke-linecap="round"/>
+          <path d="M466 400 l-7 3" stroke="#6b4a2e" stroke-width="7" stroke-linecap="round"/>
+          <path d="M494 399 l7 3" stroke="#6b4a2e" stroke-width="7" stroke-linecap="round"/>
+          <!-- corpo -->
+          <path d="M466 350 q14 -8 28 0 l-2 36 q-12 6 -24 0 Z" fill="#c94a3d"/>
+          <!-- mochila (de costas: aparece por trás) -->
+          <rect x="466" y="350" width="28" height="30" rx="9" fill="#4a8f5c"/>
+          <rect x="472" y="356" width="16" height="9" rx="4" fill="#3d7a4d"/>
+          <!-- cachecol -->
+          <path d="M468 348 q12 6 24 0" stroke="#c4693f" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <!-- cabeça + cabelo cacheado longo + gorro -->
+          <circle cx="480" cy="334" r="12" fill="#2e2018"/>
+          <circle cx="468" cy="344" r="5" fill="#2e2018"/><circle cx="492" cy="344" r="5" fill="#2e2018"/>
+          <circle cx="466" cy="352" r="4" fill="#2e2018"/><circle cx="494" cy="352" r="4" fill="#2e2018"/>
+          <path d="M468 330 a12 12 0 0 1 24 0 q-12 -6 -24 0 Z" fill="#e8c33e"/>
+          <circle cx="480" cy="318" r="5" fill="#c94a3d"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Enquadramento frontal e simétrico: os hotéis formam um corredor cinza e a
+    casinha colorida é o ponto de fuga — o olho chega nela sozinho. É a leitura mais imediata do
+    roteiro (o destino já está visível desde o primeiro segundo). Paralaxe natural: fileiras
+    esquerda/direita andam para fora, a casinha aproxima.</p>
+  </div>
+
+  <!-- ============ B. COLINA EM CAMADAS ============ -->
+  <div class="cartao">
+    <p class="rotulo">B — a colina em camadas <em>· perfil, paralaxe de telhados</em></p>
+    <div class="palco">
+      <svg viewBox="0 0 960 420" role="img" aria-label="Cidade em colina vista de perfil, camadas de telhados cinza, casinha colorida no alto da colina distante">
+        <rect width="960" height="420" fill="#0a0a09"/>
+        <g fill="#f4f1e8">
+          <circle cx="120" cy="50" r="1.6"/><circle cx="280" cy="34" r="1.2"/><circle cx="420" cy="70" r="1.4"/>
+          <circle cx="560" cy="30" r="1.2"/><circle cx="700" cy="58" r="1.6"/><circle cx="850" cy="42" r="1.2"/>
+          <circle cx="200" cy="96" r="1"/><circle cx="640" cy="100" r="1"/><circle cx="920" cy="86" r="1.4"/>
+          <circle cx="360" cy="110" r="1"/>
+        </g>
+        <!-- camada 3: colina distante com a casinha -->
+        <path d="M560 260 Q740 150 960 210 L960 420 L560 420 Z" fill="#1a1918"/>
+        <g>
+          <ellipse cx="790" cy="186" rx="46" ry="9" fill="#e39a3b" opacity="0.14"/>
+          <rect x="768" y="158" width="44" height="28" rx="2" fill="#c4693f"/>
+          <path d="M764 160 L790 142 L816 160 Z" fill="#b85c2e"/>
+          <rect x="783" y="170" width="10" height="16" fill="#e39a3b"/>
+          <circle cx="762" cy="184" r="5" fill="#4a8f5c"/>
+          <circle cx="820" cy="182" r="6" fill="#4a8f5c"/>
+          <circle cx="827" cy="186" r="4" fill="#3d7a4d"/>
+          <!-- caminho que sobe a colina -->
+          <path d="M470 330 Q600 300 700 240 Q750 210 786 190" stroke="#26241f" stroke-width="10" fill="none" stroke-linecap="round"/>
+        </g>
+        <!-- camada 2: telhados intermediários -->
+        <g>
+          <path d="M0 250 L0 200 L60 200 L60 230 L110 230 L110 186 L128 170 L146 186 L146 250 Z" fill="#232220"/>
+          <rect x="180" y="212" width="100" height="80" fill="#232220"/>
+          <path d="M175 212 L230 190 L285 212 Z" fill="#282725"/>
+          <rect x="320" y="228" width="80" height="70" fill="#232220"/>
+          <g fill="#15140f">
+            <rect x="196" y="228" width="14" height="16"/><rect x="224" y="228" width="14" height="16"/><rect x="252" y="228" width="14" height="16"/>
+            <rect x="196" y="256" width="14" height="16"/><rect x="252" y="256" width="14" height="16"/>
+            <rect x="334" y="242" width="12" height="14"/><rect x="358" y="242" width="12" height="14"/><rect x="382" y="242" width="12" height="14"/>
+          </g>
+          <rect x="224" y="256" width="14" height="16" fill="#e39a3b" opacity="0.5"/>
+        </g>
+        <!-- camada 1: hotéis em primeiro plano -->
+        <g>
+          <rect x="40" y="180" width="150" height="180" fill="#35342f"/>
+          <rect x="60" y="156" width="110" height="24" rx="3" fill="#403e3a"/>
+          <text x="115" y="174" font-family="Archivo" font-weight="700" font-size="16" letter-spacing="5" fill="#6f6c63" text-anchor="middle">HOTEL</text>
+          <g fill="#1d1c1a">
+            <rect x="58" y="196" width="24" height="28"/><rect x="100" y="196" width="24" height="28"/><rect x="142" y="196" width="24" height="28"/>
+            <rect x="58" y="244" width="24" height="28"/><rect x="142" y="244" width="24" height="28"/>
+            <rect x="58" y="292" width="24" height="28"/><rect x="100" y="292" width="24" height="28"/><rect x="142" y="292" width="24" height="28"/>
+          </g>
+          <rect x="100" y="244" width="24" height="28" fill="#e39a3b" opacity="0.85"/>
+          <rect x="240" y="220" width="130" height="140" fill="#302f2b"/>
+          <rect x="258" y="200" width="94" height="21" rx="3" fill="#3b3935"/>
+          <text x="305" y="216" font-family="Archivo" font-weight="700" font-size="13" letter-spacing="4" fill="#68655d" text-anchor="middle">HOTEL</text>
+          <g fill="#1d1c1a">
+            <rect x="256" y="236" width="20" height="24"/><rect x="292" y="236" width="20" height="24"/><rect x="328" y="236" width="20" height="24"/>
+            <rect x="256" y="278" width="20" height="24"/><rect x="328" y="278" width="20" height="24"/>
+            <rect x="256" y="320" width="20" height="24"/><rect x="292" y="320" width="20" height="24"/><rect x="328" y="320" width="20" height="24"/>
+          </g>
+          <rect x="292" y="278" width="20" height="24" fill="#e39a3b" opacity="0.6"/>
+        </g>
+        <!-- chão -->
+        <path d="M0 360 Q300 340 470 336 Q700 330 960 350 L960 420 L0 420 Z" fill="#191817"/>
+        <!-- viajante de perfil, subindo para a direita -->
+        <g transform="translate(452 292)">
+          <ellipse cx="14" cy="52" rx="24" ry="5" fill="#000" opacity="0.5"/>
+          <!-- luz do celular no rosto -->
+          <ellipse cx="34" cy="4" rx="20" ry="15" fill="#efc780" opacity="0.22"/>
+          <!-- perna de trás e da frente, passada -->
+          <path d="M8 34 l-8 14" stroke="#3d6bb0" stroke-width="9" stroke-linecap="round"/>
+          <path d="M18 34 l10 12" stroke="#3d6bb0" stroke-width="9" stroke-linecap="round"/>
+          <path d="M-2 48 l-7 2" stroke="#6b4a2e" stroke-width="7" stroke-linecap="round"/>
+          <path d="M30 46 l7 3" stroke="#6b4a2e" stroke-width="7" stroke-linecap="round"/>
+          <!-- corpo inclinado pra frente -->
+          <path d="M4 2 q16 -6 24 4 l-6 32 q-12 4 -20 -2 Z" fill="#c94a3d"/>
+          <!-- mochila nas costas (esquerda) -->
+          <rect x="-10" y="2" width="22" height="30" rx="8" fill="#4a8f5c"/>
+          <rect x="-6" y="8" width="13" height="8" rx="4" fill="#3d7a4d"/>
+          <!-- braço com celular -->
+          <path d="M22 12 q12 6 16 -2" stroke="#c94a3d" stroke-width="8" stroke-linecap="round" fill="none"/>
+          <rect x="36" y="2" width="6" height="10" rx="2" fill="#efc780"/>
+          <!-- cachecol ao vento -->
+          <path d="M10 -2 q-14 4 -22 0" stroke="#c4693f" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <!-- cabeça de perfil + cabelo + gorro -->
+          <circle cx="22" cy="-12" r="11" fill="#8a5a3a"/>
+          <circle cx="8" cy="-6" r="5" fill="#2e2018"/><circle cx="4" cy="2" r="4" fill="#2e2018"/>
+          <circle cx="7" cy="10" r="4" fill="#2e2018"/>
+          <path d="M11 -16 a11 11 0 0 1 21 3 q-11 -8 -21 -3 Z" fill="#e8c33e"/>
+          <circle cx="20" cy="-26" r="5" fill="#c94a3d"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Vista de perfil: a viajante caminha da esquerda (a cidade dos hotéis) para a
+    direita (a colina onde a casinha espera). Três camadas de profundidade prontas para paralaxe —
+    é a construção mais Night in the Woods das três, e a que dá mais "jornada": o caminho até a
+    casinha fica desenhado no chão.</p>
+  </div>
+
+  <!-- ============ C. A ESQUINA ============ -->
+  <div class="cartao">
+    <p class="rotulo">C — a esquina <em>· plano fechado, a casinha aparece no beco</em></p>
+    <div class="palco">
+      <svg viewBox="0 0 960 420" role="img" aria-label="Esquina com um hotel grande e um poste; no beco entre os prédios, uma casinha colorida ao longe">
+        <rect width="960" height="420" fill="#0a0a09"/>
+        <g fill="#f4f1e8">
+          <circle cx="500" cy="44" r="1.6"/><circle cx="600" cy="80" r="1.2"/><circle cx="700" cy="36" r="1.4"/>
+          <circle cx="560" cy="120" r="1"/><circle cx="660" cy="140" r="1"/><circle cx="740" cy="96" r="1.2"/>
+          <circle cx="880" cy="60" r="1.4"/><circle cx="820" cy="150" r="1"/>
+        </g>
+        <!-- hotel grande à esquerda, bem perto -->
+        <g>
+          <rect x="0" y="40" width="330" height="330" fill="#35342f"/>
+          <rect x="330" y="40" width="34" height="330" fill="#26251f"/>
+          <!-- letreiro vertical -->
+          <rect x="278" y="66" width="40" height="170" rx="4" fill="#403e3a"/>
+          <text x="298" y="92" font-family="Archivo" font-weight="700" font-size="20" fill="#6f6c63" text-anchor="middle">H</text>
+          <text x="298" y="122" font-family="Archivo" font-weight="700" font-size="20" fill="#6f6c63" text-anchor="middle">O</text>
+          <text x="298" y="152" font-family="Archivo" font-weight="700" font-size="20" fill="#6f6c63" text-anchor="middle">T</text>
+          <text x="298" y="182" font-family="Archivo" font-weight="700" font-size="20" fill="#6f6c63" text-anchor="middle">E</text>
+          <text x="298" y="212" font-family="Archivo" font-weight="700" font-size="20" fill="#6f6c63" text-anchor="middle">L</text>
+          <g fill="#1d1c1a">
+            <rect x="30" y="70" width="34" height="40"/><rect x="94" y="70" width="34" height="40"/><rect x="158" y="70" width="34" height="40"/><rect x="222" y="70" width="34" height="40"/>
+            <rect x="30" y="140" width="34" height="40"/><rect x="94" y="140" width="34" height="40"/><rect x="222" y="140" width="34" height="40"/>
+            <rect x="30" y="210" width="34" height="40"/><rect x="158" y="210" width="34" height="40"/><rect x="222" y="210" width="34" height="40"/>
+            <rect x="30" y="280" width="34" height="40"/><rect x="94" y="280" width="34" height="40"/><rect x="158" y="280" width="34" height="40"/>
+          </g>
+          <rect x="158" y="140" width="34" height="40" fill="#e39a3b" opacity="0.8"/>
+          <rect x="94" y="210" width="34" height="40" fill="#e39a3b" opacity="0.5"/>
+        </g>
+        <!-- prédio à direita fechando o beco -->
+        <g>
+          <rect x="620" y="150" width="340" height="220" fill="#2b2a27"/>
+          <rect x="648" y="130" width="98" height="21" rx="3" fill="#373632"/>
+          <text x="697" y="146" font-family="Archivo" font-weight="700" font-size="13" letter-spacing="4" fill="#64615a" text-anchor="middle">HOTEL</text>
+          <g fill="#1c1b19">
+            <rect x="648" y="170" width="22" height="26"/><rect x="690" y="170" width="22" height="26"/><rect x="732" y="170" width="22" height="26"/><rect x="774" y="170" width="22" height="26"/>
+            <rect x="648" y="216" width="22" height="26"/><rect x="732" y="216" width="22" height="26"/><rect x="816" y="216" width="22" height="26"/>
+            <rect x="648" y="262" width="22" height="26"/><rect x="690" y="262" width="22" height="26"/><rect x="816" y="262" width="22" height="26"/>
+            <rect x="816" y="170" width="22" height="26"/><rect x="858" y="170" width="22" height="26"/><rect x="900" y="170" width="22" height="26"/>
+            <rect x="858" y="262" width="22" height="26"/><rect x="900" y="216" width="22" height="26"/>
+          </g>
+          <rect x="774" y="216" width="22" height="26" fill="#e39a3b" opacity="0.65"/>
+        </g>
+        <!-- beco: a casinha ao longe, entre os dois prédios -->
+        <g>
+          <path d="M364 370 L440 300 L560 300 L620 370 Z" fill="#191817"/>
+          <ellipse cx="498" cy="302" rx="52" ry="9" fill="#e39a3b" opacity="0.16"/>
+          <rect x="474" y="266" width="50" height="36" rx="2" fill="#c4693f"/>
+          <path d="M469 268 L499 246 L529 268 Z" fill="#b85c2e"/>
+          <rect x="491" y="280" width="12" height="22" fill="#e39a3b"/>
+          <rect x="509" y="274" width="10" height="10" fill="#efc780"/>
+          <circle cx="468" cy="298" r="6" fill="#4a8f5c"/>
+          <circle cx="532" cy="296" r="7" fill="#4a8f5c"/>
+          <circle cx="539" cy="300" r="4" fill="#3d7a4d"/>
+        </g>
+        <!-- chão -->
+        <rect x="0" y="370" width="960" height="50" fill="#1c1b19"/>
+        <!-- poste Campion -->
+        <g>
+          <rect x="576" y="196" width="8" height="176" fill="#22211e"/>
+          <path d="M580 196 q0 -24 -28 -24" stroke="#22211e" stroke-width="8" fill="none"/>
+          <circle cx="548" cy="176" r="9" fill="#efc780"/>
+          <ellipse cx="548" cy="230" rx="60" ry="90" fill="#efc780" opacity="0.07"/>
+          <ellipse cx="548" cy="340" rx="52" ry="12" fill="#efc780" opacity="0.10"/>
+        </g>
+        <!-- viajante atravessando sob o poste, de perfil -->
+        <g transform="translate(170 304)">
+          <ellipse cx="16" cy="66" rx="28" ry="6" fill="#000" opacity="0.5"/>
+          <ellipse cx="40" cy="6" rx="22" ry="17" fill="#efc780" opacity="0.25"/>
+          <path d="M10 42 l-10 18" stroke="#3d6bb0" stroke-width="11" stroke-linecap="round"/>
+          <path d="M22 42 l12 16" stroke="#3d6bb0" stroke-width="11" stroke-linecap="round"/>
+          <path d="M-2 60 l-9 3" stroke="#6b4a2e" stroke-width="8" stroke-linecap="round"/>
+          <path d="M36 58 l9 4" stroke="#6b4a2e" stroke-width="8" stroke-linecap="round"/>
+          <path d="M4 2 q18 -8 30 4 l-7 38 q-14 5 -24 -2 Z" fill="#c94a3d"/>
+          <rect x="-13" y="2" width="26" height="36" rx="9" fill="#4a8f5c"/>
+          <rect x="-8" y="9" width="15" height="10" rx="5" fill="#3d7a4d"/>
+          <path d="M26 14 q14 7 19 -2" stroke="#c94a3d" stroke-width="9" stroke-linecap="round" fill="none"/>
+          <rect x="43" y="2" width="7" height="12" rx="2" fill="#efc780"/>
+          <path d="M12 -3 q-16 5 -26 0" stroke="#c4693f" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <circle cx="26" cy="-15" r="13" fill="#8a5a3a"/>
+          <circle cx="10" cy="-8" r="6" fill="#2e2018"/><circle cx="5" cy="2" r="5" fill="#2e2018"/>
+          <circle cx="8" cy="12" r="5" fill="#2e2018"/>
+          <path d="M13 -20 a13 13 0 0 1 25 4 q-13 -10 -25 -4 Z" fill="#e8c33e"/>
+          <circle cx="24" cy="-32" r="6" fill="#c94a3d"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Plano fechado: um hotel grande de letreiro vertical domina a cena e a
+    casinha aparece pequena, emoldurada pelo beco — o destino como descoberta, não como ponto de
+    fuga. O poste é a luz Campion em primeiro plano. É a composição mais dramática, mas a que
+    menos mostra a cidade inteira.</p>
+  </div>
+
+  <p class="nota" style="margin-top:1.5rem">As três respeitam as decisões fechadas; mudou só a
+  câmera. Minha recomendação é a <strong style="color:var(--ambar)">B (colina em camadas)</strong>:
+  é a que mais conversa com o roteiro do filme (jornada da esquerda para a direita, camadas prontas
+  para paralaxe, o caminho até a casinha visível) e a mais Night in the Woods. A A é a mais
+  imediata; a C, a mais cinematográfica.</p>
+</main>
+</body>
+</html>

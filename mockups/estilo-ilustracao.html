@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Estilo de ilustração — 3 tratamentos de cor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 980px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+  .palco { display: flex; gap: 3rem; align-items: center; justify-content: center; flex-wrap: wrap; }
+  .palco svg { max-width: 100%; height: auto; }
+  .legenda { color: var(--pedra); font-size: 0.85rem; max-width: 58ch; margin-top: 1.25rem; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>estilo de ilustração</b> · rascunho de direção</p>
+  <h1>A mesma cena, <span class="it">três temperaturas</span></h1>
+  <p class="nota">Linha solta estilo Monge/McFetridge (o traço final será desenhado com mais
+  carinho — aqui o que se decide é o tratamento de cor). A cena: a viajante caminhando sob a
+  lâmpada de hostel. Lembrete do limite combinado: playful sim, mas sem perder a
+  credibilidade com o dono de hostel.</p>
+
+  <!-- ============ A. SÓ LINHA ============ -->
+  <div class="cartao">
+    <p class="rotulo">A — só linha <em>· contorno cal, zero preenchimento</em></p>
+    <div class="palco">
+      <svg width="420" height="300" viewBox="0 0 420 300" fill="none" aria-label="Viajante caminhando sob a lâmpada, só contorno">
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <!-- lâmpada pendurada -->
+          <path d="M330 20 L330 70"/>
+          <path d="M330 70 q-16 2 -16 20 q0 14 10 20 l12 0 q10 -6 10 -20 q0 -18 -16 -20 Z"/>
+          <path d="M324 112 l12 0"/>
+          <!-- raios de luz -->
+          <path d="M296 96 l-14 8" stroke-width="4"/>
+          <path d="M364 96 l14 8" stroke-width="4"/>
+          <path d="M330 130 l0 14" stroke-width="4"/>
+          <!-- cabeça e gorro -->
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14"/>
+          <path d="M118 98 q16 -10 54 -6" stroke-width="4"/>
+          <!-- cabelo cacheado saindo do gorro -->
+          <path d="M168 104 q10 2 8 12 q10 0 6 12 q8 4 0 12" stroke-width="4"/>
+          <path d="M120 104 q-8 6 -2 14 q-8 4 -2 12" stroke-width="4"/>
+          <!-- rosto: nariz e sorriso mínimos -->
+          <path d="M164 112 q6 4 2 10" stroke-width="4"/>
+          <path d="M152 128 q6 4 12 0" stroke-width="4"/>
+          <!-- corpo caminhando -->
+          <path d="M138 140 q-4 34 -8 52"/>
+          <path d="M158 140 q6 30 4 50"/>
+          <!-- pernas em passada -->
+          <path d="M130 192 q-8 30 -26 44"/>
+          <path d="M162 190 q14 26 34 38"/>
+          <!-- pés -->
+          <path d="M104 236 l-16 4" stroke-width="6"/>
+          <path d="M196 228 l16 6" stroke-width="6"/>
+          <!-- braço balançando -->
+          <path d="M140 150 q-18 18 -10 36"/>
+          <!-- mochila -->
+          <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10"/>
+          <path d="M166 150 q12 0 12 14" stroke-width="4"/>
+          <!-- chão sugerido -->
+          <path d="M70 252 q140 10 280 0" stroke-width="4" stroke-dasharray="1 18"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">O desenho como "grifo que virou figura". Nos documentos em papel, a
+    linha vira Tinta. É o mais sóbrio dos três — credibilidade máxima, calor mínimo.</p>
+  </div>
+
+  <!-- ============ B. LINHA + UMA MANCHA ============ -->
+  <div class="cartao">
+    <p class="rotulo">B — linha + uma mancha de âmbar <em>· a regra do acento em desenho</em></p>
+    <div class="palco">
+      <svg width="420" height="300" viewBox="0 0 420 300" fill="none" aria-label="Viajante caminhando, gorro e luz da lâmpada em âmbar">
+        <!-- luz da lâmpada preenchida -->
+        <path d="M330 70 q-16 2 -16 20 q0 14 10 20 l12 0 q10 -6 10 -20 q0 -18 -16 -20 Z" fill="#e39a3b" stroke="none"/>
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M330 20 L330 70"/>
+          <path d="M330 70 q-16 2 -16 20 q0 14 10 20 l12 0 q10 -6 10 -20 q0 -18 -16 -20 Z"/>
+          <path d="M324 112 l12 0"/>
+          <path d="M296 96 l-14 8" stroke-width="4" stroke="#e39a3b"/>
+          <path d="M364 96 l14 8" stroke-width="4" stroke="#e39a3b"/>
+          <path d="M330 130 l0 14" stroke-width="4" stroke="#e39a3b"/>
+          <!-- gorro preenchido -->
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14 q-30 -8 -49 -4 Z" fill="#e39a3b" stroke="none"/>
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14"/>
+          <path d="M118 98 q16 -10 54 -6" stroke-width="4"/>
+          <path d="M168 104 q10 2 8 12 q10 0 6 12 q8 4 0 12" stroke-width="4"/>
+          <path d="M120 104 q-8 6 -2 14 q-8 4 -2 12" stroke-width="4"/>
+          <path d="M164 112 q6 4 2 10" stroke-width="4"/>
+          <path d="M152 128 q6 4 12 0" stroke-width="4"/>
+          <path d="M138 140 q-4 34 -8 52"/>
+          <path d="M158 140 q6 30 4 50"/>
+          <path d="M130 192 q-8 30 -26 44"/>
+          <path d="M162 190 q14 26 34 38"/>
+          <path d="M104 236 l-16 4" stroke-width="6"/>
+          <path d="M196 228 l16 6" stroke-width="6"/>
+          <path d="M140 150 q-18 18 -10 36"/>
+          <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10"/>
+          <path d="M166 150 q12 0 12 14" stroke-width="4"/>
+          <path d="M70 252 q140 10 280 0" stroke-width="4" stroke-dasharray="1 18"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Contorno cal, e um ponto de calor por desenho: aqui a luz da lâmpada
+    e o gorro. É a tradução literal da regra do acento — a marca continua preta com pontos
+    de calor, mas o desenho tem para onde o olho ir.</p>
+  </div>
+
+  <!-- ============ C. FLAT GENEROSO ============ -->
+  <div class="cartao">
+    <p class="rotulo">C — preenchimento flat generoso <em>· Monge colorido</em></p>
+    <div class="palco">
+      <svg width="420" height="300" viewBox="0 0 420 300" fill="none" aria-label="Viajante caminhando, várias áreas preenchidas em tons quentes">
+        <path d="M330 70 q-16 2 -16 20 q0 14 10 20 l12 0 q10 -6 10 -20 q0 -18 -16 -20 Z" fill="#efc780" stroke="none"/>
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M330 20 L330 70"/>
+          <path d="M330 70 q-16 2 -16 20 q0 14 10 20 l12 0 q10 -6 10 -20 q0 -18 -16 -20 Z"/>
+          <path d="M324 112 l12 0"/>
+          <path d="M296 96 l-14 8" stroke-width="4" stroke="#efc780"/>
+          <path d="M364 96 l14 8" stroke-width="4" stroke="#efc780"/>
+          <path d="M330 130 l0 14" stroke-width="4" stroke="#efc780"/>
+        </g>
+        <!-- gorro âmbar -->
+        <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14 q-30 -8 -49 -4 Z" fill="#e39a3b" stroke="none"/>
+        <!-- corpo/casaco barro -->
+        <path d="M138 140 q10 -4 20 0 q6 30 4 50 q-16 6 -32 2 q-4 -18 8 -52 Z" fill="#c4693f" stroke="none"/>
+        <!-- mochila dourado -->
+        <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10 Z" fill="#efc780" stroke="none"/>
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14"/>
+          <path d="M118 98 q16 -10 54 -6" stroke-width="4"/>
+          <path d="M168 104 q10 2 8 12 q10 0 6 12 q8 4 0 12" stroke-width="4"/>
+          <path d="M120 104 q-8 6 -2 14 q-8 4 -2 12" stroke-width="4"/>
+          <path d="M164 112 q6 4 2 10" stroke-width="4"/>
+          <path d="M152 128 q6 4 12 0" stroke-width="4"/>
+          <path d="M138 140 q-4 34 -8 52"/>
+          <path d="M158 140 q6 30 4 50"/>
+          <path d="M130 192 q-8 30 -26 44"/>
+          <path d="M162 190 q14 26 34 38"/>
+          <path d="M104 236 l-16 4" stroke-width="6"/>
+          <path d="M196 228 l16 6" stroke-width="6"/>
+          <path d="M140 150 q-18 18 -10 36"/>
+          <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10"/>
+          <path d="M166 150 q12 0 12 14" stroke-width="4"/>
+          <path d="M70 252 q140 10 280 0" stroke-width="4" stroke-dasharray="1 18"/>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Gorro âmbar, casaco barro, mochila e luz em dourado. O mais quente e
+    playful — e o que mais se aproxima do limite "nunca uma marca laranja". Se ganhar,
+    precisará de uma regra de dosagem (quantos desenhos assim por página).</p>
+  </div>
+</main>
+</body>
+</html>

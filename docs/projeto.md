@@ -185,6 +185,12 @@ Exemplos com diária de R$ 100 (hostels/pousadas de diária mais alta, mais prop
 
 ## 12. Estrutura do contrato de permuta (a redigir)
 
+⚠️ **Antes de redigir**: o texto "o que você recebe" (seção 4) cobre escopo técnico, mas não
+risco comercial — e é o risco comercial que trava a decisão do dono de hostel num modelo de
+permuta. As cláusulas abaixo (contrapartida, saída, propriedade, manutenção) só devem ser
+preenchidas com valores reais depois de uma entrevista dirigida que estabeleça os limites da
+autora em cada eixo. Processo e perguntas: Fase 5 em `docs/ideias-backlog.md`.
+
 Cláusulas previstas:
 
 - [ ] **Objeto** — o que é entregue (remeter à seção 4).
@@ -209,8 +215,11 @@ Cláusulas previstas:
 5. **Site da marca construído em `site/` (2026-07-03).** Landing única para donos de hostel (manifesto → dor → proposta → escopo → como funciona → quem sou eu → CTA WhatsApp), identidade do MIV, textos aprovados pela autora. Spec: `docs/superpowers/specs/2026-07-03-site-codigo-itinerante-design.md`. **Pendente**: dados reais de contato e foto (`site/src/dados.ts`), deploy na Vercel, domínio.
 6. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
    - Método: Google Maps reverso, Instagram (bio), Hostelworld/Booking, showcases de design.
-7. Definir prazos e janelas (campos [DEFINIR] acima).
-8. Redigir contrato de permuta (seção 12).
+7. Definir prazos e janelas (campos [DEFINIR] acima) — via entrevista dirigida, ver item 8.
+8. **Estabelecer os limites de risco comercial da permuta antes de redigir** (levantado
+   2026-07-20): entrevista dirigida, uma pergunta por vez, cobrindo preço/permuta, escopo,
+   saída, manutenção, propriedade e formalização. Roteiro completo: Fase 5 em
+   `docs/ideias-backlog.md`. Só depois disso redigir o contrato de permuta (seção 12).
 
 ### Estrutura do repositório (adotada)
 

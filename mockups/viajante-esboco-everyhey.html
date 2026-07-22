@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A viajante — do esboço ao Everyhey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 1080px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+  .grade { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
+  @media (min-width: 900px) { .grade { grid-template-columns: 1fr 1fr; align-items: start; } }
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2rem; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+  .palco { display: flex; justify-content: center; }
+  .palco svg { max-width: 100%; height: auto; border-radius: 8px; }
+  .legenda { color: var(--pedra); font-size: 0.85rem; margin-top: 1.25rem; }
+  .dna { margin-top: 1.25rem; }
+  .dna table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+  .dna th { font-family: "Martian Mono", monospace; font-size: 10px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); text-align: left; padding: 0.5rem 0.75rem;
+    border-bottom: 1px solid #33302a; font-weight: 500; }
+  .dna td { padding: 0.5rem 0.75rem; border-bottom: 1px solid #26241f; color: var(--cal); }
+  .dna td:first-child { color: var(--ambar); font-weight: 600; }
+  .chip { display: inline-block; width: 14px; height: 14px; border-radius: 4px;
+    vertical-align: -2px; margin-right: 6px; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>a viajante</b> · do esboço em aquarela ao vetor</p>
+  <h1>O esboço, <span class="it">geometrizado</span></h1>
+  <p class="nota">O desenho à mão (aquarela, perfil, olhando o celular) traduzido para o
+  registro Everyhey: só círculos, cápsulas e arcos, sem contorno. A pose e as cores da
+  roupa vêm do papel — mochila verde-água com saco de dormir coral, top coral, shorts
+  azul, tênis claro. A pele e o fundo violeta seguem o DNA já fechado da personagem.</p>
+
+  <div class="grade">
+    <div class="cartao">
+      <p class="rotulo">A viajante checando o mapa <em>· pose do esboço</em></p>
+      <div class="palco">
+        <svg width="440" height="600" viewBox="0 0 440 600" fill="none" aria-label="Viajante de perfil em estilo geométrico flat: cachos escuros, mochila verde-água com saco de dormir coral, top coral, shorts azul, olhando o celular">
+          <rect width="440" height="600" rx="16" fill="#4a3570"/>
+          <!-- sombra no chão -->
+          <ellipse cx="245" cy="510" rx="120" ry="16" fill="#1a1915" opacity="0.3"/>
+
+          <!-- saco de dormir coral, enrolado sobre a mochila -->
+          <rect x="108" y="192" width="100" height="50" rx="25" fill="#e07a56"/>
+          <circle cx="132" cy="217" r="13" fill="#b85c2e"/>
+          <!-- mochila verde-água -->
+          <rect x="118" y="232" width="86" height="128" rx="34" fill="#2a9d8f"/>
+          <rect x="138" y="298" width="48" height="44" rx="14" fill="#48b8a8"/>
+
+          <!-- pernas -->
+          <path d="M222 392 L218 470" stroke="#b97a52" stroke-width="32" stroke-linecap="round"/>
+          <path d="M282 390 L290 470" stroke="#b97a52" stroke-width="32" stroke-linecap="round"/>
+          <!-- tênis: duas cápsulas separadas, a da frente maior -->
+          <rect x="190" y="462" width="64" height="30" rx="15" fill="#f4f1e8"/>
+          <rect x="268" y="466" width="80" height="30" rx="15" fill="#f4f1e8"/>
+          <path d="M202 477 h16 M282 481 h18" stroke="#97928a" stroke-width="4" stroke-linecap="round"/>
+
+          <!-- torso: top coral -->
+          <rect x="192" y="212" width="112" height="140" rx="46" fill="#e2604a"/>
+          <!-- alça da mochila cruzando o ombro -->
+          <path d="M212 226 q34 26 30 92" stroke="#2a9d8f" stroke-width="18" stroke-linecap="round" fill="none"/>
+          <!-- shorts azul -->
+          <rect x="194" y="322" width="118" height="76" rx="30" fill="#3f5a8f"/>
+          <rect x="196" y="322" width="114" height="12" rx="6" fill="#2b3f66"/>
+
+          <!-- braço segurando o celular, mão por baixo -->
+          <path d="M266 248 q48 18 56 52" stroke="#b97a52" stroke-width="28" stroke-linecap="round" fill="none"/>
+          <circle cx="326" cy="306" r="15" fill="#b97a52"/>
+          <rect x="312" y="242" width="34" height="58" rx="9" fill="#1a1915" transform="rotate(-10 329 271)"/>
+          <circle cx="330" cy="256" r="5" fill="#e39a3b"/>
+
+          <!-- pescoço e cabeça de perfil -->
+          <rect x="238" y="186" width="32" height="36" rx="10" fill="#b97a52"/>
+          <circle cx="252" cy="148" r="58" fill="#b97a52"/>
+          <!-- nariz: a bolinha do perfil -->
+          <circle cx="308" cy="158" r="11" fill="#b97a52"/>
+          <!-- cachos: coroa de bolhas cobrindo topo e nuca -->
+          <g fill="#2e1b12">
+            <circle cx="214" cy="100" r="38"/>
+            <circle cx="256" cy="86" r="34"/>
+            <circle cx="292" cy="106" r="26"/>
+            <circle cx="188" cy="138" r="32"/>
+            <circle cx="196" cy="178" r="27"/>
+            <circle cx="222" cy="204" r="22"/>
+          </g>
+          <!-- rosto -->
+          <circle cx="284" cy="144" r="7" fill="#1a1915"/>
+          <path d="M286 180 q8 5 15 -2" stroke="#1a1915" stroke-width="6" stroke-linecap="round" fill="none"/>
+          <circle cx="262" cy="172" r="10" fill="#c4693f" opacity="0.6"/>
+          <!-- brinquinho -->
+          <circle cx="238" cy="164" r="5" fill="#efc780"/>
+        </svg>
+      </div>
+      <p class="legenda">Mesma cena do papel: ela parada, celular na mão — conferindo o
+      mapa antes de seguir. Os cachos viraram coroa de bolhas, a mochila é um bloco
+      arredondado com bolso, o saco de dormir uma cápsula com o espiral resumido num
+      círculo escuro.</p>
+    </div>
+
+    <div class="cartao dna">
+      <p class="rotulo">Tradução do esboço — cor a cor</p>
+      <table>
+        <tr><th>No papel</th><th>No vetor</th></tr>
+        <tr><td>Pele amarelo-ocre</td><td><span class="chip" style="background:#b97a52"></span>#B97A52 — a pele fixa do DNA da personagem</td></tr>
+        <tr><td>Cachos em nanquim</td><td><span class="chip" style="background:#2e1b12"></span>#2E1B12 — coroa de círculos, igual aos dois registros</td></tr>
+        <tr><td>Mochila verde-água</td><td><span class="chip" style="background:#2a9d8f"></span>#2A9D8F + bolso <span class="chip" style="background:#48b8a8"></span>#48B8A8 — cor livre, fora da paleta</td></tr>
+        <tr><td>Saco de dormir coral</td><td><span class="chip" style="background:#e07a56"></span>#E07A56 com espiral <span class="chip" style="background:#b85c2e"></span>queimado da paleta</td></tr>
+        <tr><td>Top coral</td><td><span class="chip" style="background:#e2604a"></span>#E2604A — cor livre</td></tr>
+        <tr><td>Shorts azul</td><td><span class="chip" style="background:#3f5a8f"></span>#3F5A8F — cor livre</td></tr>
+        <tr><td>Tênis</td><td><span class="chip" style="background:#f4f1e8"></span>cal da paleta</td></tr>
+        <tr><td>Fundo</td><td><span class="chip" style="background:#4a3570"></span>violeta da madrugada — o mesmo do retrato Everyhey</td></tr>
+      </table>
+      <p class="legenda">O que o esboço não tinha e ficou de fora de propósito: gorro âmbar e
+      cachecol barro. Se essa versão "de verão" convive com a versão "de estrada" (gorro +
+      cachecol), ou se o gorro entra aqui também, é decisão para a próxima rodada.</p>
+    </div>
+  </div>
+</main>
+</body>
+</html>

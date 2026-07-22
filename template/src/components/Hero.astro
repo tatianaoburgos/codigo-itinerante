@@ -76,6 +76,14 @@ const heroVideoPoster = config.marca?.heroVideoPoster
         video.src = video.dataset.src!;
         video.classList.remove('hidden');
         video.play().catch(() => {});
+        video.addEventListener(
+          'ended',
+          () => {
+            video.currentTime = 0;
+            video.play().catch(() => {});
+          },
+          { once: true },
+        );
       }
     </script>
   )

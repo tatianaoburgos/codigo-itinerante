@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paleta estendida de ilustração — a cena da viajante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Instrument+Serif:ital@1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780;
+    --verde-mata: #6b8f71; --azul-madrugada: #4f6a8f; --rosa-poente: #bc7e8c;
+    --teal-noite: #55857a; --lilas-noite: #8e7ba3;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 1000px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+  .eyebrow { font-family: "Martian Mono", monospace; font-size: 12px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h1 { font-weight: 700; font-size: 2rem; letter-spacing: -0.035em; margin-bottom: 0.75rem; }
+  h1 .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 64ch; margin-bottom: 2.5rem; }
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2rem; margin-bottom: 1.25rem; }
+  .rotulo { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.04em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.5rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+  .palco { display: flex; justify-content: center; }
+  .palco svg { max-width: 100%; height: auto; background: var(--breu); border-radius: 8px; }
+  .legenda { color: var(--pedra); font-size: 0.85rem; max-width: 60ch; margin-top: 1.25rem; }
+
+  .paleta { display: flex; flex-wrap: wrap; gap: 1rem; }
+  .cor { display: flex; flex-direction: column; gap: 0.4rem; width: 108px; }
+  .cor .chip { height: 56px; border-radius: 8px; border: 1px solid #26241f; }
+  .cor .nome { font-size: 0.78rem; font-weight: 600; }
+  .cor .hex { font-family: "Martian Mono", monospace; font-size: 9px; letter-spacing: 0.04em;
+    color: var(--pedra); text-transform: uppercase; }
+  .divisor-grupo { width: 1px; background: #33302a; margin: 0 0.5rem; align-self: stretch; }
+</style>
+</head>
+<body>
+<main>
+  <p class="eyebrow">MIV · fase 1 · <b>paleta estendida de ilustração</b></p>
+  <h1>As cores da <span class="it">estrada à noite</span></h1>
+  <p class="nota">As cores novas existem <strong>só dentro dos desenhos</strong> — nunca em
+  texto, botão, link ou fundo. Foram afinadas para sentar sobre o Breu com o mesmo peso do
+  âmbar e do barro: tudo parece filho da mesma noite. Compare as duas dosagens na mesma cena.</p>
+
+  <!-- PALETA -->
+  <div class="cartao">
+    <p class="rotulo">O anexo — acentos da marca + cores só-de-ilustração</p>
+    <div class="paleta">
+      <div class="cor"><div class="chip" style="background:var(--ambar)"></div><p class="nome">Âmbar</p><p class="hex">#E39A3B · marca</p></div>
+      <div class="cor"><div class="chip" style="background:var(--barro)"></div><p class="nome">Barro</p><p class="hex">#C4693F · marca</p></div>
+      <div class="cor"><div class="chip" style="background:var(--dourado)"></div><p class="nome">Dourado</p><p class="hex">#EFC780 · marca</p></div>
+      <div class="divisor-grupo"></div>
+      <div class="cor"><div class="chip" style="background:var(--verde-mata)"></div><p class="nome">Verde-mata</p><p class="hex">#6B8F71 · ilustração</p></div>
+      <div class="cor"><div class="chip" style="background:var(--azul-madrugada)"></div><p class="nome">Azul-madrugada</p><p class="hex">#4F6A8F · ilustração</p></div>
+      <div class="cor"><div class="chip" style="background:var(--rosa-poente)"></div><p class="nome">Rosa-poente</p><p class="hex">#BC7E8C · ilustração</p></div>
+      <div class="divisor-grupo"></div>
+      <div class="cor"><div class="chip" style="background:var(--teal-noite)"></div><p class="nome">Teal-noite</p><p class="hex">#55857A · só na dose +5</p></div>
+      <div class="cor"><div class="chip" style="background:var(--lilas-noite)"></div><p class="nome">Lilás-noite</p><p class="hex">#8E7BA3 · só na dose +5</p></div>
+    </div>
+  </div>
+
+  <!-- CENA +3 -->
+  <div class="cartao">
+    <p class="rotulo">Dose +3 <em>· verde-mata, azul-madrugada, rosa-poente</em></p>
+    <div class="palco">
+      <svg width="760" height="420" viewBox="0 0 760 420" fill="none" aria-label="Viajante caminhando à noite rumo a um hostel de lâmpada acesa, paleta com três cores novas">
+        <!-- estrelas -->
+        <g stroke="#efc780" stroke-width="3" stroke-linecap="round">
+          <path d="M90 50 l0 10 M85 55 l10 0"/>
+          <path d="M240 34 l0 8 M236 38 l8 0"/>
+          <path d="M420 56 l0 8 M416 60 l8 0"/>
+          <path d="M560 30 l0 10 M555 35 l10 0"/>
+          <path d="M700 70 l0 8 M696 74 l8 0"/>
+        </g>
+        <!-- lua -->
+        <path d="M640 96 a26 26 0 1 0 18 44 a22 22 0 0 1 -18 -44 Z" fill="#f4f1e8"/>
+        <!-- nuvem rosa-poente -->
+        <path d="M120 110 q10 -18 34 -14 q8 -14 28 -8 q18 4 14 20 q6 12 -10 14 l-58 0 q-14 -4 -8 -12 Z" fill="#bc7e8c"/>
+        <path d="M480 92 q8 -14 26 -10 q14 2 12 16 q4 10 -8 10 l-34 0 q-8 -8 4 -16 Z" fill="#bc7e8c" opacity="0.7"/>
+        <!-- morros azul-madrugada -->
+        <path d="M0 268 Q120 216 250 254 Q400 210 530 250 Q640 224 760 258 L760 316 L0 316 Z" fill="#4f6a8f"/>
+        <!-- chão -->
+        <rect x="0" y="312" width="760" height="108" fill="#161513"/>
+        <!-- estrada tracejada -->
+        <path d="M40 396 Q300 348 700 336" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 26"/>
+        <!-- árvores verde-mata -->
+        <path d="M300 262 q-30 -6 -26 -34 q4 -26 34 -24 q28 2 26 30 q-2 26 -34 28 Z" fill="#6b8f71"/>
+        <path d="M304 262 l0 50" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M212 280 q-20 -4 -17 -22 q3 -18 23 -16 q18 1 17 20 q-1 17 -23 18 Z" fill="#6b8f71"/>
+        <path d="M215 280 l0 34" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round"/>
+        <!-- hostel -->
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M490 232 L575 180 L660 232 Z" fill="#c4693f"/>
+          <path d="M500 232 L500 340 L650 340 L650 232" fill="#161513"/>
+          <rect x="588" y="256" width="34" height="34" fill="#e39a3b"/>
+          <path d="M588 273 l34 0 M605 256 l0 34" stroke-width="3"/>
+          <rect x="520" y="276" width="34" height="64" fill="#c4693f"/>
+        </g>
+        <!-- poste com lâmpada -->
+        <path d="M462 340 L462 210 Q462 196 478 196 L488 196" stroke="#f4f1e8" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="492" cy="210" r="12" fill="#efc780"/>
+        <g stroke="#efc780" stroke-width="3" stroke-linecap="round">
+          <path d="M492 230 l0 10"/>
+          <path d="M474 222 l-8 6"/>
+          <path d="M510 222 l8 6"/>
+        </g>
+        <!-- viajante -->
+        <g transform="translate(52,140) scale(0.62)">
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14 q-30 -8 -49 -4 Z" fill="#e39a3b"/>
+          <path d="M138 140 q10 -4 20 0 q6 30 4 50 q-16 6 -32 2 q-4 -18 8 -52 Z" fill="#c4693f"/>
+          <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10 Z" fill="#efc780"/>
+          <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14"/>
+            <path d="M118 98 q16 -10 54 -6" stroke-width="4"/>
+            <path d="M168 104 q10 2 8 12 q10 0 6 12 q8 4 0 12" stroke-width="4"/>
+            <path d="M120 104 q-8 6 -2 14 q-8 4 -2 12" stroke-width="4"/>
+            <path d="M164 112 q6 4 2 10" stroke-width="4"/>
+            <path d="M152 128 q6 4 12 0" stroke-width="4"/>
+            <path d="M138 140 q-4 34 -8 52"/>
+            <path d="M158 140 q6 30 4 50"/>
+            <path d="M130 192 q-8 30 -26 44"/>
+            <path d="M162 190 q14 26 34 38"/>
+            <path d="M104 236 l-16 4" stroke-width="6"/>
+            <path d="M196 228 l16 6" stroke-width="6"/>
+            <path d="M140 150 q-18 18 -10 36"/>
+            <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10"/>
+            <path d="M166 150 q12 0 12 14" stroke-width="4"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Céu e chão seguem Breu e Grafite — a marca continua dona do fundo.
+    As três cores novas ficam na paisagem (morros, árvores, nuvens); a viajante segue só
+    com as cores da marca. Contida, mas já é uma cena completa.</p>
+  </div>
+
+  <!-- CENA +5 -->
+  <div class="cartao">
+    <p class="rotulo">Dose +5 <em>· entra teal-noite e lilás-noite</em></p>
+    <div class="palco">
+      <svg width="760" height="420" viewBox="0 0 760 420" fill="none" aria-label="Mesma cena com cinco cores novas: morro lilás ao fundo, árvore teal e cachecol teal na viajante">
+        <g stroke="#efc780" stroke-width="3" stroke-linecap="round">
+          <path d="M90 50 l0 10 M85 55 l10 0"/>
+          <path d="M240 34 l0 8 M236 38 l8 0"/>
+          <path d="M420 56 l0 8 M416 60 l8 0"/>
+          <path d="M560 30 l0 10 M555 35 l10 0"/>
+          <path d="M700 70 l0 8 M696 74 l8 0"/>
+        </g>
+        <path d="M640 96 a26 26 0 1 0 18 44 a22 22 0 0 1 -18 -44 Z" fill="#f4f1e8"/>
+        <path d="M120 110 q10 -18 34 -14 q8 -14 28 -8 q18 4 14 20 q6 12 -10 14 l-58 0 q-14 -4 -8 -12 Z" fill="#bc7e8c"/>
+        <path d="M480 92 q8 -14 26 -10 q14 2 12 16 q4 10 -8 10 l-34 0 q-8 -8 4 -16 Z" fill="#bc7e8c" opacity="0.7"/>
+        <!-- morro lilás distante + morros azuis -->
+        <path d="M0 246 Q180 196 380 236 Q560 200 760 240 L760 316 L0 316 Z" fill="#8e7ba3"/>
+        <path d="M0 278 Q120 232 250 266 Q400 226 530 262 Q640 238 760 268 L760 316 L0 316 Z" fill="#4f6a8f"/>
+        <rect x="0" y="312" width="760" height="108" fill="#161513"/>
+        <path d="M40 396 Q300 348 700 336" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round" stroke-dasharray="2 26"/>
+        <!-- árvore verde + árvore teal -->
+        <path d="M300 262 q-30 -6 -26 -34 q4 -26 34 -24 q28 2 26 30 q-2 26 -34 28 Z" fill="#6b8f71"/>
+        <path d="M304 262 l0 50" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round"/>
+        <path d="M212 280 q-20 -4 -17 -22 q3 -18 23 -16 q18 1 17 20 q-1 17 -23 18 Z" fill="#55857a"/>
+        <path d="M215 280 l0 34" stroke="#f4f1e8" stroke-width="4" stroke-linecap="round"/>
+        <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M490 232 L575 180 L660 232 Z" fill="#c4693f"/>
+          <path d="M500 232 L500 340 L650 340 L650 232" fill="#161513"/>
+          <rect x="588" y="256" width="34" height="34" fill="#e39a3b"/>
+          <path d="M588 273 l34 0 M605 256 l0 34" stroke-width="3"/>
+          <rect x="520" y="276" width="34" height="64" fill="#c4693f"/>
+        </g>
+        <path d="M462 340 L462 210 Q462 196 478 196 L488 196" stroke="#f4f1e8" stroke-width="5" stroke-linecap="round"/>
+        <circle cx="492" cy="210" r="12" fill="#efc780"/>
+        <g stroke="#efc780" stroke-width="3" stroke-linecap="round">
+          <path d="M492 230 l0 10"/>
+          <path d="M474 222 l-8 6"/>
+          <path d="M510 222 l8 6"/>
+        </g>
+        <g transform="translate(52,140) scale(0.62)">
+          <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14 q-30 -8 -49 -4 Z" fill="#e39a3b"/>
+          <path d="M138 140 q10 -4 20 0 q6 30 4 50 q-16 6 -32 2 q-4 -18 8 -52 Z" fill="#c4693f"/>
+          <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10 Z" fill="#efc780"/>
+          <!-- cachecol teal esvoaçante -->
+          <path d="M136 138 q14 -8 26 0 q-4 10 -14 10 q-22 4 -34 -6 q4 -8 22 -4 Z" fill="#55857a"/>
+          <g stroke="#f4f1e8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M120 96 q-4 -26 22 -30 q26 -4 30 20 q1 8 -3 14"/>
+            <path d="M118 98 q16 -10 54 -6" stroke-width="4"/>
+            <path d="M168 104 q10 2 8 12 q10 0 6 12 q8 4 0 12" stroke-width="4"/>
+            <path d="M120 104 q-8 6 -2 14 q-8 4 -2 12" stroke-width="4"/>
+            <path d="M164 112 q6 4 2 10" stroke-width="4"/>
+            <path d="M152 128 q6 4 12 0" stroke-width="4"/>
+            <path d="M136 138 q14 -8 26 0 q-4 10 -14 10 q-22 4 -34 -6 q4 -8 22 -4 Z" stroke-width="4"/>
+            <path d="M138 148 q-4 28 -8 44"/>
+            <path d="M158 146 q6 26 4 44"/>
+            <path d="M130 192 q-8 30 -26 44"/>
+            <path d="M162 190 q14 26 34 38"/>
+            <path d="M104 236 l-16 4" stroke-width="6"/>
+            <path d="M196 228 l16 6" stroke-width="6"/>
+            <path d="M140 150 q-18 18 -10 36"/>
+            <path d="M156 142 q26 -2 28 22 q2 22 -14 26 q-14 2 -16 -10"/>
+            <path d="M166 150 q12 0 12 14" stroke-width="4"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <p class="legenda">Entram o morro lilás ao fundo (profundidade de madrugada), uma árvore
+    teal e o cachecol teal na viajante. Mais rica e mais "Zelda" — repare se para você ainda
+    parece a mesma marca da proposta comercial sóbria, ou se começou a virar outra coisa.</p>
+  </div>
+</main>
+</body>
+</html>

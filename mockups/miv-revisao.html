@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Revisão do MIV — rodada 2 — Código Itinerante</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&family=Xanh+Mono&family=DM+Mono:wght@400;500&family=Sometype+Mono:wght@400;500&family=Kode+Mono:wght@400;500&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: var(--breu); color: var(--cal); font-family: "Archivo", sans-serif; line-height: 1.6; }
+  main { max-width: 880px; margin: 0 auto; padding: 4rem 1.5rem 6rem; }
+
+  .secao { margin-bottom: 5rem; }
+  .eyebrow { font-family: "Space Mono", monospace; font-size: 12px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 0.5rem; }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  h2 { font-weight: 600; font-size: 1.5rem; letter-spacing: -0.03em; margin-bottom: 1.5rem; }
+  .nota { color: var(--pedra); font-size: 0.9rem; max-width: 60ch; margin-bottom: 1.5rem; }
+
+  .cartao { background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 2.5rem 2rem; margin-bottom: 1rem; }
+  .rotulo { font-family: "Space Mono", monospace; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pedra); margin-bottom: 1.25rem; }
+  .rotulo em { color: var(--dourado); font-style: normal; }
+
+  /* Wordmark */
+  .wordmark { font-size: 2.6rem; letter-spacing: -0.03em; white-space: nowrap; }
+  .wm-codigo { font-weight: 600; color: var(--cal); }
+  .wm-itin { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+
+  /* Headlines — forma final: sem ponto, itálico 10% maior, nunca negrito */
+  .headline { font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 700; letter-spacing: -0.035em;
+    line-height: 1.1; }
+  .headline .it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--ambar); letter-spacing: 0; }
+
+  /* Amostras de documento por fonte candidata */
+  .doc-amostra { background: var(--papel); color: var(--tinta); border-radius: 8px;
+    padding: 1.75rem 2rem; }
+  .doc-amostra .da-eyebrow { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--queimado); margin-bottom: 1.1rem; }
+  .doc-amostra .da-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+    margin-bottom: 1.1rem; }
+  .doc-amostra .da-meta .k { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: #97928a; margin-bottom: 0.15rem; }
+  .doc-amostra .da-meta .v { font-family: "Archivo", sans-serif; font-weight: 600; font-size: 0.9rem; }
+  .doc-amostra .da-corpo { font-family: "Archivo", sans-serif; font-size: 0.88rem; color: #3d3a33;
+    max-width: 58ch; margin-bottom: 1.1rem; }
+  .doc-amostra .da-corpo b { color: var(--queimado); }
+  .doc-amostra .da-tokens { font-size: 11px; color: #6b675e; margin-bottom: 1.1rem; }
+  .doc-amostra .da-rodape { display: flex; justify-content: space-between;
+    border-top: 1px solid #e4dfd2; padding-top: 0.7rem; font-size: 10px;
+    letter-spacing: 0.08em; color: #97928a; }
+  .f-space, .f-space .da-eyebrow, .f-space .da-meta .k, .f-space .da-tokens, .f-space .da-rodape { font-family: "Space Mono", monospace; }
+  .f-xanh, .f-xanh .da-eyebrow, .f-xanh .da-meta .k, .f-xanh .da-tokens, .f-xanh .da-rodape { font-family: "Xanh Mono", monospace; }
+  .f-dm, .f-dm .da-eyebrow, .f-dm .da-meta .k, .f-dm .da-tokens, .f-dm .da-rodape { font-family: "DM Mono", monospace; }
+  .f-sometype, .f-sometype .da-eyebrow, .f-sometype .da-meta .k, .f-sometype .da-tokens, .f-sometype .da-rodape { font-family: "Sometype Mono", monospace; }
+  .f-kode, .f-kode .da-eyebrow, .f-kode .da-meta .k, .f-kode .da-tokens, .f-kode .da-rodape { font-family: "Kode Mono", monospace; }
+  .f-martian, .f-martian .da-eyebrow, .f-martian .da-meta .k, .f-martian .da-tokens, .f-martian .da-rodape { font-family: "Martian Mono", monospace; }
+  .f-martian .da-eyebrow, .f-martian .da-meta .k, .f-martian .da-tokens, .f-martian .da-rodape { letter-spacing: 0.04em; } /* Martian já é larga */
+
+  /* Assinatura de e-mail */
+  .assinatura { background: #fff; color: #333; border-radius: 8px; padding: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif; font-size: 13px; line-height: 1.5;
+    flex: 1; min-width: 260px; }
+  .assinatura .wm { font-size: 17px; letter-spacing: -0.03em; margin-top: 0.75rem; }
+  .assinatura .wm .c { font-family: "Archivo", sans-serif; font-weight: 600; color: #1a1915; }
+  .assinatura .wm .i { font-family: "Instrument Serif", serif; font-style: italic;
+    font-size: 1.1em; color: var(--queimado); }
+  .assinatura .contato { font-family: "Space Mono", monospace; color: #777; font-size: 11px;
+    letter-spacing: 0.04em; margin-top: 0.25rem; }
+  .assinatura .contato a { color: var(--queimado); text-decoration: none; }
+  .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--breu);
+    display: inline-flex; align-items: center; justify-content: center; gap: 1px;
+    font-family: "Archivo", sans-serif; font-weight: 600; font-size: 22px; flex-shrink: 0; }
+  .avatar .c { color: var(--cal); }
+  .avatar .i { color: var(--ambar); display: inline-block; transform: rotate(12deg); }
+
+  /* Variantes artísticas do nome */
+  .nome-v1 .n1 { font-family: "Archivo", sans-serif; font-weight: 600; font-size: 16px; color: #1a1915; }
+  .nome-v1 .n2 { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 18px; color: var(--queimado); }
+  .nome-v2 { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 20px; color: #1a1915; }
+  .nome-v3 { font-family: "Archivo", sans-serif; font-weight: 600; font-size: 16px; color: #1a1915; }
+  .nome-v3 .inicial { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 20px; color: var(--queimado); }
+
+  /* Documento completo */
+  .doc { background: var(--papel); color: var(--tinta); border-radius: 8px;
+    padding: 2.5rem 2.5rem 1.5rem; display: flex; flex-direction: column; min-height: 560px; }
+  .doc-cabecalho { display: flex; justify-content: space-between; align-items: baseline;
+    border-bottom: 2px solid var(--queimado); padding-bottom: 1rem; }
+  .doc-wm { font-size: 1.3rem; letter-spacing: -0.03em; }
+  .doc-wm .c { font-weight: 600; }
+  .doc-wm .i { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400;
+    font-size: 1.1em; color: var(--queimado); }
+  .doc-tipo { font-family: "Space Mono", monospace; font-size: 11px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--queimado); }
+  .doc-corpo { flex: 1; padding: 2rem 0; font-size: 0.92rem; color: #3d3a33; max-width: 58ch; }
+  .doc-corpo h3 { font-weight: 600; color: var(--tinta); letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+  .doc-corpo p { margin-bottom: 0.75rem; }
+  .doc-corpo b { color: var(--queimado); }
+  .doc-rodape { display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid #e4dfd2; padding-top: 0.9rem;
+    font-family: "Space Mono", monospace; font-size: 10px; letter-spacing: 0.08em; color: #97928a; }
+  .doc-rodape .mono-ci { font-family: "Archivo", sans-serif; font-weight: 600; font-size: 18px;
+    letter-spacing: -0.02em; color: var(--tinta); }
+  .doc-rodape .mono-ci .i { color: var(--queimado); display: inline-block; transform: rotate(12deg); }
+</style>
+</head>
+<body>
+<main>
+  <header class="secao">
+    <p class="eyebrow">MIV · <b>revisão — rodada 2</b> · 2026-07-17</p>
+    <h1 style="font-weight:700; font-size:2rem; letter-spacing:-0.035em;">O que fechou e o que <span style="font-family:'Instrument Serif',serif; font-style:italic; font-weight:400; font-size:1.1em; color:var(--ambar); letter-spacing:0;">falta escolher</span></h1>
+  </header>
+
+  <!-- 1. WORDMARK — decisão registrada -->
+  <section class="secao">
+    <p class="eyebrow">01 · <b>wordmark</b> · fechado</p>
+    <h2>Aprovado — sem alteração</h2>
+    <p class="nota">Código 600 · Itinerante 400, ~10% maior. Os pesos alternativos foram
+    descartados na rodada 1.</p>
+    <div class="cartao">
+      <p class="wordmark"><span class="wm-codigo">Código</span> <span class="wm-itin">Itinerante</span></p>
+    </div>
+  </section>
+
+  <!-- 2. HEADLINES — forma final -->
+  <section class="secao">
+    <p class="eyebrow">02 · <b>headlines</b> · fechado</p>
+    <h2>Forma final: sem ponto, itálico sempre maior</h2>
+    <p class="nota">Decisão da rodada 1 aplicada: sem ponto final; o itálico serifado é
+    sempre ~10% maior que o corpo da frase (mesma regra do wordmark) e nunca negrito.</p>
+    <div class="cartao">
+      <p class="headline" style="margin-bottom:1.5rem;">Sites para hostels,<br>pagos em <span class="it">noites</span></p>
+      <p class="headline" style="font-size:clamp(1.3rem,3.5vw,2rem);">Pontos de calor, nunca<br>uma <span class="it">marca laranja</span></p>
+    </div>
+  </section>
+
+  <!-- 3. FONTE DE RÓTULOS — 6 candidatas em documento -->
+  <section class="secao">
+    <p class="eyebrow">03 · <b>fonte de rótulos</b> · em escolha</p>
+    <h2>Seis candidatas, cada uma num documento de verdade</h2>
+    <p class="nota">Cada cartão é o mesmo trecho de proposta comercial — eyebrow, metadados,
+    tokens técnicos e rodapé são os lugares onde essa fonte vive. A Space Mono (sua
+    preferida da rodada 1) abre a série como referência; as outras cinco são novas.</p>
+
+    <div class="cartao f-space" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Referência — Space Mono <em>· finalista da rodada 1</em></p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+
+    <div class="cartao f-xanh" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Opção A — Xanh Mono <em>· mono serifada; a mais artística, ecoa a Instrument Serif</em></p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+
+    <div class="cartao f-dm" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Opção B — DM Mono · quente e discreta, detalhes recortados</p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+
+    <div class="cartao f-sometype" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Opção C — Sometype Mono · humanista, a mais confortável de ler</p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+
+    <div class="cartao f-kode" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Opção D — Kode Mono · angulosa, ecoa a rigidez do "Código"</p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+
+    <div class="cartao f-martian" style="padding:1rem;">
+      <p class="rotulo" style="padding:0.75rem 1rem 0;">Opção E — Martian Mono · larga e assertiva, presença forte</p>
+      <div class="doc-amostra">
+        <p class="da-eyebrow">Proposta comercial · nº 2026-004</p>
+        <div class="da-meta">
+          <div><p class="k">Para</p><p class="v">LumeHostel — João Pessoa/PB</p></div>
+          <div><p class="k">Data</p><p class="v">17 de julho de 2026</p></div>
+          <div><p class="k">Validade</p><p class="v">15 dias</p></div>
+        </div>
+        <p class="da-corpo">Um site institucional completo, no ar em endereço próprio —
+        <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p class="da-tokens">tema terracota · ambar #E39A3B · queimado #B85C2E · astro 5 + tailwind 4</p>
+        <div class="da-rodape"><span>codigo-itinerante.vercel.app</span><span>contato por whatsapp</span><span>1 / 3</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. ASSINATURA — nome artístico -->
+  <section class="secao">
+    <p class="eyebrow">04 · <b>assinatura</b> · em escolha</p>
+    <h2>Três formas artísticas do seu nome</h2>
+    <p class="nota">Todas usam só as fontes da marca — a arte vem da mistura, não de fonte
+    nova. A linha de contato já aparece na fonte de rótulo em teste (Space Mono por
+    enquanto; troca junto com a escolha da seção 03).</p>
+
+    <div class="cartao" style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+      <span class="avatar"><span class="c">C</span><span class="i">I</span></span>
+      <div class="assinatura">
+        <p class="rotulo" style="margin-bottom:0.75rem;">V1 — rígido + fluido <em>· espelha o wordmark</em></p>
+        <p class="nome-v1"><span class="n1">Tatiana</span> <span class="n2">Burgos</span></p>
+        <p class="wm"><span class="c">Código</span> <span class="i">Itinerante</span></p>
+        <p class="contato">codigo-itinerante.vercel.app · <a href="#">WhatsApp</a></p>
+      </div>
+    </div>
+
+    <div class="cartao" style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+      <span class="avatar"><span class="c">C</span><span class="i">I</span></span>
+      <div class="assinatura">
+        <p class="rotulo" style="margin-bottom:0.75rem;">V2 — nome inteiro em itálico serifado</p>
+        <p class="nome-v2">Tatiana Burgos</p>
+        <p class="wm"><span class="c">Código</span> <span class="i">Itinerante</span></p>
+        <p class="contato">codigo-itinerante.vercel.app · <a href="#">WhatsApp</a></p>
+      </div>
+    </div>
+
+    <div class="cartao" style="display:flex; gap:2rem; align-items:center; flex-wrap:wrap;">
+      <span class="avatar"><span class="c">C</span><span class="i">I</span></span>
+      <div class="assinatura">
+        <p class="rotulo" style="margin-bottom:0.75rem;">V3 — inicial em itálico queimado</p>
+        <p class="nome-v3"><span class="inicial">T</span>atiana Burgos</p>
+        <p class="wm"><span class="c">Código</span> <span class="i">Itinerante</span></p>
+        <p class="contato">codigo-itinerante.vercel.app · <a href="#">WhatsApp</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DOCUMENTO — monograma maior -->
+  <section class="secao">
+    <p class="eyebrow">05 · <b>documentos</b> · fechado, com ajuste</p>
+    <h2>Rodapé aprovado, monograma maior</h2>
+    <p class="nota">Mesmo documento da rodada 1, com o CI do rodapé crescido (13px → 18px).</p>
+
+    <div class="doc">
+      <div class="doc-cabecalho">
+        <p class="doc-wm"><span class="c">Código</span> <span class="i">Itinerante</span></p>
+        <p class="doc-tipo">Proposta comercial</p>
+      </div>
+      <div class="doc-corpo">
+        <h3>O que o LumeHostel recebe</h3>
+        <p>Um site institucional completo, no ar em endereço próprio, com as acomodações,
+        comodidades e a região — <b>pago em noites de hospedagem</b>, sem custo em dinheiro.</p>
+        <p>O site não cobra manutenção: depois de publicado, ele simplesmente funciona.
+        Alterações de conteúdo são combinadas por WhatsApp.</p>
+      </div>
+      <div class="doc-rodape">
+        <p class="mono-ci">C<span class="i">I</span></p>
+        <p>codigo-itinerante.vercel.app · contato por WhatsApp</p>
+        <p>1 / 3</p>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>

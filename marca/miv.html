@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>MIV — Código Itinerante</title>
+<style>
+  @font-face {
+    font-family: "Archivo";
+    src: url("../site/node_modules/@fontsource-variable/archivo/files/archivo-latin-wght-normal.woff2") format("woff2");
+    font-weight: 100 900; font-style: normal;
+  }
+  @font-face {
+    font-family: "Archivo";
+    src: url("../site/node_modules/@fontsource-variable/archivo/files/archivo-latin-ext-wght-normal.woff2") format("woff2");
+    font-weight: 100 900; font-style: normal;
+    unicode-range: U+0100-02BA, U+1E00-1EFF;
+  }
+  @font-face {
+    font-family: "Instrument Serif";
+    src: url("../site/node_modules/@fontsource/instrument-serif/files/instrument-serif-latin-400-italic.woff2") format("woff2");
+    font-weight: 400; font-style: italic;
+  }
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../site/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+    font-weight: 400; font-style: normal;
+  }
+  @font-face {
+    font-family: "IBM Plex Mono";
+    src: url("../site/node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+    font-weight: 500; font-style: normal;
+  }
+
+  :root {
+    --breu: #0a0a09; --grafite: #161513; --cal: #f4f1e8; --pedra: #97928a;
+    --papel: #fbf9f4; --tinta: #1a1915;
+    --ambar: #e39a3b; --barro: #c4693f; --dourado: #efc780; --queimado: #b85c2e;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #333; }
+  body { font-family: "Archivo", sans-serif; font-weight: 400; }
+
+  @page { size: A4; margin: 0; }
+  .pg {
+    width: 210mm; height: 297mm; overflow: hidden; position: relative;
+    padding: 20mm 18mm 16mm; page-break-after: always;
+    background: var(--breu); color: var(--cal);
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .pg.clara { background: var(--papel); color: var(--tinta); }
+
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 10.5px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--pedra);
+  }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+  .clara .eyebrow b { color: var(--queimado); }
+
+  h1 {
+    font-weight: 700; letter-spacing: -0.035em; line-height: 1.05;
+    font-size: 42px; margin: 6mm 0 8mm;
+  }
+  h1 em, .serif-it { font-family: "Instrument Serif", serif; font-style: italic; font-weight: 400; }
+  h1 em { color: var(--ambar); }
+  .clara h1 em { color: var(--queimado); }
+
+  p, li { font-size: 12.5px; line-height: 1.6; color: var(--cal); }
+  .clara p, .clara li { color: var(--tinta); }
+  p.mudo, li.mudo { color: var(--pedra); }
+  .col { max-width: 128mm; }
+  p + p { margin-top: 4mm; }
+
+  .regua { border: 0; border-top: 2px solid var(--ambar); width: 22mm; margin: 8mm 0; }
+  .clara .regua { border-color: var(--queimado); }
+
+  .rodape {
+    position: absolute; left: 18mm; right: 18mm; bottom: 10mm;
+    display: flex; justify-content: space-between; align-items: baseline;
+    font-family: "IBM Plex Mono", monospace; font-size: 9px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--pedra);
+  }
+
+  .card {
+    background: var(--grafite); border: 1px solid #26241f; border-radius: 12px;
+    padding: 8mm;
+  }
+  .clara .card { background: #ffffff; border-color: #e8e2d4; }
+
+  table { border-collapse: collapse; width: 100%; font-size: 11.5px; }
+  th {
+    font-family: "IBM Plex Mono", monospace; font-weight: 500; font-size: 9.5px;
+    letter-spacing: 0.12em; text-transform: uppercase; color: var(--pedra);
+    text-align: left; padding: 2.5mm 4mm 2.5mm 0; border-bottom: 1px solid #2b2823;
+  }
+  td { padding: 3mm 4mm 3mm 0; border-bottom: 1px solid #1f1d19; line-height: 1.5; vertical-align: top; }
+  .clara th { border-color: #ddd6c6; }
+  .clara td { border-color: #ece6d8; }
+  .mono { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; }
+
+  /* ---- capa ---- */
+  .capa { display: flex; flex-direction: column; justify-content: space-between; }
+  .capa .wordmark-capa { width: 150mm; margin: 0 auto; }
+  .capa-centro { display: flex; flex-direction: column; align-items: center; gap: 10mm; }
+
+  /* ---- paleta ---- */
+  .swatches { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5mm; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid #26241f; }
+  .clara .sw { border-color: #e0dacb; }
+  .sw .cor { height: 26mm; }
+  .sw .info { padding: 3.5mm 4mm; background: var(--grafite); }
+  .clara .sw .info { background: #fff; }
+  .sw .nome { font-weight: 600; font-size: 12px; }
+  .sw .hex { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; color: var(--pedra); margin-top: 1mm; letter-spacing: 0.06em; }
+  .sw .papel-uso { font-size: 9.5px; color: var(--pedra); margin-top: 1.5mm; line-height: 1.45; }
+
+  /* ---- amostras de wordmark ---- */
+  .amostra { border-radius: 12px; padding: 12mm 10mm; display: flex; align-items: center; justify-content: center; }
+  .amostra img { width: 96mm; display: block; }
+  .amostra + .amostra, .amostra + .rotulo-amostra { margin-top: 0; }
+  .rotulo-amostra {
+    font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--pedra); margin: 3mm 0 6mm 2mm;
+  }
+
+  .nao-fazer li { margin-bottom: 3.2mm; list-style: none; padding-left: 8mm; position: relative; }
+  .nao-fazer li::before {
+    content: "×"; position: absolute; left: 0; top: -1px;
+    color: var(--barro); font-weight: 700; font-size: 15px;
+  }
+
+  .sumario { list-style: none; counter-reset: sum; max-width: 120mm; }
+  .sumario li {
+    counter-increment: sum; display: flex; align-items: baseline; gap: 4mm;
+    padding: 4mm 0; border-bottom: 1px solid #1f1d19; font-size: 14px; font-weight: 500;
+  }
+  .sumario li::before {
+    content: counter(sum, decimal-leading-zero);
+    font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--ambar);
+    letter-spacing: 0.1em;
+  }
+
+  .tipo-linha { display: flex; align-items: baseline; gap: 6mm; padding: 5mm 0; border-bottom: 1px solid #1f1d19; }
+  .tipo-linha .demo { font-size: 30px; width: 74mm; flex: none; letter-spacing: -0.02em; }
+  .tipo-linha .desc { font-size: 11px; color: var(--pedra); line-height: 1.55; }
+  .tipo-linha .desc b { color: var(--cal); font-weight: 600; display: block; }
+</style>
+</head>
+<body>
+
+<!-- 1 · CAPA -->
+<section class="pg capa">
+  <div class="eyebrow">Manual de <b>identidade visual</b></div>
+  <div class="capa-centro">
+    <img class="wordmark-capa" src="wordmark-escuro.svg" alt="Código Itinerante">
+    <div class="eyebrow" style="text-align:center">Identidade <b>Estrada 1 — Lâmpada de hostel</b> · aprovada em 02.07.2026</div>
+  </div>
+  <div class="rodape" style="position:static">
+    <span>Código Itinerante</span><span>v1 · 2026</span>
+  </div>
+</section>
+
+<!-- 2 · SUMÁRIO -->
+<section class="pg">
+  <div class="eyebrow">MIV · <b>sumário</b></div>
+  <h1>Sumário</h1>
+  <ol class="sumario">
+    <li>A marca e o conceito</li>
+    <li>A regra do acento</li>
+    <li>Wordmark — construção</li>
+    <li>Wordmark — versões de cor</li>
+    <li>Monograma</li>
+    <li>O que não fazer</li>
+    <li>Paleta — neutros</li>
+    <li>Paleta — acentos</li>
+    <li>Tipografia</li>
+    <li>Aplicações</li>
+  </ol>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>02</span></div>
+</section>
+
+<!-- 3 · A MARCA -->
+<section class="pg">
+  <div class="eyebrow">01 · <b>a marca</b></div>
+  <h1>Sites para hostels,<br>pagos em <em>noites</em>.</h1>
+  <div class="col">
+    <p>O Código Itinerante constrói sites institucionais para hostels e pousadas, em permuta por noites de hospedagem.</p>
+    <hr class="regua">
+    <p><strong>Conceito visual</strong> — base escura, tipografia protagonista, elegância contida, com um acento quente. A narrativa da cor: o âmbar é a luz da lâmpada de hostel à noite, o pôr-do-sol na estrada.</p>
+    <p><strong>Tom</strong> — profissional com calor humano. Nem frieza de portfólio dev, nem informalidade de agência descolada. O público principal é o dono de hostel.</p>
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>03</span></div>
+</section>
+
+<!-- 4 · REGRA DO ACENTO -->
+<section class="pg">
+  <div class="eyebrow">02 · <b>a regra do acento</b></div>
+  <h1>Pontos de calor,<br>nunca uma marca <em>laranja</em>.</h1>
+  <div class="col">
+    <p>Princípio nº 1 da identidade: a cor quente aparece pouco e sempre com intenção — um grifo, um link, uma linha, uma palavra.</p>
+    <p>A marca é preta (ou clara, em papel) com <strong>pontos</strong> de calor. Os acentos ocupam uma fração pequena de qualquer peça; o resto é neutro.</p>
+  </div>
+  <div style="display:flex; gap:5mm; margin-top:12mm">
+    <div class="card" style="flex:1">
+      <div class="eyebrow" style="margin-bottom:4mm">Certo</div>
+      <p style="font-size:16px; font-weight:600; letter-spacing:-0.02em">Um site que trabalha <span class="serif-it" style="color:var(--ambar)">enquanto você viaja</span>.</p>
+    </div>
+    <div class="card" style="flex:1">
+      <div class="eyebrow" style="margin-bottom:4mm">Errado</div>
+      <p style="font-size:16px; font-weight:600; letter-spacing:-0.02em; color:var(--ambar)">Um site que trabalha enquanto você viaja.</p>
+    </div>
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>04</span></div>
+</section>
+
+<!-- 5 · WORDMARK CONSTRUÇÃO -->
+<section class="pg">
+  <div class="eyebrow">03 · <b>wordmark</b></div>
+  <h1>O nome conta<br>a própria <em>história</em>.</h1>
+  <div class="col">
+    <p>O logo é tipográfico puro, sem símbolo. <strong>Código</strong> em sans rígida é a estrutura do código; <span class="serif-it">Itinerante</span> em itálico serifado é o movimento da viagem. As duas palavras na mesma linha, separadas por espaço simples, alinhadas pela baseline.</p>
+  </div>
+  <div class="amostra" style="background:transparent; padding:14mm 0 10mm">
+    <img src="wordmark-escuro.svg" alt="Wordmark Código Itinerante" style="width:120mm">
+  </div>
+  <table>
+    <tr><th>Parte</th><th>Fonte</th><th>Peso</th><th>Detalhes</th></tr>
+    <tr><td>Código</td><td>Archivo</td><td>600</td><td>tracking −0.03em</td></tr>
+    <tr><td><span class="serif-it">Itinerante</span></td><td>Instrument Serif Italic</td><td>400</td><td>corpo ~10% maior que "Código"</td></tr>
+  </table>
+  <p class="mudo" style="margin-top:6mm; font-size:11px">O wordmark se sustenta pequeno (validado a ~13px de corpo). Abaixo disso — favicon, avatar — usar o monograma.</p>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>05</span></div>
+</section>
+
+<!-- 6 · WORDMARK CORES -->
+<section class="pg">
+  <div class="eyebrow">04 · <b>wordmark · versões de cor</b></div>
+  <h1>Uma versão para<br>cada <em>fundo</em>.</h1>
+  <div class="rotulo-amostra">Fundo escuro (Breu) — Cal + Âmbar</div>
+  <div class="amostra" style="background:var(--grafite); border:1px solid #26241f">
+    <img src="wordmark-escuro.svg" alt="Wordmark sobre fundo escuro">
+  </div>
+  <div class="rotulo-amostra" style="margin-top:6mm">Fundo claro (Papel) — Tinta + Queimado</div>
+  <div class="amostra" style="background:var(--papel)">
+    <img src="wordmark-claro.svg" alt="Wordmark sobre fundo claro">
+  </div>
+  <div class="rotulo-amostra" style="margin-top:6mm">Monocromática (fallback) — cor do texto, mantém o itálico serifado</div>
+  <div class="amostra" style="background:var(--grafite); border:1px solid #26241f">
+    <img src="wordmark-mono.svg" alt="Wordmark monocromático" style="filter:invert(93%) sepia(6%) saturate(200%) hue-rotate(10deg)">
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>06</span></div>
+</section>
+
+<!-- 7 · MONOGRAMA -->
+<section class="pg">
+  <div class="eyebrow">05 · <b>monograma</b></div>
+  <h1>C I, com o movimento<br>na <em>inclinação</em>.</h1>
+  <div class="col">
+    <p>Para tamanhos minúsculos — favicon, avatar — onde a serifa morre. "C" e "I" ambos em <strong>Archivo 600, mesmo corpo e mesmíssimo peso</strong>, com o "I" <strong>inclinado 12°</strong> e na cor de acento: Âmbar sobre escuro, Queimado sobre claro.</p>
+    <p class="mudo">Sem serifa: aqui o movimento da viagem fica só na inclinação.</p>
+  </div>
+  <div style="display:flex; gap:5mm; margin-top:12mm">
+    <div class="amostra" style="flex:1; background:var(--grafite); border:1px solid #26241f">
+      <img src="monograma-escuro.svg" alt="Monograma sobre escuro" style="width:34mm">
+    </div>
+    <div class="amostra" style="flex:1; background:var(--papel)">
+      <img src="monograma-claro.svg" alt="Monograma sobre claro" style="width:34mm">
+    </div>
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>07</span></div>
+</section>
+
+<!-- 8 · O QUE NÃO FAZER -->
+<section class="pg">
+  <div class="eyebrow">06 · <b>o que não fazer</b></div>
+  <h1>Restrições<br>de <em>uso</em>.</h1>
+  <ul class="nao-fazer col" style="margin-top:2mm">
+    <li>Não inverter o par: serifa em "Código", sans em "Itinerante".</li>
+    <li>Não aplicar o âmbar nas duas palavras, nem em "Código" isolado.</li>
+    <li>Não usar itálico na palavra "Código" nem regular em "Itinerante".</li>
+    <li>Não adicionar ícones, contornos, sombras ou gradientes ao wordmark.</li>
+    <li>Não usar a palavra "Código" ou "Itinerante" sozinha como marca.</li>
+    <li>Sobre escuro, nunca usar Queimado (é a versão para papel).</li>
+    <li>Sobre claro, nunca usar Âmbar ou Dourado em texto — contraste insuficiente.</li>
+    <li>Preto puro #000 e branco puro #FFF não fazem parte da paleta — usar Breu e Cal/Papel.</li>
+  </ul>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>08</span></div>
+</section>
+
+<!-- 9 · PALETA NEUTROS -->
+<section class="pg">
+  <div class="eyebrow">07 · <b>paleta · neutros</b></div>
+  <h1>A base é <em>neutra</em>.</h1>
+  <div class="swatches">
+    <div class="sw"><div class="cor" style="background:#0a0a09"></div><div class="info"><div class="nome">Breu</div><div class="hex">#0A0A09</div><div class="papel-uso">Fundo principal (escuro)</div></div></div>
+    <div class="sw"><div class="cor" style="background:#161513"></div><div class="info"><div class="nome">Grafite</div><div class="hex">#161513</div><div class="papel-uso">Superfícies e cards sobre Breu</div></div></div>
+    <div class="sw"><div class="cor" style="background:#f4f1e8"></div><div class="info"><div class="nome">Cal</div><div class="hex">#F4F1E8</div><div class="papel-uso">Texto sobre escuro</div></div></div>
+    <div class="sw"><div class="cor" style="background:#97928a"></div><div class="info"><div class="nome">Cinza-pedra</div><div class="hex">#97928A</div><div class="papel-uso">Texto secundário sobre escuro</div></div></div>
+    <div class="sw"><div class="cor" style="background:#fbf9f4"></div><div class="info"><div class="nome">Papel</div><div class="hex">#FBF9F4</div><div class="papel-uso">Fundo de documentos</div></div></div>
+    <div class="sw"><div class="cor" style="background:#1a1915"></div><div class="info"><div class="nome">Tinta</div><div class="hex">#1A1915</div><div class="papel-uso">Texto sobre claro</div></div></div>
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>09</span></div>
+</section>
+
+<!-- 10 · PALETA ACENTOS -->
+<section class="pg">
+  <div class="eyebrow">08 · <b>paleta · acentos</b></div>
+  <h1>O calor, <em>dosado</em>.</h1>
+  <div class="swatches" style="grid-template-columns:1fr 1fr">
+    <div class="sw"><div class="cor" style="background:#e39a3b"></div><div class="info"><div class="nome">Âmbar</div><div class="hex">#E39A3B</div><div class="papel-uso">Acento principal sobre escuro: links, grifos, "Itinerante"</div></div></div>
+    <div class="sw"><div class="cor" style="background:#c4693f"></div><div class="info"><div class="nome">Barro</div><div class="hex">#C4693F</div><div class="papel-uso">Acento secundário sobre escuro, estados hover</div></div></div>
+    <div class="sw"><div class="cor" style="background:#efc780"></div><div class="info"><div class="nome">Dourado</div><div class="hex">#EFC780</div><div class="papel-uso">Detalhes finos sobre escuro: réguas, ícones pequenos</div></div></div>
+    <div class="sw"><div class="cor" style="background:#b85c2e"></div><div class="info"><div class="nome">Queimado</div><div class="hex">#B85C2E</div><div class="papel-uso">O acento em fundo claro — versão do âmbar com contraste para papel</div></div></div>
+  </div>
+  <p class="mudo col" style="margin-top:8mm">Proporção: os acentos ocupam uma fração pequena de qualquer peça; o resto é neutro.</p>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>10</span></div>
+</section>
+
+<!-- 11 · TIPOGRAFIA -->
+<section class="pg">
+  <div class="eyebrow">09 · <b>tipografia</b></div>
+  <h1>Tipografia <em>protagonista</em>.</h1>
+  <div class="tipo-linha">
+    <div class="demo" style="font-weight:700">Archivo</div>
+    <div class="desc"><b>Display / títulos · 500–700</b>Headlines, wordmark, títulos de documento. Também no corpo, em 400–500.</div>
+  </div>
+  <div class="tipo-linha">
+    <div class="demo serif-it" style="color:var(--ambar)">Instrument Serif</div>
+    <div class="desc"><b>Acento itálico · 400</b>"Itinerante" e palavras grifadas em headlines. Tempero: uma palavra ou expressão por título, nunca frases inteiras.</div>
+  </div>
+  <div class="tipo-linha">
+    <div class="demo" style="font-family:'IBM Plex Mono',monospace; font-size:22px">IBM Plex Mono</div>
+    <div class="desc"><b>Rótulos / técnico · 400–500</b>Eyebrows, metadados, hex, detalhes dev. Caixa alta, letter-spacing largo (~0.12em), corpo pequeno (11–12px).</div>
+  </div>
+  <p class="mudo" style="margin-top:8mm; font-size:11px">Todas livres (Google Fonts). No site, auto-hospedadas — mesmo padrão dos sites de cliente.</p>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>11</span></div>
+</section>
+
+<!-- 12 · APLICAÇÕES -->
+<section class="pg clara">
+  <div class="eyebrow">10 · <b>aplicações</b></div>
+  <h1>Documentos, site<br>e <em>assinatura</em>.</h1>
+  <div class="col">
+    <p><strong>Documentos (proposta, briefing, contrato)</strong> — fundo Papel, texto Tinta. Cabeçalho: wordmark à esquerda; tipo do documento à direita em IBM Plex Mono caps, cor Queimado; régua de 2px em Queimado fechando o cabeçalho. Destaques do corpo em Queimado, negrito.</p>
+    <p><strong>Site do projeto</strong> — fundo Breu; hero tipográfico com itálico em Âmbar. Cards em Grafite, cantos suaves (raio 12px). Botão primário: fundo Âmbar, texto Breu, pílula.</p>
+    <p><strong>Assinatura e avatar</strong> — assinatura de e-mail com o wordmark pequeno, na versão de cor conforme o fundo; avatar e favicon com o monograma.</p>
+  </div>
+  <div class="card" style="margin-top:10mm; padding:0; overflow:hidden">
+    <div style="display:flex; justify-content:space-between; align-items:center; padding:6mm 8mm 5mm">
+      <img src="wordmark-claro.svg" alt="" style="width:44mm">
+      <span class="mono" style="letter-spacing:0.12em; color:var(--queimado); font-weight:500; font-size:9.5px">PROPOSTA</span>
+    </div>
+    <div style="border-top:2px solid var(--queimado); margin:0 8mm"></div>
+    <div style="padding:5mm 8mm 7mm; display:flex; gap:12mm">
+      <div><div class="eyebrow" style="font-size:8.5px">Para</div><div style="font-weight:600; font-size:11px">Nome do hostel</div></div>
+      <div><div class="eyebrow" style="font-size:8.5px">Data</div><div style="font-weight:600; font-size:11px">07.2026</div></div>
+      <div><div class="eyebrow" style="font-size:8.5px">Validade</div><div style="font-weight:600; font-size:11px">30 dias</div></div>
+    </div>
+  </div>
+  <div class="rodape"><span>Código Itinerante · MIV</span><span>12</span></div>
+</section>
+
+<!-- 13 · CONTRACAPA -->
+<section class="pg capa">
+  <div></div>
+  <div class="capa-centro">
+    <img src="monograma-escuro.svg" alt="Monograma CI" style="width:30mm">
+  </div>
+  <div class="rodape" style="position:static">
+    <span>codigo-itinerante.vercel.app</span><span>MIV v1 · 2026</span>
+  </div>
+</section>
+
+</body>
+</html>
