@@ -32,6 +32,10 @@ export const marcaSchema = z.object({
   /** Quando true, o logo (raster) aparece só no menu; a hero usa o nome em texto.
    *  Para logos tipo selo/circular que não escalam bem em tamanho grande. */
   logoApenasNoMenu: z.boolean().optional(),
+  /** Quando true, a hero usa a composição centralizada (nome grande no meio,
+   *  frase + símbolo no canto inferior direito) em vez do bloco padrão
+   *  ancorado embaixo à esquerda. */
+  heroCentralizado: z.boolean().optional(),
 });
 
 /** Símbolos artísticos disponíveis na biblioteca compartilhada (SimboloComodidade.astro). */

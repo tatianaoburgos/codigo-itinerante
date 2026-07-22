@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
-import { foto, marca, video } from '../lib/fotos';
+import { foto, marca, simboloMarca, video } from '../lib/fotos';
 import MarcaDagua from './MarcaDagua.astro';
 
 const logo = config.marca?.logo && !config.marca.logoApenasNoMenu ? marca(config.marca.logo) : undefined;
@@ -9,10 +9,12 @@ const heroVideo = config.marca?.heroVideo ? video(config.marca.heroVideo) : unde
 const heroVideoPoster = config.marca?.heroVideoPoster
   ? foto(config.marca.heroVideoPoster)
   : undefined;
+const heroCentralizado = config.marca?.heroCentralizado ?? false;
+const simbolo = heroCentralizado ? simboloMarca() : undefined;
 ---
 
 <section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
-  <MarcaDagua />
+  {!heroCentralizado && <MarcaDagua />}
   {
     heroVideo ? (
       <>
@@ -49,19 +51,37 @@ const heroVideoPoster = config.marca?.heroVideoPoster
     aria-hidden="true"
   >
   </div>
-  <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-6 sm:pb-8">
-    <h1 class="max-w-2xl">
-      {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
-      {
-        logo ? (
-          <img src={logo.src} alt={config.nome} class="h-14 w-auto sm:h-20" />
-        ) : (
-          <span class="font-display text-4xl font-bold text-white sm:text-6xl">{config.nome}</span>
-        )
-      }
-    </h1>
-    <p class="hero-frase mt-4 max-w-xl text-lg text-white">{config.slogan}</p>
-  </div>
+  {
+    heroCentralizado ? (
+      <>
+        <div class="absolute inset-0 flex items-center justify-center px-4 text-center">
+          <h1 class="font-display text-4xl font-bold text-white [text-shadow:0_2px_24px_rgba(0,0,0,0.55)] sm:text-6xl md:text-7xl">
+            {config.nome}
+          </h1>
+        </div>
+        <div class="absolute right-4 bottom-6 flex flex-col items-end gap-3 sm:right-8 sm:bottom-8 md:right-12 md:bottom-12">
+          <p class="hero-frase max-w-[14rem] text-right text-base text-white sm:max-w-xs sm:text-lg md:max-w-sm md:text-xl">
+            {config.slogan}
+          </p>
+          {simbolo && <img src={simbolo.src} alt="" class="h-16 w-auto sm:h-20 md:h-28" />}
+        </div>
+      </>
+    ) : (
+      <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-6 sm:pb-8">
+        <h1 class="max-w-2xl">
+          {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
+          {
+            logo ? (
+              <img src={logo.src} alt={config.nome} class="h-14 w-auto sm:h-20" />
+            ) : (
+              <span class="font-display text-4xl font-bold text-white sm:text-6xl">{config.nome}</span>
+            )
+          }
+        </h1>
+        <p class="hero-frase mt-4 max-w-xl text-lg text-white">{config.slogan}</p>
+      </div>
+    )
+  }
 </section>
 
 {
