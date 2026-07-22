@@ -30,7 +30,8 @@ const site = Astro.site;
 const absoluta = (caminho: string): string => (site ? new URL(caminho, site).href : caminho);
 
 const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
-const ogImagem = absoluta(foto('capa.jpg').src);
+const ogImagemArquivo = config.marca?.heroVideoPoster ?? 'capa.jpg';
+const ogImagem = absoluta(foto(ogImagemArquivo).src);
 
 const loc = config.localizacao;
 const endereco = loc.cidade
