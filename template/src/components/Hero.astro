@@ -2,10 +2,9 @@
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
 import { foto, marca, video } from '../lib/fotos';
-import BotaoWhatsApp from './BotaoWhatsApp.astro';
 import MarcaDagua from './MarcaDagua.astro';
 
-const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
+const logo = config.marca?.logo && !config.marca.logoApenasNoMenu ? marca(config.marca.logo) : undefined;
 const heroVideo = config.marca?.heroVideo ? video(config.marca.heroVideo) : undefined;
 const heroVideoPoster = config.marca?.heroVideoPoster
   ? foto(config.marca.heroVideoPoster)
@@ -50,7 +49,7 @@ const heroVideoPoster = config.marca?.heroVideoPoster
     aria-hidden="true"
   >
   </div>
-  <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-14">
+  <div class="mx-auto w-full max-w-5xl px-4 pt-32 pb-6 sm:pb-8">
     <h1 class="max-w-2xl">
       {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
       {
@@ -61,10 +60,7 @@ const heroVideoPoster = config.marca?.heroVideoPoster
         )
       }
     </h1>
-    <p class="mt-4 max-w-xl text-lg text-white">{config.slogan}</p>
-    <div class="mt-8">
-      <BotaoWhatsApp tamanho="grande" />
-    </div>
+    <p class="hero-frase mt-4 max-w-xl text-lg text-white">{config.slogan}</p>
   </div>
 </section>
 

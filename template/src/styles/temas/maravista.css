@@ -21,6 +21,12 @@
   --font-mono: "Spline Sans Mono Variable", ui-monospace, monospace;
 }
 
+/* Frase da hero: decisão da autora (revisão de mockup, 2026-07-22) trocando o
+   branco padrão do motor por âmbar queimado, só para este cliente. */
+#hero .hero-frase {
+  color: var(--color-fitinha);
+}
+
 /* Depoimentos e CTA final (bg-mare = azul-marinho escuro): blockquote,
    figcaption e paragrafos do motor usam text-noite hardcoded (index.astro),
    que e ainda mais escuro que o mare e nao contrasta sobre ele. */
