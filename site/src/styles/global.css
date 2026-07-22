@@ -21,21 +21,22 @@
 
 /* Fase 3: o fundo da página é um degradê contínuo breu -> âmbar (a lâmpada
    acendendo ao longo da rolagem). Breu solido cobre Hero + QuemSouEu +
-   ComoFunciona; a cor começa a entrar exatamente no Manifesto (medido:
-   ~42-43% do scrollHeight tanto em mobile quanto em desktop) e chega em
-   âmbar cheio pouco antes do CtaFinal (~89-91%), que fica na zona clara.
-   Spec: docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md */
+   ProvaDeTrabalho; a cor começa a entrar exatamente no ComoFunciona
+   (medido: 41.4% em desktop e 37.4% em mobile) e chega em âmbar cheio pouco
+   antes do CtaFinal (~89.6%), que fica na zona clara.
+   Specs: docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md e
+   docs/superpowers/specs/2026-07-20-site-prova-de-trabalho-design.md */
 .pagina-degrade {
   min-height: 100vh;
   background: linear-gradient(
     180deg,
     #0a0a09 0%,
-    #0a0a09 43%,
-    #241812 52%,
-    #4a2a17 62%,
-    #8a4a24 73%,
-    #c4693f 83%,
-    #e39a3b 90%,
+    #0a0a09 41.4%,
+    #241812 50.6%,
+    #4a2a17 60.9%,
+    #8a4a24 72.2%,
+    #c4693f 82.4%,
+    #e39a3b 89.6%,
     #e39a3b 100%
   );
 }
