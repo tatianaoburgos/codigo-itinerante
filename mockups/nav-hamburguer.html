@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup — Nav com hambúrguer (LumeHostel + Mar à Vista)</title>
+<style>
+  :root {
+    --lume-fundo: #c94520;
+    --lume-texto: #ffffff;
+    --lume-ambar: #fcbe35;
+    --lume-solido: #c94520;
+
+    --mav-fundo: #081120;
+    --mav-texto: #ffffff;
+    --mav-ambar: #c17f1b;
+    --mav-azul: #026cda;
+
+    --zap: #25d366;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 40px 20px 80px;
+    background: #efe9df;
+    font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    color: #241c14;
+  }
+
+  h1 { font-size: 1.3rem; margin: 0 0 4px; }
+  .intro { max-width: 640px; margin: 0 auto 40px; text-align: center; }
+  .intro p { line-height: 1.5; color: #55493a; }
+
+  .bloco {
+    max-width: 900px;
+    margin: 0 auto 56px;
+  }
+
+  .bloco h2 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #8a7a63;
+    margin-bottom: 12px;
+  }
+
+  .telas {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .tela {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    position: relative;
+  }
+  .tela.desktop { width: 640px; }
+  .tela.mobile { width: 200px; }
+  .tela small {
+    display: block;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.7rem;
+    color: #8a7a63;
+    background: #efe9df;
+  }
+
+  .fundo {
+    position: relative;
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header.nav-mock {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 20px;
+    position: relative;
+    z-index: 5;
+  }
+
+  .logo-lume { display: flex; align-items: center; }
+  .logo-lume svg { height: 26px; width: auto; }
+  .tela.mobile .logo-lume svg { height: 20px; }
+
+  .logo-mav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--mav-azul);
+    flex-shrink: 0;
+  }
+  .tela.mobile .logo-mav { width: 30px; height: 30px; }
+
+  .grupo-direita {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+
+  .btn-zap {
+    background: var(--zap);
+    color: #0d2b15;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 8px 16px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .tela.mobile .btn-zap {
+    padding: 7px 12px;
+    font-size: 0.7rem;
+  }
+
+  .hamburguer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    width: 30px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+  }
+  .hamburguer span {
+    display: block;
+    height: 2px;
+    border-radius: 2px;
+    background: currentColor;
+    width: 100%;
+  }
+  .hamburguer[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+  .hamburguer[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburguer[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .hamburguer span { transition: transform 0.2s, opacity 0.2s; }
+
+  .dropdown {
+    position: absolute;
+    top: 62px;
+    right: 20px;
+    min-width: 200px;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 4;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.35);
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .dropdown.aberto {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .tela.mobile .dropdown { right: 12px; min-width: 160px; }
+
+  .dropdown a, .dropdown span {
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+  }
+
+  /* tema lume */
+  .fundo.lume { background: var(--lume-fundo); color: var(--lume-texto); }
+  .fundo.lume .hamburguer { color: #fff; }
+  .fundo.lume .dropdown { background: #fff3dc; }
+  .fundo.lume .dropdown a { color: #3a1509; }
+  .fundo.lume .dropdown a:hover { background: #fcbe3533; }
+  .fundo.lume .conteudo-fake h3 { color: var(--lume-ambar); }
+
+  /* tema mar a vista */
+  .fundo.mav { background: var(--mav-fundo); color: var(--mav-texto); }
+  .fundo.mav .hamburguer { color: #fff; }
+  .fundo.mav .dropdown { background: #ffffff; }
+  .fundo.mav .dropdown a, .fundo.mav .dropdown span { color: #081120; }
+  .fundo.mav .dropdown a:hover { background: #026cda22; }
+  .fundo.mav .dropdown span { color: #081120; opacity: 1; cursor: default; }
+  .fundo.mav .conteudo-fake h3 { color: var(--mav-azul); }
+
+  .conteudo-fake {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px 50px;
+    text-align: center;
+  }
+  .conteudo-fake h3 {
+    font-size: 1.4rem;
+    margin: 0;
+    line-height: 1.15;
+  }
+  .tela.mobile .conteudo-fake h3 { font-size: 1rem; }
+
+  .nota {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    background: #fff;
+    border: 1px solid #e2d8c6;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  .nota strong { color: #8f2d12; }
+</style>
+</head>
+<body>
+
+<div class="intro">
+  <h1>Nav novo: logo à esquerda, botão + hambúrguer à direita, sempre na mesma linha</h1>
+  <p>Clique no ícone de hambúrguer (☰) em qualquer uma das telas abaixo para ver o menu abrindo. Comparação lado a lado: desktop e mobile, nos dois temas.</p>
+</div>
+
+<div class="nota">
+  Padrão novo, para adotar em <strong>todo cliente futuro</strong> a partir de agora: logo sempre colada à esquerda; à direita, sempre na mesma linha (nunca quebra pra baixo), o botão "Reserve pelo WhatsApp" e, colado na borda, o ícone de hambúrguer. Clicar no hambúrguer abre um menu com os links (O Hostel, Acomodações, Comodidades...). No Mar à Vista, os rótulos ainda sem link (navFuturo) aparecem dentro do menu como texto não clicável, igual já é hoje.
+</div>
+
+<div class="bloco">
+  <h2>LumeHostel — desktop</h2>
+  <div class="telas">
+    <div class="tela desktop">
+      <div class="fundo lume">
+        <header class="nav-mock">
+          <a class="logo-lume" href="#" onclick="return false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.000 -1.000 231.080 44.000"><path d="M 20.760 24.960 L 18.840 26.880 L 14.520 41.040 C 16.560 41.760 18.720 42.000 20.880 42.000 C 23.040 42.000 24.960 41.760 26.880 41.160 L 22.560 26.880 L 20.760 24.960 Z" fill="#fcbe35"/><path d="M 40.800 15.240 L 25.200 15.240 L 32.280 8.280 L 34.920 5.520 C 33.960 4.680 33.000 3.960 31.920 3.240 L 29.280 6.000 L 22.560 12.600 L 22.560 0.000 C 21.960 0.000 21.360 0.000 20.760 0.000 C 20.040 0.000 19.440 0.000 18.840 0.000 L 18.840 12.600 L 12.240 6.000 L 9.480 3.240 C 8.400 3.960 7.440 4.680 6.480 5.520 L 16.200 15.240 L 0.720 15.240 C 0.360 16.440 0.120 17.760 0.000 18.960 L 16.200 18.960 L 6.000 29.160 L 3.240 31.920 L 5.640 34.920 L 8.280 32.280 L 18.840 21.720 L 20.760 19.800 L 22.560 21.720 L 33.240 32.280 L 35.880 34.920 C 36.720 33.960 37.560 33.000 38.160 31.920 L 35.400 29.280 L 25.200 18.960 L 41.400 18.960 C 41.280 17.760 41.040 16.440 40.800 15.240 Z" fill="#fcbe35"/><path d="M 64.440 27.240 L 56.040 27.240 C 55.680 27.240 55.440 27.120 55.440 26.640 L 55.440 11.640 C 55.440 10.920 54.960 10.440 54.240 10.440 L 51.840 10.440 C 51.000 10.440 50.640 10.920 50.640 11.640 L 50.640 29.040 C 50.640 30.600 51.600 31.560 53.040 31.560 L 64.440 31.560 C 65.160 31.560 65.640 31.080 65.640 30.360 L 65.640 28.440 C 65.640 27.720 65.160 27.240 64.440 27.240 Z" fill="#fcbe35"/><path d="M 82.320 10.440 L 79.920 10.440 C 79.080 10.440 78.720 10.920 78.720 11.640 L 78.720 23.520 C 78.720 25.920 77.640 27.360 75.360 27.360 C 73.200 27.360 72.120 25.920 72.120 23.520 L 72.120 11.640 C 72.120 10.920 71.760 10.440 70.920 10.440 L 68.520 10.440 C 67.680 10.440 67.320 10.920 67.320 11.640 L 67.320 23.880 C 67.320 29.280 70.200 31.920 75.360 31.920 C 80.640 31.920 83.520 29.280 83.520 23.880 L 83.520 11.640 C 83.520 10.920 83.040 10.440 82.320 10.440 Z" fill="#fcbe35"/><path d="M 101.520 10.440 L 98.880 10.440 C 98.280 10.440 97.920 10.800 97.560 11.520 L 94.440 19.320 L 94.320 19.320 L 91.080 11.520 C 90.720 10.800 90.480 10.440 89.760 10.440 L 87.120 10.440 C 86.400 10.440 86.040 10.920 86.040 11.640 L 86.040 30.360 C 86.040 31.080 86.400 31.560 87.120 31.560 L 89.040 31.560 C 89.880 31.560 90.240 31.080 90.240 30.360 L 90.240 19.200 L 90.480 19.200 L 92.400 24.360 C 92.640 24.960 93.000 25.320 93.720 25.320 L 94.920 25.320 C 95.640 25.320 96.000 24.960 96.240 24.360 L 98.160 19.200 L 98.400 19.200 L 98.400 30.360 C 98.400 31.080 98.760 31.560 99.600 31.560 L 101.520 31.560 C 102.240 31.560 102.720 31.080 102.720 30.360 L 102.720 11.640 C 102.720 10.920 102.240 10.440 101.520 10.440 Z" fill="#fcbe35"/><path d="M 119.520 27.240 L 111.240 27.240 C 110.880 27.240 110.640 27.000 110.640 26.640 L 110.640 23.040 L 119.400 23.040 C 120.120 23.040 120.600 22.560 120.600 21.840 L 120.600 19.920 C 120.600 19.200 120.120 18.840 119.400 18.840 L 110.640 18.840 L 110.640 15.240 C 110.640 14.880 110.880 14.760 111.240 14.760 L 119.400 14.760 C 120.240 14.760 120.600 14.280 120.600 13.560 L 120.600 11.640 C 120.600 10.920 120.240 10.440 119.400 10.440 L 108.240 10.440 C 106.800 10.440 105.840 11.400 105.840 12.960 L 105.840 29.040 C 105.840 30.600 106.800 31.560 108.240 31.560 L 119.520 31.560 C 120.240 31.560 120.600 31.080 120.600 30.360 L 120.600 28.440 C 120.600 27.720 120.240 27.240 119.520 27.240 Z" fill="#fcbe35"/><path d="M 138.720 10.440 L 138.000 10.440 C 137.400 10.440 137.040 10.800 137.040 11.400 L 137.040 19.800 L 127.200 19.800 L 127.200 11.400 C 127.200 10.800 126.840 10.440 126.240 10.440 L 125.520 10.440 C 124.920 10.440 124.560 10.800 124.560 11.400 L 124.560 30.480 C 124.560 31.200 124.920 31.560 125.520 31.560 L 126.240 31.560 C 126.840 31.560 127.200 31.200 127.200 30.480 L 127.200 22.320 L 137.040 22.320 L 137.040 30.480 C 137.040 31.200 137.400 31.560 138.000 31.560 L 138.720 31.560 C 139.440 31.560 139.680 31.200 139.680 30.480 L 139.680 11.400 C 139.680 10.800 139.440 10.440 138.720 10.440 Z" fill="#fcbe35"/><path d="M 150.480 29.400 C 147.360 29.400 145.080 27.720 145.080 21.000 C 145.080 14.160 147.360 12.600 150.480 12.600 C 153.720 12.600 155.880 14.160 155.880 21.000 C 155.880 27.720 153.720 29.400 150.480 29.400 M 150.480 10.080 C 145.560 10.080 142.560 12.840 142.560 21.000 C 142.560 29.160 145.560 31.920 150.480 31.920 C 155.400 31.920 158.520 29.160 158.520 21.000 C 158.520 12.840 155.400 10.080 150.480 10.080 Z" fill="#fcbe35"/><path d="M 170.640 19.800 L 166.560 19.200 C 164.040 18.840 163.320 18.000 163.200 16.080 C 163.200 13.080 165.360 12.600 168.120 12.600 C 171.120 12.600 172.440 13.080 173.400 13.320 C 174.240 13.560 174.600 13.320 174.600 12.600 L 174.600 12.120 C 174.600 11.400 174.360 11.160 173.640 10.920 C 172.800 10.560 170.880 10.080 168.240 10.080 C 161.760 10.080 160.560 12.960 160.560 16.080 C 160.560 19.560 162.120 21.120 165.840 21.600 L 169.680 22.080 C 172.440 22.440 173.160 23.160 173.160 25.440 C 173.160 27.600 172.560 29.280 167.520 29.400 C 164.760 29.400 162.960 28.920 161.880 28.680 C 161.040 28.560 160.680 28.800 160.680 29.400 L 160.680 30.120 C 160.680 30.720 161.040 30.960 161.640 31.200 C 162.720 31.440 164.760 31.920 167.520 31.920 C 174.000 31.920 175.800 29.400 175.800 25.560 C 175.800 21.840 174.120 20.160 170.640 19.800 Z" fill="#fcbe35"/><path d="M 193.200 10.440 L 178.080 10.440 C 177.360 10.440 177.000 10.800 177.000 11.400 L 177.000 11.880 C 177.000 12.600 177.360 12.960 178.080 12.960 L 184.320 12.960 L 184.320 30.480 C 184.320 31.200 184.560 31.560 185.280 31.560 L 186.000 31.560 C 186.600 31.560 186.960 31.200 186.960 30.480 L 186.960 12.960 L 193.200 12.960 C 193.800 12.960 194.160 12.600 194.160 11.880 L 194.160 11.400 C 194.160 10.800 193.800 10.440 193.200 10.440 Z" fill="#fcbe35"/><path d="M 209.640 29.040 L 199.440 29.040 C 199.080 29.040 198.840 28.800 198.840 28.440 L 198.840 22.080 L 209.640 22.080 C 210.240 22.080 210.600 21.720 210.600 21.000 L 210.600 20.640 C 210.600 19.920 210.240 19.560 209.640 19.560 L 198.840 19.560 L 198.840 13.440 C 198.840 13.080 199.080 12.960 199.440 12.960 L 209.640 12.960 C 210.240 12.960 210.600 12.600 210.600 11.880 L 210.600 11.400 C 210.600 10.800 210.240 10.440 209.640 10.440 L 198.000 10.440 C 196.920 10.440 196.200 11.160 196.200 12.240 L 196.200 29.760 C 196.200 30.840 196.920 31.560 198.000 31.560 L 209.640 31.560 C 210.360 31.560 210.720 31.200 210.720 30.480 L 210.720 30.000 C 210.720 29.400 210.360 29.040 209.640 29.040 Z" fill="#fcbe35"/><path d="M 228.120 29.040 L 217.680 29.040 C 217.200 29.040 217.080 28.920 217.080 28.440 L 217.080 11.400 C 217.080 10.800 216.720 10.440 216.120 10.440 L 215.400 10.440 C 214.800 10.440 214.440 10.800 214.440 11.400 L 214.440 29.760 C 214.440 30.840 215.160 31.560 216.240 31.560 L 228.120 31.560 C 228.720 31.560 229.080 31.200 229.080 30.480 L 229.080 30.000 C 229.080 29.400 228.720 29.040 228.120 29.040 Z" fill="#fcbe35"/></svg>
+          </a>
+          <div class="grupo-direita">
+            <a class="btn-zap" href="#" onclick="return false">Reserve pelo WhatsApp</a>
+            <button class="hamburguer" aria-expanded="false" onclick="toggleMenu(this)">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+        <div class="dropdown">
+          <a href="#" onclick="return false">O Hostel</a>
+          <a href="#" onclick="return false">Acomodações</a>
+          <a href="#" onclick="return false">Comodidades</a>
+          <a href="#" onclick="return false">A vibe</a>
+          <a href="#" onclick="return false">A região</a>
+          <a href="#" onclick="return false">Localização</a>
+        </div>
+        <div class="conteudo-fake"><h3>LUME HOSTEL<br>Seu porto seguro...</h3></div>
+      </div>
+      <small>640px</small>
+    </div>
+
+    <div class="tela mobile">
+      <div class="fundo lume">
+        <header class="nav-mock">
+          <a class="logo-lume" href="#" onclick="return false">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1.000 -1.000 231.080 44.000"><path d="M 20.760 24.960 L 18.840 26.880 L 14.520 41.040 C 16.560 41.760 18.720 42.000 20.880 42.000 C 23.040 42.000 24.960 41.760 26.880 41.160 L 22.560 26.880 L 20.760 24.960 Z" fill="#fcbe35"/><path d="M 40.800 15.240 L 25.200 15.240 L 32.280 8.280 L 34.920 5.520 C 33.960 4.680 33.000 3.960 31.920 3.240 L 29.280 6.000 L 22.560 12.600 L 22.560 0.000 C 21.960 0.000 21.360 0.000 20.760 0.000 C 20.040 0.000 19.440 0.000 18.840 0.000 L 18.840 12.600 L 12.240 6.000 L 9.480 3.240 C 8.400 3.960 7.440 4.680 6.480 5.520 L 16.200 15.240 L 0.720 15.240 C 0.360 16.440 0.120 17.760 0.000 18.960 L 16.200 18.960 L 6.000 29.160 L 3.240 31.920 L 5.640 34.920 L 8.280 32.280 L 18.840 21.720 L 20.760 19.800 L 22.560 21.720 L 33.240 32.280 L 35.880 34.920 C 36.720 33.960 37.560 33.000 38.160 31.920 L 35.400 29.280 L 25.200 18.960 L 41.400 18.960 C 41.280 17.760 41.040 16.440 40.800 15.240 Z" fill="#fcbe35"/><path d="M 64.440 27.240 L 56.040 27.240 C 55.680 27.240 55.440 27.120 55.440 26.640 L 55.440 11.640 C 55.440 10.920 54.960 10.440 54.240 10.440 L 51.840 10.440 C 51.000 10.440 50.640 10.920 50.640 11.640 L 50.640 29.040 C 50.640 30.600 51.600 31.560 53.040 31.560 L 64.440 31.560 C 65.160 31.560 65.640 31.080 65.640 30.360 L 65.640 28.440 C 65.640 27.720 65.160 27.240 64.440 27.240 Z" fill="#fcbe35"/><path d="M 82.320 10.440 L 79.920 10.440 C 79.080 10.440 78.720 10.920 78.720 11.640 L 78.720 23.520 C 78.720 25.920 77.640 27.360 75.360 27.360 C 73.200 27.360 72.120 25.920 72.120 23.520 L 72.120 11.640 C 72.120 10.920 71.760 10.440 70.920 10.440 L 68.520 10.440 C 67.680 10.440 67.320 10.920 67.320 11.640 L 67.320 23.880 C 67.320 29.280 70.200 31.920 75.360 31.920 C 80.640 31.920 83.520 29.280 83.520 23.880 L 83.520 11.640 C 83.520 10.920 83.040 10.440 82.320 10.440 Z" fill="#fcbe35"/><path d="M 101.520 10.440 L 98.880 10.440 C 98.280 10.440 97.920 10.800 97.560 11.520 L 94.440 19.320 L 94.320 19.320 L 91.080 11.520 C 90.720 10.800 90.480 10.440 89.760 10.440 L 87.120 10.440 C 86.400 10.440 86.040 10.920 86.040 11.640 L 86.040 30.360 C 86.040 31.080 86.400 31.560 87.120 31.560 L 89.040 31.560 C 89.880 31.560 90.240 31.080 90.240 30.360 L 90.240 19.200 L 90.480 19.200 L 92.400 24.360 C 92.640 24.960 93.000 25.320 93.720 25.320 L 94.920 25.320 C 95.640 25.320 96.000 24.960 96.240 24.360 L 98.160 19.200 L 98.400 19.200 L 98.400 30.360 C 98.400 31.080 98.760 31.560 99.600 31.560 L 101.520 31.560 C 102.240 31.560 102.720 31.080 102.720 30.360 L 102.720 11.640 C 102.720 10.920 102.240 10.440 101.520 10.440 Z" fill="#fcbe35"/><path d="M 119.520 27.240 L 111.240 27.240 C 110.880 27.240 110.640 27.000 110.640 26.640 L 110.640 23.040 L 119.400 23.040 C 120.120 23.040 120.600 22.560 120.600 21.840 L 120.600 19.920 C 120.600 19.200 120.120 18.840 119.400 18.840 L 110.640 18.840 L 110.640 15.240 C 110.640 14.880 110.880 14.760 111.240 14.760 L 119.400 14.760 C 120.240 14.760 120.600 14.280 120.600 13.560 L 120.600 11.640 C 120.600 10.920 120.240 10.440 119.400 10.440 L 108.240 10.440 C 106.800 10.440 105.840 11.400 105.840 12.960 L 105.840 29.040 C 105.840 30.600 106.800 31.560 108.240 31.560 L 119.520 31.560 C 120.240 31.560 120.600 31.080 120.600 30.360 L 120.600 28.440 C 120.600 27.720 120.240 27.240 119.520 27.240 Z" fill="#fcbe35"/><path d="M 138.720 10.440 L 138.000 10.440 C 137.400 10.440 137.040 10.800 137.040 11.400 L 137.040 19.800 L 127.200 19.800 L 127.200 11.400 C 127.200 10.800 126.840 10.440 126.240 10.440 L 125.520 10.440 C 124.920 10.440 124.560 10.800 124.560 11.400 L 124.560 30.480 C 124.560 31.200 124.920 31.560 125.520 31.560 L 126.240 31.560 C 126.840 31.560 127.200 31.200 127.200 30.480 L 127.200 22.320 L 137.040 22.320 L 137.040 30.480 C 137.040 31.200 137.400 31.560 138.000 31.560 L 138.720 31.560 C 139.440 31.560 139.680 31.200 139.680 30.480 L 139.680 11.400 C 139.680 10.800 139.440 10.440 138.720 10.440 Z" fill="#fcbe35"/><path d="M 150.480 29.400 C 147.360 29.400 145.080 27.720 145.080 21.000 C 145.080 14.160 147.360 12.600 150.480 12.600 C 153.720 12.600 155.880 14.160 155.880 21.000 C 155.880 27.720 153.720 29.400 150.480 29.400 M 150.480 10.080 C 145.560 10.080 142.560 12.840 142.560 21.000 C 142.560 29.160 145.560 31.920 150.480 31.920 C 155.400 31.920 158.520 29.160 158.520 21.000 C 158.520 12.840 155.400 10.080 150.480 10.080 Z" fill="#fcbe35"/><path d="M 170.640 19.800 L 166.560 19.200 C 164.040 18.840 163.320 18.000 163.200 16.080 C 163.200 13.080 165.360 12.600 168.120 12.600 C 171.120 12.600 172.440 13.080 173.400 13.320 C 174.240 13.560 174.600 13.320 174.600 12.600 L 174.600 12.120 C 174.600 11.400 174.360 11.160 173.640 10.920 C 172.800 10.560 170.880 10.080 168.240 10.080 C 161.760 10.080 160.560 12.960 160.560 16.080 C 160.560 19.560 162.120 21.120 165.840 21.600 L 169.680 22.080 C 172.440 22.440 173.160 23.160 173.160 25.440 C 173.160 27.600 172.560 29.280 167.520 29.400 C 164.760 29.400 162.960 28.920 161.880 28.680 C 161.040 28.560 160.680 28.800 160.680 29.400 L 160.680 30.120 C 160.680 30.720 161.040 30.960 161.640 31.200 C 162.720 31.440 164.760 31.920 167.520 31.920 C 174.000 31.920 175.800 29.400 175.800 25.560 C 175.800 21.840 174.120 20.160 170.640 19.800 Z" fill="#fcbe35"/><path d="M 193.200 10.440 L 178.080 10.440 C 177.360 10.440 177.000 10.800 177.000 11.400 L 177.000 11.880 C 177.000 12.600 177.360 12.960 178.080 12.960 L 184.320 12.960 L 184.320 30.480 C 184.320 31.200 184.560 31.560 185.280 31.560 L 186.000 31.560 C 186.600 31.560 186.960 31.200 186.960 30.480 L 186.960 12.960 L 193.200 12.960 C 193.800 12.960 194.160 12.600 194.160 11.880 L 194.160 11.400 C 194.160 10.800 193.800 10.440 193.200 10.440 Z" fill="#fcbe35"/><path d="M 209.640 29.040 L 199.440 29.040 C 199.080 29.040 198.840 28.800 198.840 28.440 L 198.840 22.080 L 209.640 22.080 C 210.240 22.080 210.600 21.720 210.600 21.000 L 210.600 20.640 C 210.600 19.920 210.240 19.560 209.640 19.560 L 198.840 19.560 L 198.840 13.440 C 198.840 13.080 199.080 12.960 199.440 12.960 L 209.640 12.960 C 210.240 12.960 210.600 12.600 210.600 11.880 L 210.600 11.400 C 210.600 10.800 210.240 10.440 209.640 10.440 L 198.000 10.440 C 196.920 10.440 196.200 11.160 196.200 12.240 L 196.200 29.760 C 196.200 30.840 196.920 31.560 198.000 31.560 L 209.640 31.560 C 210.360 31.560 210.720 31.200 210.720 30.480 L 210.720 30.000 C 210.720 29.400 210.360 29.040 209.640 29.040 Z" fill="#fcbe35"/><path d="M 228.120 29.040 L 217.680 29.040 C 217.200 29.040 217.080 28.920 217.080 28.440 L 217.080 11.400 C 217.080 10.800 216.720 10.440 216.120 10.440 L 215.400 10.440 C 214.800 10.440 214.440 10.800 214.440 11.400 L 214.440 29.760 C 214.440 30.840 215.160 31.560 216.240 31.560 L 228.120 31.560 C 228.720 31.560 229.080 31.200 229.080 30.480 L 229.080 30.000 C 229.080 29.400 228.720 29.040 228.120 29.040 Z" fill="#fcbe35"/></svg>
+          </a>
+          <div class="grupo-direita">
+            <a class="btn-zap" href="#" onclick="return false">Reserve</a>
+            <button class="hamburguer" aria-expanded="false" onclick="toggleMenu(this)">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+        <div class="dropdown">
+          <a href="#" onclick="return false">O Hostel</a>
+          <a href="#" onclick="return false">Acomodações</a>
+          <a href="#" onclick="return false">Comodidades</a>
+          <a href="#" onclick="return false">A vibe</a>
+          <a href="#" onclick="return false">A região</a>
+          <a href="#" onclick="return false">Localização</a>
+        </div>
+        <div class="conteudo-fake"><h3>LUME HOSTEL</h3></div>
+      </div>
+      <small>375px — rótulo do botão encurtado p/ caber</small>
+    </div>
+  </div>
+</div>
+
+<div class="bloco">
+  <h2>Mar à Vista — desktop e mobile (com navFuturo inerte no menu)</h2>
+  <div class="telas">
+    <div class="tela desktop">
+      <div class="fundo mav">
+        <header class="nav-mock">
+          <span class="logo-mav" aria-hidden="true"></span>
+          <div class="grupo-direita">
+            <a class="btn-zap" href="#" onclick="return false">Reserve pelo WhatsApp</a>
+            <button class="hamburguer" aria-expanded="false" onclick="toggleMenu(this)">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+        <div class="dropdown">
+          <a href="#" onclick="return false">O Hostel</a>
+          <span title="Em breve">Acomodações</span>
+          <span title="Em breve">Comodidades</span>
+          <span title="Em breve">A região</span>
+          <span title="Em breve">Localização</span>
+        </div>
+        <div class="conteudo-fake"><h3>Mar à Vista<br>Hostel</h3></div>
+      </div>
+      <small>640px</small>
+    </div>
+
+    <div class="tela mobile">
+      <div class="fundo mav">
+        <header class="nav-mock">
+          <span class="logo-mav" aria-hidden="true"></span>
+          <div class="grupo-direita">
+            <a class="btn-zap" href="#" onclick="return false">Reserve</a>
+            <button class="hamburguer" aria-expanded="false" onclick="toggleMenu(this)">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </header>
+        <div class="dropdown">
+          <a href="#" onclick="return false">O Hostel</a>
+          <span title="Em breve">Acomodações</span>
+          <span title="Em breve">Comodidades</span>
+          <span title="Em breve">A região</span>
+          <span title="Em breve">Localização</span>
+        </div>
+        <div class="conteudo-fake"><h3>Mar à Vista</h3></div>
+      </div>
+      <small>375px</small>
+    </div>
+  </div>
+</div>
+
+<div class="nota">
+  <strong>Detalhe que ainda precisa de decisão:</strong> no mobile (375px), "Reserve pelo WhatsApp" não cabe inteiro do lado do hambúrguer — testei encurtar pra só "Reserve". Outra opção seria manter o texto completo e deixar o botão quebrar em duas linhas, ou ainda usar só um ícone do WhatsApp sem texto no mobile. O que acha?
+</div>
+
+<script>
+  function toggleMenu(botao) {
+    const header = botao.closest('.nav-mock');
+    const dropdown = header.nextElementSibling;
+    const aberto = botao.getAttribute('aria-expanded') === 'true';
+    document.querySelectorAll('.hamburguer[aria-expanded="true"]').forEach((b) => {
+      b.setAttribute('aria-expanded', 'false');
+      b.closest('.nav-mock').nextElementSibling.classList.remove('aberto');
+    });
+    if (!aberto) {
+      botao.setAttribute('aria-expanded', 'true');
+      dropdown.classList.add('aberto');
+    }
+  }
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.hamburguer')) {
+      document.querySelectorAll('.hamburguer[aria-expanded="true"]').forEach((b) => {
+        b.setAttribute('aria-expanded', 'false');
+        b.closest('.nav-mock').nextElementSibling.classList.remove('aberto');
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
