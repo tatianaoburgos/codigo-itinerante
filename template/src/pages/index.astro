@@ -142,7 +142,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     )
   }
 
-  {destaqueUm ? <FotoDestaque destaque={destaqueUm} /> : <DivisorSimbolo />}
+  {destaqueUm ? <FotoDestaque destaque={destaqueUm} /> : config.vibe && <DivisorSimbolo />}
 
   {
     config.vibe && (
