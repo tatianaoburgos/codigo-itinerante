@@ -45,43 +45,25 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 - Depois, adicionar mais elementos incrementalmente.
 - Depende da Fase 1 (design da personagem) e idealmente da Fase 3 (site já com a linguagem de arte).
 
-### Fase 5 — Reduzir o risco comercial da permuta (site + documentos) — A FAZER
+### Fase 5 — Reduzir o risco comercial da permuta (site + documentos) — EM ANDAMENTO
 
 **O problema (levantado em 2026-07-20):** o modelo de permuta (site em troca de noites) é
 incomum o bastante para gerar perguntas que o texto atual não responde. A seção "O que você
 recebe" cobre o **escopo técnico**; o que trava a decisão do dono de hostel é o **risco
-comercial**, e disso o site não fala. Perguntas que ficam sem resposta hoje:
+comercial**, e disso o site não fala.
 
-- Quantas noites, em média, para um hostel médio? (hoje só existe "consultar")
-- O que acontece se o dono não gostar do resultado, além da "uma rodada de ajustes"?
-- Existe combinado por escrito? Contrato, proposta, e-mail de aceite?
-- Quem paga domínio, hospedagem, manutenção depois? Por quanto tempo?
-- Até quando ela mantém o site no ar se a relação acabar?
+**Entrevista dirigida concluída em 2026-07-23** — spec com os 8 eixos fechados (contrapartida
+da estadia, preço/noites, rodadas de ajuste, processo/prazos, saída, manutenção, propriedade,
+formalização) em
+`docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`. Também saiu dessa sessão
+o instrumento pra aplicar isso em cada cliente: `docs/gera_questionario_contrato.py` →
+`docs/questionario-contrato.docx`, questionário de intake com as perguntas que mudam por
+contrato (o valor de R$3.000 usado na fórmula de noites é parâmetro interno — não aparece no
+contrato do cliente, só o número de noites resultante).
 
-**Já existe base em `docs/projeto.md`**: §11 tem a fórmula de conversão em noites (piso/teto por
-diária real) e §5 já lista o que o escopo NÃO inclui (sem manutenção contínua além de 1 rodada
-de ajustes). §12 tem o checklist de cláusulas do contrato, ainda sem os valores preenchidos.
-Esta fase preenche essas lacunas — não recomeça do zero.
-
-**Como conduzir (pedido explícito da autora, não pular):** antes de redigir qualquer texto
-de site ou documento comercial, **estabelecer as linhas** — até onde ela vai e o que ela não
-está disposta a fazer. O trabalho começa por uma **entrevista dirigida**, uma pergunta por
-vez, com opções e recomendação (mesmo formato da skill `/novo-projeto`), para ela descobrir e
-declarar os próprios limites. Só depois de as linhas estarem escritas é que se redige.
-
-Eixos que a entrevista precisa cobrir (esboço — refinar na hora):
-1. **Preço/permuta**: piso de noites, o que conta como "hostel médio", quando ela recusa.
-2. **Escopo**: o que está incluso, o que é extra, quantas rodadas de ajuste de verdade.
-3. **Saída**: e se ele não gostar? Devolve as noites? Fica com o site? Ela tira do ar?
-4. **Manutenção**: o que ela mantém de graça, por quanto tempo, o que vira cobrança.
-5. **Propriedade**: domínio, código, fotos, conteúdo — de quem fica o quê.
-6. **Formalização**: até que ponto ela quer contrato (nada / e-mail de aceite / proposta
-   assinada) — decisão dela, não default meu.
-
-Entregáveis prováveis (definir depois da entrevista): um documento interno com as linhas
-("minhas condições"), o texto de risco no site (provável seção nova ou FAQ curto) e o
-modelo de proposta/combinado para o cliente. Depende da Fase 2 (template Word) para os
-documentos saírem com a cara da marca.
+**Ainda faltam** os entregáveis que dependem dessa base: o texto real do contrato de permuta
+(usa `docs/projeto.md` §12 + o template Word da Fase 2) e o texto de risco no site da marca
+(FAQ ou seção nova, respondendo as perguntas do dono de hostel listadas acima).
 
 ### Ideias soltas (encaixar quando fizer sentido)
 - "Artezinha" ao lado do nome na aba do navegador (Sara Soueidan) — favicon já existe? avaliar se o monograma CI cumpre isso ou se a viajante/ícone cabe.
@@ -96,4 +78,6 @@ documentos saírem com a cara da marca.
   documento. Spec `docs/superpowers/specs/2026-07-20-fase2-template-word-design.md`.
 - [x] Fase 3 — Degradê breu → âmbar + iconografia no site (2026-07-19)
 - [ ] Fase 4 — Animação da hero
-- [ ] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos)
+- [ ] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos):
+  entrevista concluída (2026-07-23), spec + questionário de intake prontos; falta o texto do
+  contrato e o texto de risco no site
