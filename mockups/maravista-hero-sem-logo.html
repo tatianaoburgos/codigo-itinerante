@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mar à Vista — hero sem o símbolo embaixo, opções pra frase</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Karla:wght@400;500&family=Big+Shoulders+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mare: #0b2c55; --noite: #081120; --azulejo: #026cda;
+    --sal: #ffffff; --espuma: #fbf4e6; --fitinha: #c17f1b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Karla", sans-serif; background: var(--noite); color: var(--espuma); padding: 2rem 1.5rem 4rem; }
+  h1.titulo { font-size: 1.1rem; font-weight: 700; max-width: 40rem; margin: 0 auto 0.5rem; }
+  p.legenda { max-width: 40rem; margin: 0 auto 2rem; color: #b9c2cf; font-size: 0.95rem; line-height: 1.5; }
+
+  .controles { max-width: 40rem; margin: 0 auto 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .controles button {
+    font-family: "Karla", sans-serif; font-size: 0.85rem; font-weight: 500;
+    padding: 0.55rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2);
+    background: transparent; color: var(--espuma); cursor: pointer; text-align: left;
+  }
+  .controles button.ativo { background: var(--azulejo); border-color: var(--azulejo); color: white; }
+
+  .preview {
+    max-width: 64rem; margin: 0 auto; position: relative; overflow: hidden;
+    border-radius: 0.75rem; aspect-ratio: 16 / 10; isolation: isolate;
+  }
+  .preview img.fundo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 42%; z-index: -2; }
+  .preview .degrade { position: absolute; inset: 0; z-index: -1;
+    background: linear-gradient(to top, rgba(8,17,32,0.9), rgba(8,17,32,0.5) 45%, rgba(8,17,32,0.15)); }
+
+  .nav-mock { position: absolute; top: 0; left: 0; right: 0; display: flex; align-items: center;
+    justify-content: space-between; padding: 0.9rem 1.2rem; gap: 0.75rem; }
+  .nav-mock img { height: 30px; width: auto; border-radius: 999px; flex: none; }
+  .nav-mock .zap { background: #25d366; color: var(--noite); font-size: 0.75rem; font-weight: 700;
+    padding: 0.35rem 0.7rem; border-radius: 999px; white-space: nowrap; }
+  .nav-mock .burger { width: 30px; height: 22px; display: flex; flex-direction: column; justify-content: space-between; }
+  .nav-mock .burger span { display: block; height: 2px; background: white; border-radius: 2px; }
+
+  .nome-central { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 0 1rem; }
+  .nome-central h2 { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; color: white;
+    max-width: 9ch; font-size: clamp(1.7rem, 5.4vw, 3.4rem); text-shadow: 0 2px 24px rgba(0,0,0,0.55); line-height: 1.05; }
+
+  .canto { position: absolute; right: 1.1rem; bottom: 1.1rem; display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; }
+  @media (min-width: 640px) { .canto { right: 2rem; bottom: 1.5rem; } }
+
+  .frase { text-align: right; color: var(--fitinha); font-weight: 700; white-space: pre-line;
+    font-family: "Bricolage Grotesque", sans-serif; font-size: clamp(0.95rem, 2vw, 1.35rem); line-height: 1.15; }
+
+  /* opção 1: atual, só maior pra compensar o peso do simbolo removido */
+  .preview[data-opcao="maior"] .frase { font-size: clamp(1.1rem, 2.6vw, 1.7rem); }
+
+  /* opção 2: traço fino acima, no lugar do simbolo */
+  .preview[data-opcao="traco"] .canto::before { content: ""; width: 2.75rem; height: 3px; background: var(--fitinha); border-radius: 2px; align-self: flex-end; }
+
+  /* opção 3: Big Shoulders, caixa alta, tracking largo — mais "carimbo" */
+  .preview[data-opcao="carimbo"] .frase { font-family: "Big Shoulders Display", sans-serif; font-weight: 800;
+    text-transform: uppercase; letter-spacing: 0.03em; font-size: clamp(1.2rem, 3vw, 1.9rem); line-height: 1.05; }
+
+  /* opção 4: duas cores, branco na primeira linha, ambar na segunda */
+  .preview[data-opcao="duascores"] .frase span.l1 { color: var(--sal); display: block; }
+  .preview[data-opcao="duascores"] .frase span.l2 { color: var(--fitinha); display: block; }
+</style>
+</head>
+<body>
+
+<h1 class="titulo">Mar à Vista — a hero sem o símbolo no canto, com opções pra frase</h1>
+<p class="legenda">O símbolo (icone.png) saiu do canto inferior direito. A frase "Mar à vista em todos os quartos" continua no mesmo lugar — o que muda entre as opções é só o tratamento dela, pra preencher bem o espaço que o símbolo deixou.</p>
+
+<div class="controles">
+  <button data-valor="maior" class="ativo">1 · Igual a hoje, só maior</button>
+  <button data-valor="traco">2 · Traço fino âmbar no lugar do símbolo</button>
+  <button data-valor="carimbo">3 · Caixa alta, fonte condensada (efeito "carimbo")</button>
+  <button data-valor="duascores">4 · Duas cores (branco + âmbar)</button>
+</div>
+
+<div class="preview" id="preview" data-opcao="maior">
+  <img class="fundo" src="../clientes/maravista/fotos/hero-poster.jpg" alt="">
+  <div class="degrade"></div>
+  <div class="nav-mock">
+    <img src="../clientes/maravista/marca/logo.png" alt="">
+    <div style="display:flex; align-items:center; gap:0.6rem;">
+      <span class="zap">Reserve pelo WhatsApp</span>
+      <div class="burger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="nome-central"><h2>Mar à Vista Hostel</h2></div>
+  <div class="canto">
+    <p class="frase" id="frase">Mar à vista<br>em todos os quartos</p>
+  </div>
+</div>
+
+<script>
+  const preview = document.getElementById('preview');
+  const frase = document.getElementById('frase');
+  document.querySelectorAll('.controles button').forEach((botao) => {
+    botao.addEventListener('click', () => {
+      preview.dataset.opcao = botao.dataset.valor;
+      document.querySelectorAll('.controles button').forEach((b) => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
+      if (botao.dataset.valor === 'duascores') {
+        frase.innerHTML = '<span class="l1">Mar à vista</span><span class="l2">em todos os quartos</span>';
+      } else {
+        frase.innerHTML = 'Mar à vista<br>em todos os quartos';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

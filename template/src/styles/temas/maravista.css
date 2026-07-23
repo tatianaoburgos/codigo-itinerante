@@ -27,6 +27,12 @@
   color: var(--color-fitinha);
 }
 
+/* Onda que substitui o símbolo no canto da hero (2026-07-23): decisão da
+   autora a partir de mockup, cor azul vivo da paleta. */
+#hero .hero-onda path {
+  stroke: var(--color-azulejo);
+}
+
 /* Depoimentos e CTA final (bg-mare = azul-marinho escuro): blockquote,
    figcaption e paragrafos do motor usam text-noite hardcoded (index.astro),
    que e ainda mais escuro que o mare e nao contrasta sobre ele. */

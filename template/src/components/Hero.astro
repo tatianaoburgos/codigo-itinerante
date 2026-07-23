@@ -1,7 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
-import { foto, marca, simboloMarca, video } from '../lib/fotos';
+import { foto, marca, video } from '../lib/fotos';
 import MarcaDagua from './MarcaDagua.astro';
 
 const logo = config.marca?.logo && !config.marca.logoApenasNoMenu ? marca(config.marca.logo) : undefined;
@@ -10,7 +10,6 @@ const heroVideoPoster = config.marca?.heroVideoPoster
   ? foto(config.marca.heroVideoPoster)
   : undefined;
 const heroCentralizado = config.marca?.heroCentralizado ?? false;
-const simbolo = heroCentralizado ? simboloMarca() : undefined;
 const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
 ---
 
@@ -60,11 +59,26 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
             {config.nome}
           </h1>
         </div>
-        <div class="absolute right-4 bottom-0 flex flex-col items-end gap-2 sm:right-8 md:right-12">
-          <p class="hero-frase whitespace-pre-line text-right text-base font-bold text-white sm:text-lg md:text-xl">
-            {fraseHero}
-          </p>
-          {simbolo && <img src={simbolo.src} alt="" class="h-12 w-auto sm:h-14 md:h-20" />}
+        <div class="absolute right-4 bottom-0 flex flex-col items-end sm:right-8 md:right-12">
+          <div class="w-fit">
+            <svg
+              class="hero-onda mb-1 h-3 w-full text-white sm:h-4 md:h-5"
+              viewBox="0 0 200 50"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M0,25 C12.5,10 12.5,10 25,25 C37.5,40 37.5,40 50,25 C62.5,10 62.5,10 75,25 C87.5,40 87.5,40 100,25 C112.5,10 112.5,10 125,25 C137.5,40 137.5,40 150,25 C162.5,10 162.5,10 175,25 C187.5,40 187.5,40 200,25"
+                stroke="currentColor"
+                stroke-width="8"
+                stroke-linecap="round"
+              />
+            </svg>
+            <p class="hero-frase whitespace-pre-line text-right text-base font-bold text-white sm:text-lg md:text-xl">
+              {fraseHero}
+            </p>
+          </div>
         </div>
       </>
     ) : (
@@ -73,13 +87,13 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
           {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
           {
             logo ? (
-              <img src={logo.src} alt={config.nome} class="h-14 w-auto sm:h-20" />
+              <img src={logo.src} alt={config.nome} class="h-10 w-auto sm:h-14" />
             ) : (
               <span class="font-display text-4xl font-bold text-white sm:text-6xl">{config.nome}</span>
             )
           }
         </h1>
-        <p class="hero-frase mt-4 max-w-xl text-lg text-white">{config.slogan}</p>
+        <p class="hero-frase mt-4 max-w-xl text-base text-white">{config.slogan}</p>
       </div>
     )
   }
