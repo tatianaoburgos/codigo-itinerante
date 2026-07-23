@@ -27,20 +27,13 @@ O `docs/miv.md` já existe (wordmark, monograma, paleta, regra do acento — apr
 - Mockups: `mockups/estilo-ilustracao.html`, `mockups/paleta-estendida-cena.html`, `mockups/viajante-dois-registros.html`, `mockups/viajante-silhuetas.html`.
 - **Execução pausada em 2026-07-18 no portão da Task 1** (plano `docs/superpowers/plans/2026-07-17-fase1-viajante-ilustracao.md`): silhueta preferida parcial S2·P2, mas o design da personagem aguarda a autora — ela vai trazer a personagem da cabeça dela (rabisco fotografado, entrevista dirigida, Figma ou ilustrador contratado; caminhos detalhados no plano). Retomar dali.
 
-### Fase 2 — Template Word com a assinatura da marca — EM ANDAMENTO (desde 2026-07-20)
-- Só o sistema visual (cabeçalho/rodapé/tipografia do MIV §5), sem texto comercial real —
-  isso fica para uma conversa futura sobre os tipos de documento (ver Fase 5). Fontes: Archivo
-  + Martian Mono (Instrument Serif não é usada em documentos, só no site); disponibilidade no
-  Word resolvida instalando faces próprias ("Archivo Doc"/"Martian Mono Doc") via
-  `marca/prepara_fontes_documento.py`.
-- Spec `docs/superpowers/specs/2026-07-20-fase2-template-word-design.md`, plano
-  `docs/superpowers/plans/2026-07-20-fase2-template-word.md` (5 tasks, subagent-driven).
-- **Estado (2026-07-20): Task 1 concluída** (commit `182fcf5`) — fontes derivadas e
-  instaladas por usuário no Windows, verificadas no registro. Faltam Tasks 2-5: gerador
-  `marca/gera_template_word.py` (esqueleto/cabeçalho/rodapé, corpo, incorporação de fontes
-  via automação COM do Word) e documentação final. Ledger de progresso em
-  `.superpowers/sdd/progress.md`. **Retomar despachando a Task 2** (usar
-  `scripts/task-brief` da skill subagent-driven-development sobre o plano acima).
+### Fase 2 — Template Word com a assinatura da marca — CONCLUÍDA (2026-07-20)
+- `marca/template-documento.docx`, gerado por `marca/gera_template_word.py`. Fontes
+  Archivo + Martian Mono (Instrument Serif não é usada em documentos, só no site);
+  disponibilidade/fallback no Word resolvidos instalando faces próprias
+  ("Archivo Doc"/"Martian Mono Doc") via `marca/prepara_fontes_documento.py`.
+- Escopo desta fase é só o sistema visual — texto real de proposta/briefing/contrato
+  fica para uma conversa futura com a autora sobre os tipos de documento.
 
 ### Fase 3 — Splashs de cor e arte no site da marca — DIREÇÃO FECHADA (2026-07-19)
 - Direção aprovada: **degradê contínuo breu → âmbar** na página inteira, final nas versões de papel do MIV, iconografia em escala grande, tipografia maior. Spec: `docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md`; mockup aprovado: `mockups/site-splash-cor.html`.
@@ -98,7 +91,9 @@ documentos saírem com a cara da marca.
 ## Status
 
 - [ ] Fase 1 — MIV expandido (ilustração, iconografia, viajante)
-- [ ] Fase 2 — Template Word
+- [x] Fase 2 — Template Word (2026-07-20): só o sistema visual, sem texto
+  comercial real — isso fica para uma conversa futura sobre os tipos de
+  documento. Spec `docs/superpowers/specs/2026-07-20-fase2-template-word-design.md`.
 - [x] Fase 3 — Degradê breu → âmbar + iconografia no site (2026-07-19)
 - [ ] Fase 4 — Animação da hero
 - [ ] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos)
