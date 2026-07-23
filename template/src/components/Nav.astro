@@ -11,6 +11,7 @@ const abas = [
   { href: '/#regiao', rotulo: 'A região' },
   { href: '/#localizacao', rotulo: 'Localização' },
 ]
+  .filter((aba) => aba.href !== '/#sobre' || config.sobre)
   .filter((aba) => aba.href !== '/#acomodacoes' || config.acomodacoes)
   .filter((aba) => aba.href !== '/#comodidades' || config.comodidades)
   .filter((aba) => aba.href !== '/#vibe' || config.vibe)
@@ -33,7 +34,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
       class="font-display text-xl font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
     >
       {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
-      {logo ? <img src={logo.src} alt={config.nome} class="h-9 w-auto" /> : config.nome}
+      {logo ? <img src={logo.src} alt={config.nome} class="h-12 w-auto" /> : config.nome}
     </a>
     <div class="flex items-center gap-3">
       <BotaoWhatsApp />

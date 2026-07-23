@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mar à Vista — profundidade no rodapé (sem ondas)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700&family=Karla:wght@400;500&family=Spline+Sans+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --mare: #0b2c55; --noite: #081120; --azulejo: #026cda;
+    --sal: #ffffff; --espuma: #fbf4e6; --fitinha: #c17f1b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: "Karla", sans-serif; background: #0d0d0c; color: #f4f1e8; padding: 2rem 1.5rem 4rem; }
+  h1.titulo { font-size: 1.1rem; font-weight: 700; max-width: 44rem; margin: 0 auto 0.5rem; }
+  p.legenda { max-width: 44rem; margin: 0 auto 2rem; color: #b9c2cf; font-size: 0.95rem; line-height: 1.5; }
+
+  .controles { max-width: 44rem; margin: 0 auto 1.5rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .controles button {
+    font-family: "Karla", sans-serif; font-size: 0.85rem; font-weight: 500;
+    padding: 0.6rem 1rem; border-radius: 999px; border: 1px solid rgba(255,255,255,0.2);
+    background: transparent; color: #f4f1e8; cursor: pointer; text-align: left;
+  }
+  .controles button.ativo { background: var(--azulejo); border-color: var(--azulejo); color: white; }
+
+  .frame { max-width: 64rem; margin: 0 auto; border-radius: 0.75rem; overflow: hidden; }
+
+  /* rodapé real: bg-noite, grid 2 colunas, replica de Footer.astro */
+  footer {
+    position: relative;
+    isolation: isolate;
+    background: var(--noite);
+    color: var(--sal);
+    overflow: hidden;
+  }
+  footer .conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 60rem;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    display: grid;
+    gap: 2rem;
+  }
+  @media (min-width: 640px) { footer .conteudo { grid-template-columns: 1fr 1fr; } }
+  footer .marca { font-family: "Bricolage Grotesque", sans-serif; font-size: 1.1rem; font-weight: 700; color: var(--espuma); }
+  footer .slogan { margin-top: 0.25rem; max-width: 20rem; font-size: 0.9rem; }
+  footer .endereco { margin-top: 1rem; font-size: 0.9rem; }
+  footer .fale { justify-self: start; }
+  @media (min-width: 640px) { footer .fale { justify-self: end; text-align: right; } }
+  footer .fale p.rotulo { font-family: "Spline Sans Mono", monospace; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--espuma); }
+  footer .fale ul { margin-top: 0.75rem; list-style: none; font-size: 0.9rem; display: grid; gap: 0.5rem; }
+  footer .fale a { color: var(--sal); text-decoration: underline; text-decoration-color: var(--fitinha); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+
+  /* camada de profundidade: cada opção liga um pseudo-elemento/filtro diferente */
+  footer .camada { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+
+  /* 1) grão de filme */
+  .frame[data-opcao="grao"] footer .camada {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: 0.18;
+    mix-blend-mode: overlay;
+  }
+
+  /* 2) vinheta radial */
+  .frame[data-opcao="vinheta"] footer .camada {
+    background:
+      radial-gradient(ellipse 60% 90% at 85% 0%, color-mix(in srgb, var(--azulejo) 35%, transparent), transparent 65%),
+      radial-gradient(ellipse 50% 70% at 0% 100%, color-mix(in srgb, var(--mare) 55%, transparent), transparent 70%);
+  }
+
+  /* 3) faixas diagonais tom sobre tom (mesmo principio da CascataOndas, sem curva) */
+  .frame[data-opcao="faixas"] footer .camada {
+    background: repeating-linear-gradient(
+      115deg,
+      var(--noite) 0px,
+      var(--noite) 90px,
+      color-mix(in srgb, var(--noite) 88%, var(--azulejo)) 90px,
+      color-mix(in srgb, var(--noite) 88%, var(--azulejo)) 150px,
+      var(--noite) 150px,
+      var(--noite) 230px
+    );
+  }
+
+  /* 4) marca d'agua do simbolo, grande e sutil */
+  .frame[data-opcao="marca"] footer .camada {
+    background-image: url("../clientes/maravista/marca/icone.png");
+    background-repeat: no-repeat;
+    background-position: 105% 120%;
+    background-size: 340px;
+    opacity: 0.14;
+    filter: brightness(3);
+  }
+
+  /* 5) grade de pontos fina (blueprint) */
+  .frame[data-opcao="grade"] footer .camada {
+    background-image: radial-gradient(circle, rgba(244,241,232,0.16) 1px, transparent 1.5px);
+    background-size: 22px 22px;
+    mask-image: radial-gradient(ellipse 90% 100% at 70% 30%, black 40%, transparent 90%);
+  }
+</style>
+</head>
+<body>
+
+<h1 class="titulo">Mar à Vista — dar profundidade ao rodapé, sem usar ondas</h1>
+<p class="legenda">Hoje o rodapé é <code>bg-noite</code> chapado — a única seção da página sem nenhuma textura. Cinco direções diferentes pra dar profundidade, todas evitando o motivo de onda (fica reservado pra hero). Escolha uma opção pra ver aplicada no rodapé real, com o conteúdo de contato do Mar à Vista.</p>
+
+<div class="controles">
+  <button data-valor="grao" class="ativo">1 · Grão de filme (ruído sutil)</button>
+  <button data-valor="vinheta">2 · Vinheta radial (luz assimétrica)</button>
+  <button data-valor="faixas">3 · Faixas diagonais tom sobre tom</button>
+  <button data-valor="marca">4 · Marca d'água do símbolo, grande e sutil</button>
+  <button data-valor="grade">5 · Grade de pontos fina (blueprint)</button>
+</div>
+
+<div class="frame" id="frame" data-opcao="grao">
+  <footer>
+    <div class="camada"></div>
+    <div class="conteudo">
+      <div>
+        <p class="marca">Mar à Vista Hostel</p>
+        <p class="slogan">Mar à vista em todos os quartos</p>
+        <p class="endereco">Av. Oceânica, 171 — Barra, Salvador/BA</p>
+      </div>
+      <div class="fale">
+        <p class="rotulo">Fale conosco</p>
+        <ul>
+          <li><a href="#">WhatsApp</a></li>
+          <li><a href="#">contato@maravistahostel.example.com</a></li>
+          <li><a href="#">@maravistahostel</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+  const frame = document.getElementById('frame');
+  document.querySelectorAll('.controles button').forEach((botao) => {
+    botao.addEventListener('click', () => {
+      frame.dataset.opcao = botao.dataset.valor;
+      document.querySelectorAll('.controles button').forEach((b) => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
+    });
+  });
+</script>
+
+</body>
+</html>

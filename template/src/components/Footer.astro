@@ -9,8 +9,19 @@ const estilosLink =
   'underline decoration-fitinha decoration-2 underline-offset-4 transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fitinha';
 ---
 
-<footer class="bg-noite text-sal">
-  <div class="mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2">
+<footer class="relative isolate overflow-hidden bg-noite text-sal">
+  {
+    /* Textura de grade de pontos: o rodapé nunca fica com fundo chapado
+       (decisão da autora, 2026-07-23). Cor neutra em branco translúcido
+       funciona sobre o bg-noite de qualquer tema. */
+  }
+  <div
+    class="pointer-events-none absolute inset-0"
+    style="background-image: radial-gradient(circle, rgb(255 255 255 / 0.12) 1px, transparent 1.5px); background-size: 22px 22px; mask-image: radial-gradient(ellipse 90% 100% at 70% 30%, black 40%, transparent 90%);"
+    aria-hidden="true"
+  >
+  </div>
+  <div class="relative mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2">
     <div>
       <p class="font-display text-lg font-bold text-espuma">{config.nome}</p>
       <p class="mt-1 max-w-xs text-sm">{config.slogan}</p>

@@ -93,10 +93,12 @@ export const configClienteSchema = z.object({
   marca: marcaSchema.optional(),
   slogan: z.string().min(1),
   descricaoSeo: z.string().min(1).max(160),
-  sobre: z.object({
-    historia: z.string().min(1),
-    foto: fotoSchema.optional(),
-  }),
+  sobre: z
+    .object({
+      historia: z.string().min(1),
+      foto: fotoSchema.optional(),
+    })
+    .optional(),
   acomodacoes: z.array(acomodacaoSchema).min(1).optional(),
   precos: z.object({
     politica: z.enum(['faixa', 'consultar']),
