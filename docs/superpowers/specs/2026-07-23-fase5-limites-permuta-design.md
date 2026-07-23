@@ -90,6 +90,17 @@ retorno).
   exclusivamente no site dele.
 - Se o domínio não for comprado, o site continua no domínio da autora
   (subdomínio `vercel.app`).
+- **Sem prazo de retirada do ar**: se a relação acabar e o cliente nunca
+  migrar pra domínio próprio nem pedir portabilidade, o site continua no ar
+  indefinidamente, enquanto não gerar trabalho nem custo pra autora — ele
+  também segue como peça do portfólio dela. Só sai do ar se a autora pedir,
+  ou se o cliente pedir. *Descartado*: prazo fixo de inatividade (1-2 anos
+  sem contato) — exigiria acompanhar prazos por cliente, sem benefício
+  claro.
+- **Uso como portfólio**: a autora usa o site do cliente como case real no
+  seu próprio site (`codigoitinerante.com.br`), enquanto ele estiver no ar
+  sob a hospedagem dela. Precisa constar tanto no contrato quanto no texto
+  público de risco (FAQ do site da marca), não só ser prática tácita.
 
 ### 8. Formalização
 
@@ -113,13 +124,26 @@ verdade em código já usado em `marca/gera_wordmark.py` e
 (cabeçalho/rodapé/fontes do MIV §5), por ser um documento de uso interno,
 não client-facing.
 
+## Entregável desta fase: FAQ no site da marca
+
+Página nova `site/src/pages/faq.astro`, fora da rolagem única da home (link
+"Veja as perguntas frequentes →" em `Escopo.astro`, depois do grid
+inclui/não inclui). Visual: versão "papel" (fundo âmbar sólido, texto Breu),
+a mesma zona clara já usada em `CtaFinal`, em vez do degradê da home — a
+página é curta e fica fora da narrativa de rolagem calibrada por seção.
+Sete perguntas, cobrindo as 5 originais da Fase 5 mais duas que surgiram
+nesta sessão (fotos/material mínimo, propriedade de domínio/código). O
+valor de R$3.000 não aparece — a resposta sobre noites fica em "consultar
+no WhatsApp", decisão explícita da autora (mesma lógica do contrato).
+Corrigido também `Escopo.astro`: a lista "está incluído" tinha "uma rodada
+de ajustes após a entrega", desatualizada frente à decisão de 4 rodadas
+antes da entrega + 15 dias de 1 ajuste pequeno depois.
+
 ## Fora de escopo (fica para depois)
 
 - Texto real do contrato de permuta (`docs/projeto.md` §12) — depende do
   template Word da Fase 2 e é a próxima etapa natural, usando as respostas
   do questionário desta fase.
-- Texto de risco no site da marca (FAQ ou seção nova) — previsto na Fase 5
-  original, ainda não escrito.
 - Preenchimento do questionário para um cliente real (LumeHostel, Mar à
   Vista ou futuro) — esta fase entrega só o instrumento vazio.
 

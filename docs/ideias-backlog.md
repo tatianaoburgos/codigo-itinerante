@@ -61,9 +61,14 @@ o instrumento pra aplicar isso em cada cliente: `docs/gera_questionario_contrato
 contrato (o valor de R$3.000 usado na fórmula de noites é parâmetro interno — não aparece no
 contrato do cliente, só o número de noites resultante).
 
-**Ainda faltam** os entregáveis que dependem dessa base: o texto real do contrato de permuta
-(usa `docs/projeto.md` §12 + o template Word da Fase 2) e o texto de risco no site da marca
-(FAQ ou seção nova, respondendo as perguntas do dono de hostel listadas acima).
+**FAQ da marca publicado, mesmo dia (2026-07-23)** — página nova `site/faq.astro` (fora da
+rolagem única, link "Veja as perguntas frequentes" em `Escopo.astro`), 7 perguntas cobrindo as
+5 originais da Fase 5 mais duas que surgiram na sessão (fotos/material mínimo, propriedade de
+domínio/código). Corrigida junto uma linha desatualizada em `Escopo.astro` ("uma rodada de
+ajustes após a entrega" → "quatro rodadas... durante a construção").
+
+**Ainda falta** o texto real do contrato de permuta (usa `docs/projeto.md` §12 + o template
+Word da Fase 2 + as respostas do questionário de intake).
 
 ### Ideias soltas (encaixar quando fizer sentido)
 - "Artezinha" ao lado do nome na aba do navegador (Sara Soueidan) — favicon já existe? avaliar se o monograma CI cumpre isso ou se a viajante/ícone cabe.
@@ -79,5 +84,5 @@ contrato do cliente, só o número de noites resultante).
 - [x] Fase 3 — Degradê breu → âmbar + iconografia no site (2026-07-19)
 - [ ] Fase 4 — Animação da hero
 - [ ] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos):
-  entrevista concluída (2026-07-23), spec + questionário de intake prontos; falta o texto do
-  contrato e o texto de risco no site
+  entrevista concluída, spec + questionário de intake + FAQ do site prontos (2026-07-23);
+  falta só o texto do contrato

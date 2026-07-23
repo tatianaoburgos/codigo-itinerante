@@ -1,0 +1,76 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BotaoWhatsApp from "../components/BotaoWhatsApp.astro";
+import monograma from "../../../marca/monograma-claro.svg";
+
+const perguntas: { pergunta: string; resposta: string }[] = [
+  {
+    pergunta: "Quantas noites custa o site?",
+    resposta:
+      "Depende da diária real do seu hostel. Calculamos juntos e fechamos esse número já na conversa inicial no WhatsApp, antes de qualquer trabalho começar.",
+  },
+  {
+    pergunta: "Preciso ter fotos profissionais?",
+    resposta:
+      "Não precisa ser produção profissional — mas o site fica exatamente tão bonito quanto as fotos e vídeos que você me manda. Não existe mágica que transforme material feio em site bonito. Se as fotos do seu hostel já são boas, mesmo tiradas com celular, isso já basta.",
+  },
+  {
+    pergunta: "E se eu não gostar do resultado?",
+    resposta:
+      "Você acompanha a construção e tem direito a quatro rodadas de revisão ao longo do processo — não é só uma olhada no fim. Depois que usarmos essas rodadas e o site for entregue, ele já reflete o que ajustamos juntos.",
+  },
+  {
+    pergunta: "Existe contrato?",
+    resposta:
+      "Sim. A gente assina um combinado simples, em linguagem clara — sem juridiquês — antes de eu começar a trabalhar. Ele deixa escrito o que cada lado faz, os prazos e o que acontece em cada situação. Pode ser assinado eletronicamente ou em papel, como você preferir.",
+  },
+  {
+    pergunta: "Quais são os meus custos, além das noites?",
+    resposta:
+      "Só um: o domínio .com.br do seu hostel (em torno de R$40 por ano) — que já nasce registrado em seu nome. Depois da entrega, você ainda tem 15 dias com direito a um ajuste pequeno gratuito — trocar uma foto, corrigir um texto. Mudanças maiores, ou depois desse prazo, combinamos à parte.",
+  },
+  {
+    pergunta: "De quem é o domínio e o código do site?",
+    resposta:
+      "O domínio é seu desde o início — você mesmo registra, com seu CPF ou CNPJ, seguindo minhas instruções. O código roda na minha hospedagem, mas o site é feito pra você: se um dia quiser levar pra outro desenvolvedor, eu preparo uma cópia independente do seu site pra isso, sem custo, dentro do prazo combinado no contrato.",
+  },
+  {
+    pergunta: "Até quando o site fica no ar?",
+    resposta:
+      "O site fica no ar sem prazo — mesmo que você ainda não tenha migrado pra um domínio próprio. Ele só sai do ar se você pedir, ou se eu pedir. E ele também aparece como case real no meu portfólio, aqui no codigoitinerante.com.br.",
+  },
+];
+---
+
+<Layout
+  titulo="Perguntas frequentes — Código Itinerante"
+  descricao="Quantas noites, o que acontece se você não gostar, quem paga o quê — as dúvidas mais comuns sobre o site em troca de hospedagem."
+>
+  <div class="min-h-dvh bg-ambar text-breu">
+    <section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
+      <a href="/" class="inline-flex items-center gap-2 text-sm text-breu/70 transition-colors hover:text-breu">
+        <img src={monograma.src} alt="" class="h-6" />
+        Código Itinerante
+      </a>
+      <h1 class="mt-8 text-4xl font-bold tracking-[-0.035em] md:text-5xl">
+        Perguntas <em class="font-serifa font-normal">frequentes</em>
+      </h1>
+      <dl class="mt-10 space-y-8">
+        {
+          perguntas.map((p) => (
+            <div>
+              <dt class="text-lg font-semibold">{p.pergunta}</dt>
+              <dd class="mt-2 leading-relaxed text-breu/80">{p.resposta}</dd>
+            </div>
+          ))
+        }
+      </dl>
+      <div class="mt-14 border-t border-breu/20 pt-8">
+        <p class="text-lg">Não achou sua dúvida?</p>
+        <div class="mt-4">
+          <BotaoWhatsApp invertido />
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>
