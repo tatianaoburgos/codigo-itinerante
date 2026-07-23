@@ -143,15 +143,19 @@ antes da entrega + 15 dias de 1 ajuste pequeno depois.
 
 - Preenchimento do questionário para um cliente real (LumeHostel, Mar à
   Vista ou futuro) — esta fase entrega só o instrumento vazio.
-- Gerador `.docx` do contrato aplicando o visual da marca (reaproveitando
-  `marca/gera_template_word.py`) — fica para depois de o texto ser
-  validado pela autora.
+- Gerador `.docx` genérico e automático do contrato. O `.docx` de cada
+  contrato real é gerado sob demanda, cliente por cliente, quando a
+  autora entrega o questionário de intake preenchido — aplicando o visual
+  da marca (reaproveitando `marca/gera_template_word.py`, `docs/miv.md`
+  §5) ao texto de `docs/contrato-permuta.md` com os valores daquele
+  cliente. Não existe (nem está previsto) rodar isso sozinho sem um
+  cliente real.
 
 ## Concluído depois desta fase
 
-- **Texto real do contrato de permuta** (`docs/projeto.md` §12), redigido em
-  2026-07-23 em `docs/contrato-permuta.md` — modelo genérico em Markdown,
-  usando os valores fechados acima. Pendente: revisão da autora.
+- **Texto real do contrato de permuta** (`docs/projeto.md` §12), redigido e
+  **aprovado pela autora** em 2026-07-23, em `docs/contrato-permuta.md` —
+  modelo genérico em Markdown, usando os valores fechados acima.
 
 ## Referências
 

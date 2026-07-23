@@ -1,9 +1,14 @@
 # Contrato de permuta — site por hospedagem
 
-> Modelo genérico. Os campos entre colchetes mudam a cada contrato — preencha
-> primeiro o questionário de intake (`docs/gera_questionario_contrato.py` →
-> `questionario-contrato.docx`) e use as respostas para substituir os
-> placeholders abaixo.
+> Modelo genérico — esta é a fonte do texto, não o documento entregue ao
+> cliente. Fluxo real: a autora preenche o questionário de intake
+> (`docs/gera_questionario_contrato.py` → `questionario-contrato.docx`) para
+> um hostel específico; a partir das respostas, o contrato final é gerado em
+> `.docx` aplicando o sistema visual da marca (mesmo padrão de
+> `marca/gera_template_word.py`, `docs/miv.md` §5) — nunca entregue como
+> texto puro. Cada contrato é gerado sob demanda, quando há um cliente real
+> com o questionário preenchido — não existe ainda um gerador genérico
+> pronto para rodar sozinho.
 
 **Entre:** Código Itinerante (eu), [CPF ou CNPJ de Código Itinerante].
 

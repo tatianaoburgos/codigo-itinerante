@@ -49,7 +49,9 @@ Modelo de referência: <https://www.nomadssalvador.com/>
 - Botão/link direto para WhatsApp e e-mail.
 - Vinculação do site ao Perfil da Empresa no Google — condicionada a o cliente fornecer acesso de administrador (ver seção 8).
 - Registro e configuração de 1 domínio para o cliente (custo do cliente — ver seção 7).
-- 1 (uma) rodada de ajustes, dentro de [DEFINIR: 15–30] dias após a entrega.
+- 4 rodadas de ajuste durante a construção, antes da entrega; mais 1 ajuste
+  pequeno grátis (texto/foto pontual) nos 15 dias após a entrega — valores
+  fechados na Fase 5 (ver `docs/contrato-permuta.md`, cláusulas 8 e 10).
 
 ---
 
@@ -58,7 +60,7 @@ Modelo de referência: <https://www.nomadssalvador.com/>
 - ❌ Não é motor de reservas. Não checa disponibilidade em tempo real, não bloqueia datas, não confirma reservas.
 - ❌ Não processa pagamento. Nenhum dado de cartão passa pelo site.
 - ❌ Não sincroniza com Booking / Airbnb / Hostelworld / OTAs (não é channel manager).
-- ❌ Não inclui manutenção contínua além da rodada de ajustes. Qualquer alteração posterior = novo acordo.
+- ❌ Não inclui manutenção contínua além das 4 rodadas de ajuste e do ajuste pequeno grátis de 15 dias. Qualquer alteração além disso = novo acordo.
 - ❌ Não inclui produção de fotos/vídeo profissional. Usa-se exclusivamente o material fornecido pelo cliente.
 - ❌ Não inclui tráfego pago, campanhas ou gestão de redes sociais.
 - ❌ Não garante posição/ranking no Google. SEO on-page ≠ garantia de primeira página.
@@ -134,7 +136,7 @@ Decisão tomada: construir em código próprio (não em builder tipo Wix).
 ### Riscos / passivos (mitigações registradas)
 
 - **Dependência do cliente em mim** — passivo que vira ativo: se o cliente quiser manutenção, ele paga (por alteração avulsa — ver decisões técnicas).
-- **Passivo de manutenção** — o principal risco, liga direto com o gargalo de não-finalização. Mitigação: entrega fechada + 1 rodada de ajustes; o resto é novo acordo (já no escopo).
+- **Passivo de manutenção** — o principal risco, liga direto com o gargalo de não-finalização. Mitigação: entrega fechada + 4 rodadas de ajuste + 1 ajuste pequeno grátis em 15 dias; o resto é novo acordo (já no escopo — ver Fase 5).
 - **Bus factor / portabilidade** — se eu paro, o hostel fica com site que ninguém mantém. Mitigação: código no GitHub + documentação mínima que permita outro dev assumir.
 - **Centralização de hospedagem** — todos os clientes na minha conta Vercel = ponto único de falha. Decisão: conta única no início (aceitável); separação futura se a carteira crescer.
 - **Domínio administrado por mim** — controle vs dependência. Resolvido com cláusula de transferência (seção 7). O controle é do cliente, para fazer o que quiser: contratar outro dev ou me pagar a manutenção.
@@ -152,6 +154,11 @@ Detalhes e justificativas em [`decisoes-tecnicas.md`](decisoes-tecnicas.md).
 ---
 
 ## 11. Precificação e cálculo de noites (referência)
+
+⚠️ **Superado pela Fase 5** (2026-07-23): o valor de referência abaixo virou um número fixo de
+**R$3.000** (não mais uma faixa), com **piso de segurança de 20 noites**. Fonte de verdade
+atual: `docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`, item 2. A tabela e
+os exemplos abaixo ficam só como raciocínio histórico de como o valor foi estimado.
 
 Valor de mercado do pacote (referência BR, escopo enxuto, sem motor/pagamento):
 
@@ -185,17 +192,16 @@ Exemplos com diária de R$ 100 (hostels/pousadas de diária mais alta, mais prop
 
 ## 12. Estrutura do contrato de permuta
 
-✅ **Texto redigido em 2026-07-23**: `docs/contrato-permuta.md` — modelo genérico com
-placeholders, usando os valores fechados na entrevista dirigida da Fase 5
-(`docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`). Pendente: revisão da
-autora antes de usar em um contrato real.
+✅ **Texto redigido e aprovado pela autora em 2026-07-23**: `docs/contrato-permuta.md` —
+modelo genérico com placeholders, usando os valores fechados na entrevista dirigida da Fase 5
+(`docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`). O `.docx` de cada
+contrato real é gerado sob demanda por cliente — ver regra em `CLAUDE.md` § Convenções.
 
 Cláusulas cobertas:
 
 - [x] **Objeto** — o que é entregue (remete à seção 4).
-- [x] **Escopo detalhado** — INCLUI (seção 4) e NÃO INCLUI (seção 5), com os números
-      atualizados pela Fase 5 (4 rodadas antes da entrega, não a "1 rodada [DEFINIR]" ainda
-      escrita nas seções 4/5 abaixo — ver nota de desatualização lá).
+- [x] **Escopo detalhado** — INCLUI (seção 4) e NÃO INCLUI (seção 5), já com os números da
+      Fase 5 (4 rodadas antes da entrega + 1 ajuste pequeno grátis em 15 dias).
 - [x] **Contrapartida** — nº de noites, tipo de acomodação fixo, período/janela de uso,
       antecedência de reserva, prazo de validade.
 - [x] **Prazo e processo de entrega** — regra dos 10 dias antes da chegada (Fase 5).
@@ -225,11 +231,12 @@ Cláusulas cobertas:
 5. **Site da marca construído em `site/` (2026-07-03).** Landing única para donos de hostel (manifesto → dor → proposta → escopo → como funciona → quem sou eu → CTA WhatsApp), identidade do MIV, textos aprovados pela autora. Spec: `docs/superpowers/specs/2026-07-03-site-codigo-itinerante-design.md`. **Pendente**: dados reais de contato e foto (`site/src/dados.ts`), deploy na Vercel, domínio.
 6. Levantar 5–8 exemplos de sites de hostel (planilha): tem motor ou WhatsApp? quantas abas? diferencial mostrado?
    - Método: Google Maps reverso, Instagram (bio), Hostelworld/Booking, showcases de design.
-7. Definir prazos e janelas (campos [DEFINIR] acima) — via entrevista dirigida, ver item 8.
-8. **Estabelecer os limites de risco comercial da permuta antes de redigir** (levantado
-   2026-07-20): entrevista dirigida, uma pergunta por vez, cobrindo preço/permuta, escopo,
-   saída, manutenção, propriedade e formalização. Roteiro completo: Fase 5 em
-   `docs/ideias-backlog.md`. Só depois disso redigir o contrato de permuta (seção 12).
+7. ~~Definir prazos e janelas (campos [DEFINIR] acima).~~ ✅ Resolvido pela Fase 5 (item 8).
+8. ~~Estabelecer os limites de risco comercial da permuta antes de redigir~~ ✅ Entrevista
+   dirigida concluída em 2026-07-23 (spec
+   `docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`), cobrindo
+   preço/permuta, escopo, saída, manutenção, propriedade e formalização. Contrato redigido
+   e aprovado no mesmo dia (`docs/contrato-permuta.md`, seção 12).
 
 ### Estrutura do repositório (adotada)
 
@@ -239,7 +246,7 @@ codigo-itinerante/
 ├── docs/
 │   ├── projeto.md               (este documento)
 │   ├── decisoes-tecnicas.md     (decisões fechadas e justificativas)
-│   ├── contrato-permuta.md      (a redigir)
+│   ├── contrato-permuta.md      (redigido e aprovado; modelo genérico)
 │   └── briefing-cliente.md      (questionário para o cliente)
 ├── marca/                       (identidade visual: wordmark/monograma SVG, tokens.css; manual em docs/miv.md)
 ├── template/                    (o motor: projeto Astro reutilizável)

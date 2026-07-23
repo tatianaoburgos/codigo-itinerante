@@ -67,8 +67,11 @@ rolagem única, link "Veja as perguntas frequentes" em `Escopo.astro`), 7 pergun
 domínio/código). Corrigida junto uma linha desatualizada em `Escopo.astro` ("uma rodada de
 ajustes após a entrega" → "quatro rodadas... durante a construção").
 
-**Ainda falta** o texto real do contrato de permuta (usa `docs/projeto.md` §12 + o template
-Word da Fase 2 + as respostas do questionário de intake).
+**Texto do contrato redigido e aprovado, mesmo dia (2026-07-23)**:
+`docs/contrato-permuta.md` — modelo genérico em Markdown, 13 cláusulas com os valores acima.
+O `.docx` de cada contrato real (aplicando o visual da marca, mesmo padrão da Fase 2) é
+gerado sob demanda, por cliente, quando a autora entrega o questionário de intake
+preenchido — não há gerador genérico rodando sozinho.
 
 ### Ideias soltas (encaixar quando fizer sentido)
 - "Artezinha" ao lado do nome na aba do navegador (Sara Soueidan) — favicon já existe? avaliar se o monograma CI cumpre isso ou se a viajante/ícone cabe.
@@ -83,6 +86,7 @@ Word da Fase 2 + as respostas do questionário de intake).
   documento. Spec `docs/superpowers/specs/2026-07-20-fase2-template-word-design.md`.
 - [x] Fase 3 — Degradê breu → âmbar + iconografia no site (2026-07-19)
 - [ ] Fase 4 — Animação da hero
-- [ ] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos):
-  entrevista concluída, spec + questionário de intake + FAQ do site prontos (2026-07-23);
-  falta só o texto do contrato
+- [x] Fase 5 — Risco comercial da permuta (entrevista de limites → textos e documentos):
+  entrevista concluída, spec + questionário de intake + FAQ do site + texto do contrato
+  prontos e aprovados (2026-07-23). `.docx` de cada contrato real gerado sob demanda por
+  cliente (não é um gerador genérico pronto).

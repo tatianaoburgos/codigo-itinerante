@@ -195,5 +195,10 @@ verdade do desenho é `mockups/icones-refino.html`.
 5. ✅ Template-base em `marca/template-documento.docx` (2026-07-20), gerado por
    `marca/gera_template_word.py` a partir de `marca/prepara_fontes_documento.py`
    (instala as fontes "Archivo Doc"/"Martian Mono Doc"). Aplica o cabeçalho/rodapé
-   desta seção com conteúdo placeholder — o texto real de cada documento
-   (proposta, briefing, contrato) fica para uma fase futura, a combinar.
+   desta seção com conteúdo placeholder. Todo documento comercial real (proposta,
+   briefing, contrato) usa sempre este sistema visual — nunca entregue em texto
+   puro. O primeiro conteúdo real é o contrato de permuta: texto redigido e
+   aprovado em `docs/contrato-permuta.md` (2026-07-23), com o `.docx` de cada
+   contrato gerado sob demanda, por cliente, a partir das respostas do
+   questionário de intake (`docs/gera_questionario_contrato.py`) — não existe
+   ainda um gerador genérico automático.
