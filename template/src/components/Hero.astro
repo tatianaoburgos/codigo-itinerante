@@ -59,7 +59,7 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
             {config.nome}
           </h1>
         </div>
-        <div class="absolute right-4 bottom-0 flex flex-col items-end sm:right-8 md:right-12">
+        <div class="absolute right-4 bottom-4 flex flex-col items-end sm:right-8 sm:bottom-6 md:right-12 md:bottom-8">
           <div class="w-fit">
             <svg
               class="hero-onda mb-1 h-3 w-full text-white sm:h-4 md:h-5"
@@ -78,6 +78,20 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
             <p class="hero-frase whitespace-pre-line text-right text-base font-bold text-white sm:text-lg md:text-xl">
               {fraseHero}
             </p>
+            <svg
+              class="hero-onda mt-1 h-3 w-full text-white sm:h-4 md:h-5"
+              viewBox="0 0 200 50"
+              preserveAspectRatio="none"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M0,25 C12.5,10 12.5,10 25,25 C37.5,40 37.5,40 50,25 C62.5,10 62.5,10 75,25 C87.5,40 87.5,40 100,25 C112.5,10 112.5,10 125,25 C137.5,40 137.5,40 150,25 C162.5,10 162.5,10 175,25 C187.5,40 187.5,40 200,25"
+                stroke="currentColor"
+                stroke-width="8"
+                stroke-linecap="round"
+              />
+            </svg>
           </div>
         </div>
       </>
