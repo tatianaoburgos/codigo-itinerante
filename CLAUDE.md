@@ -41,6 +41,8 @@ npm run og        # regenera a imagem Open Graph via sharp
 
 Não há testes nem linter configurados ainda.
 
+**Deploy de um cliente novo no Vercel** (receita usada para LumeHostel e Mar à Vista, via `vercel` CLI): cada cliente é um projeto Vercel **separado**, mas todos com **Root Directory = `.`** (raiz do monorepo, não `template/`) — assim o build enxerga `../clientes/<slug>` a partir de `template/astro.config.mjs`. O `template/` sozinho não basta como raiz do deploy. Comandos do projeto (setados via `vercel project update <nome> --framework astro --build-command "cd template && npm run build" --install-command "cd template && npm install" --output-directory "template/dist"`) fazem o `cd` para dentro de `template/`. Env var `CLIENTE=<slug>` setada nos 3 ambientes (`vercel env add CLIENTE production/preview/development --value <slug> --yes --cwd template`, rodado com o projeto novo já linkado). Projetos existentes (`lumehostel`, `codigo-itinerante`/site) ficam registrados em `.vercel/repo.json` (não versionado) com `directory: "template"` ou `"site"` — adicionar o cliente novo lá também para que `vercel deploy --project <nome> --cwd template` resolva certo.
+
 ## Arquitetura
 
 - **Stack**: Astro 5 + Tailwind CSS 4 (via `@tailwindcss/vite`), site 100% estático, deploy Vercel free tier. Tailwind é importado em `src/styles/global.css`.
