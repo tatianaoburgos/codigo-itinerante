@@ -26,9 +26,6 @@ export const marcaSchema = z.object({
   heroVideo: z.string().min(1).optional(),
   /** Frame estático (jpg) usado como poster do vídeo e fallback sem motion. */
   heroVideoPoster: z.string().min(1).optional(),
-  /** Quando true, o logo do menu fica sempre alinhado à esquerda, mesmo no
-   *  layout mobile empilhado (padrão: centralizado). */
-  logoFixoEsquerda: z.boolean().optional(),
   /** Quando true, o logo (raster) aparece só no menu; a hero usa o nome em texto.
    *  Para logos tipo selo/circular que não escalam bem em tamanho grande. */
   logoApenasNoMenu: z.boolean().optional(),
