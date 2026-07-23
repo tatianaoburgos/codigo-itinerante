@@ -36,6 +36,7 @@ Notas de identidade visual da aba "Critérios UX" da planilha (0-5): nota máxim
 
 ### UXUA Casa Hotel & Spa — Trancoso/BA
 - "O hero mais lindo que já vi na vida. O site de hotel mais lindo que já vi." Provavelmente não replicável no nosso escopo, mas é o teto de qualidade.
+- **Usada em 2026-07-22** (junto com Surfcamp Arara, abaixo) como referência explícita para a hero centralizada do Mar à Vista (`marca.heroCentralizado` — nome grande no meio da tela): ver `template/src/components/Hero.astro`.
 
 ### Ibiti Projeto — Lima Duarte/MG · wellness · média 5,0
 - "Hospedagens que encantam e inspiram" — **bem artístico; incluir parte artística/detalhes artísticos nos nossos sites** (desde que produzível em SVG pelo Claude). Gostou do mapa e da hero.
@@ -52,6 +53,7 @@ Notas de identidade visual da aba "Critérios UX" da planilha (0-5): nota máxim
 ### Surfcamp Arara — Pipa/RN · surf · média 4,86
 - **A melhor referência de "descolado mas com cara de caro"** para hostel de surf. Design e cores bonitos (melhoráveis).
 - **Desenhinhos de onda no background e nas pontas da página: profundidade, não fica flat.** Adotado como padrão (detalhe temático no fundo).
+- **Usada em 2026-07-22** como referência de composição para a hero centralizada do Mar à Vista: nome grande, centralizado tanto na horizontal quanto na vertical, sobre a foto/vídeo — ver `marca.heroCentralizado` em `template/src/lib/schema.ts`.
 
 ### Mango Tree Hostel — Rio/RJ · surf/festa · média 4,43
 - Hero legal; foto metade da página + texto na outra metade (**ela gosta disso**); símbolos "bonitinhos" de lockers/bar/toalhas; **aspas grandes nos depoimentos** (adotado).
