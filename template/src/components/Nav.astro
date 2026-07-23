@@ -53,7 +53,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
   <div
     id="menu-nav"
     popover
-    class="fixed top-[4.5rem] right-4 m-0 flex flex-col gap-1 rounded-2xl border-0 bg-sal p-2 text-noite shadow-xl"
+    class="fixed top-[4.5rem] right-4 left-auto m-0 flex-col gap-1 rounded-2xl border-0 bg-sal p-2 text-noite shadow-xl [&:popover-open]:flex"
   >
     {
       abas.map((aba) => (
