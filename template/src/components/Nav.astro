@@ -36,7 +36,7 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
       {logo ? <img src={logo.src} alt={config.nome} class="h-9 w-auto" /> : config.nome}
     </a>
     <div class="flex items-center gap-3">
-      <BotaoWhatsApp icone />
+      <BotaoWhatsApp />
       <button
         popovertarget="menu-nav"
         popovertargetaction="toggle"

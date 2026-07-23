@@ -15,7 +15,7 @@ const mensagem = encodeURIComponent(
 const href = `https://wa.me/${config.contato.whatsapp}?text=${mensagem}`;
 
 const tamanhos = {
-  medio: 'px-4 py-2 text-sm',
+  medio: 'px-3 py-1.5 text-xs sm:px-4 sm:py-2 sm:text-sm',
   grande: 'px-6 py-3 text-base',
 };
 ---
@@ -26,7 +26,7 @@ const tamanhos = {
   rel="noopener noreferrer"
   aria-label={icone ? rotulo : undefined}
   class:list={[
-    'inline-flex items-center justify-center gap-2 rounded-full bg-zap font-corpo font-bold text-noite transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo',
+    'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full bg-zap font-corpo font-bold text-noite transition hover:brightness-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo',
     icone ? 'p-2.5 sm:px-4 sm:py-2' : tamanhos[tamanho],
   ]}
 >
