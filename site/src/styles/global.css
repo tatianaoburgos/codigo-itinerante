@@ -20,10 +20,10 @@
 }
 
 /* Fase 3: o fundo da página é um degradê contínuo breu -> âmbar (a lâmpada
-   acendendo ao longo da rolagem). Breu solido cobre Hero + QuemSouEu +
-   ProvaDeTrabalho; a cor começa a entrar exatamente no ComoFunciona
-   (medido: 41.4% em desktop e 37.4% em mobile) e chega em âmbar cheio pouco
-   antes do CtaFinal (~89.6%), que fica na zona clara.
+   acendendo ao longo da rolagem). Breu sólido cobre Hero + QuemSouEu; a cor
+   começa a entrar já no início de O Resultado/ProvaDeTrabalho (medido:
+   27.3% em desktop e 33.5% em mobile, usado o valor de desktop) e chega em
+   âmbar cheio pouco antes do CtaFinal (~89.6%), que fica na zona clara.
    Specs: docs/superpowers/specs/2026-07-19-site-degrade-fase3-design.md e
    docs/superpowers/specs/2026-07-20-site-prova-de-trabalho-design.md */
 .pagina-degrade {
@@ -31,7 +31,7 @@
   background: linear-gradient(
     180deg,
     #0a0a09 0%,
-    #0a0a09 41.4%,
+    #0a0a09 27.3%,
     #241812 50.6%,
     #4a2a17 60.9%,
     #8a4a24 72.2%,
