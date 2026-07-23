@@ -18,20 +18,15 @@ const abas = [
   .filter((aba) => aba.href !== '/#localizacao' || config.localizacao.mapsEmbedUrl);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
-const logoFixoEsquerda = config.marca?.logoFixoEsquerda ?? false;
 ---
 
 <header
   data-solido="false"
-  class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent text-white transition-colors duration-300 data-[solido=true]:border-sal data-[solido=true]:bg-espuma data-[solido=true]:text-noite"
+  class="group fixed inset-x-0 top-0 z-50 border-b border-transparent bg-transparent text-white transition-colors duration-300 data-[solido=true]:border-sal data-[solido=true]:bg-espuma data-[solido=true]:text-noite"
 >
   <nav
     aria-label="Principal"
-    class={
-      logoFixoEsquerda
-        ? 'mx-auto flex max-w-5xl flex-row flex-wrap items-start justify-start gap-6 px-4 py-4'
-        : 'mx-auto flex max-w-5xl flex-col items-center gap-3 px-4 py-4 sm:flex-row sm:justify-between'
-    }
+    class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4"
   >
     <a
       href="/"
@@ -40,27 +35,44 @@ const logoFixoEsquerda = config.marca?.logoFixoEsquerda ?? false;
       {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
       {logo ? <img src={logo.src} alt={config.nome} class="h-9 w-auto" /> : config.nome}
     </a>
-    <div class="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
-      {
-        abas.map((aba) => (
-          <a
-            href={aba.href}
-            class="border-b-2 border-transparent pb-0.5 text-sm font-bold transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
-          >
-            {aba.rotulo}
-          </a>
-        ))
-      }
-      {
-        config.navFuturo?.map((rotulo) => (
-          <span class="pb-0.5 text-sm font-bold" title="Em breve" aria-hidden="true">
-            {rotulo}
-          </span>
-        ))
-      }
-      <BotaoWhatsApp />
+    <div class="flex items-center gap-3">
+      <BotaoWhatsApp icone />
+      <button
+        popovertarget="menu-nav"
+        popovertargetaction="toggle"
+        aria-label="Abrir menu"
+        class="flex h-8 w-8 flex-col items-center justify-center gap-[5px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+      >
+        <span class="block h-0.5 w-6 rounded-full bg-current transition-transform duration-200 group-has-[#menu-nav:popover-open]:translate-y-[7px] group-has-[#menu-nav:popover-open]:rotate-45"></span>
+        <span class="block h-0.5 w-6 rounded-full bg-current transition-opacity duration-200 group-has-[#menu-nav:popover-open]:opacity-0"></span>
+        <span class="block h-0.5 w-6 rounded-full bg-current transition-transform duration-200 group-has-[#menu-nav:popover-open]:-translate-y-[7px] group-has-[#menu-nav:popover-open]:-rotate-45"></span>
+      </button>
     </div>
   </nav>
+
+  <div
+    id="menu-nav"
+    popover
+    class="fixed top-[4.5rem] right-4 m-0 flex flex-col gap-1 rounded-2xl border-0 bg-sal p-2 text-noite shadow-xl"
+  >
+    {
+      abas.map((aba) => (
+        <a
+          href={aba.href}
+          class="rounded-lg px-3 py-2 text-sm font-bold transition hover:bg-azulejo/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+        >
+          {aba.rotulo}
+        </a>
+      ))
+    }
+    {
+      config.navFuturo?.map((rotulo) => (
+        <span class="px-3 py-2 text-sm font-bold" title="Em breve" aria-hidden="true">
+          {rotulo}
+        </span>
+      ))
+    }
+  </div>
 </header>
 
 <script>
