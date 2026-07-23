@@ -141,11 +141,17 @@ antes da entrega + 15 dias de 1 ajuste pequeno depois.
 
 ## Fora de escopo (fica para depois)
 
-- Texto real do contrato de permuta (`docs/projeto.md` §12) — depende do
-  template Word da Fase 2 e é a próxima etapa natural, usando as respostas
-  do questionário desta fase.
 - Preenchimento do questionário para um cliente real (LumeHostel, Mar à
   Vista ou futuro) — esta fase entrega só o instrumento vazio.
+- Gerador `.docx` do contrato aplicando o visual da marca (reaproveitando
+  `marca/gera_template_word.py`) — fica para depois de o texto ser
+  validado pela autora.
+
+## Concluído depois desta fase
+
+- **Texto real do contrato de permuta** (`docs/projeto.md` §12), redigido em
+  2026-07-23 em `docs/contrato-permuta.md` — modelo genérico em Markdown,
+  usando os valores fechados acima. Pendente: revisão da autora.
 
 ## Referências
 

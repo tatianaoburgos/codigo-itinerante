@@ -183,26 +183,36 @@ Exemplos com diária de R$ 100 (hostels/pousadas de diária mais alta, mais prop
 
 ---
 
-## 12. Estrutura do contrato de permuta (a redigir)
+## 12. Estrutura do contrato de permuta
 
-⚠️ **Antes de redigir**: o texto "o que você recebe" (seção 4) cobre escopo técnico, mas não
-risco comercial — e é o risco comercial que trava a decisão do dono de hostel num modelo de
-permuta. As cláusulas abaixo (contrapartida, saída, propriedade, manutenção) só devem ser
-preenchidas com valores reais depois de uma entrevista dirigida que estabeleça os limites da
-autora em cada eixo. Processo e perguntas: Fase 5 em `docs/ideias-backlog.md`.
+✅ **Texto redigido em 2026-07-23**: `docs/contrato-permuta.md` — modelo genérico com
+placeholders, usando os valores fechados na entrevista dirigida da Fase 5
+(`docs/superpowers/specs/2026-07-23-fase5-limites-permuta-design.md`). Pendente: revisão da
+autora antes de usar em um contrato real.
 
-Cláusulas previstas:
+Cláusulas cobertas:
 
-- [ ] **Objeto** — o que é entregue (remeter à seção 4).
-- [ ] **Escopo detalhado** — INCLUI (seção 4) e NÃO INCLUI (seção 5).
-- [ ] **Contrapartida** — nº de noites, período/janela de uso, antecedência de reserva, prazo de validade.
-- [ ] **Prazo de entrega** — [DEFINIR].
-- [ ] **Responsabilidades do cliente** — fornecer material (seção 6), custear domínio (seção 7), dar acesso ao Google (seção 8).
-- [ ] **Domínio e hospedagem** — quem registra, quem administra, quem paga (seção 7).
-- [ ] **Cláusula de portabilidade/transferência** (seção 7).
-- [ ] **Cláusula do Google Business Profile** (seção 8).
-- [ ] **Rodadas de revisão** — 1 inclusa; além disso, novo acordo.
-- [ ] **Propriedade e manutenção** — de quem é o código; o que acontece após entrega; preço da alteração avulsa.
+- [x] **Objeto** — o que é entregue (remete à seção 4).
+- [x] **Escopo detalhado** — INCLUI (seção 4) e NÃO INCLUI (seção 5), com os números
+      atualizados pela Fase 5 (4 rodadas antes da entrega, não a "1 rodada [DEFINIR]" ainda
+      escrita nas seções 4/5 abaixo — ver nota de desatualização lá).
+- [x] **Contrapartida** — nº de noites, tipo de acomodação fixo, período/janela de uso,
+      antecedência de reserva, prazo de validade.
+- [x] **Prazo e processo de entrega** — regra dos 10 dias antes da chegada (Fase 5).
+- [x] **Responsabilidades do cliente** — fornecer material (seção 6), custear domínio
+      (seção 7), dar acesso ao Google (seção 8).
+- [x] **Domínio e hospedagem** — quem registra, quem administra, quem paga (seção 7).
+- [x] **Cláusula de portabilidade/transferência** (seção 7 + Fase 5: 30 dias, cópia isolada,
+      sem revenda).
+- [x] **Cláusula do Google Business Profile** (seção 8, texto reaproveitado quase verbatim).
+- [x] **Rodadas de ajuste** — 4 antes da entrega; além disso, novo acordo (Fase 5).
+- [x] **Saída se o cliente não gostar** — site entregue como está, noites continuam devidas
+      (Fase 5, não previsto no checklist original).
+- [x] **Manutenção pós-entrega** — 15 dias com 1 ajuste pequeno grátis; depois, novo acordo
+      (Fase 5).
+- [x] **Propriedade** — de quem é o código; uso como portfólio; preço da alteração avulsa
+      fica fora do texto do contrato (ver `decisoes-tecnicas.md`, cobrança à parte).
+- [x] **Formalização** — gov.br ou papel (Fase 5).
 
 ---
 
