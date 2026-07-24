@@ -1,13 +1,15 @@
 ---
 import { Image } from "astro:assets";
 import Eyebrow from "./Eyebrow.astro";
+import Secao from "./Secao.astro";
+import BotaoContorno from "./BotaoContorno.astro";
 import printDesktop from "../assets/portfolio/lumehostel-desktop.png";
 import printMobile from "../assets/portfolio/lumehostel-mobile.png";
 
 const url = "https://lumehostel.vercel.app";
 ---
 
-<section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
+<Secao>
   <Eyebrow texto="o" destaque="resultado" />
 
   <div class="relative mt-7">
@@ -26,7 +28,8 @@ const url = "https://lumehostel.vercel.app";
       <Image
         src={printDesktop}
         alt="Primeira dobra do site do LumeHostel vista no computador"
-        width={1440}
+        widths={[480, 900, 1440]}
+        sizes="(min-width: 768px) 720px, 100vw"
         class="w-full"
       />
     </a>
@@ -37,7 +40,8 @@ const url = "https://lumehostel.vercel.app";
       <Image
         src={printMobile}
         alt="O mesmo site do LumeHostel visto no celular"
-        width={390}
+        widths={[130, 260, 390]}
+        sizes="130px"
         class="w-full"
       />
     </div>
@@ -50,12 +54,7 @@ const url = "https://lumehostel.vercel.app";
       depoimentos e localização, com reserva direta pelo WhatsApp.
     </p>
     <p>
-      <a
-        href={url}
-        target="_blank"
-        rel="noopener"
-        class="inline-block rounded-full border border-ambar px-6 py-2.5 font-medium text-ambar transition-colors hover:bg-ambar hover:text-breu"
-      >Ver o site no ar</a>
+      <BotaoContorno href={url}>Ver o site no ar</BotaoContorno>
     </p>
   </div>
-</section>
+</Secao>

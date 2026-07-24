@@ -1,13 +1,30 @@
 ---
 import "../styles/global.css";
+import { dados } from "../dados";
 
 interface Props {
   titulo: string;
   descricao: string;
+  /** JSON-LD adicional específico da página (ex.: FAQPage), somado ao Organization padrão. */
+  jsonLd?: Record<string, unknown>;
 }
 
-const { titulo, descricao } = Astro.props;
+const { titulo, descricao, jsonLd } = Astro.props;
 const ogImage = new URL("og.png", Astro.site ?? Astro.url);
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+
+const jsonLdOrganizacao = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Código Itinerante",
+  description:
+    "Construção de sites institucionais para hostels e pousadas, pagos em noites de hospedagem.",
+  url: (Astro.site ?? Astro.url).href,
+  email: dados.email,
+  sameAs: [dados.linkedin],
+};
+
+const blocosJsonLd = [jsonLdOrganizacao, ...(jsonLd ? [jsonLd] : [])];
 ---
 
 <!doctype html>
@@ -15,20 +32,34 @@ const ogImage = new URL("og.png", Astro.site ?? Astro.url);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="canonical" href={canonical} />
     <title>{titulo}</title>
     <meta name="description" content={descricao} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Código Itinerante" />
     <meta property="og:title" content={titulo} />
     <meta property="og:description" content={descricao} />
     <meta property="og:image" content={ogImage} />
-    <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <!--
-      Qual é a ideia que você está tentando provar ao mundo?
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="pt_BR" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={titulo} />
+    <meta name="twitter:description" content={descricao} />
+    <meta name="twitter:image" content={ogImage} />
 
-      Que conhecimento se compartilha construindo soluções reais para
-      pessoas reais. Que dá pra se conectar às pessoas e aos lugares,
-      não apenas passar por eles.
-    -->
+    {
+      blocosJsonLd.map((bloco) => (
+        <script
+          type="application/ld+json"
+          is:inline
+          set:html={JSON.stringify(bloco).replace(/</g, "\\u003c")}
+        />
+      ))
+    }
   </head>
   <body class="bg-ambar font-sans text-cal antialiased">
     <div class="pagina-degrade">

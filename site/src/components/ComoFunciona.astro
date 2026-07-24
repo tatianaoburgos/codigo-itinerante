@@ -1,5 +1,6 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
+import Secao from "./Secao.astro";
 import iconeContato from "../../../marca/icones/icone-contato-cheio-breu.svg";
 import iconeHostel from "../../../marca/icones/icone-hostel-cheio-breu.svg";
 import iconeSiteProprio from "../../../marca/icones/icone-site-proprio-cheio-breu.svg";
@@ -13,7 +14,7 @@ const passos: { icone: ImageMetadata; titulo: string; texto: string }[] = [
 ];
 ---
 
-<section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
+<Secao>
   <Eyebrow texto="como" destaque="funciona" />
   <ol class="mt-7 space-y-8">
     {
@@ -28,4 +29,4 @@ const passos: { icone: ImageMetadata; titulo: string; texto: string }[] = [
       ))
     }
   </ol>
-</section>
+</Secao>

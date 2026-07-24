@@ -1,6 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import BotaoWhatsApp from "../components/BotaoWhatsApp.astro";
+import Secao from "../components/Secao.astro";
+import { dados } from "../dados";
 import monograma from "../../../marca/monograma-claro.svg";
 
 const perguntas: { pergunta: string; resposta: string }[] = [
@@ -40,14 +42,25 @@ const perguntas: { pergunta: string; resposta: string }[] = [
       "O site fica no ar sem prazo — mesmo que você ainda não tenha migrado pra um domínio próprio. Ele só sai do ar se você pedir, ou se eu pedir. E ele também aparece como case real no meu portfólio, aqui no codigoitinerante.com.br.",
   },
 ];
+
+const jsonLdFaq = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: perguntas.map((p) => ({
+    "@type": "Question",
+    name: p.pergunta,
+    acceptedAnswer: { "@type": "Answer", text: p.resposta },
+  })),
+};
 ---
 
 <Layout
   titulo="Perguntas frequentes — Código Itinerante"
   descricao="Quantas noites, o que acontece se você não gostar, quem paga o quê — as dúvidas mais comuns sobre o site em troca de hospedagem."
+  jsonLd={jsonLdFaq}
 >
   <div class="min-h-dvh bg-ambar text-breu">
-    <section class="mx-auto w-full max-w-3xl px-6 py-10 md:py-12">
+    <Secao>
       <a href="/" class="inline-flex items-center gap-2 text-sm text-breu/70 transition-colors hover:text-breu">
         <img src={monograma.src} alt="" class="h-6" />
         Código Itinerante
@@ -55,22 +68,29 @@ const perguntas: { pergunta: string; resposta: string }[] = [
       <h1 class="mt-8 text-4xl font-bold tracking-[-0.035em] md:text-5xl">
         Perguntas <em class="font-serifa font-normal">frequentes</em>
       </h1>
-      <dl class="mt-10 space-y-8">
+      <div class="mt-10 space-y-8">
         {
           perguntas.map((p) => (
             <div>
-              <dt class="text-lg font-semibold">{p.pergunta}</dt>
-              <dd class="mt-2 leading-relaxed text-breu/80">{p.resposta}</dd>
+              <h2 class="text-lg font-semibold">{p.pergunta}</h2>
+              <p class="mt-2 leading-relaxed text-breu/80">{p.resposta}</p>
             </div>
           ))
         }
-      </dl>
+      </div>
       <div class="mt-14 border-t border-breu/20 pt-8">
         <p class="text-lg">Não achou sua dúvida?</p>
         <div class="mt-4">
           <BotaoWhatsApp invertido />
         </div>
       </div>
-    </section>
+      <footer class="mt-12 flex items-center justify-between border-t border-breu/20 pt-6 text-sm text-breu/70">
+        <img src={monograma.src} alt="Código Itinerante" class="h-6" />
+        <div class="flex gap-6">
+          <a href={`mailto:${dados.email}`} class="hover:text-breu">{dados.email}</a>
+          <a href={dados.linkedin} class="hover:text-breu">LinkedIn</a>
+        </div>
+      </footer>
+    </Secao>
   </div>
 </Layout>

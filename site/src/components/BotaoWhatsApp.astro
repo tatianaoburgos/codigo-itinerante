@@ -11,6 +11,8 @@ const { rotulo = "Chamar no WhatsApp", invertido = false } = Astro.props;
 
 <a
   href={linkWhatsApp()}
+  target="_blank"
+  rel="noopener noreferrer"
   class:list={[
     "inline-block rounded-full px-7 py-3 font-medium transition-colors",
     invertido ? "bg-breu text-ambar hover:bg-grafite" : "bg-ambar text-breu hover:bg-barro",

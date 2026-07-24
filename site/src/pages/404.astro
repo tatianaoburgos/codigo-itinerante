@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BotaoContorno from "../components/BotaoContorno.astro";
+import wordmark from "../../../marca/wordmark-escuro.svg";
+---
+
+<Layout
+  titulo="Página não encontrada — Código Itinerante"
+  descricao="Essa página não existe. Volte para a home do Código Itinerante."
+>
+  <div class="flex min-h-dvh flex-col items-center justify-center bg-breu px-6 py-10 text-center text-cal">
+    <img src={wordmark.src} alt="Código Itinerante" class="w-64 max-w-full" />
+    <p class="mt-8 text-2xl font-bold tracking-[-0.02em]">Essa página não existe.</p>
+    <p class="mt-3 max-w-sm text-pedra">
+      Talvez o endereço tenha mudado, ou você tenha digitado errado.
+    </p>
+    <div class="mt-8">
+      <BotaoContorno href="/" externo={false}>Voltar para a home</BotaoContorno>
+    </div>
+  </div>
+</Layout>
