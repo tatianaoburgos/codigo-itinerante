@@ -85,7 +85,11 @@ const dadosEstruturados = {
     <meta name="twitter:description" content={descricao} />
     <meta name="twitter:image" content={ogImagem} />
 
-    <script type="application/ld+json" is:inline set:html={JSON.stringify(dadosEstruturados)} />
+    <script
+      type="application/ld+json"
+      is:inline
+      set:html={JSON.stringify(dadosEstruturados).replace(/</g, '\\u003c')}
+    />
   </head>
   <body class="flex min-h-screen flex-col bg-espuma font-corpo text-noite">
     <Nav />

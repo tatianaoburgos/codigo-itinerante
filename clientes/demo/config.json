@@ -32,9 +32,6 @@
       ]
     }
   ],
-  "precos": {
-    "politica": "consultar"
-  },
   "localizacao": {
     "endereco": "Rua da Paciência, 123 — Rio Vermelho, Salvador/BA",
     "mapsEmbedUrl": "https://maps.google.com/maps?q=Rio%20Vermelho%2C%20Salvador%2C%20Bahia&output=embed",

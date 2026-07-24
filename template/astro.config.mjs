@@ -87,8 +87,12 @@ export default defineConfig({
     },
     server: {
       fs: {
-        // Fotos dos clientes vivem fora da raiz do Vite (../clientes); libera o monorepo inteiro.
-        allow: [fileURLToPath(new URL('..', import.meta.url))],
+        // Fotos/config dos clientes e ativos da marca vivem fora da raiz do Vite
+        // (../clientes, ../marca) — libera só essas duas pastas, não o monorepo inteiro.
+        allow: [
+          fileURLToPath(new URL('../clientes', import.meta.url)),
+          fileURLToPath(new URL('../marca', import.meta.url)),
+        ],
       },
     },
   },

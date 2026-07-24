@@ -14,6 +14,7 @@ import Vibe from '../components/Vibe.astro';
 import CascataOndas from '../components/CascataOndas.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
+import { aspectMosaico } from '../lib/mosaico';
 
 const comodidadesComFoto = config.comodidades?.filter((c) => c.foto) ?? [];
 const comodidadesSemFoto = config.comodidades?.filter((c) => !c.foto) ?? [];
@@ -183,7 +184,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
                   sizes="(min-width: 1024px) 40vw, 50vw"
                   class:list={[
                     'w-full object-cover transition duration-500 group-hover:scale-105 lg:aspect-auto lg:h-75',
-                    indice % 3 === 0 ? 'aspect-4/5' : indice % 3 === 1 ? 'aspect-square' : 'aspect-4/3',
+                    aspectMosaico(indice),
                   ]}
                 />
               </div>

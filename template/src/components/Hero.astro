@@ -104,9 +104,16 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
     <script>
       const video = document.querySelector<HTMLVideoElement>('.hero-video');
       if (video && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+        video.addEventListener('error', () => video.classList.add('hidden'), { once: true });
+        video.addEventListener(
+          'canplay',
+          () => {
+            video.classList.remove('hidden');
+            video.play().catch(() => {});
+          },
+          { once: true },
+        );
         video.src = video.dataset.src!;
-        video.classList.remove('hidden');
-        video.play().catch(() => {});
         video.addEventListener(
           'ended',
           () => {

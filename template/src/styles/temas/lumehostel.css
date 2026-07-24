@@ -28,8 +28,7 @@ body {
 }
 
 .bg-mare,
-.bg-sal,
-.bg-white {
+.bg-sal {
   color: var(--color-noite);
 }
 
@@ -52,18 +51,12 @@ footer.bg-noite {
   border-radius: 1rem;
 }
 
-.bg-white {
-  background: #fff3dc;
-  border: 1px solid #8f2d1233;
-}
-
 .font-display {
   letter-spacing: -0.01em;
 }
 
-/* Cards claros (bg-white/bg-sal) usam text-mare (ambar) nos titulos, que fica
+/* Cards claros (bg-sal) usam text-mare (ambar) nos titulos, que fica
    ilegivel sobre o creme do card. Escurece para o marrom do tema. */
-.bg-white .text-mare,
 .bg-sal .text-mare {
   color: var(--color-azulejo);
 }
@@ -82,14 +75,13 @@ section.bg-mare .text-espuma {
 }
 
 /* text-azulejo (terracota profundo) e usado tanto sobre fundo terracota
-   (eyebrows) quanto dentro de cards claros (bg-white/bg-sal). Sobre terracota
+   (eyebrows) quanto dentro de cards claros (bg-sal). Sobre terracota
    fica quase invisivel; ali precisa de ambar. Dentro dos cards claros o
    terracota profundo continua correto. */
 .text-azulejo {
   color: var(--color-fitinha);
 }
 
-.bg-white .text-azulejo,
 .bg-sal .text-azulejo {
   color: #8f2d12;
 }

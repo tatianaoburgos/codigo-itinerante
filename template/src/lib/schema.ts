@@ -100,10 +100,6 @@ export const configClienteSchema = z.object({
     })
     .optional(),
   acomodacoes: z.array(acomodacaoSchema).min(1).optional(),
-  precos: z.object({
-    politica: z.enum(['faixa', 'consultar']),
-    faixa: z.string().optional(),
-  }),
   localizacao: z.object({
     endereco: z.string().min(1),
     /** Campos estruturados (opcionais) usados no PostalAddress do JSON-LD. */

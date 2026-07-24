@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
+import { aspectMosaico } from '../lib/mosaico';
 ---
 
 {/* Mesma gramática do mosaico da região: no celular 2 colunas com alturas
@@ -20,10 +21,7 @@ import { foto } from '../lib/fotos';
             alt={imagem.alt}
             widths={[300, 600, 1200]}
             sizes="(min-width: 1024px) 40vw, 50vw"
-            class:list={[
-              'w-full object-cover lg:aspect-auto lg:h-72',
-              indice % 3 === 0 ? 'aspect-4/5' : indice % 3 === 1 ? 'aspect-square' : 'aspect-4/3',
-            ]}
+            class:list={['w-full object-cover lg:aspect-auto lg:h-72', aspectMosaico(indice)]}
           />
         </div>
       ))}

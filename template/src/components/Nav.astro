@@ -9,6 +9,7 @@ const abas = [
   { href: '/#comodidades', rotulo: 'Comodidades' },
   { href: '/#vibe', rotulo: 'A vibe' },
   { href: '/#regiao', rotulo: 'A região' },
+  { href: '/#depoimentos', rotulo: 'Depoimentos' },
   { href: '/#localizacao', rotulo: 'Localização' },
 ]
   .filter((aba) => aba.href !== '/#sobre' || config.sobre)
@@ -16,6 +17,7 @@ const abas = [
   .filter((aba) => aba.href !== '/#comodidades' || config.comodidades)
   .filter((aba) => aba.href !== '/#vibe' || config.vibe)
   .filter((aba) => aba.href !== '/#regiao' || config.regiao)
+  .filter((aba) => aba.href !== '/#depoimentos' || config.depoimentos)
   .filter((aba) => aba.href !== '/#localizacao' || config.localizacao.mapsEmbedUrl);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
@@ -39,9 +41,12 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
     <div class="flex items-center gap-3">
       <BotaoWhatsApp />
       <button
+        id="botao-menu-nav"
         popovertarget="menu-nav"
         popovertargetaction="toggle"
         aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-nav"
         class="flex h-8 w-8 flex-col items-center justify-center gap-[5px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
       >
         <span class="block h-0.5 w-6 rounded-full bg-current transition-transform duration-200 group-has-[#menu-nav:popover-open]:translate-y-[7px] group-has-[#menu-nav:popover-open]:rotate-45"></span>
@@ -84,5 +89,15 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
       header.dataset.solido = entry.isIntersecting ? 'false' : 'true';
     });
     observer.observe(hero);
+  }
+
+  const botaoMenu = document.getElementById('botao-menu-nav');
+  const menu = document.getElementById('menu-nav');
+  if (botaoMenu && menu) {
+    menu.addEventListener('toggle', (evento) => {
+      const aberto = (evento as ToggleEvent).newState === 'open';
+      botaoMenu.setAttribute('aria-expanded', String(aberto));
+      botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+    });
   }
 </script>
