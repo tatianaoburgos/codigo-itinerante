@@ -56,9 +56,6 @@
       ]
     }
   ],
-  "precos": {
-    "politica": "consultar"
-  },
   "localizacao": {
     "endereco": "Av. Pombal, 1745 - Manaíra, João Pessoa - PB, 58038-242",
     "logradouro": "Av. Pombal, 1745",
@@ -155,12 +152,12 @@
   "depoimentos": [
     {
       "texto": "Superou muito as minhas expectativas. É uma das melhores estruturas de Hostel que já encontrei. Tudo muito organizado, limpo, e nota-se muito capricho em tudo. Mas o que mais me chamou atenção: a equipe. Voltaria mais vezes só pela atenção, respeito, carinho e educação com a qual fui tratado.",
-      "nome": "Gabriel Batista",
+      "nome": "Gabriel B.",
       "fonte": "via Google"
     },
     {
       "texto": "Eu amei a experiência, é um ambiente acolhedor, tranquilo, me senti em casa. Se você procura um espaço que respeite a sua tranquilidade, descanso e ainda assim sugira atividades diferentes para te acolher e te fazer não se sentir sozinho na sua viagem, você vai ao lugar certo.",
-      "nome": "Camila Cavalcanti",
+      "nome": "Camila C.",
       "fonte": "via Google"
     },
     {
@@ -170,7 +167,7 @@
     },
     {
       "texto": "Feito de viajante para viajante. Ambiente acolhedor e familiar. Tudo muito limpo. Cozinha equipada. Quartos com ar-condicionado. Cowork excelente. Internet rápida.",
-      "nome": "Rudá Alberti",
+      "nome": "Rudá A.",
       "fonte": "via Google"
     }
   ],

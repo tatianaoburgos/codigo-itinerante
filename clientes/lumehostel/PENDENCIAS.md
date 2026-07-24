@@ -3,11 +3,11 @@
 O MIV cobre a marca (recebido — ver `marca.md`). O `config.json` foi preenchido com
 dados reais levantados em fontes públicas (Booking/agregadores e Google Maps, em
 2026-07-12/13): endereço, acomodações, sobre, comodidades, região, depoimentos e mapa.
-O WhatsApp já é o número real (atualizado em 2026-07-14); e-mail e confirmação do
-Instagram ainda dependem do Gabriel. As fotos do hostel
+O WhatsApp já é o número real (atualizado em 2026-07-14); e-mail já é o real, confirmação do
+Instagram ainda depende do Gabriel. As fotos do hostel
 são reais, extraídas das presenças públicas do próprio estabelecimento (Google Maps,
 aba "Do proprietário", e Booking) — proveniência de cada arquivo em `fotos/FONTES.md`;
-falta a autorização formal de uso.
+uso já autorizado pelo Gabriel (2026-07-23).
 
 Desde 2026-07-13 o site é uma **one-page com âncoras** (hero → acomodações em grade →
 comodidades → a região → depoimentos → localização → CTA).
@@ -36,12 +36,15 @@ comodidades → a região → depoimentos → localização → CTA).
       são as avaliações reais dos hóspedes, e convertem). Mas é também uma área que
       **demandaria manutenção no futuro**: trocar, acrescentar ou remover um depoimento
       exige editar os dados do site e publicar de novo — não é algo que o Gabriel muda
-      sozinho. Perguntar se ele quer manter a seção sabendo disso.
+      sozinho. Perguntar se ele quer manter a seção sabendo disso. A seção agora também
+      tem item próprio no menu (`#depoimentos`).
 - [x] **Quais depoimentos entram no site.** Em 2026-07-14 foram levantadas as 10 melhores
       avaliações públicas (Google Maps e Booking) em `avaliacoes.md`; o `config.json` já
-      foi atualizado com a troca (3 via Google, 1 via Booking). Falta confirmar com o
-      Gabriel se os nomes devem aparecer completos ou só o primeiro nome.
-- [ ] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
+      foi atualizado com a troca (3 via Google, 1 via Booking).
+- [x] **Nome completo ou abreviado nos depoimentos.** Resolvido (2026-07-23): primeiro
+      nome + inicial do sobrenome (ex.: "Gabriel B."), aplicado aos 4 depoimentos do
+      `config.json`.
+- [x] **Fonte do site.** A fonte auxiliar do MIV dele (**Arial Rounded MT Bold**) é
       proprietária da Monotype e não pode ser hospedada num site sem licença web paga.
       A autora comparou visualmente três substitutas livres e escolheu **Space Grotesk**
       — geométrica e angular, no espírito do logotipo (que usa a Ellograph CF, também
@@ -60,9 +63,9 @@ comodidades → a região → depoimentos → localização → CTA).
       Quarto Duplo e Suíte Standard
 - [ ] **Confirmar coworking e sala de jogos** — constam no config, mas não achamos
       confirmação de primeira mão nas fontes públicas nesta rodada
-- [ ] **Autorização para uso das fotos** que vieram do Google Maps e do Booking
+- [x] **Autorização para uso das fotos** que vieram do Google Maps e do Booking
       (todas do perfil oficial do estabelecimento; nenhuma foto de hóspede foi usada —
-      ver `fotos/FONTES.md`)
+      ver `fotos/FONTES.md`). Autorizado pelo Gabriel em 2026-07-23.
 - [ ] **Acesso admin ao Perfil da Empresa no Google** (ver seção 8 de `docs/projeto.md`)
 
 ## Fotos que faltam (enviar em alta resolução)
@@ -73,4 +76,6 @@ já têm foto própria (adicionadas em 2026-07-14). Ainda faltam:
 - [ ] **Churrasqueira**
 - [ ] **Sala de jogos**
 
-Preços: não pedir — política fixa é "consultar no WhatsApp" (já aplicada, `precos.politica: "consultar"`).
+Preços: não pedir — política fixa é "consultar no WhatsApp" (nunca aparece no site; o campo
+`precos` foi removido do `config.json`/schema em 2026-07-23 por não ser mais consumido em
+lugar nenhum do motor).

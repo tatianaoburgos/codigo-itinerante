@@ -30,8 +30,11 @@ Gestor da marca: **Gabriel Lume**.
 - MIV (pagas/proprietárias, não self-hostáveis):
   - Display/marca: **Ellograph CF** (Connary Fagen).
   - Auxiliar: **Arial Rounded MT Bold** (Monotype).
-- Substitutas livres adotadas (self-host via `@fontsource-variable`, respeitando o
-  espírito "arredondada, amigável, simples"):
-  - Display: **Fredoka Variable** → `--font-display`.
-  - Corpo: **Nunito Variable** → `--font-corpo`.
+- Substituta livre adotada em todo o site (self-host via `@fontsource-variable`), decisão final
+  registrada em `PENDENCIAS.md`: **Space Grotesk Variable** — geométrica e angular, no espírito
+  do logotipo — usada tanto para display quanto para corpo (`--font-display` e `--font-corpo`).
+  As primeiras candidatas avaliadas (Fredoka Variable + Nunito Variable, mais arredondadas) foram
+  descartadas em favor de uma família só, mais próxima do caráter do logotipo.
   - Mono: **Spline Sans Mono Variable** → `--font-mono`.
+- O Gabriel tem a opção de comprar a licença web de Ellograph CF ou Arial Rounded MT Bold, se
+  quiser a tipografia original do MIV no site (ver `PENDENCIAS.md`).
