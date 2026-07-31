@@ -2,7 +2,7 @@
 export const dados = {
   nome: "Tatiana Burgos",
   /** Número no formato wa.me: DDI + DDD + número, só dígitos. */
-  whatsapp: "5581996730570",
+  whatsapp: "5581971127821",
   mensagemWhatsApp: "Oi! Tenho um hostel e quero saber mais sobre a permuta.",
   email: "tatianaoburgos@gmail.com",
   linkedin: "https://www.linkedin.com/in/tatianaoburgos/",
