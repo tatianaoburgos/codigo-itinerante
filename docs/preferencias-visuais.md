@@ -80,6 +80,13 @@ Notas de identidade visual da aba "Critérios UX" da planilha (0-5): nota máxim
 ### Pousada do Cais — Paraty/RJ
 - **"Amo a combinação das cores"** — paleta aproveitável; **mas a forma como foi usada ficou cafona**. Usar a paleta, não a execução.
 
+### Porto das Palmeiras Hostel — Salvador/BA (Barra) · portodaspalmeirashostel.com.br
+- Site **"feio e sem graça" em geral — não é referência de execução global.**
+- **Mas duas seções específicas agradaram, confirmadas em 2026-07-31:**
+  - **"Distâncias dos principais pontos"**: lista simples, cada destino + distância (Praia do Porto da Barra 100 m, Farol da Barra 1 km, Elevador Lacerda 4,3 km, Rio Vermelho 4,7 km, Pelourinho 5,4 km) — a Praia do Porto da Barra vem com selo de autoridade ("3º melhor banho de mar do mundo", The Guardian). **Adotar o formato distância objetiva + citação de autoridade quando houver.**
+  - **"Pontos Turísticos"**: texto curto de abertura ("Orientações, roteiro personalizado, dúvidas, o @pphostel está disposto a ajudar") seguido de grade de ~8 fotos reais dos arredores (não do hostel) em 3 colunas, coladas sem espaçamento, sem legenda sobre a foto — variando aérea, pôr do sol, praia cheia, Pelourinho colorido. Fotos grandes carregando o peso visual, texto mínimo.
+- Reforça o guia "Como mostrar a região/atrações" (El Misti, Ponto de Luz) — mais um caso de distância/proximidade como argumento de venda.
+
 ## Reprovados — o que evitar (e por quê)
 
 | Site | Veredito |
