@@ -1,0 +1,39 @@
+---
+export type RedeSocial = 'instagram' | 'tiktok' | 'facebook';
+
+interface Props {
+  rede: RedeSocial;
+  class?: string;
+}
+
+const { rede, class: classe } = Astro.props;
+
+/**
+ * Ícones de redes sociais desenhados à mão (traço grosso, viewBox 48),
+ * mesmo espírito da biblioteca de símbolos de comodidade
+ * (SimboloComodidade.astro) — nunca ícones literais de biblioteca de
+ * terceiros. Ver diretrizes-design.md.
+ */
+const desenhos: Record<RedeSocial, string> = {
+  instagram: `
+    <rect x="6" y="6" width="36" height="36" rx="12" />
+    <circle cx="24" cy="24" r="8" />
+    <circle cx="34" cy="14" r="1.2" fill="currentColor" stroke="none" />`,
+  tiktok: `
+    <path d="M32 7c1 4.6 4 7.4 9.2 8v5.4c-3.2 0-6.2-.8-9.2-2.8v12.8a10 10 0 1 1-10-10c.6 0 1.2 0 1.8.2" />`,
+  facebook: `
+    <path d="M28 41v-14h4.6l.8-5.6H28V17.2c0-1.6.4-2.6 2.6-2.6H34V9c-.6 0-2.4-.2-4.4-.2-4.4 0-7.2 2.6-7.2 7.4v5.2H17.4v5.6h5v14" />`,
+};
+---
+
+<svg
+  viewBox="0 0 48 48"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="4"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  class={classe}
+  set:html={desenhos[rede]}
+/>

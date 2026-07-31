@@ -117,6 +117,8 @@ export const configClienteSchema = z.object({
     whatsapp: z.string().regex(/^\d{12,13}$/, 'somente dígitos, com DDI e DDD (ex.: 5571999998888)'),
     email: z.email(),
     instagram: z.string().optional(),
+    tiktok: z.string().optional(),
+    facebook: z.string().optional(),
   }),
   comodidades: z.array(comodidadeSchema).min(1).optional(),
   regiao: z.array(pontoRegiaoSchema).min(1).optional(),
