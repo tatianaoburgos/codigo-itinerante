@@ -2,56 +2,95 @@
   "nome": "LumeHostel",
   "idiomasDisponiveis": ["pt", "en"],
   "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg", "appleTouchIcon": "apple-touch-icon.png", "faviconPng": "favicon-32.png" },
-  "slogan": "Seu porto seguro para renovar energias e seguir explorando",
-  "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
+  "slogan": {
+    "pt": "Seu porto seguro para renovar energias e seguir explorando",
+    "en": "Your safe harbor to recharge and keep exploring"
+  },
+  "descricaoSeo": {
+    "pt": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",
+    "en": "LumeHostel in Manaíra, João Pessoa: a hostel designed for digital nomads, minutes from the beach."
+  },
   "sobre": {
-    "historia": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais."
+    "historia": {
+      "pt": "O LumeHostel fica em Manaíra, a poucos minutos a pé da praia, e nasce como ponto de orientação para quem viaja trabalhando. Aqui a ideia é simples: oferecer um porto seguro para renovar energias entre uma jornada e outra, com espaço pensado para quem precisa de foco durante o dia e descanso à noite. Um ambiente acolhedor para nômades digitais.",
+      "en": "LumeHostel is in Manaíra, just a short walk from the beach, and was created as a landmark for people who travel while they work. The idea here is simple: offer a safe harbor to recharge between one journey and the next, with space designed for those who need focus during the day and rest at night. A welcoming environment for digital nomads."
+    }
   },
   "acomodacoes": [
     {
-      "nome": "Dormitório Misto — 8 camas",
-      "capacidade": "Quarto misto com 8 camas (beliches)",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "nome": { "pt": "Dormitório Misto — 8 camas", "en": "Mixed Dorm — 8 beds" },
+      "capacidade": { "pt": "Quarto misto com 8 camas (beliches)", "en": "Mixed room with 8 beds (bunks)" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual por cama", "en": "Individual power outlet per bed" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "dormitorio-misto-8.jpg", "alt": "Dormitório misto amplo com cama de solteiro e beliches, armário branco e janela com persiana" }
       ]
     },
     {
-      "nome": "Dormitório Feminino — 4 camas",
-      "capacidade": "Quarto feminino com 4 camas (beliches)",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "nome": { "pt": "Dormitório Feminino — 4 camas", "en": "Female Dorm — 4 beds" },
+      "capacidade": { "pt": "Quarto feminino com 4 camas (beliches)", "en": "Female room with 4 beds (bunks)" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual por cama", "en": "Individual power outlet per bed" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "dormitorio-feminino-4.jpg", "alt": "Dormitório feminino com dois beliches de metal preto, armário e janela com grade decorativa" }
       ]
     },
     {
-      "nome": "Suíte Standard",
-      "capacidade": "2 pessoas, 1 cama de casal",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
+      "nome": { "pt": "Suíte Standard", "en": "Standard Suite" },
+      "capacidade": { "pt": "2 pessoas, 1 cama de casal", "en": "2 people, 1 double bed" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual", "en": "Individual power outlet" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "suite-standard.jpg", "alt": "Suíte privativa com cama de casal, mesa de madeira, cadeiras e espelho de corpo inteiro" }
       ]
     },
     {
-      "nome": "Dormitório Misto — 6 camas",
-      "capacidade": "Quarto misto com 6 camas (beliches)",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "nome": { "pt": "Dormitório Misto — 6 camas", "en": "Mixed Dorm — 6 beds" },
+      "capacidade": { "pt": "Quarto misto com 6 camas (beliches)", "en": "Mixed room with 6 beds (bunks)" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual por cama", "en": "Individual power outlet per bed" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "dormitorio-misto-6.jpg", "alt": "Dormitório misto com três beliches de metal e cortinas separando as camas" }
       ]
     },
     {
-      "nome": "Dormitório Feminino — 6 camas",
-      "capacidade": "Quarto feminino com 6 camas (beliches)",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual por cama", "Toalhas inclusas"],
+      "nome": { "pt": "Dormitório Feminino — 6 camas", "en": "Female Dorm — 6 beds" },
+      "capacidade": { "pt": "Quarto feminino com 6 camas (beliches)", "en": "Female room with 6 beds (bunks)" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual por cama", "en": "Individual power outlet per bed" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "dormitorio-feminino-6.jpg", "alt": "Dormitório feminino com beliches de metal preto, armário branco e piso de cerâmica" }
       ]
     },
     {
-      "nome": "Quarto Duplo",
-      "capacidade": "2 pessoas, 1 cama de casal",
-      "comodidades": ["Ar-condicionado", "Locker individual", "Tomada individual", "Toalhas inclusas"],
+      "nome": { "pt": "Quarto Duplo", "en": "Double Room" },
+      "capacidade": { "pt": "2 pessoas, 1 cama de casal", "en": "2 people, 1 double bed" },
+      "comodidades": [
+        { "pt": "Ar-condicionado", "en": "Air conditioning" },
+        { "pt": "Locker individual", "en": "Individual locker" },
+        { "pt": "Tomada individual", "en": "Individual power outlet" },
+        { "pt": "Toalhas inclusas", "en": "Towels included" }
+      ],
       "fotos": [
         { "arquivo": "quarto-duplo.jpg", "alt": "Quarto privativo com cama de casal, cortinas marrons, quadros na parede e mesa com cadeiras" }
       ]
@@ -66,11 +105,14 @@
     "cep": "58038-242",
     "mapsEmbedUrl": "https://www.google.com/maps?q=LumeHostel,+Av.+Pombal+1745,+Manaira,+Joao+Pessoa&output=embed",
     "comoChegar": [
-      "Aeroporto Internacional de João Pessoa a cerca de 18 km",
-      "Rodoviária de João Pessoa a cerca de 9 km",
-      "Praia de Manaíra a cerca de 8 minutos a pé"
+      { "pt": "Aeroporto Internacional de João Pessoa a cerca de 18 km", "en": "João Pessoa International Airport about 18 km away" },
+      { "pt": "Rodoviária de João Pessoa a cerca de 9 km", "en": "João Pessoa bus station about 9 km away" },
+      { "pt": "Praia de Manaíra a cerca de 8 minutos a pé", "en": "Manaíra Beach about an 8-minute walk" }
     ],
-    "resumo": "A poucos minutos da praia de Manaíra, no coração de João Pessoa."
+    "resumo": {
+      "pt": "A poucos minutos da praia de Manaíra, no coração de João Pessoa.",
+      "en": "Just minutes from Manaíra Beach, in the heart of João Pessoa."
+    }
   },
   "contato": {
     "whatsapp": "5583988411745",
@@ -80,72 +122,88 @@
   },
   "comodidades": [
     {
-      "nome": "Cozinha compartilhada",
-      "descricao": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes",
+      "nome": { "pt": "Cozinha compartilhada", "en": "Shared kitchen" },
+      "descricao": { "pt": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes", "en": "Fridge, microwave, water purifier and utensils available for guests" },
       "simbolo": "cozinha",
       "foto": { "arquivo": "cozinha.jpg", "alt": "Cozinha compartilhada do LumeHostel, com balcão e banquetas" }
     },
     {
-      "nome": "Pátio externo",
-      "descricao": "Espaço com mesas para refeições e convivência entre hóspedes",
+      "nome": { "pt": "Pátio externo", "en": "Outdoor patio" },
+      "descricao": { "pt": "Espaço com mesas para refeições e convivência entre hóspedes", "en": "Space with tables for meals and time together with other guests" },
       "simbolo": "patio",
       "foto": { "arquivo": "jardim.jpg", "alt": "Pátio de entrada do LumeHostel com mesas de madeira e a fachada com o logo ao fundo" }
     },
     {
-      "nome": "Coworking ergonômico",
-      "descricao": "Mesas amplas e cadeiras confortáveis para render no trabalho",
+      "nome": { "pt": "Coworking ergonômico", "en": "Ergonomic coworking space" },
+      "descricao": { "pt": "Mesas amplas e cadeiras confortáveis para render no trabalho", "en": "Spacious desks and comfortable chairs to get work done" },
       "simbolo": "cowork",
       "foto": { "arquivo": "coworking.jpg", "alt": "Sala de coworking do LumeHostel com mesas, cadeiras ergonômicas e notebooks junto à janela" }
     },
     {
-      "nome": "Espaço com redes",
-      "descricao": "Redes para descansar entre as atividades do dia",
+      "nome": { "pt": "Espaço com redes", "en": "Hammock area" },
+      "descricao": { "pt": "Redes para descansar entre as atividades do dia", "en": "Hammocks to rest between the day's activities" },
       "simbolo": "rede",
       "foto": { "arquivo": "redario.jpg", "alt": "Redário do LumeHostel, com redes amarelas no corredor externo entre os quartos" }
     },
-    { "nome": "Churrasqueira", "descricao": "Para reunir a galera em volta do fogo", "simbolo": "churrasqueira" },
-    { "nome": "Sala de jogos", "descricao": "Diversão garantida entre um passeio e outro", "simbolo": "jogos" },
-    { "nome": "Depósito de bagagem", "descricao": "Suas malas guardadas antes do check-in e depois do check-out", "simbolo": "bagagem" },
-    { "nome": "Ambiente acolhedor", "descricao": "Elogiado pelos hóspedes pelo aconchego e pela organização", "simbolo": "acolhedor" }
+    {
+      "nome": { "pt": "Churrasqueira", "en": "Barbecue area" },
+      "descricao": { "pt": "Para reunir a galera em volta do fogo", "en": "For gathering everyone around the fire" },
+      "simbolo": "churrasqueira"
+    },
+    {
+      "nome": { "pt": "Sala de jogos", "en": "Games room" },
+      "descricao": { "pt": "Diversão garantida entre um passeio e outro", "en": "Guaranteed fun between outings" },
+      "simbolo": "jogos"
+    },
+    {
+      "nome": { "pt": "Depósito de bagagem", "en": "Luggage storage" },
+      "descricao": { "pt": "Suas malas guardadas antes do check-in e depois do check-out", "en": "Keep your bags safe before check-in and after check-out" },
+      "simbolo": "bagagem"
+    },
+    {
+      "nome": { "pt": "Ambiente acolhedor", "en": "Welcoming atmosphere" },
+      "descricao": { "pt": "Elogiado pelos hóspedes pelo aconchego e pela organização", "en": "Praised by guests for its coziness and organization" },
+      "simbolo": "acolhedor"
+    }
   ],
   "regiao": [
     {
-      "nome": "Praia de Manaíra",
-      "descricao": "Praia urbana em frente ao bairro, com orla de bares e restaurantes",
+      "nome": { "pt": "Praia de Manaíra", "en": "Manaíra Beach" },
+      "descricao": { "pt": "Praia urbana em frente ao bairro, com orla de bares e restaurantes", "en": "Urban beach right by the neighborhood, with a waterfront strip of bars and restaurants" },
       "distancia": "600 m",
       "foto": { "arquivo": "regiao-praia-manaira.jpg", "alt": "Faixa de areia e calçadão da Praia de Manaíra, com a orla ao fundo, em João Pessoa"},
       "credito": "Patrick / CC BY-SA 3.0"
     },
     {
-      "nome": "Orla do Bessa",
-      "descricao": "Orla vizinha a Manaíra, com calçadão à beira-mar",
+      "nome": { "pt": "Orla do Bessa", "en": "Bessa Waterfront" },
+      "descricao": { "pt": "Orla vizinha a Manaíra, com calçadão à beira-mar", "en": "Waterfront next to Manaíra, with a seaside boardwalk" },
       "distancia": "750 m",
       "foto": { "arquivo": "regiao-orla-bessa.jpg", "alt": "Orla da Praia do Bessa em João Pessoa" },
       "credito": "Matheus Jampa da Silva / CC BY-SA 4.0"
     },
     {
-      "nome": "Pôr do sol no Jacaré",
-      "descricao": "Praia em Cabedelo, na foz do Rio Paraíba, conhecida pelo pôr do sol",
+      "nome": { "pt": "Pôr do sol no Jacaré", "en": "Sunset at Jacaré Beach" },
+      "descricao": { "pt": "Praia em Cabedelo, na foz do Rio Paraíba, conhecida pelo pôr do sol", "en": "Beach in Cabedelo, at the mouth of the Paraíba River, known for its sunset" },
       "distancia": "10 km",
       "foto": { "arquivo": "regiao-por-do-sol-jacare.jpg", "alt": "Pôr do sol na Praia do Jacaré, em João Pessoa" },
       "credito": "Marinelson Almeida / CC BY 2.0"
     },
     {
-      "nome": "Centro Histórico",
-      "descricao": "Conjunto de prédios históricos do Centro/Varadouro de João Pessoa",
+      "nome": { "pt": "Centro Histórico", "en": "Historic Center" },
+      "descricao": { "pt": "Conjunto de prédios históricos do Centro/Varadouro de João Pessoa", "en": "Cluster of historic buildings in João Pessoa's Centro/Varadouro district" },
       "distancia": "4 km",
       "foto": { "arquivo": "regiao-centro-historico.jpg", "alt": "Vista do Centro Histórico de João Pessoa" },
       "credito": "Rogerio121402 / CC BY-SA 4.0"
     },
     {
-      "nome": "Farol do Cabo Branco",
-      "descricao": "Farol no ponto mais oriental das Américas, no bairro Cabo Branco",
+      "nome": { "pt": "Farol do Cabo Branco", "en": "Cabo Branco Lighthouse" },
+      "descricao": { "pt": "Farol no ponto mais oriental das Américas, no bairro Cabo Branco", "en": "Lighthouse at the easternmost point of the Americas, in the Cabo Branco neighborhood" },
       "distancia": "3,1 km",
       "foto": { "arquivo": "regiao-farol-cabo-branco.jpg", "alt": "Farol do Cabo Branco, em João Pessoa" }
     },
     {
-      "nome": "Estação Cabo Branco",
-      "descricao": "Estação Cabo Branco de Ciência, Cultura e Artes, museu projetado por Oscar Niemeyer",
+      "nome": { "pt": "Estação Cabo Branco", "en": "Cabo Branco Station" },
+      "descricao": { "pt": "Estação Cabo Branco de Ciência, Cultura e Artes, museu projetado por Oscar Niemeyer", "en": "Cabo Branco Station of Science, Culture and Arts, a museum designed by Oscar Niemeyer" },
       "distancia": "9 km",
       "foto": { "arquivo": "regiao-estacao-cabo-branco.jpg", "alt": "Estação Cabo Branco de Ciência, Cultura e Artes, em João Pessoa" },
       "credito": "A. Júnior / CC BY 2.0"
@@ -153,33 +211,45 @@
   ],
   "depoimentos": [
     {
-      "texto": "Superou muito as minhas expectativas. É uma das melhores estruturas de Hostel que já encontrei. Tudo muito organizado, limpo, e nota-se muito capricho em tudo. Mas o que mais me chamou atenção: a equipe. Voltaria mais vezes só pela atenção, respeito, carinho e educação com a qual fui tratado.",
+      "texto": {
+        "pt": "Superou muito as minhas expectativas. É uma das melhores estruturas de Hostel que já encontrei. Tudo muito organizado, limpo, e nota-se muito capricho em tudo. Mas o que mais me chamou atenção: a equipe. Voltaria mais vezes só pela atenção, respeito, carinho e educação com a qual fui tratado.",
+        "en": "It far exceeded my expectations. It's one of the best hostel setups I've ever found. Everything very organized, clean, and you can tell a lot of care went into it. But what struck me most: the team. I'd come back just for the attention, respect, care and courtesy I was treated with."
+      },
       "nome": "Gabriel B.",
       "fonte": "via Google"
     },
     {
-      "texto": "Eu amei a experiência, é um ambiente acolhedor, tranquilo, me senti em casa. Se você procura um espaço que respeite a sua tranquilidade, descanso e ainda assim sugira atividades diferentes para te acolher e te fazer não se sentir sozinho na sua viagem, você vai ao lugar certo.",
+      "texto": {
+        "pt": "Eu amei a experiência, é um ambiente acolhedor, tranquilo, me senti em casa. Se você procura um espaço que respeite a sua tranquilidade, descanso e ainda assim sugira atividades diferentes para te acolher e te fazer não se sentir sozinho na sua viagem, você vai ao lugar certo.",
+        "en": "I loved the experience — it's a welcoming, peaceful environment, I felt right at home. If you're looking for a place that respects your peace and rest while still offering different activities to welcome you and keep you from feeling alone on your trip, this is the right place."
+      },
       "nome": "Camila C.",
       "fonte": "via Google"
     },
     {
-      "texto": "Um dos melhores hostels que já fiquei. Muito limpo. Tinha noite de tacos, bate-papo com histórias de viajantes e teve uma aula de forró muito massa que participei e depois dançamos quadrilha. Foi muito divertido!",
+      "texto": {
+        "pt": "Um dos melhores hostels que já fiquei. Muito limpo. Tinha noite de tacos, bate-papo com histórias de viajantes e teve uma aula de forró muito massa que participei e depois dançamos quadrilha. Foi muito divertido!",
+        "en": "One of the best hostels I've stayed at. Very clean. There was taco night, chats swapping travel stories, and a really fun forró class I joined, and afterwards we danced quadrilha. It was a blast!"
+      },
       "nome": "Desirree",
       "fonte": "via Booking"
     },
     {
-      "texto": "Feito de viajante para viajante. Ambiente acolhedor e familiar. Tudo muito limpo. Cozinha equipada. Quartos com ar-condicionado. Cowork excelente. Internet rápida.",
+      "texto": {
+        "pt": "Feito de viajante para viajante. Ambiente acolhedor e familiar. Tudo muito limpo. Cozinha equipada. Quartos com ar-condicionado. Cowork excelente. Internet rápida.",
+        "en": "Made by a traveler, for travelers. Welcoming, homey atmosphere. Everything very clean. Fully equipped kitchen. Air-conditioned rooms. Excellent coworking space. Fast internet."
+      },
       "nome": "Rudá A.",
       "fonte": "via Google"
     }
   ],
   "destaques": [
     {
-      "frase": "Fique à vontade: a casa também é sua",
+      "frase": { "pt": "Fique à vontade: a casa também é sua", "en": "Make yourself at home: this house is yours too" },
       "foto": { "arquivo": "destaque-cozinha.jpg", "alt": "Copa do LumeHostel com paredes amarelas, mural ondulado terracota e mesa de vidro com banquinhos" }
     },
     {
-      "frase": "Um porto seguro entre uma jornada e outra",
+      "frase": { "pt": "Um porto seguro entre uma jornada e outra", "en": "A safe harbor between one journey and the next" },
       "foto": { "arquivo": "destaque-recepcao.jpg", "alt": "Recepção do LumeHostel banhada de sol, com balcão de madeira e vista para o pátio pelo portão decorado" }
     }
   ],
