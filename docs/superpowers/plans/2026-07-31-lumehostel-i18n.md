@@ -34,6 +34,8 @@
 
 **Nota de escopo**: o spec (`docs/superpowers/specs/2026-07-31-lumehostel-i18n-design.md`, seção 3) lista os campos de prosa a tornar bilíngues, mas não incluiu `destaque.frase` — uma omissão da enumeração, não uma decisão deliberada (o LumeHostel usa `destaques` com 2 itens reais; sem tradução, a página em inglês mostraria a frase em português bem no meio de uma seção full-bleed). Esta task já inclui `destaque.frase` na lista, como correção de escopo. Avise a autora disso ao final do plano.
 
+**Nota de dependência**: o bloco `contato` abaixo já inclui `tiktok`/`facebook` (strings simples, não traduzidas — são nomes de plataforma) porque o plano `docs/superpowers/plans/2026-07-31-redes-sociais-rodape.md` foi commitado antes deste (`6330f7b`, `713c212`) e já adicionou esses dois campos ao `schema.ts` real. Esta task parte desse estado — não reverte os campos.
+
 - [ ] **Step 1: Escrever o schema novo**
 
 Substituir o conteúdo inteiro de `template/src/lib/schema.ts** por:
@@ -177,6 +179,8 @@ export const configClienteSchema = z.object({
     whatsapp: z.string().regex(/^\d{12,13}$/, 'somente dígitos, com DDI e DDD (ex.: 5571999998888)'),
     email: z.email(),
     instagram: z.string().optional(),
+    tiktok: z.string().optional(),
+    facebook: z.string().optional(),
   }),
   comodidades: z.array(comodidadeSchema).min(1).optional(),
   regiao: z.array(pontoRegiaoSchema).min(1).optional(),
@@ -346,6 +350,8 @@ git commit -m "Adiciona helpers t() e idiomaAtual() para resolver texto por idio
 - Consumes: nada.
 - Produces: `textos: { pt: {...}, en: {...} }` (const, tipo inferido) — namespaces `nav`, `footer`, `botaoWhatsApp`, `pagina`, `mapa`. Consumido por Tasks 5-10.
 
+**Nota de dependência**: `footer.sigaAGente` foi adicionado à lista de chaves — é rótulo do bloco "Siga a gente" do rodapé (plano `redes-sociais-rodape.md`, commit `6330f7b`), texto de interface como `faleConosco`, não nome de marca/plataforma, então precisa de tradução como qualquer outro rótulo fixo do motor.
+
 - [ ] **Step 1: Criar o arquivo**
 
 ```ts
@@ -364,6 +370,7 @@ export const textos = {
     },
     footer: {
       faleConosco: 'Fale conosco',
+      sigaAGente: 'Siga a gente',
     },
     botaoWhatsApp: {
       rotuloPadrao: 'Reserve pelo WhatsApp',
@@ -409,6 +416,7 @@ export const textos = {
     },
     footer: {
       faleConosco: 'Get in touch',
+      sigaAGente: 'Follow us',
     },
     botaoWhatsApp: {
       rotuloPadrao: 'Book on WhatsApp',
@@ -888,28 +896,34 @@ import BotaoWhatsApp from './BotaoWhatsApp.astro';
 const idioma = idiomaAtual(Astro.currentLocale);
 const txt = textos[idioma].nav;
 
+const linkPt = getRelativeLocaleUrl('pt');
+const linkEn = getRelativeLocaleUrl('en');
+// Base do link "home" pro idioma atual — usada tanto pelo logo quanto pelos
+// itens de âncora do menu (abas), pra não levar quem está em /en/ de volta
+// pra página em português. Só o alternador PT/EN em si (abaixo) precisa de
+// linkPt/linkEn crus, sem esse prefixo.
+const linkBase = idioma === 'en' ? linkEn : linkPt;
+
 const abas = [
-  { href: '/#sobre', rotulo: txt.oHostel },
-  { href: '/#acomodacoes', rotulo: txt.acomodacoes },
-  { href: '/#comodidades', rotulo: txt.comodidades },
-  { href: '/#vibe', rotulo: txt.vibe },
-  { href: '/#regiao', rotulo: txt.regiao },
-  { href: '/#depoimentos', rotulo: txt.depoimentos },
-  { href: '/#localizacao', rotulo: txt.localizacao },
+  { href: `${linkBase}#sobre`, rotulo: txt.oHostel },
+  { href: `${linkBase}#acomodacoes`, rotulo: txt.acomodacoes },
+  { href: `${linkBase}#comodidades`, rotulo: txt.comodidades },
+  { href: `${linkBase}#vibe`, rotulo: txt.vibe },
+  { href: `${linkBase}#regiao`, rotulo: txt.regiao },
+  { href: `${linkBase}#depoimentos`, rotulo: txt.depoimentos },
+  { href: `${linkBase}#localizacao`, rotulo: txt.localizacao },
 ]
-  .filter((aba) => aba.href !== '/#sobre' || config.sobre)
-  .filter((aba) => aba.href !== '/#acomodacoes' || config.acomodacoes)
-  .filter((aba) => aba.href !== '/#comodidades' || config.comodidades)
-  .filter((aba) => aba.href !== '/#vibe' || config.vibe)
-  .filter((aba) => aba.href !== '/#regiao' || config.regiao)
-  .filter((aba) => aba.href !== '/#depoimentos' || config.depoimentos)
-  .filter((aba) => aba.href !== '/#localizacao' || config.localizacao.mapsEmbedUrl);
+  .filter((aba) => aba.href !== `${linkBase}#sobre` || config.sobre)
+  .filter((aba) => aba.href !== `${linkBase}#acomodacoes` || config.acomodacoes)
+  .filter((aba) => aba.href !== `${linkBase}#comodidades` || config.comodidades)
+  .filter((aba) => aba.href !== `${linkBase}#vibe` || config.vibe)
+  .filter((aba) => aba.href !== `${linkBase}#regiao` || config.regiao)
+  .filter((aba) => aba.href !== `${linkBase}#depoimentos` || config.depoimentos)
+  .filter((aba) => aba.href !== `${linkBase}#localizacao` || config.localizacao.mapsEmbedUrl);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 
 const mostrarAlternador = (config.idiomasDisponiveis?.length ?? 0) > 1;
-const linkPt = getRelativeLocaleUrl('pt');
-const linkEn = getRelativeLocaleUrl('en');
 ---
 
 <header
@@ -921,7 +935,7 @@ const linkEn = getRelativeLocaleUrl('en');
     class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4"
   >
     <a
-      href="/"
+      href={linkBase}
       class="font-display text-xl font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
     >
       {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
@@ -1027,6 +1041,19 @@ const linkEn = getRelativeLocaleUrl('en');
 
 Nota: o `aria-label` de abrir/fechar menu é setado por um `<script>` que roda no navegador — não tem acesso a `Astro.currentLocale` (isso só existe em tempo de build/SSR). Por isso os rótulos traduzidos são passados via `data-rotulo-abrir`/`data-rotulo-fechar` no próprio botão, e o script lê `dataset` em vez de usar strings cravadas.
 
+**Nota sobre `linkBase` (correção de bug encontrada na revisão do plano)**: numa
+versão anterior deste plano, o link do logo e os `href` de `abas` ficavam
+fixos em `/`/`/#acomodacoes` etc., iguais ao `Nav.astro` de hoje (que só
+serve `/`, então "raiz" e "página atual" sempre coincidem). Com `/en/`
+virando uma segunda página real que renderiza as mesmas seções, isso
+quebraria: clicar no logo ou em qualquer item do menu de seção estando em
+`/en/` levaria de volta pra `/` (página em português), abandonando o site em
+inglês — só o alternador PT/EN em si (que já usava `linkPt`/`linkEn` via
+`getRelativeLocaleUrl`) ficava correto. `linkBase` resolve isso: em `/`
+gera exatamente os mesmos hrefs de hoje (`/#acomodacoes` etc., zero mudança
+pra `demo`/`maravista`, que sempre resolvem `idioma === 'pt'`); em `/en/`
+gera `/en#acomodacoes` etc., mantendo a navegação dentro do idioma atual.
+
 - [ ] **Step 2: Build e checagem**
 
 ```
@@ -1036,14 +1063,17 @@ Select-String -Path dist/index.html -Pattern 'Acomodações'
 Select-String -Path dist/en/index.html -Pattern 'Rooms'
 Select-String -Path dist/en/index.html -Pattern '>PT<'
 Select-String -Path dist/index.html -Pattern '>EN<'
+Select-String -Path dist/en/index.html -Pattern 'href="/en#acomodacoes"'
+Select-String -Path dist/index.html -Pattern 'href="/#acomodacoes"'
 ```
-Expected: `dist/index.html` (pt) mostra "Acomodações" e o link "EN"; `dist/en/index.html` mostra "Rooms" e o rótulo ativo "PT".
+Expected: `dist/index.html` (pt) mostra "Acomodações" e o link "EN"; `dist/en/index.html` mostra "Rooms" e o rótulo ativo "PT". Crucial: o item de menu "Acomodações"/"Rooms" e o link do logo em `dist/en/index.html` apontam pra `/en#acomodacoes` (não `/#acomodacoes` puro) — confirma que navegar pelo menu ou clicar no logo estando em `/en/` não manda de volta pra página em português; em `dist/index.html` o href continua `/#acomodacoes`, idêntico ao comportamento de hoje.
 
 ```
 $env:CLIENTE = 'demo'; npm run build
 Select-String -Path dist/index.html -Pattern '>PT<|>EN<'
+Select-String -Path dist/index.html -Pattern 'href="/#acomodacoes"'
 ```
-Expected: nenhuma ocorrência — `demo` não tem `idiomasDisponiveis`, o alternador não aparece.
+Expected: nenhuma ocorrência de `>PT<`/`>EN<` — `demo` não tem `idiomasDisponiveis`, o alternador não aparece; o href do menu de seção continua `/#acomodacoes` (comportamento inalterado, já que `demo` nunca resolve `idioma === 'en'`).
 
 - [ ] **Step 3: Commit**
 
@@ -1062,11 +1092,19 @@ git commit -m "Traduz rotulos do Nav e adiciona alternador PT/EN"
 **Interfaces:**
 - Consumes: `idiomaAtual`, `t` (Task 2); `textos` (Task 3).
 
+**Nota de dependência**: o `Footer.astro` real já foi reescrito pelo plano
+`redes-sociais-rodape.md` (commit `6330f7b`) para incluir o bloco "Siga a
+gente" (`IconeRedeSocial`, `linkTiktok`, `linkFacebook`, `temRedeSocial`,
+grid de 3 colunas condicional). O bloco abaixo parte **desse** arquivo real
+e acrescenta só as mudanças de i18n por cima — não é mais uma reversão pro
+estado de 2 colunas de antes da Task de redes sociais.
+
 - [ ] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
 import { config } from '../lib/cliente';
+import IconeRedeSocial from './IconeRedeSocial.astro';
 import { idiomaAtual, t } from '../lib/i18n';
 import { textos } from '../lib/textos';
 
@@ -1077,8 +1115,16 @@ const linkWhatsApp = `https://wa.me/${config.contato.whatsapp}`;
 const linkInstagram = config.contato.instagram
   ? `https://instagram.com/${config.contato.instagram}`
   : undefined;
+const linkTiktok = config.contato.tiktok ? `https://www.tiktok.com/@${config.contato.tiktok}` : undefined;
+const linkFacebook = config.contato.facebook
+  ? `https://www.facebook.com/${config.contato.facebook}`
+  : undefined;
+const temRedeSocial = Boolean(linkInstagram || linkTiktok || linkFacebook);
+
 const estilosLink =
   'underline decoration-fitinha decoration-2 underline-offset-4 transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fitinha';
+const estilosIcone =
+  'transition hover:opacity-75 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-fitinha';
 ---
 
 <footer class="relative isolate overflow-hidden bg-noite text-sal">
@@ -1093,13 +1139,18 @@ const estilosLink =
     aria-hidden="true"
   >
   </div>
-  <div class="relative mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2">
+  <div
+    class:list={[
+      'relative mx-auto grid max-w-5xl gap-8 px-4 py-10 sm:grid-cols-2',
+      { 'lg:grid-cols-3': temRedeSocial },
+    ]}
+  >
     <div>
       <p class="font-display text-lg font-bold text-espuma">{config.nome}</p>
       <p class="mt-1 max-w-xs text-sm">{t(config.slogan, idioma)}</p>
       <p class="mt-4 text-sm">{config.localizacao.endereco}</p>
     </div>
-    <div class="text-sm sm:justify-self-end">
+    <div class="text-sm sm:justify-self-end lg:justify-self-start">
       <p class="font-mono text-xs tracking-widest text-espuma uppercase">{txt.faleConosco}</p>
       <ul class="mt-3 space-y-2">
         <li>
@@ -1108,20 +1159,41 @@ const estilosLink =
         <li>
           <a href={`mailto:${config.contato.email}`} class={estilosLink}>{config.contato.email}</a>
         </li>
-        {
-          linkInstagram && (
-            <li>
-              <a href={linkInstagram} target="_blank" rel="noopener noreferrer" class={estilosLink}>
-                @{config.contato.instagram}
-              </a>
-            </li>
-          )
-        }
       </ul>
     </div>
+    {
+      temRedeSocial && (
+        <div class="text-sm sm:justify-self-end lg:justify-self-start">
+          <p class="font-mono text-xs tracking-widest text-espuma uppercase">{txt.sigaAGente}</p>
+          <div class="mt-3 flex justify-center gap-4">
+            {linkInstagram && (
+              <a href={linkInstagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" class={estilosIcone}>
+                <IconeRedeSocial rede="instagram" class="h-6 w-6 text-fitinha" />
+              </a>
+            )}
+            {linkTiktok && (
+              <a href={linkTiktok} target="_blank" rel="noopener noreferrer" aria-label="TikTok" class={estilosIcone}>
+                <IconeRedeSocial rede="tiktok" class="h-6 w-6 text-fitinha" />
+              </a>
+            )}
+            {linkFacebook && (
+              <a href={linkFacebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" class={estilosIcone}>
+                <IconeRedeSocial rede="facebook" class="h-6 w-6 text-fitinha" />
+              </a>
+            )}
+          </div>
+        </div>
+      )
+    }
   </div>
 </footer>
 ```
+
+Nota: `aria-label="Instagram"`/`"TikTok"`/`"Facebook"` e os nomes dentro de
+`IconeRedeSocial` continuam fixos nos dois idiomas — são nomes de
+plataforma, mesma regra de não-tradução já usada pra nome/fonte de
+depoimento e crédito de foto. Só `{txt.sigaAGente}` (rótulo da seção) é
+traduzido, igual `{txt.faleConosco}`.
 
 - [ ] **Step 2: Build e checagem**
 
@@ -1130,14 +1202,19 @@ npm run check
 $env:CLIENTE = 'lumehostel'; npm run build
 Select-String -Path dist/en/index.html -Pattern 'Get in touch'
 Select-String -Path dist/index.html -Pattern 'Fale conosco'
+Select-String -Path dist/en/index.html -Pattern 'Follow us'
+Select-String -Path dist/index.html -Pattern 'Siga a gente'
+Select-String -Path dist/en/index.html -Pattern 'tiktok.com/@lumehostel'
 ```
-Expected: cada arquivo mostra a versão do seu próprio idioma.
+Expected: cada arquivo mostra a versão do seu próprio idioma (inclusive o
+rótulo "Siga a gente"/"Follow us"); o bloco de redes sociais (Instagram +
+TikTok do LumeHostel) continua presente nos dois idiomas.
 
 - [ ] **Step 3: Commit**
 
 ```bash
 git add template/src/components/Footer.astro
-git commit -m "Traduz rodape (Fale conosco / Get in touch e slogan)"
+git commit -m "Traduz rodape (Fale conosco/Siga a gente e equivalentes em ingles, slogan)"
 ```
 
 ---
@@ -1893,6 +1970,8 @@ git commit -m "Adiciona lang/og:locale dinamicos e hreflang ao Layout"
 
 **Nota de escopo conhecida**: `foto.alt` (texto alternativo de imagem) **não é traduzido nesta rodada** — permanece só em português mesmo em `/en/`. Isso é uma lacuna real de acessibilidade/SEO na versão em inglês (leitor de tela lerá a descrição em português), mas ficou fora do campo de campos aprovado no spec; registrar como pendência para a autora decidir se entra numa rodada futura.
 
+**Nota de dependência**: o `contato.tiktok` abaixo já reflete o config real (commit `713c212`, plano `redes-sociais-rodape.md`) — não remover.
+
 - [ ] **Step 1: Substituir o `config.json` inteiro**
 
 ```json
@@ -2015,7 +2094,8 @@ git commit -m "Adiciona lang/og:locale dinamicos e hreflang ao Layout"
   "contato": {
     "whatsapp": "5583988411745",
     "email": "lumehostel@gmail.com",
-    "instagram": "lumehostel"
+    "instagram": "lumehostel",
+    "tiktok": "lumehostel"
   },
   "comodidades": [
     {
@@ -2225,11 +2305,14 @@ $env:CLIENTE = 'lumehostel'; npm run dev
 No navegador:
 1. Abrir `http://localhost:4321/` — confirmar site em português, alternador "PT / EN" no Nav com "PT" ativo (não clicável) e "EN" como link.
 2. Clicar em "EN" — confirmar navegação para `/en/`, conteúdo inteiro em inglês (nav, hero, seções, rodapé, botões de WhatsApp).
-3. Na seção Depoimentos em `/en/`, confirmar que cada citação tem a nota "Translated from Portuguese." abaixo.
-4. Clicar em "PT" a partir de `/en/` — confirmar volta para `/` em português.
-5. Testar o botão de WhatsApp em `/en/` — confirmar que a mensagem pré-preenchida está em inglês.
-6. Ver código-fonte da página (`Ctrl+U`) em `/en/` — confirmar `<html lang="en">`, `<link rel="alternate" hreflang="pt" ...>` e `<link rel="alternate" hreflang="en" ...>`, `og:locale` = `en_US`.
-7. Repetir a checagem de `hreflang`/`lang`/`og:locale` em `/` (esperado: `lang="pt-BR"`, `og:locale` = `pt_BR`).
+3. **(cobre o bug de locale do Nav corrigido nesta revisão)** Em `/en/`, abrir o menu hambúrguer e clicar num item de seção (ex. "Rooms" ou "Amenities") — confirmar que a URL continua começando com `/en` e a página rola até a seção, sem voltar pra `/` em português.
+4. Em `/en/`, clicar no logo "LumeHostel" no canto esquerdo do Nav — confirmar que a URL continua `/en/` (não volta pra `/`).
+5. Na seção Depoimentos em `/en/`, confirmar que cada citação tem a nota "Translated from Portuguese." abaixo.
+6. Clicar em "PT" a partir de `/en/` — confirmar volta para `/` em português.
+7. Testar o botão de WhatsApp em `/en/` — confirmar que a mensagem pré-preenchida está em inglês.
+8. No rodapé em `/en/`, confirmar o rótulo "Follow us" (em vez de "Siga a gente") acima dos ícones de Instagram/TikTok.
+9. Ver código-fonte da página (`Ctrl+U`) em `/en/` — confirmar `<html lang="en">`, `<link rel="alternate" hreflang="pt" ...>` e `<link rel="alternate" hreflang="en" ...>`, `og:locale` = `en_US`.
+10. Repetir a checagem de `hreflang`/`lang`/`og:locale` em `/` (esperado: `lang="pt-BR"`, `og:locale` = `pt_BR`).
 
 - [ ] **Step 5: Parar o servidor de dev**
 
