@@ -14,6 +14,11 @@ import CascataOndas from './CascataOndas.astro';
 import { config } from '../lib/cliente';
 import { foto } from '../lib/fotos';
 import { aspectMosaico } from '../lib/mosaico';
+import { idiomaAtual, t } from '../lib/i18n';
+import { textos } from '../lib/textos';
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].pagina;
 
 const comodidadesComFoto = config.comodidades?.filter((c) => c.foto) ?? [];
 const comodidadesSemFoto = config.comodidades?.filter((c) => !c.foto) ?? [];
@@ -28,12 +33,12 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
       <section id="acomodacoes" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
         <CascataOndas />
         <div class="mx-auto max-w-5xl px-4 py-14">
-          <TituloSecao eyebrow="Acomodações">Escolha seu canto</TituloSecao>
+          <TituloSecao eyebrow={txt.acomodacoesEyebrow}>{txt.acomodacoesTitulo}</TituloSecao>
           <div class="revela mt-8">
             <Acomodacoes />
           </div>
           <div class="mt-6 text-center">
-            <BotaoWhatsApp rotulo="Consultar disponibilidade no WhatsApp" />
+            <BotaoWhatsApp rotulo={txt.acomodacoesCta} />
           </div>
         </div>
       </section>
@@ -48,7 +53,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     <section id="sobre" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
       <CascataOndas />
       <div class="mx-auto max-w-5xl px-4 py-14">
-        <TituloSecao>A casa</TituloSecao>
+        <TituloSecao>{txt.casaTitulo}</TituloSecao>
         <div
           class:list={[
             'revela mt-8',
@@ -66,7 +71,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
               />
             )
           }
-          <p class="max-w-2xl text-lg leading-relaxed">{config.sobre.historia}</p>
+          <p class="max-w-2xl text-lg leading-relaxed">{t(config.sobre.historia, idioma)}</p>
         </div>
       </div>
     </section>
@@ -80,7 +85,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
       <section id="comodidades" class="scroll-mt-36 sm:scroll-mt-20 bg-sal">
         <div class="mx-auto max-w-5xl px-4 py-14">
-          <TituloSecao eyebrow="Comodidades">A vida por aqui</TituloSecao>
+          <TituloSecao eyebrow={txt.comodidadesEyebrow}>{txt.comodidadesTitulo}</TituloSecao>
           {
             comodidadesComFoto.length > 0 && (
               <div class="mt-12 space-y-12">
@@ -103,9 +108,9 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
                           class="mb-4 h-12 w-12 text-fitinha"
                         />
                       )}
-                      <h3 class="font-display text-2xl font-bold text-mare">{comodidade.nome}</h3>
+                      <h3 class="font-display text-2xl font-bold text-mare">{t(comodidade.nome, idioma)}</h3>
                       {comodidade.descricao && (
-                        <p class="mt-3 text-lg leading-relaxed">{comodidade.descricao}</p>
+                        <p class="mt-3 text-lg leading-relaxed">{t(comodidade.descricao, idioma)}</p>
                       )}
                     </div>
                   </div>
@@ -127,8 +132,8 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
                       <span class="mt-3 h-0.5 w-6 shrink-0 bg-fitinha" aria-hidden="true" />
                     )}
                     <div>
-                      <h3 class="font-display font-bold text-mare">{comodidade.nome}</h3>
-                      {comodidade.descricao && <p class="mt-1 text-sm">{comodidade.descricao}</p>}
+                      <h3 class="font-display font-bold text-mare">{t(comodidade.nome, idioma)}</h3>
+                      {comodidade.descricao && <p class="mt-1 text-sm">{t(comodidade.descricao, idioma)}</p>}
                     </div>
                   </li>
                 ))}
@@ -148,7 +153,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     <section id="vibe" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
       <CascataOndas />
       <div class="mx-auto max-w-5xl px-4 py-14">
-        <TituloSecao eyebrow="A vibe">Como é ficar aqui</TituloSecao>
+        <TituloSecao eyebrow={txt.vibeEyebrow}>{txt.vibeTitulo}</TituloSecao>
         <div class="revela mt-8">
           <Vibe />
         </div>
@@ -164,7 +169,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     <section id="regiao" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
       <CascataOndas />
       <div class="mx-auto max-w-5xl px-4 py-14">
-      <TituloSecao eyebrow="A região">Explore os arredores</TituloSecao>
+      <TituloSecao eyebrow={txt.regiaoEyebrow}>{txt.regiaoTitulo}</TituloSecao>
       {/* Celular: mosaico em 2 colunas com alturas variadas. Computador: fileiras
           alinhadas na mesma altura, alternando foto grande + pequena (ritmo
           Parador/Kenoa) — display:grid desativa as columns no lg. */}
@@ -188,9 +193,9 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
             </div>
             <figcaption class="px-1 pt-3">
               <p class="font-mono text-xs tracking-widest text-fitinha uppercase">{ponto.distancia}</p>
-              <h3 class="mt-1 font-display text-lg font-bold">{ponto.nome}</h3>
-              <p class="mt-1 text-sm opacity-90">{ponto.descricao}</p>
-              {ponto.credito && <p class="mt-1 text-xs opacity-60">Foto: {ponto.credito}</p>}
+              <h3 class="mt-1 font-display text-lg font-bold">{t(ponto.nome, idioma)}</h3>
+              <p class="mt-1 text-sm opacity-90">{t(ponto.descricao, idioma)}</p>
+              {ponto.credito && <p class="mt-1 text-xs opacity-60">{txt.fotoCredito} {ponto.credito}</p>}
             </figcaption>
           </figure>
         ))}
@@ -208,8 +213,8 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
       <CascataOndas cor="var(--color-mare)" />
       <MarcaDagua />
       <div class="mx-auto max-w-5xl px-4 py-14">
-        <TituloSecao eyebrow="Depoimentos" claro>
-          Quem passou por aqui
+        <TituloSecao eyebrow={txt.depoimentosEyebrow} claro>
+          {txt.depoimentosTitulo}
         </TituloSecao>
         <div class="mt-10 grid gap-x-10 gap-y-12 sm:grid-cols-2">
           {config.depoimentos.map((depoimento) => (
@@ -218,12 +223,15 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
                 class="pointer-events-none absolute -top-3 left-0 font-display text-8xl leading-none text-noite/25 select-none"
                 aria-hidden="true"
               >
-                “
+                &ldquo;
               </span>
-              <blockquote class="text-lg leading-relaxed text-noite">{depoimento.texto}</blockquote>
+              <blockquote class="text-lg leading-relaxed text-noite">{t(depoimento.texto, idioma)}</blockquote>
               <figcaption class="mt-4 text-sm font-bold text-noite">
                 {depoimento.nome} <span class="font-normal opacity-70">— {depoimento.fonte}</span>
               </figcaption>
+              {idioma === 'en' && typeof depoimento.texto !== 'string' && (
+                <p class="mt-2 text-xs opacity-60">{txt.depoimentoTraduzido}</p>
+              )}
             </figure>
           ))}
         </div>
@@ -239,7 +247,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
     <section id="localizacao" class="relative isolate scroll-mt-36 sm:scroll-mt-20 overflow-hidden">
       <CascataOndas />
       <div class="mx-auto max-w-5xl px-4 py-14">
-      <TituloSecao eyebrow="Localização">Onde estamos</TituloSecao>
+      <TituloSecao eyebrow={txt.localizacaoEyebrow}>{txt.localizacaoTitulo}</TituloSecao>
       <p class="mt-4 text-lg">{config.localizacao.endereco}</p>
       <div class="revela mt-8">
         <Mapa />
@@ -247,12 +255,12 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
       {
         config.localizacao.comoChegar && config.localizacao.comoChegar.length > 0 && (
           <div class="revela mt-10">
-            <h3 class="font-display text-xl font-bold text-mare">Como chegar</h3>
+            <h3 class="font-display text-xl font-bold text-mare">{txt.comoChegarTitulo}</h3>
             <ul class="mt-4 max-w-2xl space-y-3">
               {config.localizacao.comoChegar.map((trecho) => (
                 <li class="flex gap-3">
                   <span class="mt-2.5 h-0.5 w-4 shrink-0 bg-fitinha" aria-hidden="true" />
-                  {trecho}
+                  {t(trecho, idioma)}
                 </li>
               ))}
             </ul>
@@ -261,7 +269,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
       }
       {
         config.localizacao.resumo && (
-          <p class="mt-10 text-center text-lg">{config.localizacao.resumo}</p>
+          <p class="mt-10 text-center text-lg">{t(config.localizacao.resumo, idioma)}</p>
         )
       }
       </div>
@@ -273,9 +281,9 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
   <CascataOndas cor="var(--color-mare)" />
   <MarcaDagua />
   <div class="mx-auto max-w-5xl px-4 py-14 text-center">
-    <h2 class="font-display text-3xl font-bold text-noite">Reserve direto com a gente</h2>
+    <h2 class="font-display text-3xl font-bold text-noite">{txt.ctaFinalTitulo}</h2>
     <p class="mx-auto mt-3 max-w-md text-noite">
-      Chame no WhatsApp e combine sua estadia direto com quem cuida da casa.
+      {txt.ctaFinalTexto}
     </p>
     <div class="mt-6">
       <BotaoWhatsApp tamanho="grande" />

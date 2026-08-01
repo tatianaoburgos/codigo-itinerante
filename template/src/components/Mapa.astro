@@ -1,10 +1,15 @@
 ---
 import { config } from '../lib/cliente';
+import { idiomaAtual } from '../lib/i18n';
+import { textos } from '../lib/textos';
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].mapa;
 ---
 
 <iframe
   src={config.localizacao.mapsEmbedUrl}
-  title={`Mapa: ${config.localizacao.endereco}`}
+  title={`${txt.titulo}: ${config.localizacao.endereco}`}
   loading="lazy"
   referrerpolicy="no-referrer-when-downgrade"
   sandbox="allow-scripts allow-same-origin allow-popups"
