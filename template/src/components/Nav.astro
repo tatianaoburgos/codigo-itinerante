@@ -1,26 +1,42 @@
 ---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 import { config } from '../lib/cliente';
 import { marca } from '../lib/fotos';
+import { idiomaAtual } from '../lib/i18n';
+import { textos } from '../lib/textos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].nav;
+
+const linkPt = getRelativeLocaleUrl('pt');
+const linkEn = getRelativeLocaleUrl('en');
+// Base do link "home" pro idioma atual — usada tanto pelo logo quanto pelos
+// itens de âncora do menu (abas), pra não levar quem está em /en/ de volta
+// pra página em português. Só o alternador PT/EN em si (abaixo) precisa de
+// linkPt/linkEn crus, sem esse prefixo.
+const linkBase = idioma === 'en' ? linkEn : linkPt;
+
 const abas = [
-  { href: '/#sobre', rotulo: 'O Hostel' },
-  { href: '/#acomodacoes', rotulo: 'Acomodações' },
-  { href: '/#comodidades', rotulo: 'Comodidades' },
-  { href: '/#vibe', rotulo: 'A vibe' },
-  { href: '/#regiao', rotulo: 'A região' },
-  { href: '/#depoimentos', rotulo: 'Depoimentos' },
-  { href: '/#localizacao', rotulo: 'Localização' },
+  { href: `${linkBase}#sobre`, rotulo: txt.oHostel },
+  { href: `${linkBase}#acomodacoes`, rotulo: txt.acomodacoes },
+  { href: `${linkBase}#comodidades`, rotulo: txt.comodidades },
+  { href: `${linkBase}#vibe`, rotulo: txt.vibe },
+  { href: `${linkBase}#regiao`, rotulo: txt.regiao },
+  { href: `${linkBase}#depoimentos`, rotulo: txt.depoimentos },
+  { href: `${linkBase}#localizacao`, rotulo: txt.localizacao },
 ]
-  .filter((aba) => aba.href !== '/#sobre' || config.sobre)
-  .filter((aba) => aba.href !== '/#acomodacoes' || config.acomodacoes)
-  .filter((aba) => aba.href !== '/#comodidades' || config.comodidades)
-  .filter((aba) => aba.href !== '/#vibe' || config.vibe)
-  .filter((aba) => aba.href !== '/#regiao' || config.regiao)
-  .filter((aba) => aba.href !== '/#depoimentos' || config.depoimentos)
-  .filter((aba) => aba.href !== '/#localizacao' || config.localizacao.mapsEmbedUrl);
+  .filter((aba) => aba.href !== `${linkBase}#sobre` || config.sobre)
+  .filter((aba) => aba.href !== `${linkBase}#acomodacoes` || config.acomodacoes)
+  .filter((aba) => aba.href !== `${linkBase}#comodidades` || config.comodidades)
+  .filter((aba) => aba.href !== `${linkBase}#vibe` || config.vibe)
+  .filter((aba) => aba.href !== `${linkBase}#regiao` || config.regiao)
+  .filter((aba) => aba.href !== `${linkBase}#depoimentos` || config.depoimentos)
+  .filter((aba) => aba.href !== `${linkBase}#localizacao` || config.localizacao.mapsEmbedUrl);
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
+
+const mostrarAlternador = (config.idiomasDisponiveis?.length ?? 0) > 1;
 ---
 
 <header
@@ -32,21 +48,52 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
     class="mx-auto flex max-w-5xl items-center justify-between gap-4 px-4 py-4"
   >
     <a
-      href="/"
+      href={linkBase}
       class="font-display text-xl font-bold focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
     >
       {/* SVG vetorial: `<img>` cru é intencional — astro:assets otimiza raster, não SVG. */}
       {logo ? <img src={logo.src} alt={config.nome} class="h-12 w-auto" /> : config.nome}
     </a>
     <div class="flex items-center gap-3">
+      {
+        mostrarAlternador && (
+          <div class="flex items-center gap-1 font-mono text-xs font-bold tracking-widest uppercase">
+            {idioma === 'pt' ? (
+              <span aria-current="page">PT</span>
+            ) : (
+              <a
+                href={linkPt}
+                hreflang="pt"
+                class="transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+              >
+                PT
+              </a>
+            )}
+            <span aria-hidden="true">/</span>
+            {idioma === 'en' ? (
+              <span aria-current="page">EN</span>
+            ) : (
+              <a
+                href={linkEn}
+                hreflang="en"
+                class="transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+              >
+                EN
+              </a>
+            )}
+          </div>
+        )
+      }
       <BotaoWhatsApp />
       <button
         id="botao-menu-nav"
         popovertarget="menu-nav"
         popovertargetaction="toggle"
-        aria-label="Abrir menu"
+        aria-label={txt.abrirMenu}
         aria-expanded="false"
         aria-controls="menu-nav"
+        data-rotulo-abrir={txt.abrirMenu}
+        data-rotulo-fechar={txt.fecharMenu}
         class="flex h-8 w-8 flex-col items-center justify-center gap-[5px] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
       >
         <span class="block h-0.5 w-6 rounded-full bg-current transition-transform duration-200 group-has-[#menu-nav:popover-open]:translate-y-[7px] group-has-[#menu-nav:popover-open]:rotate-45"></span>
@@ -94,10 +141,12 @@ const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
   const botaoMenu = document.getElementById('botao-menu-nav');
   const menu = document.getElementById('menu-nav');
   if (botaoMenu && menu) {
+    const rotuloAbrir = botaoMenu.dataset.rotuloAbrir ?? 'Abrir menu';
+    const rotuloFechar = botaoMenu.dataset.rotuloFechar ?? 'Fechar menu';
     menu.addEventListener('toggle', (evento) => {
       const aberto = (evento as ToggleEvent).newState === 'open';
       botaoMenu.setAttribute('aria-expanded', String(aberto));
-      botaoMenu.setAttribute('aria-label', aberto ? 'Fechar menu' : 'Abrir menu');
+      botaoMenu.setAttribute('aria-label', aberto ? rotuloFechar : rotuloAbrir);
     });
   }
 </script>
