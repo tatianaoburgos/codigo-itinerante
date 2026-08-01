@@ -1,5 +1,6 @@
 {
   "nome": "LumeHostel",
+  "idiomasDisponiveis": ["pt", "en"],
   "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg", "appleTouchIcon": "apple-touch-icon.png", "faviconPng": "favicon-32.png" },
   "slogan": "Seu porto seguro para renovar energias e seguir explorando",
   "descricaoSeo": "LumeHostel em Manaíra, João Pessoa: hostel pensado para nômades digitais, a poucos minutos da praia.",

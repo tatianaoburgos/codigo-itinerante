@@ -73,6 +73,11 @@ const site =
 
 export default defineConfig({
   site,
+  i18n: {
+    locales: ['pt', 'en'],
+    defaultLocale: 'pt',
+    routing: { prefixDefaultLocale: false },
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [
