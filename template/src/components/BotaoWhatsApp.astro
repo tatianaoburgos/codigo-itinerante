@@ -1,16 +1,19 @@
 ---
 import { config } from '../lib/cliente';
+import { idiomaAtual } from '../lib/i18n';
+import { textos } from '../lib/textos';
 
 interface Props {
   rotulo?: string;
   tamanho?: 'medio' | 'grande';
 }
 
-const { rotulo = 'Reserve pelo WhatsApp', tamanho = 'medio' } = Astro.props;
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].botaoWhatsApp;
 
-const mensagem = encodeURIComponent(
-  `Ola! Vi o site do ${config.nome} e quero saber valores e disponibilidade.`,
-);
+const { rotulo = txt.rotuloPadrao, tamanho = 'medio' } = Astro.props;
+
+const mensagem = encodeURIComponent(txt.mensagem(config.nome));
 const href = `https://wa.me/${config.contato.whatsapp}?text=${mensagem}`;
 
 const tamanhos = {
