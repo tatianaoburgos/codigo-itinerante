@@ -6,11 +6,25 @@ export const fotoSchema = z.object({
   alt: z.string().min(1),
 });
 
+/** Texto do cliente: string única (um idioma) ou par pt/en (cliente bilíngue). */
+export const campoLocalizavel = z.union([
+  z.string().min(1),
+  z.object({ pt: z.string().min(1), en: z.string().min(1) }),
+]);
+
+/** Mesma regra de `campoLocalizavel`, com limite de caracteres (ex.: meta description de SEO). */
+function campoLocalizavelComMax(max: number) {
+  return z.union([
+    z.string().min(1).max(max),
+    z.object({ pt: z.string().min(1).max(max), en: z.string().min(1).max(max) }),
+  ]);
+}
+
 /** Um tipo de acomodação do hostel (quarto compartilhado, suíte etc.). */
 export const acomodacaoSchema = z.object({
-  nome: z.string().min(1),
-  capacidade: z.string().min(1),
-  comodidades: z.array(z.string().min(1)).min(1),
+  nome: campoLocalizavel,
+  capacidade: campoLocalizavel,
+  comodidades: z.array(campoLocalizavel).min(1),
   fotos: z.array(fotoSchema).min(1),
 });
 
@@ -56,22 +70,22 @@ export const simbolosComodidade = [
 
 /** Comodidade do hostel, opcionalmente ilustrada com foto ou com símbolo artístico. */
 export const comodidadeSchema = z.object({
-  nome: z.string().min(1),
-  descricao: z.string().min(1).optional(),
+  nome: campoLocalizavel,
+  descricao: campoLocalizavel.optional(),
   foto: fotoSchema.optional(),
   simbolo: z.enum(simbolosComodidade).optional(),
 });
 
 /** Seção de destaque full-bleed: foto que fica fixa enquanto a página rola, com frase por cima. */
 export const destaqueSchema = z.object({
-  frase: z.string().min(1),
+  frase: campoLocalizavel,
   foto: fotoSchema,
 });
 
 /** Ponto de interesse da região, com distância a partir do hostel. */
 export const pontoRegiaoSchema = z.object({
-  nome: z.string().min(1),
-  descricao: z.string().min(1),
+  nome: campoLocalizavel,
+  descricao: campoLocalizavel,
   distancia: z.string().min(1),
   foto: fotoSchema,
   credito: z.string().min(1).optional(),
@@ -79,10 +93,13 @@ export const pontoRegiaoSchema = z.object({
 
 /** Depoimento público real (Booking/Google), validável pelo cliente. */
 export const depoimentoSchema = z.object({
-  texto: z.string().min(1),
+  texto: campoLocalizavel,
   nome: z.string().min(1),
   fonte: z.string().min(1),
 });
+
+/** Idiomas com suporte no motor. */
+export const idiomas = ['pt', 'en'] as const;
 
 /**
  * Schema do config.json de cada cliente (`clientes/<slug>/config.json`).
@@ -91,11 +108,13 @@ export const depoimentoSchema = z.object({
 export const configClienteSchema = z.object({
   nome: z.string().min(1),
   marca: marcaSchema.optional(),
-  slogan: z.string().min(1),
-  descricaoSeo: z.string().min(1).max(160),
+  slogan: campoLocalizavel,
+  descricaoSeo: campoLocalizavelComMax(160),
+  /** Idiomas em que o site deste cliente está disponível. Ausente = só pt (padrão de hoje). */
+  idiomasDisponiveis: z.array(z.enum(idiomas)).optional(),
   sobre: z
     .object({
-      historia: z.string().min(1),
+      historia: campoLocalizavel,
       foto: fotoSchema.optional(),
     })
     .optional(),
@@ -109,9 +128,9 @@ export const configClienteSchema = z.object({
     uf: z.string().min(1).optional(),
     cep: z.string().min(1).optional(),
     mapsEmbedUrl: z.url().optional(),
-    comoChegar: z.array(z.string().min(1)).optional(),
+    comoChegar: z.array(campoLocalizavel).optional(),
     /** Frase curta opcional, exibida ao fim da seção Localização. */
-    resumo: z.string().min(1).optional(),
+    resumo: campoLocalizavel.optional(),
   }),
   contato: z.object({
     whatsapp: z.string().regex(/^\d{12,13}$/, 'somente dígitos, com DDI e DDD (ex.: 5571999998888)'),
@@ -137,3 +156,5 @@ export type PontoRegiao = z.infer<typeof pontoRegiaoSchema>;
 export type Depoimento = z.infer<typeof depoimentoSchema>;
 export type Destaque = z.infer<typeof destaqueSchema>;
 export type SimboloComodidade = (typeof simbolosComodidade)[number];
+export type CampoLocalizavel = z.infer<typeof campoLocalizavel>;
+export type Idioma = (typeof idiomas)[number];
