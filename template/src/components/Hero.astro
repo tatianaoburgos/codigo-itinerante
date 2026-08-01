@@ -2,7 +2,10 @@
 import { Image } from 'astro:assets';
 import { config } from '../lib/cliente';
 import { foto, marca, video } from '../lib/fotos';
+import { idiomaAtual, t } from '../lib/i18n';
 import MarcaDagua from './MarcaDagua.astro';
+
+const idioma = idiomaAtual(Astro.currentLocale);
 
 const logo = config.marca?.logo && !config.marca.logoApenasNoMenu ? marca(config.marca.logo) : undefined;
 const heroVideo = config.marca?.heroVideo ? video(config.marca.heroVideo) : undefined;
@@ -10,7 +13,7 @@ const heroVideoPoster = config.marca?.heroVideoPoster
   ? foto(config.marca.heroVideoPoster)
   : undefined;
 const heroCentralizado = config.marca?.heroCentralizado ?? false;
-const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
+const fraseHero = config.marca?.heroFraseQuebrada ?? t(config.slogan, idioma);
 ---
 
 <section id="hero" class="relative isolate flex min-h-svh items-end overflow-hidden bg-noite">
@@ -93,7 +96,7 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? config.slogan;
             )
           }
         </h1>
-        <p class="hero-frase mt-4 max-w-xl text-base text-white">{config.slogan}</p>
+        <p class="hero-frase mt-4 max-w-xl text-base text-white">{t(config.slogan, idioma)}</p>
       </div>
     )
   }
