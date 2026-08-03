@@ -7,3 +7,6 @@ dist/
 .vercel
 .env*
 .worktrees/
+.superpowers/
+__pycache__/
+~$*
