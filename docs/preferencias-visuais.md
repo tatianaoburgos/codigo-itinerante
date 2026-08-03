@@ -87,6 +87,12 @@ Notas de identidade visual da aba "Critérios UX" da planilha (0-5): nota máxim
   - **"Pontos Turísticos"**: texto curto de abertura ("Orientações, roteiro personalizado, dúvidas, o @pphostel está disposto a ajudar") seguido de grade de ~8 fotos reais dos arredores (não do hostel) em 3 colunas, coladas sem espaçamento, sem legenda sobre a foto — variando aérea, pôr do sol, praia cheia, Pelourinho colorido. Fotos grandes carregando o peso visual, texto mínimo.
 - Reforça o guia "Como mostrar a região/atrações" (El Misti, Ponto de Luz) — mais um caso de distância/proximidade como argumento de venda.
 
+### CasAmarelo — Barra, Salvador/BA · hostel comunitário · casamarelo.com
+- **"Site de hostel simples e bonitinho. Tem um gostinho quentinho, um gostinho de casa."** (2026-07-31)
+- One-page, tom acolhedor/comunitário ("abrigo, arte e afeto"), paleta em tons quentes, fotografia atmosférica de quartos e eventos.
+- Contra: hero em carrossel de 3 imagens — não muda a proibição de carrossel já registrada em `diretrizes-design.md`.
+- Mesmo bairro (Barra) do Mar à Vista Hostel — vale olhar de novo como referência de concorrência quando o site completo do Mar à Vista for retomado.
+
 ## Reprovados — o que evitar (e por quê)
 
 | Site | Veredito |

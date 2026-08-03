@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Proposta visual — CasaMarelo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --breu: #0A0A09;
+    --grafite: #161513;
+    --cal: #F4F1E8;
+    --cinza: #97928A;
+    --ambar: #E39A3B;
+    --barro: #C4693F;
+    --dourado: #EFC780;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--breu);
+    color: var(--cal);
+    font-family: "Archivo", sans-serif;
+    line-height: 1.6;
+  }
+  .pagina { max-width: 880px; margin: 0 auto; padding: 5vw 6vw 8vw; }
+
+  .marca { display: flex; align-items: baseline; gap: 2px; font-family: "Archivo", sans-serif; font-weight: 600; font-size: 15px; margin-bottom: 3.5rem; }
+  .marca .it { font-family: "Instrument Serif", serif; font-style: italic; color: var(--ambar); font-weight: 400; }
+
+  .eyebrow {
+    font-family: "Martian Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cinza);
+    margin-bottom: 1rem;
+  }
+  .eyebrow b { color: var(--ambar); font-weight: 500; }
+
+  h1 {
+    font-family: "Archivo", sans-serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+    max-width: 14ch;
+  }
+  h1 .it {
+    font-family: "Instrument Serif", serif;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--ambar);
+    font-size: 1.1em;
+  }
+
+  .sub {
+    margin-top: 1.4rem;
+    max-width: 46ch;
+    color: var(--cinza);
+    font-size: 1.02rem;
+  }
+
+  .secao { margin-top: 5rem; }
+  .secao-titulo {
+    font-family: "Martian Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cinza);
+    margin-bottom: 1.6rem;
+  }
+
+  .comparativo { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid #2a2822; }
+  .col { padding: 1.5rem 1.6rem; }
+  .col-hoje { border-right: 1px solid #2a2822; }
+  .col-cabecalho { font-family: "Martian Mono", monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; padding-bottom: 1.2rem; }
+  .col-hoje .col-cabecalho { color: var(--cinza); }
+  .col-novo .col-cabecalho { color: var(--ambar); }
+
+  .linha { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid #201f1a; }
+  .item { padding: 1.1rem 1.6rem; font-size: 0.95rem; display: flex; gap: 0.7rem; align-items: flex-start; }
+  .marcador { flex-shrink: 0; font-family: "Martian Mono", monospace; font-size: 13px; margin-top: 2px; }
+  .item-hoje { border-right: 1px solid #201f1a; color: var(--cinza); }
+  .item-hoje .marcador { color: #514c42; }
+  .item-novo { color: var(--cal); }
+  .item-novo .marcador { color: var(--ambar); }
+  .item-novo b { color: var(--ambar); font-weight: 500; }
+
+  .fora { margin-top: 5rem; }
+  .fora-lista { color: var(--cinza); font-size: 0.92rem; display: flex; flex-wrap: wrap; gap: 0.6rem 0; }
+  .fora-lista span { display: inline-block; }
+  .fora-lista span:not(:last-child)::after { content: "  ·  "; color: #3a372f; }
+
+  .fechamento {
+    margin-top: 6rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid #2a2822;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  .fechamento p { max-width: 30ch; font-size: 1.05rem; color: var(--cal); }
+  .fechamento .contato { font-family: "Martian Mono", monospace; font-size: 11px; color: var(--cinza); text-align: right; }
+  .fechamento .contato b { color: var(--dourado); font-weight: 500; }
+
+  @media (max-width: 640px) {
+    .comparativo, .linha { grid-template-columns: 1fr; }
+    .col-hoje, .item-hoje { border-right: none; border-bottom: 1px solid #201f1a; }
+  }
+</style>
+</head>
+<body>
+<div class="pagina">
+
+  <div class="marca">Código<span class="it">&nbsp;Itinerante</span></div>
+
+  <div class="eyebrow">Proposta &nbsp;—&nbsp; <b>CasaMarelo</b></div>
+  <h1>Seu site promete três idiomas.<br>Nenhum <span class="it">existe</span>.</h1>
+  <p class="sub">Clicamos em cada botão do casamarelo.com. Isto é o que encontramos — e o que muda com um site novo.</p>
+
+  <div class="secao">
+    <div class="secao-titulo">O que muda</div>
+    <div class="comparativo">
+      <div class="col col-hoje"><div class="col-cabecalho">Hoje</div></div>
+      <div class="col col-novo"><div class="col-cabecalho">Com a Código Itinerante</div></div>
+
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>"BR · ES · EN" não leva a lugar nenhum</div>
+        <div class="item item-novo"><span class="marcador">✓</span>Site real em <b>três idiomas</b></div>
+      </div>
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>"Avaliações" é um título vazio</div>
+        <div class="item item-novo"><span class="marcador">✓</span><b>Depoimentos reais</b> publicados no site</div>
+      </div>
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>"CasAMARelo Cultural" é um título vazio</div>
+        <div class="item item-novo"><span class="marcador">✓</span>Comodidades, região e como chegar — com fotos</div>
+      </div>
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>5 ícones de rede social, nenhum funciona</div>
+        <div class="item item-novo"><span class="marcador">✓</span>Redes sociais <b>linkadas de verdade</b></div>
+      </div>
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>Nenhum dado pro Google entender o hostel</div>
+        <div class="item item-novo"><span class="marcador">✓</span>SEO técnico completo</div>
+      </div>
+      <div class="linha">
+        <div class="item item-hoje"><span class="marcador">×</span>Site trava ao rolar a página</div>
+        <div class="item item-novo"><span class="marcador">✓</span>Site leve, rápido, <b>feito pra celular</b></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fora">
+    <div class="secao-titulo">O que não muda</div>
+    <div class="fora-lista">
+      <span>Sem checagem de disponibilidade</span>
+      <span>Sem pagamento online</span>
+      <span>Sem integração com Booking/Airbnb</span>
+      <span>Reserva sempre pelo WhatsApp</span>
+    </div>
+  </div>
+
+  <div class="fechamento">
+    <p>O combinado completo — noites, prazos, entrega — vem no contrato a seguir.</p>
+    <div class="contato"><b>codigoitinerante.com.br</b></div>
+  </div>
+
+</div>
+</body>
+</html>
