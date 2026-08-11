@@ -3,19 +3,21 @@ import { getRelativeLocaleUrl } from 'astro:i18n';
 import { config } from '../lib/cliente';
 import { marca } from '../lib/fotos';
 import { idiomaAtual } from '../lib/i18n';
+import { idiomas } from '../lib/schema';
 import { textos } from '../lib/textos';
 import BotaoWhatsApp from './BotaoWhatsApp.astro';
 
 const idioma = idiomaAtual(Astro.currentLocale);
 const txt = textos[idioma].nav;
 
-const linkPt = getRelativeLocaleUrl('pt');
-const linkEn = getRelativeLocaleUrl('en');
+// Idiomas ativos deste cliente, na ordem fixa pt -> en -> es (não a ordem em
+// que aparecem no config.json).
+const idiomasAtivos = idiomas.filter((i) => config.idiomasDisponiveis?.includes(i));
+
 // Base do link "home" pro idioma atual — usada tanto pelo logo quanto pelos
-// itens de âncora do menu (abas), pra não levar quem está em /en/ de volta
-// pra página em português. Só o alternador PT/EN em si (abaixo) precisa de
-// linkPt/linkEn crus, sem esse prefixo.
-const linkBase = idioma === 'en' ? linkEn : linkPt;
+// itens de âncora do menu (abas), pra não levar quem está em /en/ ou /es/ de
+// volta pra página em português.
+const linkBase = getRelativeLocaleUrl(idioma);
 
 const abas = [
   { href: `${linkBase}#sobre`, rotulo: txt.oHostel },
@@ -36,7 +38,7 @@ const abas = [
 
 const logo = config.marca?.logo ? marca(config.marca.logo) : undefined;
 
-const mostrarAlternador = (config.idiomasDisponiveis?.length ?? 0) > 1;
+const mostrarAlternador = idiomasAtivos.length > 1;
 ---
 
 <header
@@ -58,29 +60,22 @@ const mostrarAlternador = (config.idiomasDisponiveis?.length ?? 0) > 1;
       {
         mostrarAlternador && (
           <div class="flex items-center gap-1 font-mono text-xs font-bold tracking-widest uppercase">
-            {idioma === 'pt' ? (
-              <span aria-current="page">PT</span>
-            ) : (
-              <a
-                href={linkPt}
-                hreflang="pt"
-                class="transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
-              >
-                PT
-              </a>
-            )}
-            <span aria-hidden="true">/</span>
-            {idioma === 'en' ? (
-              <span aria-current="page">EN</span>
-            ) : (
-              <a
-                href={linkEn}
-                hreflang="en"
-                class="transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
-              >
-                EN
-              </a>
-            )}
+            {idiomasAtivos.map((idiomaItem, indice) => (
+              <>
+                {indice > 0 && <span aria-hidden="true">/</span>}
+                {idioma === idiomaItem ? (
+                  <span aria-current="page">{idiomaItem.toUpperCase()}</span>
+                ) : (
+                  <a
+                    href={getRelativeLocaleUrl(idiomaItem)}
+                    hreflang={idiomaItem}
+                    class="transition hover:text-fitinha focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-azulejo"
+                  >
+                    {idiomaItem.toUpperCase()}
+                  </a>
+                )}
+              </>
+            ))}
           </div>
         )
       }
