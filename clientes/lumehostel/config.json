@@ -1,6 +1,6 @@
 {
   "nome": "LumeHostel",
-  "idiomasDisponiveis": ["pt", "en"],
+  "idiomasDisponiveis": ["pt", "en", "es"],
   "marca": { "logo": "logo-ambar.svg", "favicon": "simbolo-completo-terracota.svg", "simbolo": "simbolo-completo.svg", "appleTouchIcon": "apple-touch-icon.png", "faviconPng": "favicon-32.png" },
   "slogan": {
     "pt": "Seu porto seguro para renovar energias e seguir explorando",

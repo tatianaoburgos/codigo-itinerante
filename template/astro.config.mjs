@@ -74,7 +74,7 @@ const site =
 export default defineConfig({
   site,
   i18n: {
-    locales: ['pt', 'en'],
+    locales: ['pt', 'en', 'es'],
     defaultLocale: 'pt',
     routing: { prefixDefaultLocale: false },
   },
