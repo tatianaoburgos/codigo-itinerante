@@ -122,14 +122,8 @@ def construir_corpo(documento: Document) -> None:
     paragrafo_meta(documento, "VALIDADE", VALIDADE)
 
     titulo_documento(documento, "O que muda no site do CasaMarelo")
-    paragrafo(
-        documento,
-        "Fomos ao casamarelo.com e clicamos em cada botão, cada link, cada "
-        "seção do menu. O que segue é o que encontramos — e o que entregamos "
-        "no lugar.",
-    )
 
-    subtitulo(documento, "O que o site atual promete e não entrega")
+    subtitulo(documento, "O que não está funcional do site atual")
     item(documento, "O seletor ", "\"BR · ES · EN\"", " não leva a nenhum conteúdo em inglês ou espanhol — os links não vão a lugar nenhum.")
     item(documento, "O item de menu ", "\"Avaliações\"", " abre uma seção sem nenhum depoimento.")
     item(documento, "O item de menu ", "\"CasAMARelo Cultural\"", " abre uma seção sem nenhum conteúdo.")
@@ -137,12 +131,12 @@ def construir_corpo(documento: Document) -> None:
     item(documento, "O site não tem dados estruturados nem SEO básico configurado para o Google.")
 
     subtitulo(documento, "O que a Código Itinerante entrega")
-    item(documento, "Site institucional real em ", "três idiomas", ": português, inglês e espanhol.")
+    item(documento, "Site institucional real em ", "três idiomas", ": português, inglês e espanhol — pode haver um pequeno custo de ferramenta à parte, a confirmar no diagnóstico.")
     item(documento, "Seção de ", "depoimentos reais", ", publicada a partir das avaliações do Google e do Booking.")
     item(documento, "Seções de ", "comodidades, região e como chegar", ", ilustradas e com fotos.")
     item(documento, "Redes sociais ", "linkadas de verdade", " no site.")
     item(documento, "Configuração completa de ", "SEO técnico", ": dados estruturados, sitemap, meta description.")
-    item(documento, "Site ", "leve e rápido", ", pensado primeiro para celular.")
+    item(documento, "Site ", "mais rápido que hoje", ", sem o travamento ao rolar a página.")
     item(documento, "Reserva simples e direta ", "pelo WhatsApp", ".")
 
     subtitulo(documento, "O que não está incluído")
@@ -150,13 +144,6 @@ def construir_corpo(documento: Document) -> None:
     item_ausente(documento, "Pagamento online.")
     item_ausente(documento, "Integração com Booking, Airbnb, Hostelworld ou outras plataformas.")
     item_ausente(documento, "Produção de fotos ou vídeos profissionais.")
-
-    subtitulo(documento, "Próximo passo")
-    paragrafo(
-        documento,
-        "O combinado completo — noites de hospedagem, prazos e forma de "
-        "entrega — vem no contrato, a seguir.",
-    )
 
 
 def main() -> None:
