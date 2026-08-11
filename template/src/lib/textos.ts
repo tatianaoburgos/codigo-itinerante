@@ -92,4 +92,51 @@ export const textos = {
       titulo: 'Map',
     },
   },
+  es: {
+    nav: {
+      oHostel: 'El Hostel',
+      acomodacoes: 'Habitaciones',
+      comodidades: 'Comodidades',
+      vibe: 'El ambiente',
+      regiao: 'La zona',
+      depoimentos: 'Reseñas',
+      localizacao: 'Ubicación',
+      abrirMenu: 'Abrir menú',
+      fecharMenu: 'Cerrar menú',
+    },
+    footer: {
+      faleConosco: 'Contáctanos',
+      sigaAGente: 'Síguenos',
+    },
+    botaoWhatsApp: {
+      rotuloPadrao: 'Reserva por WhatsApp',
+      mensagem: (nome: string) =>
+        `¡Hola! Vi el sitio web de ${nome} y me gustaría saber precios y disponibilidad.`,
+    },
+    pagina: {
+      acomodacoesEyebrow: 'Habitaciones',
+      acomodacoesTitulo: 'Elige tu rincón',
+      acomodacoesCta: 'Consultar disponibilidad por WhatsApp',
+      casaTitulo: 'La casa',
+      comodidadesEyebrow: 'Comodidades',
+      comodidadesTitulo: 'La vida por aquí',
+      vibeEyebrow: 'El ambiente',
+      vibeTitulo: 'Cómo es estar aquí',
+      regiaoEyebrow: 'La zona',
+      regiaoTitulo: 'Explora los alrededores',
+      comoChegarTitulo: 'Cómo llegar',
+      depoimentosEyebrow: 'Reseñas',
+      depoimentosTitulo: 'Quién ha pasado por aquí',
+      depoimentoTraduzido: 'Traducido del portugués.',
+      localizacaoEyebrow: 'Ubicación',
+      localizacaoTitulo: 'Dónde estamos',
+      fotoCredito: 'Foto:',
+      ctaFinalTitulo: 'Reserva directo con nosotros',
+      ctaFinalTexto:
+        'Escríbenos por WhatsApp y organiza tu estadía directo con quienes cuidan la casa.',
+    },
+    mapa: {
+      titulo: 'Mapa',
+    },
+  },
 } as const;
