@@ -6,17 +6,28 @@ export const fotoSchema = z.object({
   alt: z.string().min(1),
 });
 
-/** Texto do cliente: string única (um idioma) ou par pt/en (cliente bilíngue). */
+/** Texto do cliente: string única (um idioma) ou objeto por idioma. `pt` é
+ *  sempre obrigatório (idioma base); `en`/`es` são opcionais e independentes
+ *  entre si — um cliente pode ativar só um dos dois sem precisar traduzir
+ *  pro outro. */
 export const campoLocalizavel = z.union([
   z.string().min(1),
-  z.object({ pt: z.string().min(1), en: z.string().min(1) }),
+  z.object({
+    pt: z.string().min(1),
+    en: z.string().min(1).optional(),
+    es: z.string().min(1).optional(),
+  }),
 ]);
 
 /** Mesma regra de `campoLocalizavel`, com limite de caracteres (ex.: meta description de SEO). */
 function campoLocalizavelComMax(max: number) {
   return z.union([
     z.string().min(1).max(max),
-    z.object({ pt: z.string().min(1).max(max), en: z.string().min(1).max(max) }),
+    z.object({
+      pt: z.string().min(1).max(max),
+      en: z.string().min(1).max(max).optional(),
+      es: z.string().min(1).max(max).optional(),
+    }),
   ]);
 }
 
@@ -99,7 +110,7 @@ export const depoimentoSchema = z.object({
 });
 
 /** Idiomas com suporte no motor. */
-export const idiomas = ['pt', 'en'] as const;
+export const idiomas = ['pt', 'en', 'es'] as const;
 
 /**
  * Schema do config.json de cada cliente (`clientes/<slug>/config.json`).
