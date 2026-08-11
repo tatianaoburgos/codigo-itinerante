@@ -36,7 +36,7 @@
 
 **Nota de dependência**: o bloco `contato` abaixo já inclui `tiktok`/`facebook` (strings simples, não traduzidas — são nomes de plataforma) porque o plano `docs/superpowers/plans/2026-07-31-redes-sociais-rodape.md` foi commitado antes deste (`6330f7b`, `713c212`) e já adicionou esses dois campos ao `schema.ts` real. Esta task parte desse estado — não reverte os campos.
 
-- [ ] **Step 1: Escrever o schema novo**
+- [x] **Step 1: Escrever o schema novo**
 
 Substituir o conteúdo inteiro de `template/src/lib/schema.ts** por:
 
@@ -203,7 +203,7 @@ export type CampoLocalizavel = z.infer<typeof campoLocalizavel>;
 export type Idioma = (typeof idiomas)[number];
 ```
 
-- [ ] **Step 2: Verificar que configs existentes (string solta) continuam válidos e que par incompleto falha**
+- [x] **Step 2: Verificar que configs existentes (string solta) continuam válidos e que par incompleto falha**
 
 Criar um script descartável `template/_verificar_schema.ts`:
 
@@ -245,7 +245,7 @@ Expected: `Schema: os 3 casos passaram.`
 
 Depois de confirmar, apagar o arquivo: `rm template/_verificar_schema.ts` (ou `Remove-Item` no PowerShell).
 
-- [ ] **Step 3: Rodar `npm run check` e builds de regressão**
+- [x] **Step 3: Rodar `npm run check` e builds de regressão**
 
 A partir de `template/`:
 ```
@@ -256,7 +256,7 @@ $env:CLIENTE = 'lumehostel'; npm run build
 ```
 Expected: os três passam sem erro (nenhum config foi editado ainda — a mudança de schema é aditiva).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add template/src/lib/schema.ts
@@ -274,7 +274,7 @@ git commit -m "Adiciona suporte a campo bilíngue (pt/en) e idiomasDisponiveis a
 - Consumes: `CampoLocalizavel`, `Idioma` de `template/src/lib/schema.ts` (Task 1).
 - Produces: `t(campo: CampoLocalizavel, idioma: Idioma): string`, `idiomaAtual(currentLocale: string | undefined): Idioma` — usados por todo componente que renderiza texto (Tasks 5-10).
 
-- [ ] **Step 1: Criar o arquivo**
+- [x] **Step 1: Criar o arquivo**
 
 ```ts
 import type { CampoLocalizavel, Idioma } from './schema';
@@ -290,7 +290,7 @@ export function idiomaAtual(currentLocale: string | undefined): Idioma {
 }
 ```
 
-- [ ] **Step 2: Verificar com script descartável**
+- [x] **Step 2: Verificar com script descartável**
 
 Criar `template/_verificar_i18n.ts`:
 
@@ -327,12 +327,12 @@ Expected: `i18n: todos os casos passaram.`
 
 Apagar depois: `rm template/_verificar_i18n.ts`.
 
-- [ ] **Step 3: `npm run check`**
+- [x] **Step 3: `npm run check`**
 
 Run: `npm run check` (dentro de `template/`)
 Expected: passa sem erro.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add template/src/lib/i18n.ts
@@ -352,7 +352,7 @@ git commit -m "Adiciona helpers t() e idiomaAtual() para resolver texto por idio
 
 **Nota de dependência**: `footer.sigaAGente` foi adicionado à lista de chaves — é rótulo do bloco "Siga a gente" do rodapé (plano `redes-sociais-rodape.md`, commit `6330f7b`), texto de interface como `faleConosco`, não nome de marca/plataforma, então precisa de tradução como qualquer outro rótulo fixo do motor.
 
-- [ ] **Step 1: Criar o arquivo**
+- [x] **Step 1: Criar o arquivo**
 
 ```ts
 export const textos = {
@@ -452,12 +452,12 @@ export const textos = {
 } as const;
 ```
 
-- [ ] **Step 2: `npm run check`**
+- [x] **Step 2: `npm run check`**
 
 Run: `npm run check` (dentro de `template/`)
 Expected: passa sem erro (valida que `pt` e `en` têm exatamente as mesmas chaves — se uma faltar, o uso mais adiante com `textos[idioma].pagina.xyz` acusaria erro de tipo).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/lib/textos.ts
@@ -479,7 +479,7 @@ git commit -m "Adiciona dicionario pt/en de textos fixos do motor (nav, rodape, 
 - Consumes: `config` de `template/src/lib/cliente.ts` (já existente).
 - Produces: rota `/en/` funcional (redireciona para `/` quando o cliente não tem `"en"` em `idiomasDisponiveis`; renderiza a página quando tem). Componente `PaginaInicial.astro` sem props, usado por `pages/index.astro` e `pages/en/index.astro`.
 
-- [ ] **Step 1: Adicionar bloco `i18n` ao `astro.config.mjs`**
+- [x] **Step 1: Adicionar bloco `i18n` ao `astro.config.mjs`**
 
 Modificar `template/astro.config.mjs`, dentro de `export default defineConfig({ ... })` — adicionar a chave `i18n` (pode ir logo após `site,`):
 
@@ -496,7 +496,7 @@ export default defineConfig({
     // ... resto do arquivo permanece idêntico
 ```
 
-- [ ] **Step 2: Extrair `PaginaInicial.astro` (mover, sem alterar conteúdo)**
+- [x] **Step 2: Extrair `PaginaInicial.astro` (mover, sem alterar conteúdo)**
 
 Criar `template/src/components/PaginaInicial.astro` com o conteúdo atual de `template/src/pages/index.astro`, removendo só a importação e o wrap de `Layout` (o resto — imports de componentes, frontmatter, todas as seções — é uma cópia literal):
 
@@ -789,7 +789,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
 Note: os imports de componentes agora usam `./` em vez de `../components/` (o arquivo está dentro de `components/`); os imports de `lib/` continuam `../lib/`.
 
-- [ ] **Step 3: `pages/index.astro` vira casca fina**
+- [x] **Step 3: `pages/index.astro` vira casca fina**
 
 Substituir todo o conteúdo de `template/src/pages/index.astro` por:
 
@@ -804,7 +804,7 @@ import PaginaInicial from '../components/PaginaInicial.astro';
 </Layout>
 ```
 
-- [ ] **Step 4: Criar `pages/en/index.astro` com a guarda de redirecionamento**
+- [x] **Step 4: Criar `pages/en/index.astro` com a guarda de redirecionamento**
 
 ```astro
 ---
@@ -822,7 +822,7 @@ if (!config.idiomasDisponiveis?.includes('en')) {
 </Layout>
 ```
 
-- [ ] **Step 5: Verificar a guarda ANTES de ativar o LumeHostel (estado "desligado")**
+- [x] **Step 5: Verificar a guarda ANTES de ativar o LumeHostel (estado "desligado")**
 
 A partir de `template/`:
 ```
@@ -831,7 +831,7 @@ Select-String -Path dist/en/index.html -Pattern 'http-equiv="refresh"'
 ```
 Expected: encontra a linha do `<meta http-equiv="refresh" ...>` — confirma que, sem `idiomasDisponiveis` no config, `/en/` redireciona para `/` (comportamento padrão do Astro em build estático sem adaptador: `Astro.redirect()` vira uma página HTML com meta-refresh, não um 302 HTTP real — [confirmado na doc oficial do Astro]).
 
-- [ ] **Step 6: Ativar `idiomasDisponiveis` no LumeHostel e verificar o estado "ligado"**
+- [x] **Step 6: Ativar `idiomasDisponiveis` no LumeHostel e verificar o estado "ligado"**
 
 Editar `clientes/lumehostel/config.json`, adicionando a chave logo depois de `"nome"`:
 
@@ -849,7 +849,7 @@ Select-String -Path dist/en/index.html -Pattern 'Reserve pelo WhatsApp'
 ```
 Expected: o primeiro `Select-String` não encontra nada (sem redirecionamento); o segundo encontra `Reserve pelo WhatsApp` (esperado — os textos ainda estão em português, porque `Nav`/`Footer`/`BotaoWhatsApp`/`PaginaInicial` ainda não foram religados aos helpers; isso é corrigido nas próximas tasks). O importante aqui é confirmar que `/en/` renderiza a página completa, não o redirect.
 
-- [ ] **Step 7: Confirmar que `demo` e `maravista` continuam redirecionando**
+- [x] **Step 7: Confirmar que `demo` e `maravista` continuam redirecionando**
 
 ```
 $env:CLIENTE = 'demo'; npm run build
@@ -859,12 +859,12 @@ Select-String -Path dist/en/index.html -Pattern 'http-equiv="refresh"'
 ```
 Expected: os dois encontram a linha do meta-refresh (nenhum dos dois tem `idiomasDisponiveis`).
 
-- [ ] **Step 8: `npm run check`**
+- [x] **Step 8: `npm run check`**
 
 Run: `npm run check`
 Expected: passa sem erro.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add template/astro.config.mjs template/src/components/PaginaInicial.astro template/src/pages/index.astro template/src/pages/en/index.astro clientes/lumehostel/config.json
@@ -882,7 +882,7 @@ git commit -m "Adiciona roteamento i18n do Astro e rota /en/ com guarda por idio
 - Consumes: `idiomaAtual`, `t` (Task 2); `textos` (Task 3); `config.idiomasDisponiveis` (Task 1); `getRelativeLocaleUrl` de `astro:i18n` (nativo do Astro, disponível a partir da Task 4).
 - Produces: nenhuma interface nova para outras tasks — componente-folha.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1054,7 +1054,7 @@ gera exatamente os mesmos hrefs de hoje (`/#acomodacoes` etc., zero mudança
 pra `demo`/`maravista`, que sempre resolvem `idioma === 'pt'`); em `/en/`
 gera `/en#acomodacoes` etc., mantendo a navegação dentro do idioma atual.
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -1075,7 +1075,7 @@ Select-String -Path dist/index.html -Pattern 'href="/#acomodacoes"'
 ```
 Expected: nenhuma ocorrência de `>PT<`/`>EN<` — `demo` não tem `idiomasDisponiveis`, o alternador não aparece; o href do menu de seção continua `/#acomodacoes` (comportamento inalterado, já que `demo` nunca resolve `idioma === 'en'`).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/components/Nav.astro
@@ -1099,7 +1099,7 @@ grid de 3 colunas condicional). O bloco abaixo parte **desse** arquivo real
 e acrescenta só as mudanças de i18n por cima — não é mais uma reversão pro
 estado de 2 colunas de antes da Task de redes sociais.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1195,7 +1195,7 @@ plataforma, mesma regra de não-tradução já usada pra nome/fonte de
 depoimento e crédito de foto. Só `{txt.sigaAGente}` (rótulo da seção) é
 traduzido, igual `{txt.faleConosco}`.
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -1210,7 +1210,7 @@ Expected: cada arquivo mostra a versão do seu próprio idioma (inclusive o
 rótulo "Siga a gente"/"Follow us"); o bloco de redes sociais (Instagram +
 TikTok do LumeHostel) continua presente nos dois idiomas.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/components/Footer.astro
@@ -1228,7 +1228,7 @@ git commit -m "Traduz rodape (Fale conosco/Siga a gente e equivalentes em ingles
 - Consumes: `idiomaAtual` (Task 2); `textos` (Task 3).
 - Produces: comportamento inalterado para quem já passa `rotulo` explícito (`PaginaInicial.astro`, Task 9, vai passar o texto traduzido via prop).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1268,7 +1268,7 @@ const tamanhos = {
 </a>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -1278,7 +1278,7 @@ Select-String -Path dist/index.html -Pattern 'Reserve pelo WhatsApp'
 ```
 Expected: cada versão mostra o rótulo padrão no seu idioma (a versão com `rotulo` explícito — "Consultar disponibilidade" — ainda está em português nos dois idiomas até a Task 9).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/components/BotaoWhatsApp.astro
@@ -1296,7 +1296,7 @@ git commit -m "Traduz rotulo padrao e mensagem do BotaoWhatsApp"
 **Interfaces:**
 - Consumes: `idiomaAtual`, `t` (Task 2).
 
-- [ ] **Step 1: `Hero.astro` — atualizar frontmatter**
+- [x] **Step 1: `Hero.astro` — atualizar frontmatter**
 
 Modificar `template/src/components/Hero.astro`, linhas 1-13 (frontmatter):
 
@@ -1320,7 +1320,7 @@ const fraseHero = config.marca?.heroFraseQuebrada ?? t(config.slogan, idioma);
 ---
 ```
 
-- [ ] **Step 2: `Hero.astro` — atualizar a linha do slogan no bloco não-centralizado**
+- [x] **Step 2: `Hero.astro` — atualizar a linha do slogan no bloco não-centralizado**
 
 Na mesma seção do template (bloco `else` do `heroCentralizado ? (...) : (...)`), trocar:
 
@@ -1336,7 +1336,7 @@ por:
 
 (O restante do arquivo — vídeo, poster, composição centralizada, script do vídeo — permanece idêntico; `fraseHero`, já resolvido no frontmatter, é usado sem mudança na composição centralizada.)
 
-- [ ] **Step 3: `Acomodacoes.astro` — substituir o arquivo inteiro**
+- [x] **Step 3: `Acomodacoes.astro` — substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1379,12 +1379,12 @@ const idioma = idiomaAtual(Astro.currentLocale);
 }
 ```
 
-- [ ] **Step 4: `npm run check` (ainda sem tradução no config — output visual não muda)**
+- [x] **Step 4: `npm run check` (ainda sem tradução no config — output visual não muda)**
 
 Run: `npm run check`
 Expected: passa sem erro. (Sem tradução ainda no `config.json`, `t()` devolve a mesma string em pt e en — nenhuma regressão visual esperada nesta task.)
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add template/src/components/Hero.astro template/src/components/Acomodacoes.astro
@@ -1403,7 +1403,7 @@ git commit -m "Religa Hero e Acomodacoes ao helper t() para conteudo bilingue"
 **Interfaces:**
 - Consumes: `idiomaAtual`, `t` (Task 2); `textos` (Task 3); `Destaque` type (Task 1).
 
-- [ ] **Step 1: `FotoDestaque.astro` — substituir o arquivo inteiro**
+- [x] **Step 1: `FotoDestaque.astro` — substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1442,7 +1442,7 @@ const idioma = idiomaAtual(Astro.currentLocale);
 </section>
 ```
 
-- [ ] **Step 2: `Mapa.astro` — substituir o arquivo inteiro**
+- [x] **Step 2: `Mapa.astro` — substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1463,7 +1463,7 @@ const txt = textos[idioma].mapa;
   class="aspect-video w-full rounded-xl border-0"></iframe>
 ```
 
-- [ ] **Step 3: `PaginaInicial.astro` — substituir o arquivo inteiro**
+- [x] **Step 3: `PaginaInicial.astro` — substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1762,7 +1762,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
 
 Nota sobre a nota "Traduzido do português": ela só aparece quando o depoimento **de fato** tem um par `{pt, en}` no config (`typeof depoimento.texto !== 'string'`) — um depoimento que ficasse só em português (string solta) num cliente bilíngue não ganharia a nota (não faria sentido, já que apareceria em português mesmo na página em inglês).
 
-- [ ] **Step 4: `npm run check` e build**
+- [x] **Step 4: `npm run check` e build**
 
 ```
 npm run check
@@ -1778,7 +1778,7 @@ $env:CLIENTE = 'demo'; npm run build
 ```
 Expected: build passa; conteúdo de `demo` (site sem `idiomasDisponiveis`) idêntico ao anterior — `Astro.currentLocale` resolve pt tanto em `/` (rota default) quanto, se alguém acessasse `/en/` diretamente, redirecionaria antes de renderizar.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add template/src/components/PaginaInicial.astro template/src/components/FotoDestaque.astro template/src/components/Mapa.astro
@@ -1795,7 +1795,7 @@ git commit -m "Traduz titulos/eyebrows de secao e religa conteudo do cliente ao 
 **Interfaces:**
 - Consumes: `idiomaAtual`, `t` (Task 2); `getRelativeLocaleUrl` de `astro:i18n`.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1933,7 +1933,7 @@ const dadosEstruturados = {
 
 Nota: `descricao` (prop opcional do `Layout`, usada por páginas que não sejam a home — nenhuma existe hoje, mas a interface pública do componente é preservada) continua string simples — quem passar essa prop no futuro passa a string já resolvida no idioma certo.
 
-- [ ] **Step 2: `npm run check` e build**
+- [x] **Step 2: `npm run check` e build**
 
 ```
 npm run check
@@ -1951,7 +1951,7 @@ Select-String -Path dist/index.html -Pattern 'hreflang'
 ```
 Expected: nenhuma ocorrência (`demo` não é bilíngue, `bilingue` é `false`, nenhuma tag `hreflang` é gerada).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/layouts/Layout.astro
@@ -1972,7 +1972,7 @@ git commit -m "Adiciona lang/og:locale dinamicos e hreflang ao Layout"
 
 **Nota de dependência**: o `contato.tiktok` abaixo já reflete o config real (commit `713c212`, plano `redes-sociais-rodape.md`) — não remover.
 
-- [ ] **Step 1: Substituir o `config.json` inteiro**
+- [x] **Step 1: Substituir o `config.json` inteiro**
 
 ```json
 {
@@ -2240,7 +2240,7 @@ git commit -m "Adiciona lang/og:locale dinamicos e hreflang ao Layout"
 }
 ```
 
-- [ ] **Step 2: `npm run check` e build final do LumeHostel**
+- [x] **Step 2: `npm run check` e build final do LumeHostel**
 
 ```
 npm run check
@@ -2252,7 +2252,7 @@ Select-String -Path dist/index.html -Pattern 'Seu porto seguro para renovar ener
 ```
 Expected: todas as buscas encontram a linha correspondente — `/en/` mostra conteúdo real em inglês (slogan, acomodações, nota de tradução nos depoimentos), `/` continua em português.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add clientes/lumehostel/config.json
@@ -2267,7 +2267,7 @@ git commit -m "Traduz conteudo do LumeHostel para ingles (slogan, acomodacoes, c
 
 **Interfaces:** nenhuma nova.
 
-- [ ] **Step 1: Build limpo dos 3 clientes**
+- [x] **Step 1: Build limpo dos 3 clientes**
 
 ```
 $env:CLIENTE = 'demo'; npm run build
@@ -2276,7 +2276,7 @@ $env:CLIENTE = 'lumehostel'; npm run build
 ```
 Expected: os três terminam sem erro.
 
-- [ ] **Step 2: Confirmar que `demo` e `maravista` redirecionam `/en/` e não mostram o alternador**
+- [x] **Step 2: Confirmar que `demo` e `maravista` redirecionam `/en/` e não mostram o alternador**
 
 ```
 $env:CLIENTE = 'demo'; npm run build
@@ -2289,14 +2289,14 @@ Select-String -Path dist/index.html -Pattern '>PT<|>EN<'
 ```
 Expected: os dois clientes mostram o meta-refresh em `/en/` e nenhuma ocorrência de `PT`/`EN` no Nav.
 
-- [ ] **Step 3: `astro check` limpo**
+- [x] **Step 3: `astro check` limpo**
 
 ```
 npm run check
 ```
 Expected: passa sem erro.
 
-- [ ] **Step 4: Checklist manual no navegador (LumeHostel)**
+- [x] **Step 4: Checklist manual no navegador (LumeHostel)**
 
 ```
 $env:CLIENTE = 'lumehostel'; npm run dev
@@ -2314,14 +2314,14 @@ No navegador:
 9. Ver código-fonte da página (`Ctrl+U`) em `/en/` — confirmar `<html lang="en">`, `<link rel="alternate" hreflang="pt" ...>` e `<link rel="alternate" hreflang="en" ...>`, `og:locale` = `en_US`.
 10. Repetir a checagem de `hreflang`/`lang`/`og:locale` em `/` (esperado: `lang="pt-BR"`, `og:locale` = `pt_BR`).
 
-- [ ] **Step 5: Parar o servidor de dev**
+- [x] **Step 5: Parar o servidor de dev**
 
 ```
 npx astro dev stop
 ```
 (Astro 7 usa daemon persistente — `Ctrl+C` não é suficiente, ver `CLAUDE.md`.)
 
-- [ ] **Step 6: Commit final (se houver algum ajuste do checklist manual)**
+- [x] **Step 6: Commit final (se houver algum ajuste do checklist manual)**
 
 Se o Step 4 revelar algum ajuste necessário, corrigir, re-rodar o checklist relevante, e:
 ```bash
