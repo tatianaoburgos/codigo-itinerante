@@ -1,6 +1,6 @@
 # Espanhol no LumeHostel — motor multilingue — Implementation Plan
 
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [x]`) syntax for tracking.
 
 **Goal:** Dar ao motor (`template/`) capacidade de servir N idiomas (não só pt/en) e ativar espanhol no LumeHostel (`/es/`), com o alternador do Nav virando "PT / EN / ES".
 
@@ -29,7 +29,7 @@
 - Produces: `idiomas` (`['pt', 'en', 'es'] as const`), `Idioma` (tipo inferido, `'pt' | 'en' | 'es'`), `campoLocalizavel` (Zod schema, `string | {pt: string; en?: string; es?: string}`), `CampoLocalizavel` (tipo inferido).
 - Consumes: nada (task raiz).
 
-- [ ] **Step 1: Escrever o schema novo**
+- [x] **Step 1: Escrever o schema novo**
 
 Substituir o conteúdo inteiro de `template/src/lib/schema.ts` por:
 
@@ -207,7 +207,7 @@ export type CampoLocalizavel = z.infer<typeof campoLocalizavel>;
 export type Idioma = (typeof idiomas)[number];
 ```
 
-- [ ] **Step 2: Verificar com script descartável — string solta, objetos parciais e completos, objeto sem pt**
+- [x] **Step 2: Verificar com script descartável — string solta, objetos parciais e completos, objeto sem pt**
 
 Criar `template/_verificar_schema.ts`:
 
@@ -252,7 +252,7 @@ Expected: `Schema: todos os casos passaram.`
 
 Depois de confirmar, apagar o arquivo: `Remove-Item _verificar_schema.ts` (dentro de `template/`).
 
-- [ ] **Step 3: Rodar `npm run check` e builds de regressão**
+- [x] **Step 3: Rodar `npm run check` e builds de regressão**
 
 A partir de `template/`:
 ```
@@ -263,7 +263,7 @@ $env:CLIENTE = 'lumehostel'; npm run build
 ```
 Expected: os três passam sem erro (mudança de schema é aditiva — nenhum config foi editado ainda).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add template/src/lib/schema.ts
@@ -281,7 +281,7 @@ git commit -m "Generaliza campoLocalizavel para en/es opcionais e adiciona es a 
 - Consumes: `CampoLocalizavel`, `Idioma` de `template/src/lib/schema.ts` (Task 1).
 - Produces: `t(campo: CampoLocalizavel, idioma: Idioma): string` (agora com fallback pro `pt` quando o campo é objeto e não tem a chave pedida), `idiomaAtual(currentLocale: string | undefined): Idioma` (reconhece `'en'` e `'es'`) — usados por todo componente que renderiza texto (Tasks 5-7 e componentes já existentes que não mudam nesta rodada: `Footer`, `BotaoWhatsApp`, `Mapa`, `Hero`, `Acomodacoes`, `FotoDestaque`).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```ts
 import type { CampoLocalizavel, Idioma } from './schema';
@@ -301,7 +301,7 @@ export function idiomaAtual(currentLocale: string | undefined): Idioma {
 }
 ```
 
-- [ ] **Step 2: Verificar com script descartável**
+- [x] **Step 2: Verificar com script descartável**
 
 Criar `template/_verificar_i18n.ts`:
 
@@ -340,12 +340,12 @@ Expected: `i18n: todos os casos passaram.`
 
 Apagar depois: `Remove-Item _verificar_i18n.ts`.
 
-- [ ] **Step 3: `npm run check`**
+- [x] **Step 3: `npm run check`**
 
 Run: `npm run check` (dentro de `template/`)
 Expected: passa sem erro.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add template/src/lib/i18n.ts
@@ -363,7 +363,7 @@ git commit -m "Adiciona fallback pro pt em t() e reconhece es em idiomaAtual()"
 - Consumes: nada.
 - Produces: `textos.es` (mesma forma de `textos.pt`/`textos.en`) — consumido por Tasks 5-7 e pelos componentes já existentes (`Footer`, `BotaoWhatsApp`, `Mapa`) que já leem `textos[idioma]` genericamente.
 
-- [ ] **Step 1: Adicionar o bloco `es`, logo após o fechamento do bloco `en` e antes de `} as const;`**
+- [x] **Step 1: Adicionar o bloco `es`, logo após o fechamento do bloco `en` e antes de `} as const;`**
 
 No arquivo `template/src/lib/textos.ts`, localizar o final do bloco `en` (a linha `},` que fecha `mapa: { titulo: 'Map' },` seguida da linha `} as const;`) e inserir o bloco `es` entre elas:
 
@@ -417,12 +417,12 @@ No arquivo `template/src/lib/textos.ts`, localizar o final do bloco `en` (a linh
   },
 ```
 
-- [ ] **Step 2: `npm run check`**
+- [x] **Step 2: `npm run check`**
 
 Run: `npm run check` (dentro de `template/`)
 Expected: passa sem erro (valida que `pt`, `en` e `es` têm exatamente as mesmas chaves — se uma faltar em `es`, o uso mais adiante com `textos[idioma].pagina.xyz` acusaria erro de tipo quando `idioma` inclui `'es'`).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/lib/textos.ts
@@ -442,7 +442,7 @@ git commit -m "Adiciona bloco es ao dicionario de textos fixos do motor"
 - Consumes: `config` de `template/src/lib/cliente.ts` (já existente); `PaginaInicial` de `template/src/components/PaginaInicial.astro` (já existente, sem mudança nesta task).
 - Produces: rota `/es/` funcional (redireciona para `/` quando o cliente não tem `"es"` em `idiomasDisponiveis`; renderiza a página quando tem).
 
-- [ ] **Step 1: Adicionar `'es'` a `i18n.locales` em `astro.config.mjs`**
+- [x] **Step 1: Adicionar `'es'` a `i18n.locales` em `astro.config.mjs`**
 
 Em `template/astro.config.mjs`, dentro de `export default defineConfig({ ... })`, trocar:
 
@@ -464,7 +464,7 @@ por:
   },
 ```
 
-- [ ] **Step 2: Criar `pages/es/index.astro` com a mesma guarda de `pages/en/index.astro`**
+- [x] **Step 2: Criar `pages/es/index.astro` com a mesma guarda de `pages/en/index.astro`**
 
 ```astro
 ---
@@ -482,7 +482,7 @@ if (!config.idiomasDisponiveis?.includes('es')) {
 </Layout>
 ```
 
-- [ ] **Step 3: Verificar a guarda ANTES de ativar o espanhol no LumeHostel (estado "desligado")**
+- [x] **Step 3: Verificar a guarda ANTES de ativar o espanhol no LumeHostel (estado "desligado")**
 
 A partir de `template/`:
 ```
@@ -491,7 +491,7 @@ Select-String -Path dist/es/index.html -Pattern 'http-equiv="refresh"'
 ```
 Expected: encontra a linha do `<meta http-equiv="refresh" ...>` — confirma que, sem `"es"` em `idiomasDisponiveis`, `/es/` redireciona para `/`.
 
-- [ ] **Step 4: Ativar `"es"` no LumeHostel e verificar o estado "ligado"**
+- [x] **Step 4: Ativar `"es"` no LumeHostel e verificar o estado "ligado"**
 
 Editar `clientes/lumehostel/config.json`, linha 3:
 
@@ -507,7 +507,7 @@ Select-String -Path dist/es/index.html -Pattern 'Seu porto seguro'
 ```
 Expected: o primeiro `Select-String` não encontra nada (sem redirecionamento); o segundo encontra "Seu porto seguro" (esperado — o conteúdo do config ainda não tem tradução `es`, então `t()` cai pro `pt`; isso é corrigido na Task 8. O importante aqui é confirmar que `/es/` renderiza a página completa, não o redirect).
 
-- [ ] **Step 5: Confirmar que `demo` e `maravista` continuam redirecionando `/es/`**
+- [x] **Step 5: Confirmar que `demo` e `maravista` continuam redirecionando `/es/`**
 
 ```
 $env:CLIENTE = 'demo'; npm run build
@@ -517,12 +517,12 @@ Select-String -Path dist/es/index.html -Pattern 'http-equiv="refresh"'
 ```
 Expected: os dois encontram a linha do meta-refresh (nenhum dos dois tem `idiomasDisponiveis`).
 
-- [ ] **Step 6: `npm run check`**
+- [x] **Step 6: `npm run check`**
 
 Run: `npm run check`
 Expected: passa sem erro.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add template/astro.config.mjs template/src/pages/es/index.astro clientes/lumehostel/config.json
@@ -540,7 +540,7 @@ git commit -m "Adiciona rota /es/ com guarda por idiomasDisponiveis e ativa espa
 - Consumes: `idiomaAtual` (Task 2); `textos` (Task 3); `idiomas` (Task 1); `config.idiomasDisponiveis`; `getRelativeLocaleUrl` de `astro:i18n`.
 - Produces: nenhuma interface nova para outras tasks — componente-folha.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -694,7 +694,7 @@ const mostrarAlternador = idiomasAtivos.length > 1;
 
 Nota: `linkBase = getRelativeLocaleUrl(idioma)` substitui o antigo `idioma === 'en' ? linkEn : linkPt` — é a mesma resolução, só generalizada pra qualquer idioma da lista (inclusive `es`), preservando o comportamento já corrigido de manter a navegação de menu/logo dentro do idioma atual (não voltar pra `/` estando em `/en/` ou `/es/`).
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -712,7 +712,7 @@ Select-String -Path dist/index.html -Pattern '>PT<|>EN<|>ES<'
 ```
 Expected: nenhuma ocorrência — `demo` não tem `idiomasDisponiveis`, o alternador não aparece.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/components/Nav.astro
@@ -730,7 +730,7 @@ git commit -m "Generaliza alternador do Nav para N idiomas (PT/EN/ES)"
 - Consumes: `idiomaAtual`, `t` (Task 2); `idiomas`, `Idioma` (Task 1); `getRelativeLocaleUrl` de `astro:i18n`.
 - Produces: nenhuma interface nova para outras tasks — usado pelas páginas (`pages/index.astro`, `pages/en/index.astro`, `pages/es/index.astro`), sem props novas.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -875,7 +875,7 @@ const dadosEstruturados = {
 </html>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -896,7 +896,7 @@ Select-String -Path dist/index.html -Pattern 'hreflang'
 ```
 Expected: nenhuma ocorrência — `demo` tem só 1 idioma ativo (nenhum, na verdade — sem `idiomasDisponiveis`), `hrefsAlternativos` fica vazio.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/layouts/Layout.astro
@@ -916,7 +916,7 @@ git commit -m "Generaliza hreflang, og:locale e html lang para N idiomas"
 
 **Contexto do bug**: a nota "Traduzido do português" abaixo de cada depoimento hoje só aparece quando `idioma === 'en'`. Isso foi escrito antes de existir um terceiro idioma — com `es` ativo, um depoimento traduzido pro espanhol (`{pt, en, es}` ou `{pt, es}`) nunca mostraria a nota, porque a condição só reconhece `'en'`. A correção troca `idioma === 'en'` por `idioma !== 'pt'`, que cobre qualquer idioma não-português.
 
-- [ ] **Step 1: Trocar a condição**
+- [x] **Step 1: Trocar a condição**
 
 Em `template/src/components/PaginaInicial.astro`, trocar:
 
@@ -934,7 +934,7 @@ por:
               )}
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 ```
 npm run check
@@ -944,7 +944,7 @@ Select-String -Path dist/es/index.html -Pattern 'Traducido del portugu'
 ```
 Expected: a versão `en` continua mostrando a nota (regressão-zero). A versão `es` passa a mostrar a nota também — antes desta correção, não mostraria (a condição só reconhecia `'en'`). Isso já funciona nesta task mesmo antes da Task 8 traduzir `depoimentos[].texto`: a nota em si vem de `textos.es.pagina.depoimentoTraduzido` (Task 3, já existe), e a condição só depende de `idioma !== 'pt'` — não depende de o depoimento já ter uma chave `es`. O texto do depoimento exibido continua em português (fallback do `t()`) até a Task 8; só a nota abaixo dele já aparece corretamente em espanhol.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add template/src/components/PaginaInicial.astro
@@ -964,7 +964,7 @@ git commit -m "Corrige nota de traducao dos depoimentos para reconhecer qualquer
 
 **Tradução (Claude → revisão da autora)**: mesmos campos que já têm `en` (commit `add339a`) ganham `es`: `slogan`, `descricaoSeo`, `sobre.historia`, `acomodacoes[].nome/capacidade/comodidades`, `localizacao.comoChegar/resumo`, `comodidades[].nome/descricao`, `regiao[].nome/descricao`, `depoimentos[].texto`, `destaques[].frase`. Campos que continuam sem tradução (mesma regra do inglês): nome de arquivo, telefone, e-mail, endereço estruturado, `credito` de foto, `nome`/`fonte` de depoimento.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```json
 {
@@ -1240,12 +1240,12 @@ git commit -m "Corrige nota de traducao dos depoimentos para reconhecer qualquer
 }
 ```
 
-- [ ] **Step 2: `npm run check`**
+- [x] **Step 2: `npm run check`**
 
 Run: `npm run check` (dentro de `template/`)
 Expected: passa sem erro (schema já aceita `es` desde a Task 1).
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add clientes/lumehostel/config.json
@@ -1260,7 +1260,7 @@ git commit -m "Traduz conteudo do LumeHostel para espanhol (slogan, acomodacoes,
 
 **Interfaces:** nenhuma — task terminal.
 
-- [ ] **Step 1: `npm run check` e builds dos 3 clientes**
+- [x] **Step 1: `npm run check` e builds dos 3 clientes**
 
 A partir de `template/`:
 ```
@@ -1271,7 +1271,7 @@ $env:CLIENTE = 'lumehostel'; npm run build
 ```
 Expected: os três passam sem erro. `demo`/`maravista` não têm `/es/index.html` funcional (redirect); `lumehostel` tem `dist/index.html`, `dist/en/index.html` e `dist/es/index.html` com conteúdo próprio.
 
-- [ ] **Step 2: Confirmar conteúdo traduzido no `dist/es/` do LumeHostel**
+- [x] **Step 2: Confirmar conteúdo traduzido no `dist/es/` do LumeHostel**
 
 ```
 Select-String -Path dist/es/index.html -Pattern 'Tu puerto seguro'
@@ -1282,7 +1282,7 @@ Select-String -Path dist/es/index.html -Pattern 'Síguenos'
 ```
 Expected: todas encontram ocorrência — slogan, título de seção, nota de tradução dos depoimentos, botão de WhatsApp e rótulo do rodapé, todos em espanhol.
 
-- [ ] **Step 3: Rodar o preview local e abrir no navegador**
+- [x] **Step 3: Rodar o preview local e abrir no navegador**
 
 A partir de `template/`:
 ```
@@ -1300,7 +1300,7 @@ Abrir `http://localhost:4321/` (ou a porta que o preview indicar) e conferir man
 8. Voltar pra `/` (idioma pt) e `/en/`: nada mudou visualmente em relação ao comportamento já em produção (regressão-zero).
 9. `demo` e `maravista`: confirmar que `/es/` desses clientes redireciona pra `/` (não é preciso abrir no navegador — já verificado via build na Task 4; só reconfirmar aqui como parte do checklist final se houver dúvida).
 
-- [ ] **Step 4: Reportar o resultado do checklist pra autora**
+- [x] **Step 4: Reportar o resultado do checklist pra autora**
 
 Sem commit nesta task — é só verificação. Se todos os itens do Step 3 passarem, o projeto está pronto pra revisão final da autora antes do deploy manual (`vercel deploy --project lumehostel --cwd template --prod --yes`, fora do escopo deste plano).
 
