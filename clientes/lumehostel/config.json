@@ -127,7 +127,7 @@
   "comodidades": [
     {
       "nome": { "pt": "Cozinha compartilhada", "en": "Shared kitchen", "es": "Cocina compartida" },
-      "descricao": { "pt": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes", "en": "Fridge, microwave, water purifier and utensils available for guests", "es": "Nevera, microondas, purificador de agua y utensilios a disposición de los huéspedes" },
+      "descricao": { "pt": "Geladeira, micro-ondas, purificador de água e utensílios à disposição dos hóspedes", "en": "Fridge, microwave, water purifier and utensils available for guests", "es": "Refrigerador, microondas, purificador de agua y utensilios a disposición de los huéspedes" },
       "simbolo": "cozinha",
       "foto": { "arquivo": "cozinha.jpg", "alt": "Cozinha compartilhada do LumeHostel, com balcão e banquetas" }
     },
