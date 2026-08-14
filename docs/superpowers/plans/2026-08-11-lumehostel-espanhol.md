@@ -1312,3 +1312,7 @@ Duas correções de escopo em relação à spec original, encontradas ao investi
 
 1. **Task 7** corrige um bug pré-existente: a nota "Traduzido do português" nos depoimentos só reconhecia `idioma === 'en'`, então depoimentos traduzidos pro espanhol nunca mostrariam a nota. Não é uma regressão desta rodada — já existia desde a implementação do inglês, só ficou visível agora que há um terceiro idioma.
 2. A tradução do conteúdo (Task 8) foi escrita por mim como parte deste plano, não como um placeholder a preencher depois — está pronta pra revisão sua antes do deploy.
+
+## Status final (2026-08-14)
+
+Plano concluído: 9/9 tasks completas, branch `i18n/lumehostel-es` mesclada em `master` por fast-forward. Correção adicional feita antes do merge: "Nevera" (regionalismo ibérico/caribenho) trocado por "Refrigerador" na descrição da cozinha compartilhada, único outlier de registro regional encontrado revisando todos os campos `es` do `config.json` — o resto do vocabulário já era consistente com espanhol latino-americano ("casillero", "parrilla", "cama matrimonial"). Tradução revisada e aprovada pela autora. `master` empurrado pra `origin` e deploy manual de produção feito (`vercel deploy --project lumehostel --cwd template --prod --yes`); `https://lumehostel.vercel.app/es/` confirmado no ar.
