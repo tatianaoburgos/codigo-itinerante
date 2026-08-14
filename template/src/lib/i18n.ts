@@ -1,4 +1,4 @@
-import type { CampoLocalizavel, Idioma } from './schema';
+import { idiomas, type CampoLocalizavel, type Idioma } from './schema';
 
 /** Resolve um campo de texto do cliente (string única ou objeto por idioma) para
  *  o idioma pedido. Se o campo for objeto e não tiver a chave do idioma pedido
@@ -11,5 +11,7 @@ export function t(campo: CampoLocalizavel, idioma: Idioma): string {
 
 /** Normaliza `Astro.currentLocale` (pode vir undefined) para um Idioma válido, com pt como padrão. */
 export function idiomaAtual(currentLocale: string | undefined): Idioma {
-  return currentLocale === 'en' || currentLocale === 'es' ? currentLocale : 'pt';
+  return currentLocale !== undefined && (idiomas as readonly string[]).includes(currentLocale)
+    ? (currentLocale as Idioma)
+    : 'pt';
 }
