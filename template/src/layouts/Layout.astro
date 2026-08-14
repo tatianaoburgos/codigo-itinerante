@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import { config } from '../lib/cliente';
 import { foto, marca } from '../lib/fotos';
 import { idiomaAtual, t } from '../lib/i18n';
+import { idiomas, type Idioma } from '../lib/schema';
 
 interface Props {
   titulo?: string;
@@ -39,12 +40,19 @@ const canonical = site ? new URL(Astro.url.pathname, site).href : undefined;
 const ogImagemArquivo = config.marca?.heroVideoPoster ?? 'capa.jpg';
 const ogImagem = absoluta(foto(ogImagemArquivo).src);
 
-const bilingue = (config.idiomasDisponiveis?.length ?? 0) > 1;
-const hrefAlternativaPt = bilingue ? absoluta(getRelativeLocaleUrl('pt')) : undefined;
-const hrefAlternativaEn = bilingue ? absoluta(getRelativeLocaleUrl('en')) : undefined;
+// Idiomas ativos deste cliente, na ordem fixa pt -> en -> es. Gera um <link
+// rel="alternate"> por idioma ativo; lista vazia (sem tags) quando o cliente
+// só tem um idioma.
+const idiomasAtivos = idiomas.filter((i) => config.idiomasDisponiveis?.includes(i));
+const hrefsAlternativos =
+  idiomasAtivos.length > 1
+    ? idiomasAtivos.map((i) => ({ idioma: i, href: absoluta(getRelativeLocaleUrl(i)) }))
+    : [];
 
-const ogLocale = idioma === 'en' ? 'en_US' : 'pt_BR';
-const htmlLang = idioma === 'en' ? 'en' : 'pt-BR';
+const ogLocalePorIdioma: Record<Idioma, string> = { pt: 'pt_BR', en: 'en_US', es: 'es_ES' };
+const htmlLangPorIdioma: Record<Idioma, string> = { pt: 'pt-BR', en: 'en', es: 'es' };
+const ogLocale = ogLocalePorIdioma[idioma];
+const htmlLang = htmlLangPorIdioma[idioma];
 
 const loc = config.localizacao;
 const endereco = loc.cidade
@@ -83,8 +91,9 @@ const dadosEstruturados = {
     {faviconPng && <link rel="icon" type="image/png" sizes="32x32" href={faviconPng} />}
     {appleTouchIcon && <link rel="apple-touch-icon" href={appleTouchIcon} />}
     {canonical && <link rel="canonical" href={canonical} />}
-    {hrefAlternativaPt && <link rel="alternate" hreflang="pt" href={hrefAlternativaPt} />}
-    {hrefAlternativaEn && <link rel="alternate" hreflang="en" href={hrefAlternativaEn} />}
+    {hrefsAlternativos.map(({ idioma: idiomaAlternativo, href }) => (
+      <link rel="alternate" hreflang={idiomaAlternativo} href={href} />
+    ))}
     <title>{tituloPagina}</title>
     <meta name="description" content={descricao} />
 
