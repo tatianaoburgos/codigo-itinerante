@@ -229,7 +229,7 @@ const [destaqueUm, destaqueDois] = config.destaques ?? [];
               <figcaption class="mt-4 text-sm font-bold text-noite">
                 {depoimento.nome} <span class="font-normal opacity-70">— {depoimento.fonte}</span>
               </figcaption>
-              {idioma !== 'pt' && typeof depoimento.texto !== 'string' && (
+              {idioma !== 'pt' && typeof depoimento.texto !== 'string' && depoimento.texto[idioma] !== undefined && (
                 <p class="mt-2 text-xs opacity-60">{txt.depoimentoTraduzido}</p>
               )}
             </figure>
