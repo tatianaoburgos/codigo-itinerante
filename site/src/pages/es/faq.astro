@@ -1,13 +1,8 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "../../layouts/Layout.astro";
-import BotaoWhatsApp from "../../components/BotaoWhatsApp.astro";
-import AlternadorIdioma from "../../components/AlternadorIdioma.astro";
-import Secao from "../../components/Secao.astro";
-import { dados } from "../../dados";
+import PaginaFaq from "../../components/PaginaFaq.astro";
 import { idiomaAtual } from "../../lib/i18n";
 import { textos } from "../../lib/textos";
-import monograma from "../../../../marca/monograma-claro.svg";
 
 const idioma = idiomaAtual(Astro.currentLocale);
 const txt = textos[idioma].faq;
@@ -25,44 +20,5 @@ const jsonLdFaq = {
 ---
 
 <Layout titulo={txtMeta.titulo} descricao={txtMeta.descricao} jsonLd={jsonLdFaq}>
-  <div class="min-h-dvh bg-ambar text-breu">
-    <Secao>
-      <div class="flex items-center justify-between gap-4">
-        <a
-          href={getRelativeLocaleUrl(idioma)}
-          class="inline-flex items-center gap-2 text-sm text-breu/70 transition-colors hover:text-breu"
-        >
-          <img src={monograma.src} alt="" class="h-6" />
-          Código Itinerante
-        </a>
-        <AlternadorIdioma idioma={idioma} />
-      </div>
-      <h1 class="mt-8 text-4xl font-bold tracking-[-0.035em] md:text-5xl">
-        {txt.tituloPre}<em class="font-serifa font-normal">{txt.tituloDestaque}</em>
-      </h1>
-      <div class="mt-10 space-y-8">
-        {
-          txt.perguntas.map((p) => (
-            <div>
-              <h2 class="text-lg font-semibold">{p.pergunta}</h2>
-              <p class="mt-2 leading-relaxed text-breu/80">{p.resposta}</p>
-            </div>
-          ))
-        }
-      </div>
-      <div class="mt-14 border-t border-breu/20 pt-8">
-        <p class="text-lg">{txt.naoAchou}</p>
-        <div class="mt-4">
-          <BotaoWhatsApp invertido />
-        </div>
-      </div>
-      <footer class="mt-12 flex items-center justify-between border-t border-breu/20 pt-6 text-sm text-breu/70">
-        <img src={monograma.src} alt="Código Itinerante" class="h-6" />
-        <div class="flex gap-6">
-          <a href={`mailto:${dados.email}`} class="hover:text-breu">{dados.email}</a>
-          <a href={dados.linkedin} class="hover:text-breu">LinkedIn</a>
-        </div>
-      </footer>
-    </Secao>
-  </div>
+  <PaginaFaq />
 </Layout>

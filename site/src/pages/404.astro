@@ -1,27 +1,13 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
 import Layout from "../layouts/Layout.astro";
-import BotaoContorno from "../components/BotaoContorno.astro";
-import AlternadorIdioma from "../components/AlternadorIdioma.astro";
+import Pagina404 from "../components/Pagina404.astro";
 import { idiomaAtual } from "../lib/i18n";
 import { textos } from "../lib/textos";
-import wordmark from "../../../marca/wordmark-escuro.svg";
 
 const idioma = idiomaAtual(Astro.currentLocale);
-const txt = textos[idioma].pagina404;
 const txtMeta = textos[idioma].meta.pagina404;
 ---
 
 <Layout titulo={txtMeta.titulo} descricao={txtMeta.descricao}>
-  <div class="flex min-h-dvh flex-col items-center justify-center bg-breu px-6 py-10 text-center text-cal">
-    <AlternadorIdioma idioma={idioma} class="mb-4" />
-    <img src={wordmark.src} alt="Código Itinerante" class="w-64 max-w-full" />
-    <p class="mt-8 text-2xl font-bold tracking-[-0.02em]">{txt.titulo}</p>
-    <p class="mt-3 max-w-sm text-pedra">
-      {txt.texto}
-    </p>
-    <div class="mt-8">
-      <BotaoContorno href={getRelativeLocaleUrl(idioma)} externo={false}>{txt.voltarLabel}</BotaoContorno>
-    </div>
-  </div>
+  <Pagina404 />
 </Layout>

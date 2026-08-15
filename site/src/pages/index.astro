@@ -1,14 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hero from "../components/Hero.astro";
-import Manifesto from "../components/Manifesto.astro";
-import Dor from "../components/Dor.astro";
-import Proposta from "../components/Proposta.astro";
-import Escopo from "../components/Escopo.astro";
-import ComoFunciona from "../components/ComoFunciona.astro";
-import QuemSouEu from "../components/QuemSouEu.astro";
-import ProvaDeTrabalho from "../components/ProvaDeTrabalho.astro";
-import CtaFinal from "../components/CtaFinal.astro";
+import PaginaInicial from "../components/PaginaInicial.astro";
 import { idiomaAtual } from "../lib/i18n";
 import { textos } from "../lib/textos";
 
@@ -17,13 +9,5 @@ const txt = textos[idioma].meta.home;
 ---
 
 <Layout titulo={txt.titulo} descricao={txt.descricao}>
-  <Hero />
-  <QuemSouEu />
-  <ProvaDeTrabalho />
-  <ComoFunciona />
-  <Manifesto />
-  <Dor />
-  <Proposta />
-  <Escopo />
-  <CtaFinal />
+  <PaginaInicial />
 </Layout>
