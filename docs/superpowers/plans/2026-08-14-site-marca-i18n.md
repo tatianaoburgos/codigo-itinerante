@@ -37,7 +37,7 @@
 - Consumes: nada (task raiz).
 - Produces: `idiomas` (`['pt', 'en', 'es'] as const`), `Idioma` (tipo `'pt' | 'en' | 'es'`), `idiomaAtual(currentLocale: string | undefined): Idioma` — usado por todo componente/página das Tasks 3-16.
 
-- [ ] **Step 1: Criar o arquivo**
+- [x] **Step 1: Criar o arquivo**
 
 ```ts
 export const idiomas = ['pt', 'en', 'es'] as const;
@@ -51,7 +51,7 @@ export function idiomaAtual(currentLocale: string | undefined): Idioma {
 }
 ```
 
-- [ ] **Step 2: Verificar com script descartável**
+- [x] **Step 2: Verificar com script descartável**
 
 Criar `site/_verificar_i18n.ts`:
 
@@ -82,12 +82,12 @@ Expected: `i18n: todos os casos passaram.`
 
 Apagar depois: `Remove-Item _verificar_i18n.ts`.
 
-- [ ] **Step 3: `npm run check`**
+- [x] **Step 3: `npm run check`**
 
 Run (a partir de `site/`): `npm run check`
 Expected: passa sem erro (arquivo novo, ainda sem consumidores — nada quebra).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add site/src/lib/i18n.ts
@@ -105,7 +105,7 @@ git commit -m "Adiciona helper de idioma ao site da marca"
 - Consumes: nada.
 - Produces: `textos.pt`/`textos.en`/`textos.es`, cada um com as chaves `layout`, `meta.{home,faq,pagina404}`, `botaoWhatsApp`, `hero`, `quemSouEu`, `provaDeTrabalho`, `comoFunciona`, `manifesto`, `dor`, `proposta`, `escopo`, `ctaFinal`, `faq`, `pagina404` — consumidas pelas Tasks 4-16.
 
-- [ ] **Step 1: Criar o arquivo**
+- [x] **Step 1: Criar o arquivo**
 
 ```ts
 export const textos = {
@@ -621,7 +621,7 @@ export const textos = {
 } as const;
 ```
 
-- [ ] **Step 2: Verificar paridade de chaves entre pt/en/es com script descartável**
+- [x] **Step 2: Verificar paridade de chaves entre pt/en/es com script descartável**
 
 Criar `site/_verificar_textos.ts`:
 
@@ -676,12 +676,12 @@ Expected: `textos: pt/en/es com a mesma estrutura de chaves.`
 
 Apagar depois: `Remove-Item _verificar_textos.ts`.
 
-- [ ] **Step 3: `npm run check`**
+- [x] **Step 3: `npm run check`**
 
 Run: `npm run check`
 Expected: passa sem erro.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add site/src/lib/textos.ts
@@ -702,7 +702,7 @@ git commit -m "Adiciona dicionario pt/en/es de textos fixos ao site da marca"
 - Consumes: `idiomaAtual` (Task 1); `textos` (Task 2).
 - Produces: rotas `/`, `/en/`, `/es/` funcionais, com `<title>`/meta description traduzidos. **Estado esperado ao fim desta task**: o corpo da página (Hero, QuemSouEu, etc.) continua em português nas 3 rotas — os componentes só são traduzidos nas Tasks 6-14. Isso é esperado, não é regressão.
 
-- [ ] **Step 1: Substituir o arquivo inteiro, adicionando o bloco `i18n`**
+- [x] **Step 1: Substituir o arquivo inteiro, adicionando o bloco `i18n`**
 
 ```js
 // @ts-check
@@ -730,7 +730,7 @@ export default defineConfig({
 });
 ```
 
-- [ ] **Step 2: Atualizar `site/src/pages/index.astro` para ler idioma**
+- [x] **Step 2: Atualizar `site/src/pages/index.astro` para ler idioma**
 
 ```astro
 ---
@@ -764,7 +764,7 @@ const txt = textos[idioma].meta.home;
 </Layout>
 ```
 
-- [ ] **Step 3: Criar `site/src/pages/en/index.astro`**
+- [x] **Step 3: Criar `site/src/pages/en/index.astro`**
 
 ```astro
 ---
@@ -798,7 +798,7 @@ const txt = textos[idioma].meta.home;
 </Layout>
 ```
 
-- [ ] **Step 4: Criar `site/src/pages/es/index.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
+- [x] **Step 4: Criar `site/src/pages/es/index.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
 
 ```astro
 ---
@@ -832,7 +832,7 @@ const txt = textos[idioma].meta.home;
 </Layout>
 ```
 
-- [ ] **Step 5: Build e checagem**
+- [x] **Step 5: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -845,7 +845,7 @@ Select-String -Path dist/en/index.html -Pattern 'Sites para hostels, pagos em'
 ```
 Expected: os 3 `<title>` corretos por idioma; a última busca **encontra** "Sites para hostels, pagos em" dentro de `dist/en/index.html` — confirma o estado esperado (Hero ainda não traduzido, corrigido na Task 6).
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add site/astro.config.mjs site/src/pages/index.astro site/src/pages/en/index.astro site/src/pages/es/index.astro
@@ -864,7 +864,7 @@ git commit -m "Adiciona roteamento i18n e paginas index localizadas (meta) ao si
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].botaoWhatsApp` (Task 2).
 - Produces: `linkWhatsApp(mensagem: string): string` (assinatura mudou — antes não tinha parâmetro) — usado só por `BotaoWhatsApp.astro`, nenhum outro consumidor no repo.
 
-- [ ] **Step 1: Remover `mensagemWhatsApp` de `dados.ts` e parametrizar `linkWhatsApp`**
+- [x] **Step 1: Remover `mensagemWhatsApp` de `dados.ts` e parametrizar `linkWhatsApp`**
 
 ```ts
 /** Dados de contato e identidade da autora. */
@@ -882,7 +882,7 @@ export function linkWhatsApp(mensagem: string): string {
 }
 ```
 
-- [ ] **Step 2: `BotaoWhatsApp.astro` lê idioma e resolve rótulo/mensagem**
+- [x] **Step 2: `BotaoWhatsApp.astro` lê idioma e resolve rótulo/mensagem**
 
 ```astro
 ---
@@ -913,7 +913,7 @@ const { rotulo = txt.rotuloPadrao, invertido = false } = Astro.props;
 </a>
 ```
 
-- [ ] **Step 3: Build e checagem**
+- [x] **Step 3: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -925,7 +925,7 @@ Select-String -Path dist/es/index.html -Pattern 'Escribir por WhatsApp'
 ```
 Expected: cada rota mostra o rótulo do botão no idioma certo (o botão da Hero não passa `rotulo` explícito, então usa sempre `rotuloPadrao`).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add site/src/dados.ts site/src/components/BotaoWhatsApp.astro
@@ -943,7 +943,7 @@ git commit -m "Localiza rotulo e mensagem do botao de WhatsApp no site da marca"
 - Consumes: `idiomaAtual`, `idiomas`, `Idioma` (Task 1); `textos[idioma].layout.descricaoNegocio` (Task 2); `getRelativeLocaleUrl` de `astro:i18n`.
 - Produces: nenhuma interface nova — `titulo`/`descricao`/`jsonLd` continuam props explícitas, como antes.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1036,7 +1036,7 @@ const blocosJsonLd = [jsonLdOrganizacao, ...(jsonLd ? [jsonLd] : [])];
 </html>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1057,7 +1057,7 @@ Select-String -Path dist/es/index.html -Pattern 'Construcción de sitios web ins
 ```
 Expected: `lang`/`og:locale` corretos por rota; `dist/index.html` tem `hreflang="en"` e `hreflang="es"` (as 3 tags sempre presentes, sem gate); a descrição do JSON-LD aparece traduzida em `en`/`es`.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/layouts/Layout.astro
@@ -1076,7 +1076,7 @@ git commit -m "Traduz hreflang, og:locale, html lang e JSON-LD do site da marca"
 - Consumes: `idiomas`, `Idioma`, `idiomaAtual` (Task 1); `textos[idioma].hero` (Task 2); `getRelativeLocaleUrl` de `astro:i18n`.
 - Produces: `AlternadorIdioma` (props: `idioma: Idioma`, `class?: string`) — reusado nas Tasks 15 e 16.
 
-- [ ] **Step 1: Criar `AlternadorIdioma.astro`**
+- [x] **Step 1: Criar `AlternadorIdioma.astro`**
 
 Réplica do padrão visual "PT / EN / ES" do `Nav.astro` do motor (`template/src/components/Nav.astro`), sem gate de idiomas ativos — aqui os 3 sempre aparecem.
 
@@ -1111,7 +1111,7 @@ const { idioma, class: className } = Astro.props;
 </div>
 ```
 
-- [ ] **Step 2: `Hero.astro` lê idioma e usa o alternador**
+- [x] **Step 2: `Hero.astro` lê idioma e usa o alternador**
 
 ```astro
 ---
@@ -1142,7 +1142,7 @@ const txt = textos[idioma].hero;
 </header>
 ```
 
-- [ ] **Step 3: Build e checagem**
+- [x] **Step 3: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1158,7 +1158,7 @@ Select-String -Path dist/es/index.html -Pattern 'href="/"'
 ```
 Expected: Hero traduzida em cada rota; alternador da home (`/`) linka para `/en/` e `/es/` **(com barra final — confirmado no build real do LumeHostel, `template/dist/index.html`: `getRelativeLocaleUrl` sempre adiciona `/` no fim para locales não-default, porque `trailingSlash` é `'ignore'` e `build.format` é `'directory'`, combinação que resolve para "sempre com barra"; só o locale padrão sem `path` retorna `/` puro)**; alternadores de `/en/` e `/es/` linkam de volta pra `/` (pt, sem barra dupla).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add site/src/components/AlternadorIdioma.astro site/src/components/Hero.astro
@@ -1175,7 +1175,7 @@ git commit -m "Adiciona alternador de idioma e localiza a Hero do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].quemSouEu` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1216,7 +1216,7 @@ const txt = textos[idioma].quemSouEu;
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1228,7 +1228,7 @@ Select-String -Path dist/es/index.html -Pattern 'Trabajo como especialista en Ci
 ```
 Expected: as 3 rotas mostram o parágrafo no idioma correto.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/QuemSouEu.astro
@@ -1245,7 +1245,7 @@ git commit -m "Localiza a secao Quem sou eu do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].provaDeTrabalho` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1311,7 +1311,7 @@ const url = "https://lumehostel.vercel.app";
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1322,7 +1322,7 @@ Select-String -Path dist/en/index.html -Pattern 'The full LumeHostel website'
 Select-String -Path dist/es/index.html -Pattern 'El sitio completo de LumeHostel'
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/ProvaDeTrabalho.astro
@@ -1339,7 +1339,7 @@ git commit -m "Localiza a secao Prova de trabalho do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].comoFunciona` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1377,7 +1377,7 @@ const passos = txt.passos.map((passo, indice) => ({ ...passo, icone: icones[indi
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1388,7 +1388,7 @@ Select-String -Path dist/en/index.html -Pattern 'We talk on WhatsApp'
 Select-String -Path dist/es/index.html -Pattern 'Conversamos por WhatsApp'
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/ComoFunciona.astro
@@ -1405,7 +1405,7 @@ git commit -m "Localiza a secao Como funciona do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].manifesto` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1431,7 +1431,7 @@ const txt = textos[idioma].manifesto;
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1442,7 +1442,7 @@ Select-String -Path dist/en/index.html -Pattern 'was born from a simple trade'
 Select-String -Path dist/es/index.html -Pattern 'nació de un intercambio simple'
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/Manifesto.astro
@@ -1459,7 +1459,7 @@ git commit -m "Localiza a secao Manifesto do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].dor` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1485,7 +1485,7 @@ const txt = textos[idioma].dor;
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1496,7 +1496,7 @@ Select-String -Path dist/en/index.html -Pattern '10% to 25% per booking'
 Select-String -Path dist/es/index.html -Pattern 'de 10% a 25% por reserva'
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/Dor.astro
@@ -1513,7 +1513,7 @@ git commit -m "Localiza a secao O problema do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].proposta` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1538,7 +1538,7 @@ const txt = textos[idioma].proposta;
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1549,7 +1549,7 @@ Select-String -Path dist/en/index.html -Pattern 'a temporary trade for a permane
 Select-String -Path dist/es/index.html -Pattern 'un intercambio temporal por un producto permanente'
 ```
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/Proposta.astro
@@ -1566,7 +1566,7 @@ git commit -m "Localiza a secao A proposta do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].escopo` (Task 2); `getRelativeLocaleUrl` de `astro:i18n`.
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1608,7 +1608,7 @@ const txt = textos[idioma].escopo;
 </Secao>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1624,7 +1624,7 @@ Expected: o link para o FAQ é relativo ao idioma atual em cada rota, **sempre c
 
 **Nota sobre apóstrofo em `Select-String`**: evite padrões com contração (ex. `"What's included"`) — o Astro renderiza apóstrofo de texto como entidade HTML `&#39;` no HTML final (confirmado ao rodar: o texto-fonte `What's included` sai como `What&#39;s included` no `dist/`), então o apóstrofo literal nunca bate contra o HTML gerado. Prefira um trecho sem contração, como acima.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/Escopo.astro
@@ -1641,7 +1641,7 @@ git commit -m "Localiza a secao O que voce recebe do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].ctaFinal` (Task 2).
 
-- [ ] **Step 1: Substituir o arquivo inteiro**
+- [x] **Step 1: Substituir o arquivo inteiro**
 
 ```astro
 ---
@@ -1677,7 +1677,7 @@ const txt = textos[idioma].ctaFinal;
 </section>
 ```
 
-- [ ] **Step 2: Build e checagem**
+- [x] **Step 2: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1690,7 +1690,7 @@ Select-String -Path dist/es/index.html -Pattern 'Vamos a <em class="font-serifa 
 ```
 Expected: cada rota mostra o título de fechamento no idioma certo.
 
-- [ ] **Step 3: Commit**
+- [x] **Step 3: Commit**
 
 ```bash
 git add site/src/components/CtaFinal.astro
@@ -1709,7 +1709,7 @@ git commit -m "Localiza a secao final de CTA do site da marca"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].faq`, `textos[idioma].meta.faq` (Task 2); `AlternadorIdioma` (Task 6); `getRelativeLocaleUrl` de `astro:i18n`.
 
-- [ ] **Step 1: Substituir `site/src/pages/faq.astro`**
+- [x] **Step 1: Substituir `site/src/pages/faq.astro`**
 
 ```astro
 ---
@@ -1782,7 +1782,7 @@ const jsonLdFaq = {
 </Layout>
 ```
 
-- [ ] **Step 2: Criar `site/src/pages/en/faq.astro`** (mesmo conteúdo, um nível a mais de `../`)
+- [x] **Step 2: Criar `site/src/pages/en/faq.astro`** (mesmo conteúdo, um nível a mais de `../`)
 
 ```astro
 ---
@@ -1855,7 +1855,7 @@ const jsonLdFaq = {
 </Layout>
 ```
 
-- [ ] **Step 3: Criar `site/src/pages/es/faq.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
+- [x] **Step 3: Criar `site/src/pages/es/faq.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
 
 ```astro
 ---
@@ -1928,7 +1928,7 @@ const jsonLdFaq = {
 </Layout>
 ```
 
-- [ ] **Step 4: Build e checagem**
+- [x] **Step 4: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -1942,7 +1942,7 @@ Select-String -Path dist/es/faq/index.html -Pattern 'href="/es/"'
 ```
 Expected: as 3 rotas do FAQ existem, com as perguntas traduzidas; o link do logo/monograma em `/en/faq` aponta para `/en/` e em `/es/faq` para `/es/` — a home **daquele idioma**, não a raiz `/` em português. `getRelativeLocaleUrl(idioma)` sem segundo argumento sempre resolve pra home do idioma atual da página (com barra final, exceto quando esse idioma é o padrão pt).
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add site/src/pages/faq.astro site/src/pages/en/faq.astro site/src/pages/es/faq.astro
@@ -1961,7 +1961,7 @@ git commit -m "Localiza a pagina de FAQ do site da marca em pt/en/es"
 **Interfaces:**
 - Consumes: `idiomaAtual` (Task 1); `textos[idioma].pagina404`, `textos[idioma].meta.pagina404` (Task 2); `AlternadorIdioma` (Task 6); `getRelativeLocaleUrl` de `astro:i18n`.
 
-- [ ] **Step 1: Substituir `site/src/pages/404.astro`**
+- [x] **Step 1: Substituir `site/src/pages/404.astro`**
 
 ```astro
 ---
@@ -1993,7 +1993,7 @@ const txtMeta = textos[idioma].meta.pagina404;
 </Layout>
 ```
 
-- [ ] **Step 2: Criar `site/src/pages/en/404.astro`** (mesmo conteúdo, um nível a mais de `../`)
+- [x] **Step 2: Criar `site/src/pages/en/404.astro`** (mesmo conteúdo, um nível a mais de `../`)
 
 ```astro
 ---
@@ -2025,7 +2025,7 @@ const txtMeta = textos[idioma].meta.pagina404;
 </Layout>
 ```
 
-- [ ] **Step 3: Criar `site/src/pages/es/404.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
+- [x] **Step 3: Criar `site/src/pages/es/404.astro`** (idêntico ao de `en/`, mesmos caminhos relativos)
 
 ```astro
 ---
@@ -2057,7 +2057,7 @@ const txtMeta = textos[idioma].meta.pagina404;
 </Layout>
 ```
 
-- [ ] **Step 4: Build e checagem**
+- [x] **Step 4: Build e checagem**
 
 A partir de `site/`:
 ```
@@ -2075,7 +2075,7 @@ Expected: as 3 versões da 404 existem, com o texto traduzido; o botão "voltar 
 
 **Limitação conhecida, fora do controle deste código** (ver revisão crítica antes da execução): essas páginas `en/404.astro`/`es/404.astro` são páginas comuns, sem nenhum vínculo com o mecanismo de erro do Astro — só são alcançadas se alguém navegar direto pra `/en/404` ou `/es/404`. Elas **não** são servidas automaticamente quando o visitante acerta uma URL quebrada de verdade sob `/en/*` ou `/es/*` — nem no `astro preview` (o servidor de preview do Astro serve sempre `dist/404.html`, hardcoded, sem olhar pra subpastas — confirmado lendo `node_modules/astro/dist/core/preview/vite-plugin-astro-preview.js`), nem, muito provavelmente, em produção na Vercel (hospedagem estática da Vercel não documenta suporte a `404.html` aninhado por diretório — confirmado na documentação oficial e em relatos da comunidade). Um link quebrado sob `/en/algumacoisa` mostra a 404 em português. As páginas continuam valendo a pena como conteúdo alcançável por link direto, mas não resolvem "404 traduzida para quem cai numa URL quebrada" — ver decisão registrada na revisão crítica do plano.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add site/src/pages/404.astro site/src/pages/en/404.astro site/src/pages/es/404.astro
@@ -2091,7 +2091,7 @@ git commit -m "Localiza a pagina 404 do site da marca em pt/en/es"
 **Interfaces:**
 - Consumes: build final de todas as Tasks 1-16.
 
-- [ ] **Step 1: Build e `check` limpos**
+- [x] **Step 1: Build e `check` limpos**
 
 A partir de `site/`:
 ```
@@ -2100,14 +2100,14 @@ npm run build
 ```
 Expected: ambos passam sem erro. Confirma o critério de conclusão "npm run check e npm run build limpos em site/".
 
-- [ ] **Step 2: Confirmar as 9 rotas existem no `dist/`**
+- [x] **Step 2: Confirmar as 9 rotas existem no `dist/`**
 
 ```
 Get-ChildItem dist/index.html, dist/en/index.html, dist/es/index.html, dist/faq/index.html, dist/en/faq/index.html, dist/es/faq/index.html, dist/404.html, dist/en/404/index.html, dist/es/404/index.html
 ```
 Expected: os 9 arquivos existem (critério de conclusão "gera dist/index.html, dist/en/index.html, dist/es/index.html — e o mesmo trio pra faq e 404"). **Nota**: só a 404 raiz (`dist/404.html`) recebe o nome de arquivo especial sem subpasta — `en/404.astro` e `es/404.astro` saem como página comum, em `dist/en/404/index.html` e `dist/es/404/index.html` (confirmado rodando o build; ver nota na Task 16).
 
-- [ ] **Step 3: Regressão consolidada de `hreflang`/`og:locale`/`lang` nas 3 páginas**
+- [x] **Step 3: Regressão consolidada de `hreflang`/`og:locale`/`lang` nas 3 páginas**
 
 ```
 Select-String -Path dist/index.html, dist/faq/index.html, dist/404.html -Pattern 'lang="pt-BR"'
@@ -2118,7 +2118,7 @@ Select-String -Path dist/404.html -Pattern 'hreflang="en"|hreflang="es"'
 ```
 Expected: `lang` correto nas 9 páginas; `hreflang` presente também nas páginas de FAQ e 404 (o `Layout.astro` gera as 3 tags sempre, independente da página).
 
-- [ ] **Step 4: Rodar `npm run preview` e verificar manualmente no navegador (9 combinações)**
+- [x] **Step 4: Rodar `npm run preview` e verificar manualmente no navegador (9 combinações)**
 
 A partir de `site/`: `npm run build` (se ainda não rodou) seguido de `npm run preview`, depois abrir no navegador e conferir, para cada uma das 3 páginas (`/`, `/faq`, `/en/404`/`/es/404` — navegando **direto** pra essas URLs, não digitando uma rota quebrada qualquer, já que uma URL inválida de verdade sob `/en/` ou `/es/` mostra a 404 em português, não a traduzida — ver limitação registrada na Task 16) nos 3 idiomas (`pt`, `en`, `es`):
 
@@ -2130,6 +2130,6 @@ A partir de `site/`: `npm run build` (se ainda não rodou) seguido de `npm run p
 
 Usar as ferramentas de navegador (`claude-in-chrome`) para navegar e conferir cada uma das 9 combinações; reportar qualquer divergência antes de considerar a task concluída.
 
-- [ ] **Step 5: Commit final (se sobrar algum ajuste do checklist manual)**
+- [x] **Step 5: Commit final (se sobrar algum ajuste do checklist manual)**
 
 Se o Step 4 não apontar nenhum ajuste, esta task não gera commit novo — as Tasks 1-16 já cobrem todo o código. Se algo precisar de correção, aplicar, re-rodar Steps 1-3 e commitar normalmente.
