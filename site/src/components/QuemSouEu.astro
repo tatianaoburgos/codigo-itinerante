@@ -4,36 +4,32 @@ import Eyebrow from "./Eyebrow.astro";
 import Secao from "./Secao.astro";
 import BotaoContorno from "./BotaoContorno.astro";
 import { dados } from "../dados";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
 import foto from "../assets/tatiana.jpg";
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].quemSouEu;
 ---
 
 <Secao>
-  <Eyebrow texto="quem" destaque="sou eu" />
+  <Eyebrow texto={txt.eyebrowTexto} destaque={txt.eyebrowDestaque} />
   <div class="mt-7 grid items-start gap-7 md:grid-cols-[200px_1fr]">
     <Image
       src={foto}
-      alt="Tatiana Burgos sorrindo em uma paisagem de gêiseres no altiplano"
+      alt={txt.fotoAlt}
       widths={[200, 400, 800]}
       sizes="(min-width: 768px) 200px, 100vw"
       class="aspect-square w-full rounded-xl object-cover"
     />
     <div class="space-y-5 leading-relaxed">
       <p class="text-xl font-semibold">{dados.nome}</p>
-      <p>
-        Trabalho como especialista em Ciência de Dados no Ministério da
-        Gestão e da Inovação e, ao mesmo tempo, viajo pelo Brasil me
-        hospedando em hostels. Essa combinação me deixa ver os hostels pelos
-        dois lados: como hóspede e como profissional que constrói soluções
-        digitais.
-      </p>
+      <p>{txt.paragrafo}</p>
       <blockquote class="border-l-2 border-ambar pl-5 text-lg">
-        Eu não estou construindo um site para um hostel que conheci por uma
-        reunião de vídeo. Eu provavelmente dormi em um lugar como o seu na
-        semana passada — e vou dormir em outro na semana que vem. Conheço a
-        jornada do hóspede porque ela também é a minha.
+        {txt.citacao}
       </blockquote>
       <p>
-        <BotaoContorno href={dados.linkedin}>Me encontre no LinkedIn</BotaoContorno>
+        <BotaoContorno href={dados.linkedin}>{txt.linkedinLabel}</BotaoContorno>
       </p>
     </div>
   </div>
