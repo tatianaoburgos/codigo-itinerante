@@ -1,18 +1,22 @@
 ---
 import BotaoWhatsApp from "./BotaoWhatsApp.astro";
 import { dados } from "../dados";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
 import iconeContato from "../../../marca/icones/icone-contato-cheio-papel.svg";
 import monograma from "../../../marca/monograma-claro.svg";
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].ctaFinal;
 ---
 
 <section class="mx-auto w-full max-w-3xl px-6 pb-6 pt-10 text-breu md:pt-12">
   <img src={iconeContato.src} alt="" class="h-[88px]" />
   <h2 class="mt-6 text-4xl font-bold tracking-[-0.035em] md:text-5xl">
-    Tem um hostel? Vamos <em class="font-serifa font-normal">conversar</em>.
+    {txt.tituloPre}<em class="font-serifa font-normal">{txt.tituloDestaque}</em>.
   </h2>
   <p class="mt-4 max-w-md text-lg leading-relaxed text-breu/70">
-    Me chama no WhatsApp e me conta do seu hostel. A conversa não custa
-    nada — nem depois dela.
+    {txt.paragrafo}
   </p>
   <div class="mt-7">
     <BotaoWhatsApp invertido />
