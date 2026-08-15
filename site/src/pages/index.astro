@@ -9,12 +9,14 @@ import ComoFunciona from "../components/ComoFunciona.astro";
 import QuemSouEu from "../components/QuemSouEu.astro";
 import ProvaDeTrabalho from "../components/ProvaDeTrabalho.astro";
 import CtaFinal from "../components/CtaFinal.astro";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].meta.home;
 ---
 
-<Layout
-  titulo="Código Itinerante — sites para hostels, pagos em noites"
-  descricao="Construo o site institucional do seu hostel em troca de noites de hospedagem. Sem dinheiro envolvido. Reserva direta pelo WhatsApp, sem comissão de plataforma."
->
+<Layout titulo={txt.titulo} descricao={txt.descricao}>
   <Hero />
   <QuemSouEu />
   <ProvaDeTrabalho />

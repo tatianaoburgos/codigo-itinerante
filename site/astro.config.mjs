@@ -6,6 +6,11 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://codigo-itinerante.vercel.app',
+  i18n: {
+    locales: ['pt', 'en', 'es'],
+    defaultLocale: 'pt',
+    routing: { prefixDefaultLocale: false },
+  },
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
