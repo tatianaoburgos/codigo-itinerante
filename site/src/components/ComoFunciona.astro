@@ -1,21 +1,22 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
 import Secao from "./Secao.astro";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
 import iconeContato from "../../../marca/icones/icone-contato-cheio-breu.svg";
 import iconeHostel from "../../../marca/icones/icone-hostel-cheio-breu.svg";
 import iconeSiteProprio from "../../../marca/icones/icone-site-proprio-cheio-breu.svg";
 import iconeEstrada from "../../../marca/icones/icone-estrada-cheio-breu.svg";
 
-const passos: { icone: ImageMetadata; titulo: string; texto: string }[] = [
-  { icone: iconeContato, titulo: "Conversamos no WhatsApp", texto: "Você me conta do hostel e fechamos juntos o acordo de noites." },
-  { icone: iconeHostel, titulo: "Briefing e fotos", texto: "Você preenche um formulário rápido sobre o hostel e me envia as fotos em alta qualidade. Quanto melhores as fotos, mais bonito o site fica." },
-  { icone: iconeSiteProprio, titulo: "Quinze dias de construção", texto: "Eu escrevo os textos, monto o site e você acompanha." },
-  { icone: iconeEstrada, titulo: "Site no ar, tudo seu", texto: "Domínio no seu nome, site sob seu controle total." },
-];
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].comoFunciona;
+
+const icones = [iconeContato, iconeHostel, iconeSiteProprio, iconeEstrada];
+const passos = txt.passos.map((passo, indice) => ({ ...passo, icone: icones[indice] }));
 ---
 
 <Secao>
-  <Eyebrow texto="como" destaque="funciona" />
+  <Eyebrow texto={txt.eyebrowTexto} destaque={txt.eyebrowDestaque} />
   <ol class="mt-7 space-y-8">
     {
       passos.map((passo) => (
