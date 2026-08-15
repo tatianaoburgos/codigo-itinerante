@@ -1,0 +1,28 @@
+---
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { idiomas, type Idioma } from "../lib/i18n";
+
+interface Props {
+  idioma: Idioma;
+  class?: string;
+}
+
+const { idioma, class: className } = Astro.props;
+---
+
+<div class:list={["flex items-center gap-1 font-mono text-xs font-bold tracking-widest uppercase", className]}>
+  {
+    idiomas.map((idiomaItem, indice) => (
+      <>
+        {indice > 0 && <span aria-hidden="true">/</span>}
+        {idioma === idiomaItem ? (
+          <span aria-current="page">{idiomaItem.toUpperCase()}</span>
+        ) : (
+          <a href={getRelativeLocaleUrl(idiomaItem)} hreflang={idiomaItem} class="transition hover:text-ambar">
+            {idiomaItem.toUpperCase()}
+          </a>
+        )}
+      </>
+    ))
+  }
+</div>
