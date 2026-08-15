@@ -1,22 +1,20 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
 import Secao from "./Secao.astro";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].proposta;
 ---
 
 <Secao>
-  <Eyebrow texto="a" destaque="proposta" />
+  <Eyebrow texto={txt.eyebrowTexto} destaque={txt.eyebrowDestaque} />
   <div class="mt-6 space-y-5 text-lg leading-relaxed">
-    <p>
-      Eu construo o site institucional completo do seu hostel — páginas, textos,
-      fotos organizadas, botão de reserva direta pelo WhatsApp — e você me paga
-      em noites de hospedagem.
-    </p>
+    <p>{txt.paragrafo1}</p>
     <p class="font-serifa italic text-3xl leading-snug text-ambar md:text-4xl">
-      É uma troca temporária por um produto permanente.
+      {txt.destaque}
     </p>
-    <p>
-      Sem dinheiro envolvido. O único custo é o registro do domínio — que é
-      seu e fica com você.
-    </p>
+    <p>{txt.paragrafo3}</p>
   </div>
 </Secao>
