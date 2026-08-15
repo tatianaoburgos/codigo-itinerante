@@ -1,25 +1,21 @@
 ---
 import Eyebrow from "./Eyebrow.astro";
 import Secao from "./Secao.astro";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
+
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].dor;
 ---
 
 <Secao>
-  <Eyebrow texto="o" destaque="problema" />
+  <Eyebrow texto={txt.eyebrowTexto} destaque={txt.eyebrowDestaque} />
   <div class="mt-6 space-y-5 text-lg leading-relaxed">
-    <p>
-      Muitas vezes eu queria reservar diretamente com o hostel, pois sabia que
-      ficaria mais barato para mim e melhor para o negócio. Procurava o
-      WhatsApp, tentava encontrar fotos confiáveis, entender os quartos,
-      confirmar a localização. As informações estavam espalhadas entre redes
-      sociais, mapas e plataformas de reserva. Depois de um tempo procurando,
-      eu desistia — e reservava pela plataforma.
-    </p>
+    <p>{txt.paragrafo}</p>
   </div>
   <div class="mt-8 rounded-xl border border-cal/10 bg-grafite/70 p-6 backdrop-blur-sm md:p-7">
     <p class="text-xl leading-relaxed">
-      Isso é comissão: <strong class="text-ambar">de 10% a 25% por
-      reserva</strong>, direto do bolso do hostel. Cada hóspede que reserva
-      pelo seu WhatsApp é comissão que fica com você.
+      {txt.boxPre}<strong class="text-ambar">{txt.boxForte}</strong>{txt.boxPos}
     </p>
   </div>
 </Secao>
