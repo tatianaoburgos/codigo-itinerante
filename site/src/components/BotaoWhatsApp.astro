@@ -1,16 +1,20 @@
 ---
 import { linkWhatsApp } from "../dados";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
 
 interface Props {
   rotulo?: string;
   invertido?: boolean;
 }
 
-const { rotulo = "Chamar no WhatsApp", invertido = false } = Astro.props;
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].botaoWhatsApp;
+const { rotulo = txt.rotuloPadrao, invertido = false } = Astro.props;
 ---
 
 <a
-  href={linkWhatsApp()}
+  href={linkWhatsApp(txt.mensagem)}
   target="_blank"
   rel="noopener noreferrer"
   class:list={[
