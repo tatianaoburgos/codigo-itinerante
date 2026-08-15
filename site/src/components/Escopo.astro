@@ -1,45 +1,37 @@
 ---
+import { getRelativeLocaleUrl } from "astro:i18n";
 import Eyebrow from "./Eyebrow.astro";
 import Secao from "./Secao.astro";
+import { idiomaAtual } from "../lib/i18n";
+import { textos } from "../lib/textos";
 
-const inclui: string[] = [
-  "Site responsivo, bonito no celular e no computador",
-  "Acomodações, sobre o hostel, localização com mapa e contato",
-  "Textos escritos por mim a partir do seu briefing",
-  "Botão de reserva direta pelo seu WhatsApp",
-  "SEO básico: seu hostel bem apresentado no Google",
-  "Vinculação ao Perfil da Empresa no Google",
-  "Domínio registrado e configurado",
-  "Quatro rodadas de ajuste durante a construção",
-];
-
-const naoInclui: string[] = [
-  "Motor de reservas com calendário e disponibilidade",
-  "Pagamento online",
-  "Integração com plataformas de reserva",
-  "Manutenção contínua (alterações futuras são combinadas à parte)",
-  "Produção de fotos profissionais",
-  "Tráfego pago e gestão de redes sociais",
-];
+const idioma = idiomaAtual(Astro.currentLocale);
+const txt = textos[idioma].escopo;
 ---
 
 <Secao>
-  <Eyebrow texto="o que você" destaque="recebe" />
+  <Eyebrow texto={txt.eyebrowTexto} destaque={txt.eyebrowDestaque} />
   <div class="mt-6 grid gap-6 md:grid-cols-2">
     <div class="rounded-xl border border-cal/10 bg-grafite/70 p-6 backdrop-blur-sm md:p-7">
-      <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-ambar">Está incluído</h3>
+      <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-ambar">{txt.incluiTitulo}</h3>
       <ul class="mt-5 space-y-3 leading-relaxed">
-        {inclui.map((item) => <li>{item}</li>)}
+        {txt.inclui.map((item) => <li>{item}</li>)}
       </ul>
     </div>
     <div class="rounded-xl border border-cal/10 bg-grafite/70 p-6 backdrop-blur-sm md:p-7">
-      <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-cal/75">Não está incluído</h3>
+      <h3 class="font-mono text-sm font-medium uppercase tracking-[0.12em] text-cal/75">{txt.naoIncluiTitulo}</h3>
       <ul class="mt-5 space-y-3 leading-relaxed text-cal/75">
-        {naoInclui.map((item) => <li>{item}</li>)}
+        {txt.naoInclui.map((item) => <li>{item}</li>)}
       </ul>
     </div>
   </div>
   <p class="mt-6 text-sm text-cal/75">
-    Ainda com dúvidas? <a href="/faq" class="text-cal underline decoration-cal/40 underline-offset-4 hover:decoration-cal">Veja as perguntas frequentes →</a>
+    {txt.duvidasPre}
+    <a
+      href={getRelativeLocaleUrl(idioma, "faq")}
+      class="text-cal underline decoration-cal/40 underline-offset-4 hover:decoration-cal"
+    >
+      {txt.duvidasLink}
+    </a>
   </p>
 </Secao>
