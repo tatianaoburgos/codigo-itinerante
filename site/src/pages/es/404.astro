@@ -1,11 +1,11 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import Layout from "../layouts/Layout.astro";
-import BotaoContorno from "../components/BotaoContorno.astro";
-import AlternadorIdioma from "../components/AlternadorIdioma.astro";
-import { idiomaAtual } from "../lib/i18n";
-import { textos } from "../lib/textos";
-import wordmark from "../../../marca/wordmark-escuro.svg";
+import Layout from "../../layouts/Layout.astro";
+import BotaoContorno from "../../components/BotaoContorno.astro";
+import AlternadorIdioma from "../../components/AlternadorIdioma.astro";
+import { idiomaAtual } from "../../lib/i18n";
+import { textos } from "../../lib/textos";
+import wordmark from "../../../../marca/wordmark-escuro.svg";
 
 const idioma = idiomaAtual(Astro.currentLocale);
 const txt = textos[idioma].pagina404;

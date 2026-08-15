@@ -2064,14 +2064,16 @@ A partir de `site/`:
 npm run check
 npm run build
 Select-String -Path dist/404.html -Pattern 'Essa página não existe'
-Select-String -Path dist/en/404.html -Pattern 'This page'
-Select-String -Path dist/es/404.html -Pattern 'Esta página no existe'
-Select-String -Path dist/en/404.html -Pattern 'href="/en/"'
-Select-String -Path dist/es/404.html -Pattern 'href="/es/"'
+Select-String -Path dist/en/404/index.html -Pattern 'This page'
+Select-String -Path dist/es/404/index.html -Pattern 'Esta página no existe'
+Select-String -Path dist/en/404/index.html -Pattern 'href="/en/"'
+Select-String -Path dist/es/404/index.html -Pattern 'href="/es/"'
 ```
-Expected: as 3 versões da 404 existem, com o texto traduzido; o botão "voltar pra home" aponta pra `/en/` em `dist/en/404.html` e `/es/` em `dist/es/404.html` (home do próprio idioma atual, não a raiz `/` em português) — `getRelativeLocaleUrl(idioma)` sem `path`.
+Expected: as 3 versões da 404 existem, com o texto traduzido; o botão "voltar pra home" aponta pra `/en/` em `dist/en/404/index.html` e `/es/` em `dist/es/404/index.html` (home do próprio idioma atual, não a raiz `/` em português) — `getRelativeLocaleUrl(idioma)` sem `path`.
 
-**Limitação conhecida, fora do controle deste código** (ver revisão crítica antes da execução): essas páginas `en/404.astro`/`es/404.astro` só são alcançadas se alguém navegar direto pra `/en/404` ou `/es/404`. Elas **não** são servidas automaticamente quando o visitante acerta uma URL quebrada de verdade sob `/en/*` ou `/es/*` — nem no `astro preview` (o servidor de preview do Astro serve sempre `dist/404.html`, hardcoded, sem olhar pra subpastas — confirmado lendo `node_modules/astro/dist/core/preview/vite-plugin-astro-preview.js`), nem, muito provavelmente, em produção na Vercel (hospedagem estática da Vercel não documenta suporte a `404.html` aninhado por diretório — confirmado na documentação oficial e em relatos da comunidade). Um link quebrado sob `/en/algumacoisa` mostra a 404 em português. As páginas continuam valendo a pena como conteúdo alcançável por link direto, mas não resolvem "404 traduzida para quem cai numa URL quebrada" — ver decisão registrada na revisão crítica do plano.
+**Caminho de saída real, diferente do assumido originalmente** (confirmado rodando o build): só `src/pages/404.astro` (raiz, sem prefixo de idioma) recebe o tratamento especial do Astro que gera `dist/404.html` direto, sem subpasta — porque a rota dele bate exatamente com o padrão reservado `/404` que o Astro trata como página de erro (`ROUTE404_RE` em `node_modules/astro/dist/core/routing/internal/route-errors.js`). `src/pages/en/404.astro` e `src/pages/es/404.astro` têm rota `/en/404` e `/es/404` — não batem com esse padrão reservado — então o Astro as trata como páginas comuns, no formato `directory` padrão: saem em `dist/en/404/index.html` e `dist/es/404/index.html` (com subpasta), não em `dist/en/404.html`.
+
+**Limitação conhecida, fora do controle deste código** (ver revisão crítica antes da execução): essas páginas `en/404.astro`/`es/404.astro` são páginas comuns, sem nenhum vínculo com o mecanismo de erro do Astro — só são alcançadas se alguém navegar direto pra `/en/404` ou `/es/404`. Elas **não** são servidas automaticamente quando o visitante acerta uma URL quebrada de verdade sob `/en/*` ou `/es/*` — nem no `astro preview` (o servidor de preview do Astro serve sempre `dist/404.html`, hardcoded, sem olhar pra subpastas — confirmado lendo `node_modules/astro/dist/core/preview/vite-plugin-astro-preview.js`), nem, muito provavelmente, em produção na Vercel (hospedagem estática da Vercel não documenta suporte a `404.html` aninhado por diretório — confirmado na documentação oficial e em relatos da comunidade). Um link quebrado sob `/en/algumacoisa` mostra a 404 em português. As páginas continuam valendo a pena como conteúdo alcançável por link direto, mas não resolvem "404 traduzida para quem cai numa URL quebrada" — ver decisão registrada na revisão crítica do plano.
 
 - [ ] **Step 5: Commit**
 
@@ -2101,16 +2103,16 @@ Expected: ambos passam sem erro. Confirma o critério de conclusão "npm run che
 - [ ] **Step 2: Confirmar as 9 rotas existem no `dist/`**
 
 ```
-Get-ChildItem dist/index.html, dist/en/index.html, dist/es/index.html, dist/faq/index.html, dist/en/faq/index.html, dist/es/faq/index.html, dist/404.html, dist/en/404.html, dist/es/404.html
+Get-ChildItem dist/index.html, dist/en/index.html, dist/es/index.html, dist/faq/index.html, dist/en/faq/index.html, dist/es/faq/index.html, dist/404.html, dist/en/404/index.html, dist/es/404/index.html
 ```
-Expected: os 9 arquivos existem (critério de conclusão "gera dist/index.html, dist/en/index.html, dist/es/index.html — e o mesmo trio pra faq e 404").
+Expected: os 9 arquivos existem (critério de conclusão "gera dist/index.html, dist/en/index.html, dist/es/index.html — e o mesmo trio pra faq e 404"). **Nota**: só a 404 raiz (`dist/404.html`) recebe o nome de arquivo especial sem subpasta — `en/404.astro` e `es/404.astro` saem como página comum, em `dist/en/404/index.html` e `dist/es/404/index.html` (confirmado rodando o build; ver nota na Task 16).
 
 - [ ] **Step 3: Regressão consolidada de `hreflang`/`og:locale`/`lang` nas 3 páginas**
 
 ```
 Select-String -Path dist/index.html, dist/faq/index.html, dist/404.html -Pattern 'lang="pt-BR"'
-Select-String -Path dist/en/index.html, dist/en/faq/index.html, dist/en/404.html -Pattern 'lang="en"'
-Select-String -Path dist/es/index.html, dist/es/faq/index.html, dist/es/404.html -Pattern 'lang="es"'
+Select-String -Path dist/en/index.html, dist/en/faq/index.html, dist/en/404/index.html -Pattern 'lang="en"'
+Select-String -Path dist/es/index.html, dist/es/faq/index.html, dist/es/404/index.html -Pattern 'lang="es"'
 Select-String -Path dist/faq/index.html -Pattern 'hreflang="en"|hreflang="es"'
 Select-String -Path dist/404.html -Pattern 'hreflang="en"|hreflang="es"'
 ```
@@ -2118,7 +2120,7 @@ Expected: `lang` correto nas 9 páginas; `hreflang` presente também nas página
 
 - [ ] **Step 4: Rodar `npm run preview` e verificar manualmente no navegador (9 combinações)**
 
-A partir de `site/`: `npm run build` (se ainda não rodou) seguido de `npm run preview`, depois abrir no navegador e conferir, para cada uma das 3 páginas (`/`, `/faq`, `/404-inexistente` ou qualquer rota inválida) nos 3 idiomas (`pt`, `en`, `es`):
+A partir de `site/`: `npm run build` (se ainda não rodou) seguido de `npm run preview`, depois abrir no navegador e conferir, para cada uma das 3 páginas (`/`, `/faq`, `/en/404`/`/es/404` — navegando **direto** pra essas URLs, não digitando uma rota quebrada qualquer, já que uma URL inválida de verdade sob `/en/` ou `/es/` mostra a 404 em português, não a traduzida — ver limitação registrada na Task 16) nos 3 idiomas (`pt`, `en`, `es`):
 
 - [ ] Alternador PT/EN/ES visível e funcional, sem levar de volta pra `/` estando em `/en/` ou `/es/`.
 - [ ] Conteúdo da página (título, parágrafos, botões) no idioma certo.
