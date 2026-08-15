@@ -1,6 +1,9 @@
 ---
 import "../styles/global.css";
+import { getRelativeLocaleUrl } from "astro:i18n";
 import { dados } from "../dados";
+import { idiomaAtual, idiomas, type Idioma } from "../lib/i18n";
+import { textos } from "../lib/textos";
 
 interface Props {
   titulo: string;
@@ -10,15 +13,28 @@ interface Props {
 }
 
 const { titulo, descricao, jsonLd } = Astro.props;
+const idioma = idiomaAtual(Astro.currentLocale);
+
 const ogImage = new URL("og.png", Astro.site ?? Astro.url);
 const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+
+// Os 3 idiomas do site sempre estão ativos (sem gate de idiomasDisponiveis,
+// diferente do motor) — sempre 3 tags <link rel="alternate">.
+const hrefsAlternativos = idiomas.map((i) => ({
+  idioma: i,
+  href: new URL(getRelativeLocaleUrl(i), Astro.site ?? Astro.url).href,
+}));
+
+const ogLocalePorIdioma: Record<Idioma, string> = { pt: "pt_BR", en: "en_US", es: "es_ES" };
+const htmlLangPorIdioma: Record<Idioma, string> = { pt: "pt-BR", en: "en", es: "es" };
+const ogLocale = ogLocalePorIdioma[idioma];
+const htmlLang = htmlLangPorIdioma[idioma];
 
 const jsonLdOrganizacao = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Código Itinerante",
-  description:
-    "Construção de sites institucionais para hostels e pousadas, pagos em noites de hospedagem.",
+  description: textos[idioma].layout.descricaoNegocio,
   url: (Astro.site ?? Astro.url).href,
   email: dados.email,
   sameAs: [dados.linkedin],
@@ -28,7 +44,7 @@ const blocosJsonLd = [jsonLdOrganizacao, ...(jsonLd ? [jsonLd] : [])];
 ---
 
 <!doctype html>
-<html lang="pt-BR">
+<html lang={htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -36,6 +52,9 @@ const blocosJsonLd = [jsonLdOrganizacao, ...(jsonLd ? [jsonLd] : [])];
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="canonical" href={canonical} />
+    {hrefsAlternativos.map(({ idioma: idiomaAlternativo, href }) => (
+      <link rel="alternate" hreflang={idiomaAlternativo} href={href} />
+    ))}
     <title>{titulo}</title>
     <meta name="description" content={descricao} />
 
@@ -45,7 +64,7 @@ const blocosJsonLd = [jsonLdOrganizacao, ...(jsonLd ? [jsonLd] : [])];
     <meta property="og:description" content={descricao} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale" content={ogLocale} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={titulo} />
     <meta name="twitter:description" content={descricao} />
