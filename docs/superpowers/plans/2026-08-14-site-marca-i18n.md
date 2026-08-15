@@ -2122,14 +2122,27 @@ Expected: `lang` correto nas 9 páginas; `hreflang` presente também nas página
 
 A partir de `site/`: `npm run build` (se ainda não rodou) seguido de `npm run preview`, depois abrir no navegador e conferir, para cada uma das 3 páginas (`/`, `/faq`, `/en/404`/`/es/404` — navegando **direto** pra essas URLs, não digitando uma rota quebrada qualquer, já que uma URL inválida de verdade sob `/en/` ou `/es/` mostra a 404 em português, não a traduzida — ver limitação registrada na Task 16) nos 3 idiomas (`pt`, `en`, `es`):
 
-- [ ] Alternador PT/EN/ES visível e funcional, sem levar de volta pra `/` estando em `/en/` ou `/es/`.
-- [ ] Conteúdo da página (título, parágrafos, botões) no idioma certo.
-- [ ] Botão do WhatsApp abre com a mensagem certa no idioma da página.
-- [ ] Link "Veja as perguntas frequentes" (Escopo, na home) leva pro FAQ no idioma atual.
-- [ ] `view-source:` confirma `<html lang>`, `hreflang` e `og:locale` corretos.
+- [x] Alternador PT/EN/ES visível e funcional, sem levar de volta pra `/` estando em `/en/` ou `/es/`.
+- [x] Conteúdo da página (título, parágrafos, botões) no idioma certo.
+- [x] Botão do WhatsApp abre com a mensagem certa no idioma da página.
+- [x] Link "Veja as perguntas frequentes" (Escopo, na home) leva pro FAQ no idioma atual.
+- [x] `view-source:` confirma `<html lang>`, `hreflang` e `og:locale` corretos.
 
 Usar as ferramentas de navegador (`claude-in-chrome`) para navegar e conferir cada uma das 9 combinações; reportar qualquer divergência antes de considerar a task concluída.
 
 - [x] **Step 5: Commit final (se sobrar algum ajuste do checklist manual)**
 
 Se o Step 4 não apontar nenhum ajuste, esta task não gera commit novo — as Tasks 1-16 já cobrem todo o código. Se algo precisar de correção, aplicar, re-rodar Steps 1-3 e commitar normalmente.
+
+---
+
+## Achados da execução real e da revisão final (fora do escopo original das 17 tasks)
+
+Registrados aqui porque só apareceram ao rodar o código de verdade, não durante o planejamento:
+
+1. **Trailing slash em `getRelativeLocaleUrl()`**: com `trailingSlash: 'ignore'` (padrão) + `build.format: 'directory'` (padrão), toda URL gerada por `getRelativeLocaleUrl()` fecha com `/` — exceto o locale padrão (pt) chamado sem `path`, que retorna `/` puro. Confirmado no código-fonte do Astro e no build real já em produção do LumeHostel antes de codar; todas as asserções deste plano já foram escritas com isso em mente.
+2. **Apóstrofo em texto vira `&#39;` no HTML**: qualquer contração em inglês (`What's`, `Let's`, `doesn't`) sai como entidade HTML no `dist/`. Não é bug de conteúdo — só invalida um padrão de busca com apóstrofo literal.
+3. **`en/404.astro`/`es/404.astro` não recebem o tratamento especial de página de erro do Astro** — só a `404.astro` raiz vira `dist/404.html` direto; as localizadas saem em `dist/<locale>/404/index.html`, como página comum. Confirmado rodando o build (`Astro v7.1.3`) e testado ao vivo no navegador: uma URL quebrada de verdade sob `/en/*` mostra a 404 em português, não a traduzida — só quem navega direto pra `/en/404` vê a versão em inglês.
+4. **Espaço ausente entre texto e `<em>` destacado** (`Manifesto.astro`): escrever `{txt.paragrafo3Pre}` e `<em>` em linhas separadas fez o Astro descartar o espaço em branco entre eles (renderizava `week:hostels` sem espaço) — só foi pego na checagem visual no navegador, nenhum `Select-String` de texto pegaria isso. Corrigido colocando os dois na mesma linha com espaço literal.
+5. **`en/404`/`es/404` vazavam pro `sitemap.xml`** como página de conteúdo: o `@astrojs/sitemap` só exclui `404`/`500` localizados quando recebe a opção `i18n` (com `locales` no formato que ele espera) — sem isso, só a raiz `/404` é excluída (tratamento especial nativo do Astro), e as localizadas, sendo páginas comuns pro Astro (achado 3), vazavam. Corrigido passando `i18n: { defaultLocale: 'pt', locales: { pt: 'pt-BR', en: 'en', es: 'es' } }` pro `sitemap()` em `astro.config.mjs` — como bônus, o sitemap passou a gerar `<xhtml:link rel="alternate" hreflang>` cruzado entre os idiomas.
+6. **Commit da Task 13 (`Escopo.astro`) tinha ficado pendente**: o arquivo foi implementado e verificado (check/build/grep) na hora certa, mas o passo de `git commit` foi pulado ao avançar direto pra Task 14. Descoberto só na revisão final rodando `git status` — nenhuma checagem de build acusaria isso, já que o arquivo existia em disco. Corrigido com o commit isolado antes de fechar o plano.
