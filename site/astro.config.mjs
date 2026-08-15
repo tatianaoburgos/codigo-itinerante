@@ -11,7 +11,18 @@ export default defineConfig({
     defaultLocale: 'pt',
     routing: { prefixDefaultLocale: false },
   },
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      // Sem isso, o sitemap só exclui a 404 raiz (`/404`) — `en/404` e `es/404`
+      // não recebem o tratamento especial de página de erro do Astro (são
+      // páginas comuns, ver Nav i18n) e vazariam pro sitemap como conteúdo.
+      // Com `i18n` configurado, @astrojs/sitemap exclui `<locale>/404` também.
+      i18n: {
+        defaultLocale: 'pt',
+        locales: { pt: 'pt-BR', en: 'en', es: 'es' },
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
     server: {
